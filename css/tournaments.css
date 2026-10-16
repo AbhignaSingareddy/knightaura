@@ -5825,3 +5825,13 @@ html body .dashboard-page .brand-subtitle {
     margin-top: 16px !important;
   }
 }
+/* TOURNAMENTS — BUTTON HOVER TEXT GREEN */
+.page-tournaments .ka-btn:hover,
+.page-tournaments .ka-btn:hover *,
+.page-tournaments .ka-tourney-hero-actions .ka-btn:hover,
+.page-tournaments .ka-tourney-hero-actions .ka-btn:hover *,
+.page-tournaments .ka-final-actions .ka-btn:hover,
+.page-tournaments .ka-final-actions .ka-btn:hover * {
+    color: #203C32 !important;
+    -webkit-text-fill-color: #203C32 !important;
+}
