@@ -1,0 +1,850 @@
+
+/* ==========================================
+   KNIGHT AURA — COMING SOON PAGE
+   Original brand colors:
+   Primary:   #203C32
+   Secondary: #B88A4A
+========================================== */
+
+.coming-soon-page {
+    --coming-primary: #203C32;
+    --coming-secondary: #B88A4A;
+    --coming-background: #F5F1E8;
+    --coming-surface: #FFFCF6;
+    --coming-text: #24342D;
+    --coming-muted: #58675F;
+    --coming-border: rgba(184, 138, 74, 0.30);
+
+    min-height: 100vh;
+    margin: 0;
+    background: var(--coming-background);
+    color: var(--coming-text);
+    font-family: "Lora", Georgia, serif;
+}
+
+.coming-soon-page *,
+.coming-soon-page *::before,
+.coming-soon-page *::after {
+    box-sizing: border-box;
+}
+
+.coming-soon-page button,
+.coming-soon-page input {
+    font: inherit;
+}
+
+.coming-soon-page button:focus-visible,
+.coming-soon-page input:focus-visible,
+.coming-soon-page a:focus-visible {
+    outline: 3px solid var(--coming-secondary);
+    outline-offset: 4px;
+}
+
+/* Main background */
+
+.coming-soon-page .coming-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 34px 22px;
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(184, 138, 74, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 94% 90%,
+            rgba(32, 60, 50, 0.08),
+            transparent 30%
+        ),
+        var(--coming-background);
+}
+
+/* Single content card */
+
+.coming-soon-page .coming-card {
+    position: relative;
+    width: min(100%, 860px);
+    min-height: 650px;
+    padding: 55px clamp(22px, 6vw, 76px) 35px;
+    overflow: hidden;
+    text-align: center;
+    background: var(--coming-surface);
+    border: 1px solid var(--coming-border);
+    border-radius: 24px;
+    box-shadow: 0 24px 70px rgba(32, 60, 50, 0.09);
+    isolation: isolate;
+}
+
+.coming-soon-page .coming-card::before,
+.coming-soon-page .coming-card::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(184, 138, 74, 0.17);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.coming-soon-page .coming-card::before {
+    top: -135px;
+    left: -100px;
+}
+
+.coming-soon-page .coming-card::after {
+    right: -125px;
+    bottom: -140px;
+}
+
+/* Theme and direction controls */
+
+.coming-soon-page .coming-controls {
+    position: absolute;
+    top: 20px;
+    inset-inline-end: 22px;
+    display: flex;
+    gap: 10px;
+    direction: ltr;
+}
+
+.coming-soon-page .coming-icon-button {
+    width: 43px;
+    height: 43px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--coming-border);
+    border-radius: 50%;
+    background: var(--coming-background);
+    color: var(--coming-primary);
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    cursor: pointer;
+    transition:
+        background 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.coming-soon-page .coming-icon-button:hover {
+    color: var(--coming-surface);
+    background: var(--coming-primary);
+    border-color: var(--coming-primary);
+    transform: translateY(-2px);
+}
+
+/* Brand */
+
+.coming-soon-page .coming-brand {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--coming-primary);
+    text-align: start;
+    text-decoration: none;
+    direction: ltr;
+}
+
+.coming-soon-page .coming-logo {
+    display: block;
+    width: 57px;
+    height: 57px;
+    flex: 0 0 57px;
+    object-fit: contain;
+}
+
+.coming-soon-page .coming-brand-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.coming-soon-page .coming-brand-name {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    white-space: nowrap;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(27px, 4vw, 36px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -1.1px;
+}
+
+.coming-soon-page .coming-brand-name > span:first-child {
+    color: var(--coming-primary);
+}
+
+.coming-soon-page .coming-brand-name .brand-aura {
+    color: var(--coming-secondary);
+}
+
+.coming-soon-page .coming-tagline {
+    color: var(--coming-primary);
+    font-family: "Lora", Georgia, serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.05px;
+    line-height: 1.5;
+}
+
+/* Intro */
+
+.coming-soon-page .coming-status {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 25px;
+    padding: 11px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--coming-primary);
+    background: rgba(184, 138, 74, 0.10);
+    border: 1px solid var(--coming-border);
+    border-radius: 999px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    line-height: 1.5;
+}
+
+.coming-soon-page .coming-status-icon {
+    color: var(--coming-secondary);
+    font-size: 18px;
+}
+
+.coming-soon-page .coming-eyebrow {
+    margin: 0 0 12px;
+    color: var(--coming-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    line-height: 1.8;
+}
+
+.coming-soon-page .coming-card h1 {
+    max-width: 690px;
+    margin: 0 auto 20px;
+    color: var(--coming-primary);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(42px, 6.5vw, 66px);
+    font-weight: 600;
+    letter-spacing: -1.4px;
+    line-height: 0.98;
+    text-wrap: balance;
+}
+
+.coming-soon-page .coming-card h1 em {
+    display: block;
+    margin-top: 5px;
+    color: var(--coming-secondary);
+    font-weight: 500;
+}
+
+.coming-soon-page .coming-description {
+    max-width: 570px;
+    margin: 0 auto;
+    color: var(--coming-muted);
+    font-size: 14px;
+    line-height: 1.9;
+    text-wrap: pretty;
+}
+
+/* Divider */
+
+.coming-soon-page .coming-divider {
+    max-width: 350px;
+    margin: 25px auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.coming-soon-page .coming-divider > span:not(.coming-divider-piece) {
+    height: 1px;
+    flex: 1;
+    background: var(--coming-border);
+}
+
+.coming-soon-page .coming-divider-piece {
+    color: var(--coming-secondary);
+    font-size: 21px;
+}
+
+/* Countdown */
+
+.coming-soon-page .coming-countdown-label {
+    margin: 0 0 15px;
+    color: var(--coming-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.7;
+}
+
+.coming-soon-page .coming-countdown {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(75px, 100px));
+    gap: 10px;
+    direction: ltr;
+}
+
+.coming-soon-page .coming-time-box {
+    min-height: 92px;
+    padding: 13px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: var(--coming-background);
+    border: 1px solid var(--coming-border);
+    border-radius: 13px;
+}
+
+.coming-soon-page .coming-time-box > span {
+    color: var(--coming-primary);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 35px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.coming-soon-page .coming-time-box small {
+    color: var(--coming-muted);
+    font-family: "Lora", Georgia, serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+/* Email form */
+
+.coming-soon-page .coming-notify-form {
+    width: min(100%, 540px);
+    margin: 25px auto 0;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.coming-soon-page .coming-email-wrap {
+    min-width: 0;
+    min-height: 49px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    color: var(--coming-secondary);
+    background: var(--coming-background);
+    border: 1px solid var(--coming-border);
+    border-radius: 999px;
+}
+
+.coming-soon-page .coming-email-wrap > span {
+    flex: 0 0 auto;
+    font-size: 18px;
+}
+
+.coming-soon-page .coming-email-wrap input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--coming-text);
+    font-size: 12px;
+    text-align: start;
+}
+
+.coming-soon-page .coming-email-wrap input::placeholder {
+    color: var(--coming-muted);
+    opacity: 1;
+}
+
+.coming-soon-page .coming-notify-button {
+    min-height: 49px;
+    padding: 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex: 0 0 auto;
+    color: #FFFFFF;
+    background: var(--coming-primary);
+    border: 1px solid var(--coming-primary);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.coming-soon-page .coming-notify-button:hover {
+    background: #142B23;
+    border-color: #142B23;
+    transform: translateY(-2px);
+}
+
+.coming-soon-page .coming-form-message {
+    min-height: 18px;
+    margin: 10px auto 0;
+    color: var(--coming-primary);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.coming-soon-page .coming-form-message.is-visible {
+    padding: 8px 12px;
+    background: rgba(184, 138, 74, 0.10);
+    border-radius: 8px;
+}
+
+/* Bottom tagline */
+
+.coming-soon-page .coming-bottom-note {
+    margin: 18px 0 0;
+    color: var(--coming-muted);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    line-height: 1.8;
+}
+
+.coming-soon-page .coming-bottom-note span {
+    margin-inline-end: 5px;
+    color: var(--coming-secondary);
+}
+
+.coming-soon-page .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Dark mode */
+
+html[data-theme="dark"] .coming-soon-page {
+    --coming-background: #101A16;
+    --coming-surface: #17231D;
+    --coming-text: #F5F1E8;
+    --coming-muted: #D0D8D1;
+    --coming-border: rgba(184, 138, 74, 0.36);
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-shell {
+    background:
+        radial-gradient(circle at 8% 12%, rgba(184, 138, 74, 0.09), transparent 25%),
+        radial-gradient(circle at 94% 90%, rgba(32, 60, 50, 0.30), transparent 30%),
+        var(--coming-background);
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-brand-name > span:first-child,
+html[data-theme="dark"] .coming-soon-page .coming-tagline,
+html[data-theme="dark"] .coming-soon-page .coming-brand {
+    color: #F5F1E8;
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-card h1 {
+    color: #F5F1E8;
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-time-box > span {
+    color: #F5F1E8;
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-icon-button {
+    background: #203C32;
+    color: #F5F1E8;
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-notify-button {
+    color: #FFFFFF;
+    background: #28604D;
+    border-color: #28604D;
+}
+
+html[data-theme="dark"] .coming-soon-page .coming-notify-button:hover {
+    background: #34765F;
+    border-color: #34765F;
+}
+
+/* RTL: keep logo text before logo image */
+
+html[dir="rtl"] .coming-soon-page .coming-brand {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-brand-copy {
+    align-items: flex-end;
+    text-align: end;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-brand-name {
+    flex-direction: row;
+    direction: rtl;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-card {
+    text-align: center;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-email-wrap input {
+    text-align: right;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-bottom-note {
+    direction: rtl;
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+    .coming-soon-page .coming-shell {
+        padding: 18px 12px;
+    }
+
+    .coming-soon-page .coming-card {
+        min-height: auto;
+        padding: 76px 24px 28px;
+        border-radius: 18px;
+    }
+
+    .coming-soon-page .coming-brand {
+        margin-bottom: 29px;
+    }
+
+    .coming-soon-page .coming-card h1 {
+        font-size: clamp(40px, 8vw, 55px);
+    }
+
+    .coming-soon-page .coming-description {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .coming-soon-page .coming-countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 100%;
+        gap: 7px;
+    }
+
+    .coming-soon-page .coming-time-box {
+        min-height: 82px;
+        padding-inline: 4px;
+    }
+
+    .coming-soon-page .coming-time-box > span {
+        font-size: 30px;
+    }
+
+    .coming-soon-page .coming-time-box small {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 420px) {
+    .coming-soon-page .coming-card {
+        padding: 76px 16px 25px;
+    }
+
+    .coming-soon-page .coming-controls {
+        top: 14px;
+        inset-inline-end: 14px;
+        gap: 7px;
+    }
+
+    .coming-soon-page .coming-icon-button {
+        width: 38px;
+        height: 38px;
+    }
+
+    .coming-soon-page .coming-logo {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+
+    .coming-soon-page .coming-brand-name {
+        font-size: 29px;
+    }
+
+    .coming-soon-page .coming-tagline {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .coming-soon-page .coming-status {
+        padding: 9px 12px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .coming-soon-page .coming-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .coming-soon-page .coming-card h1 {
+        font-size: clamp(37px, 10vw, 44px);
+        letter-spacing: -0.8px;
+        line-height: 1.02;
+    }
+
+    .coming-soon-page .coming-countdown {
+        gap: 5px;
+    }
+
+    .coming-soon-page .coming-time-box {
+        min-height: 73px;
+        border-radius: 10px;
+    }
+
+    .coming-soon-page .coming-time-box > span {
+        font-size: 26px;
+    }
+
+    .coming-soon-page .coming-time-box small {
+        font-size: 7px;
+    }
+
+    .coming-soon-page .coming-notify-form {
+        flex-direction: column;
+    }
+
+    .coming-soon-page .coming-email-wrap,
+    .coming-soon-page .coming-notify-button {
+        width: 100%;
+        min-height: 47px;
+    }
+
+    .coming-soon-page .coming-notify-button {
+        flex: auto;
+    }
+
+    .coming-soon-page .coming-bottom-note {
+        font-size: 9px;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .coming-soon-page *,
+    .coming-soon-page *::before,
+    .coming-soon-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   COMING SOON — RTL FIX
+========================================== */
+
+/* Keep logo text order correct in both directions */
+.coming-soon-page .coming-brand {
+    direction: ltr;
+}
+
+/* Keep KnightAura word order unchanged */
+.coming-soon-page .coming-brand-name {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* RTL: move controls to the left */
+html[dir="rtl"] .coming-soon-page .coming-controls {
+    left: 24px;
+    right: auto;
+}
+
+/* RTL: logo name first, logo image after it */
+html[dir="rtl"] .coming-soon-page .coming-brand {
+    flex-direction: row-reverse;
+}
+
+/* Keep tagline aligned with the brand name in RTL */
+html[dir="rtl"] .coming-soon-page .coming-brand-copy {
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* RTL: icons inside status badge move to the right */
+html[dir="rtl"] .coming-soon-page .coming-badge {
+    flex-direction: row-reverse;
+}
+
+/* RTL: countdown remains in a consistent order */
+.coming-soon-page .coming-countdown {
+    direction: ltr;
+}
+
+/* RTL: email icon and input */
+html[dir="rtl"] .coming-soon-page .coming-email-wrap {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-email-wrap input {
+    text-align: right;
+}
+
+/* RTL: notification button icon */
+html[dir="rtl"] .coming-soon-page .coming-notify-button {
+    flex-direction: row-reverse;
+}
+
+/* Responsive controls */
+@media (max-width: 600px) {
+    html[dir="rtl"] .coming-soon-page .coming-controls {
+        left: 12px;
+        right: auto;
+    }
+}
+
+/* ==========================================
+   COMING SOON — BRAND SIZE & BADGE SPACING
+========================================== */
+
+/* Match the logo sizing used on the Privacy Policy page */
+.coming-soon-page .coming-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 28px;
+    width: fit-content;
+    direction: ltr;
+}
+
+.coming-soon-page .coming-logo {
+    width: 46px !important;
+    height: 46px !important;
+    max-width: 46px !important;
+    max-height: 46px !important;
+    object-fit: contain;
+    flex: 0 0 46px;
+}
+
+.coming-soon-page .coming-brand-name {
+    font-size: 27px !important;
+    line-height: 1 !important;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.coming-soon-page .coming-tagline {
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.7px;
+    margin-top: 3px;
+}
+
+/* Keep the status badge directly below the logo */
+.coming-soon-page .coming-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 22px !important;
+    padding: 0;
+}
+
+.coming-soon-page .coming-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Avoid extra spacing above the eyebrow */
+.coming-soon-page .coming-eyebrow {
+    margin-top: 0 !important;
+}
+
+/* RTL: name first, logo on the right; keep the same size */
+html[dir="rtl"] .coming-soon-page .coming-brand {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-brand-copy {
+    align-items: flex-end;
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+    .coming-soon-page .coming-logo {
+        width: 42px !important;
+        height: 42px !important;
+        max-width: 42px !important;
+        max-height: 42px !important;
+        flex-basis: 42px;
+    }
+
+    .coming-soon-page .coming-brand-name {
+        font-size: 24px !important;
+    }
+
+    .coming-soon-page .coming-tagline {
+        font-size: 8px !important;
+    }
+
+    .coming-soon-page .coming-status {
+        margin-bottom: 18px !important;
+    }
+}
+
+/* Keep brand name as KnightAura in both LTR and RTL */
+.coming-soon-page .coming-brand-name {
+    direction: ltr !important;
+    unicode-bidi: isolate;
+    display: inline-flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+/* In RTL, place the name first and logo on its right */
+html[dir="rtl"] .coming-soon-page .coming-brand {
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .coming-soon-page .coming-brand-copy {
+    direction: ltr !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+}

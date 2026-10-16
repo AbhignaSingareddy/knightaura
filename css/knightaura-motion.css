@@ -1,0 +1,875 @@
+/* KnightAura Home 1 — extra sections + motion system
+   Brand palette only: forest green, antique gold, warm cream and paper. */
+:root {
+   --ka-green: #203c32;
+   --ka-green-dark: #10271f;
+   --ka-green-light: #315747;
+   --ka-gold: #b88a4a;
+   --ka-gold-light: #dfbd82;
+   --ka-cream: #fff9f0;
+   --ka-paper: #f4eee3;
+   --ka-white: #fffdf8;
+   --ka-text: #293a31;
+   --ka-muted: #69766e;
+   --ka-border: #e1d6c5
+}
+
+html {
+   scroll-behavior: smooth;
+   overflow-x: clip
+}
+
+body {
+   overflow-x: clip;
+   max-width: 100%
+}
+
+img {
+   max-width: 100%;
+   height: auto
+}
+
+#main {
+   min-width: 0;
+   overflow: clip
+}
+
+/* Keep all interactive colours on-brand */
+.btn,
+.ka-btn,
+.login-action {
+   background: var(--ka-green) !important;
+   border-color: var(--ka-green) !important;
+   color: var(--ka-cream) !important;
+   transition: background .28s ease, color .28s ease, border-color .28s ease, transform .28s cubic-bezier(.2, .8, .2, 1), box-shadow .28s ease
+}
+
+.btn:hover,
+.ka-btn:hover,
+.login-action:hover {
+   background: var(--ka-gold) !important;
+   border-color: var(--ka-gold) !important;
+   color: var(--ka-green-dark) !important;
+   transform: translateY(-4px);
+   box-shadow: 0 14px 30px rgba(16, 39, 31, .2)
+}
+
+.site-header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   backdrop-filter: blur(14px);
+   -webkit-backdrop-filter: blur(14px)
+}
+
+.site-header .nav-link,
+.site-header .dropdown-trigger {
+   transition: color .25s ease, transform .25s ease
+}
+
+.site-header .nav-link:hover,
+.site-header .dropdown-trigger:hover {
+   color: var(--ka-gold) !important;
+   transform: translateY(-2px)
+}
+
+/* Warm image treatment avoids cool blue casts without tinting the brand logo */
+#main img:not(.brand-mark img) {
+   filter: saturate(.82) sepia(.12) hue-rotate(-8deg);
+   transition: filter .55s ease, transform .8s cubic-bezier(.2, .75, .2, 1)
+}
+
+#main img:not(.brand-mark img):hover {
+   filter: saturate(.98) sepia(.08) hue-rotate(-8deg);
+   transform: scale(1.045)
+}
+
+.ka-hero,
+.ka-ink,
+.ka-event-band,
+.ka-final-cta {
+   background-color: var(--ka-green-dark)
+}
+
+.ka-hero {
+   isolation: isolate
+}
+
+.ka-hero-glow {
+   animation: kaGlowDrift 9s ease-in-out infinite alternate
+}
+
+.ka-hero-art,
+.ka-board-art,
+.ka-journal-visual {
+   perspective: 1000px
+}
+
+.ka-art-frame {
+   animation: kaImageFloat 7s ease-in-out infinite;
+   transform-origin: center
+}
+
+.ka-orbit {
+   animation: kaOrbitSpin 24s linear infinite
+}
+
+.ka-float-top {
+   animation: kaFloatCard 5s ease-in-out infinite
+}
+
+.ka-float-bottom {
+   animation: kaFloatCard 6s ease-in-out infinite reverse
+}
+
+.ka-path,
+.ka-feature-wide,
+.ka-feature-tall,
+.ka-event-card,
+.ka-training-card,
+.ka-journal-list>div {
+   transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease, border-color .35s ease, background .35s ease
+}
+
+.ka-path:hover,
+.ka-feature-wide:hover,
+.ka-feature-tall:hover,
+.ka-event-card:hover,
+.ka-training-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 22px 45px rgba(16, 39, 31, .14)
+}
+
+.ka-round-arrow {
+   transition: transform .3s ease, background .3s ease, color .3s ease
+}
+
+.ka-path:hover .ka-round-arrow {
+   transform: rotate(45deg);
+   background: var(--ka-gold);
+   color: var(--ka-green-dark)
+}
+
+/* Cards reveal slowly, one after another */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 1.5s ease,
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0ms !important;
+}
+
+[data-reveal].ka-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the three program cards */
+.ka-path[data-reveal]:nth-child(1) {
+  transition-delay: 0ms !important;
+}
+
+.ka-path[data-reveal]:nth-child(2) {
+  transition-delay: 250ms !important;
+}
+
+.ka-path[data-reveal]:nth-child(3) {
+  transition-delay: 500ms !important;
+}
+.ka-training-lab {
+   position: relative;
+   isolation: isolate;
+   background: var(--ka-paper);
+   overflow: hidden
+}
+
+.ka-training-lab:before {
+   content: "♞";
+   position: absolute;
+   z-index: -1;
+   right: -.02em;
+   top: -.45em;
+   font: clamp(230px, 35vw, 520px)/1 Georgia, serif;
+   color: var(--ka-gold);
+   opacity: .065;
+   pointer-events: none;
+   animation: kaKnightDrift 11s ease-in-out infinite alternate
+}
+
+.ka-training-heading {
+   margin-bottom: 38px
+}
+
+.ka-training-grid {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 18px
+}
+
+.ka-training-card {
+   position: relative;
+   min-height: 300px;
+   padding: 30px 28px 26px;
+   background: var(--ka-white);
+   border: 1px solid var(--ka-border);
+   overflow: hidden
+}
+
+.ka-training-card:before {
+   content: "";
+   position: absolute;
+   inset: 0 auto 0 0;
+   width: 3px;
+   background: var(--ka-gold);
+   transform: scaleY(0);
+   transform-origin: bottom;
+   transition: transform .4s ease
+}
+
+.ka-training-card:hover:before {
+   transform: scaleY(1)
+}
+
+.ka-training-index {
+   position: absolute;
+   right: 22px;
+   top: 20px;
+   color: var(--ka-gold);
+   font-size: 12px;
+   letter-spacing: .14em
+}
+
+.ka-training-icon {
+   display: grid;
+   place-items: center;
+   width: 58px;
+   height: 58px;
+   margin-bottom: 25px;
+   border: 1px solid var(--ka-gold);
+   border-radius: 50%;
+   color: var(--ka-gold);
+   font-size: 27px;
+   transition: transform .45s ease, background .35s ease, color .35s ease
+}
+
+.ka-training-card:hover .ka-training-icon {
+   transform: rotate(12deg) scale(1.08);
+   background: var(--ka-green);
+   color: var(--ka-gold-light)
+}
+
+.ka-training-label {
+   margin: 0 0 8px;
+   color: var(--ka-gold);
+   font-size: 10px;
+   letter-spacing: .16em;
+   font-weight: 700
+}
+
+.ka-training-card h3 {
+   margin: 0 0 12px;
+   color: var(--ka-green);
+   font-size: clamp(24px, 2.5vw, 31px);
+   line-height: 1.1
+}
+
+.ka-training-card>p:last-of-type {
+   color: var(--ka-muted);
+   font-size: 13px;
+   line-height: 1.85
+}
+
+.ka-training-line {
+   display: block;
+   width: 44px;
+   height: 2px;
+   margin-top: 22px;
+   background: var(--ka-gold);
+   transition: width .4s ease
+}
+
+.ka-training-card:hover .ka-training-line {
+   width: 100%
+}
+
+.ka-player-journal {
+   background: var(--ka-cream);
+   overflow: hidden
+}
+
+.ka-journal-layout {
+   display: grid;
+   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+   align-items: center;
+   gap: clamp(38px, 7vw, 90px)
+}
+
+.ka-journal-visual {
+   position: relative;
+   min-height: 490px;
+   display: grid;
+   place-items: center
+}
+
+.ka-journal-image {
+   position: absolute;
+   inset: 35px 42px 35px 0;
+   overflow: hidden;
+   border-radius: 48% 48% 4px 4px;
+   background: var(--ka-green)
+}
+
+.ka-journal-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(.22) saturate(.72) !important
+}
+
+.ka-journal-visual:hover .ka-journal-image img {
+   transform: scale(1.08) rotate(-1deg)
+}
+
+.ka-journal-stamp {
+   position: absolute;
+   right: 0;
+   bottom: 28px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 3px;
+   padding: 22px 27px;
+   background: var(--ka-green);
+   color: var(--ka-cream);
+   box-shadow: 0 18px 38px rgba(16, 39, 31, .18);
+   animation: kaFloatCard 5.5s ease-in-out infinite
+}
+
+.ka-journal-stamp span {
+   font-size: 9px;
+   letter-spacing: .2em;
+   color: var(--ka-gold-light)
+}
+
+.ka-journal-stamp strong {
+   font: 600 25px/1.1 Georgia, serif;
+   letter-spacing: .04em
+}
+
+.ka-journal-stamp i {
+   position: absolute;
+   right: 16px;
+   top: -20px;
+   font-size: 27px;
+   color: var(--ka-gold-light);
+   font-style: normal
+}
+
+.ka-journal-orbit {
+   position: absolute;
+   width: 330px;
+   height: 330px;
+   border: 1px solid rgba(184, 138, 74, .42);
+   border-radius: 50%;
+   pointer-events: none
+}
+
+.ka-journal-orbit-one {
+   animation: kaOrbitSpin 22s linear infinite
+}
+
+.ka-journal-orbit-two {
+   width: 390px;
+   height: 390px;
+   border-style: dashed;
+   opacity: .55;
+   animation: kaOrbitSpin 34s linear infinite reverse
+}
+
+.ka-journal-copy h2 {
+   margin: 10px 0 16px;
+   color: var(--ka-green);
+   font: 600 clamp(37px, 4.4vw, 56px)/1.04 Georgia, serif;
+   letter-spacing: -.03em
+}
+
+.ka-journal-copy h2 em {
+   color: var(--ka-gold);
+   font-weight: 500
+}
+
+.ka-journal-copy>p {
+   color: var(--ka-muted);
+   font-size: 14px;
+   line-height: 1.9
+}
+
+.ka-journal-list {
+   display: grid;
+   gap: 0;
+   margin: 25px 0 28px;
+   border-top: 1px solid var(--ka-border)
+}
+
+.ka-journal-list>div {
+   display: grid;
+   grid-template-columns: 36px 1fr 20px;
+   align-items: center;
+   gap: 12px;
+   padding: 15px 12px;
+   border-bottom: 1px solid var(--ka-border)
+}
+
+.ka-journal-list>div:hover {
+   padding-left: 18px;
+   background: var(--ka-paper)
+}
+
+.ka-journal-list>div>span {
+   color: var(--ka-gold);
+   font-size: 11px
+}
+
+.ka-journal-list p {
+   display: grid;
+   gap: 4px;
+   margin: 0
+}
+
+.ka-journal-list strong {
+   color: var(--ka-green);
+   font-size: 13px
+}
+
+.ka-journal-list small {
+   color: var(--ka-muted);
+   font-size: 11px;
+   line-height: 1.6
+}
+
+.ka-journal-list>div>b {
+   color: var(--ka-gold);
+   transition: transform .25s ease
+}
+
+.ka-journal-list>div:hover>b {
+   transform: translate(3px, -3px)
+}
+
+@keyframes kaGlowDrift {
+   0% {
+      transform: translate3d(-2%, 0, 0) scale(.96);
+      opacity: .55
+   }
+
+   100% {
+      transform: translate3d(3%, 4%, 0) scale(1.08);
+      opacity: 1
+   }
+}
+
+@keyframes kaImageFloat {
+
+   0%,
+   100% {
+      transform: translateY(0) rotateY(0)
+   }
+
+   50% {
+      transform: translateY(-8px) rotateY(-1deg)
+   }
+}
+
+@keyframes kaOrbitSpin {
+   to {
+      transform: rotate(360deg)
+   }
+}
+
+@keyframes kaFloatCard {
+
+   0%,
+   100% {
+      transform: translateY(0)
+   }
+
+   50% {
+      transform: translateY(-10px)
+   }
+}
+
+@keyframes kaKnightDrift {
+   0% {
+      transform: translateY(0) rotate(-5deg)
+   }
+
+   100% {
+      transform: translateY(22px) rotate(4deg)
+   }
+}
+
+@media(max-width:800px) {
+   .ka-training-grid {
+      grid-template-columns: 1fr
+   }
+
+   .ka-training-card {
+      min-height: 0
+   }
+
+   .ka-journal-layout {
+      grid-template-columns: 1fr;
+      gap: 34px
+   }
+
+   .ka-journal-visual {
+      min-height: 390px;
+      max-width: 560px;
+      width: 100%;
+      margin-inline: auto
+   }
+
+   .ka-journal-image {
+      inset: 25px 34px 25px 0
+   }
+
+   .ka-journal-orbit-one {
+      width: 270px;
+      height: 270px
+   }
+
+   .ka-journal-orbit-two {
+      width: 320px;
+      height: 320px
+   }
+}
+
+@media(max-width:480px) {
+   .ka-journal-visual {
+      min-height: 320px
+   }
+
+   .ka-journal-stamp {
+      padding: 16px 18px;
+      bottom: 16px
+   }
+
+   .ka-journal-stamp strong {
+      font-size: 21px
+   }
+
+   .ka-journal-orbit-one {
+      width: 220px;
+      height: 220px
+   }
+
+   .ka-journal-orbit-two {
+      width: 270px;
+      height: 270px
+   }
+
+   .ka-training-card {
+      padding: 25px 22px
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+   html {
+      scroll-behavior: auto
+   }
+
+   *,
+   *::before,
+   *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important
+   }
+
+   [data-reveal] {
+      opacity: 1;
+      transform: none
+   }
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}

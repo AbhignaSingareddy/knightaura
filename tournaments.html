@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203C32">
+  <meta name="description" content="Explore KnightAura chess tournaments, friendly rapid events, academy leagues, tournament preparation and registration.">
+
+  <title>Tournaments | KnightAura Chess Academy</title>
+
+  <link rel="icon" type="image/png" href="assets/knightaura-mark.png">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/tournaments.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="page-tournaments">
+  
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- SHARED HEADER -->
+  <header class="site-header">
+    <div class="container">
+
+      <a class="brand" href="index.html" aria-label="KnightAura home">
+        <span class="brand-mark">
+          <img src="assets/knightaura-mark.png" alt="" aria-hidden="true">
+        </span>
+
+        <span class="brand-copy">
+          <span class="brand-name">
+            <span class="brand-knight">Knight</span>
+            <span class="brand-aura">Aura</span>
+          </span>
+          <span class="brand-subtitle">The Art of Chess</span>
+        </span>
+      </a>
+
+      <button
+        class="icon-button mobile-toggle"
+        type="button"
+        data-mobile-toggle
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="nav" data-main-nav aria-label="Main navigation">
+
+        <div class="dropdown" data-home-dropdown>
+          <button
+            class="dropdown-trigger"
+            type="button"
+            data-home-trigger
+            aria-expanded="false">
+            Home <i data-lucide="chevron-down"></i>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="index.html">Home 1 </a>
+            <a href="home-2.html">Home 2 </a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="programs.html">Programs</a>
+        <a class="nav-link is-active" href="tournaments.html" aria-current="page">Tournaments</a>
+        
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+      
+          <a class="mobile-login-link" href="login.html">Login</a>
+        </nav>
+
+      <div class="header-actions">
+        <button class="icon-button desktop-action" data-theme-toggle type="button" aria-label="Toggle dark mode">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button class="icon-button desktop-action" data-rtl-toggle type="button" aria-label="Toggle text direction">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+
+        <a class="btn desktop-action login-action" href="login.html">Login</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 01. HERO -->
+    <section class="ka-page-hero ka-tourney-hero">
+      <div class="ka-wrap ka-page-hero-grid">
+
+        <div class="ka-tourney-hero-copy" data-reveal>
+          <span class="ka-eyebrow">KNIGHTAURA · TOURNAMENTS</span>
+
+          <h1>
+            Every move tells
+            <em>a story.</em>
+          </h1>
+
+          <p>
+            Step beyond practice and experience the thrill of competition.
+            Challenge your thinking, discover your strengths and turn every
+            game into a meaningful step forward.
+          </p>
+
+          <div class="ka-tourney-hero-actions">
+            <a class="ka-btn ka-btn-light" href="#upcoming-events">
+              Discover tournaments <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="ka-btn ka-btn-outline" href="#registration">
+              Register your interest
+            </a>
+          </div>
+
+          <div class="ka-tourney-trust">
+            <span><i data-lucide="trophy"></i> Competitive spirit</span>
+            <span><i data-lucide="users"></i> A welcoming community</span>
+          </div>
+        </div>
+
+        <div class="ka-tourney-hero-art" data-reveal>
+          <img
+            src="images/tournment-hero.jpg"
+            alt="Chess pieces arranged on a tournament board">
+
+          <div class="ka-hero-image-label">
+            <span class="ka-hero-label-icon"><i data-lucide="crown"></i></span>
+            <span>
+              <small>YOUR NEXT CHALLENGE</small>
+              <strong>Think. Compete. Grow.</strong>
+            </span>
+          </div>
+
+          <span class="ka-hero-decor" aria-hidden="true">♞</span>
+        </div>
+
+      </div>
+
+      <div class="ka-hero-bottom-line">
+        <span>FOCUS</span>
+        <span class="ka-line"></span>
+        <span>STRATEGY</span>
+        <span class="ka-line"></span>
+        <span>FAIR PLAY</span>
+      </div>
+    </section>
+
+
+    <!-- 02. INTRODUCTION -->
+    <section class="ka-section ka-tourney-intro">
+      <div class="ka-wrap ka-intro-grid">
+
+        <div class="ka-intro-image" data-reveal>
+          <img
+            src="https://i.pinimg.com/736x/79/e4/a9/79e4a97f4e4455278ef6923e829aa548.jpg"
+            alt="Chessboard ready for a strategic game">
+           
+            <span class="ka2-eyebrow">
+            <span class="ka-eyebrow"> THE BEAUTY IS IN THE THINKING</span>
+           
+          </span>
+         
+        </div>
+
+        <div class="ka-intro-copy" data-reveal>
+          <span class="ka2-eyebrow">
+            <span class="ka-eyebrow"> — MORE THAN A MATCH</span>
+           
+          </span>
+          
+
+          <h2>
+            The board is where
+            <em>growth becomes visible.</em>
+          </h2>
+
+          <p>
+            A tournament is an opportunity to put your preparation into
+            practice, manage pressure and learn to make decisions with
+            confidence.
+          </p>
+
+          <p>
+            At KnightAura, we believe competition should encourage curiosity,
+            discipline and respect. Whether you are taking your first
+            competitive step or sharpening your existing skills, every game
+            can teach you something valuable.
+          </p>
+
+          <a class="ka-text-link" href="programs.html">
+            Explore our training programs
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 03. TOURNAMENT FORMATS -->
+    <section class="ka-section ka-format-section" id="event-formats">
+      <div class="ka-wrap">
+
+        <div class="ka-section-top" data-reveal>
+          <div>
+            <span class="ka-eyebrow ka-dark-eye"> — CHOOSE YOUR FORMAT</span>
+            <h2>
+              Different challenges.
+              <em>One great game.</em>
+            </h2>
+          </div>
+
+          <p>
+            Find a format that suits your current experience and the skills
+            you want to develop.
+          </p>
+        </div>
+
+        <div class="ka-format-grid">
+
+          <article class="ka-format-card ka-format-featured" data-reveal>
+            <div class="ka-format-image">
+              <img
+                src="images/tournment-fast thinking.jpg"
+                alt="Chessboard and pieces ready for a rapid game">
+              <span class="ka-format-number">01</span>
+            </div>
+
+            <div class="ka-format-content">
+              <span class="ka-card-kicker">FAST THINKING</span>
+              <h3>Friendly Rapid</h3>
+
+              <p>
+                Practise time management, calculate efficiently and make
+                confident decisions in a lively, friendly setting.
+              </p>
+
+              <div class="ka-tags">
+                <span>Clock management</span>
+                <span>Quick decisions</span>
+              </div>
+
+              <a href="#registration" class="ka-card-link">
+                Express interest <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="ka-format-card" data-reveal>
+            <div class="ka-format-image">
+              <img
+                src="images/tournment-consistency.jpg"
+                alt="Chess pieces on a wooden chessboard">
+              <span class="ka-format-number">02</span>
+            </div>
+
+            <div class="ka-format-content">
+              <span class="ka-card-kicker">CONSISTENT PLAY</span>
+              <h3>Academy League</h3>
+
+              <p>
+                Develop a steady playing routine, learn from different
+                opponents and track your progress across multiple games.
+              </p>
+
+              <div class="ka-tags">
+                <span>Match practice</span>
+                <span>Game reviews</span>
+              </div>
+
+              <a href="#registration" class="ka-card-link">
+                Express interest <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="ka-format-card" data-reveal>
+            <div class="ka-format-image">
+              <img
+                src="images/tornment-open challange.jpg"
+                alt="Chess pieces positioned for a competitive match">
+              <span class="ka-format-number">03</span>
+            </div>
+
+            <div class="ka-format-content">
+              <span class="ka-card-kicker">A FRESH CHALLENGE</span>
+              <h3>Open Challenge</h3>
+
+              <p>
+                Meet new playing styles, test your preparation and discover
+                how you respond to unfamiliar positions.
+              </p>
+
+              <div class="ka-tags">
+                <span>New opponents</span>
+                <span>Adaptability</span>
+              </div>
+
+              <a href="#registration" class="ka-card-link">
+                Express interest <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="ka-event-note">
+          <i data-lucide="info"></i>
+          Event availability, eligibility and schedules will be confirmed
+          by the academy.
+        </p>
+
+      </div>
+    </section>
+
+
+    
+
+    <!-- 05. UPCOMING EVENTS -->
+    <section class="ka-section ka-events-section" id="upcoming-events">
+      <div class="ka-wrap">
+
+        <div class="ka-section-top" data-reveal>
+          <div>
+            <span class="ka-eyebrow ka-dark-eye"> — EVENT DESK</span>
+            <h2>
+              Your next game
+              <em>starts here.</em>
+            </h2>
+          </div>
+
+          <p>
+            Keep an eye on academy announcements and enquire about upcoming
+            events before making your plans.
+          </p>
+        </div>
+
+        <div class="ka-event-feature" data-reveal>
+
+          <div class="ka-event-feature-image">
+            <img
+              src="images/tournment-event.jpg"
+              alt="Chessboard prepared for an upcoming competition">
+            <span class="ka-event-status">EVENT ENQUIRY</span>
+          </div>
+
+          <div class="ka-event-feature-copy">
+            <span class="ka-card-kicker">KNIGHTAURA COMMUNITY</span>
+
+            <h3>Academy Tournament Updates</h3>
+
+            <p>
+              Interested in friendly matches, league play or a future
+              competitive event? Contact the academy to learn about the
+              next available opportunity.
+            </p>
+
+            <ul class="ka-event-details">
+              <li>
+                <i data-lucide="calendar-days"></i>
+                <span>
+                  <strong>Schedule</strong>
+                  <small>Confirm upcoming dates with the academy</small>
+                </span>
+              </li>
+
+              <li>
+                <i data-lucide="map-pin"></i>
+                <span>
+                  <strong>Venue</strong>
+                  <small>Confirm event location before attending</small>
+                </span>
+              </li>
+
+              <li>
+                <i data-lucide="users"></i>
+                <span>
+                  <strong>Eligibility</strong>
+                  <small>Ask about age groups and playing levels</small>
+                </span>
+              </li>
+            </ul>
+
+            <a class="ka-btn ka-btn-primary" href="contact.html">
+              Ask about upcoming events
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="ka-event-mini-grid">
+
+          <article class="ka-event-mini" data-reveal>
+            <span class="ka-mini-icon"><i data-lucide="timer"></i></span>
+            <div>
+              <span class="ka-card-kicker">FORMAT</span>
+              <h3>Rapid Practice</h3>
+              <p>Ask about time-control practice and friendly rapid events.</p>
+            </div>
+            <a href="#registration" aria-label="Ask about rapid practice">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="ka-event-mini" data-reveal>
+            <span class="ka-mini-icon"><i data-lucide="medal"></i></span>
+            <div>
+              <span class="ka-card-kicker">PROGRESSION</span>
+              <h3>League Matches</h3>
+              <p>Explore opportunities to practise regularly against peers.</p>
+            </div>
+            <a href="#registration" aria-label="Ask about league matches">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="ka-event-mini" data-reveal>
+            <span class="ka-mini-icon"><i data-lucide="trophy"></i></span>
+            <div>
+              <span class="ka-card-kicker">COMPETITION</span>
+              <h3>Open Events</h3>
+              <p>Find out about future open competitions and entry criteria.</p>
+            </div>
+            <a href="#registration" aria-label="Ask about open events">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 06. PREPARATION -->
+    <section class="ka-section ka-prep-section">
+      <div class="ka-wrap ka-prep-layout">
+
+        <div class="ka-prep-copy" data-reveal>
+          <span class="ka-eyebrow"> — PREPARE WITH PURPOSE</span>
+
+          <h2>
+            Confidence is built
+            <em>before the first move.</em>
+          </h2>
+
+          <p>
+            You do not need to predict every position. You need a process
+            that helps you stay calm, think clearly and make the best
+            decision you can.
+          </p>
+
+          <a class="ka-btn ka-btn-outline" href="programs.html">
+            Build your chess skills <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="ka-prep-steps" data-reveal>
+
+          <article class="ka-prep-step">
+            <span class="ka-prep-step-no">01</span>
+            <div>
+              <h3>Review your fundamentals</h3>
+              <p>Refresh opening principles, tactical patterns and basic endgames.</p>
+            </div>
+            <i data-lucide="check-circle-2"></i>
+          </article>
+
+          <article class="ka-prep-step">
+            <span class="ka-prep-step-no">02</span>
+            <div>
+              <h3>Practise with a clock</h3>
+              <p>Learn to balance careful calculation with sensible time management.</p>
+            </div>
+            <i data-lucide="check-circle-2"></i>
+          </article>
+
+          <article class="ka-prep-step">
+            <span class="ka-prep-step-no">03</span>
+            <div>
+              <h3>Take care of yourself</h3>
+              <p>Arrive prepared, stay hydrated and give yourself time to settle.</p>
+            </div>
+            <i data-lucide="check-circle-2"></i>
+          </article>
+
+          <article class="ka-prep-step">
+            <span class="ka-prep-step-no">04</span>
+            <div>
+              <h3>Learn from every round</h3>
+              <p>Review important positions and identify one lesson for next time.</p>
+            </div>
+            <i data-lucide="check-circle-2"></i>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+
+
+    
+<!-- =========================================
+     KNIGHTAURA — STUDENT ACHIEVEMENTS
+========================================= -->
+
+<section class="ka-achievements" id="student-achievements">
+
+  <div class="ka-achievements-container">
+
+    <!-- SECTION INTRO -->
+    <div class="ka-achievements-heading">
+      <span class="ka-achievements-eyebrow">
+         — STUDENT ACHIEVEMENTS
+      </span>
+
+      <h2>
+        Young minds.<br>
+        <em>Remarkable achievements.</em>
+      </h2>
+
+      <p>
+        Celebrating the dedication, discipline and outstanding performances
+        of our students as they continue their journey towards chess excellence.
+      </p>
+    </div>
+
+    <!-- MAIN ACHIEVEMENT AREA -->
+    <div class="ka-achievements-layout">
+
+      <!-- LEFT: TROPHY SHOWCASE -->
+      <div class="ka-trophy-showcase">
+
+        <img
+          class="ka-trophy-image"
+          src="https://i.pinimg.com/1200x/87/01/ba/8701ba7fa7123deca565b79674024ff9.jpg"
+          alt="Chessboard and chess pieces representing achievement"
+          loading="lazy"
+        >
+
+        <div class="ka-trophy-shade"></div>
+
+        <div class="ka-trophy-caption">
+          <span class="ka-trophy-brand">KNIGHTAURA</span>
+
+          <h3>
+            Today's students.<br>
+            Tomorrow's champions.
+          </h3>
+
+          <span class="ka-trophy-divider"></span>
+
+          <p>THINK · LEARN · ACHIEVE</p>
+        </div>
+
+        <div class="ka-trophy-seal">
+          <span>♛</span>
+          <small>EXCELLENCE<br>IN CHESS</small>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: STUDENT ACHIEVEMENTS -->
+      <div class="ka-achievements-list">
+
+        
+<!-- STUDENT 01 — YOUNG CHAMPION -->
+<article class="ka-achievement-item">
+  <div class="ka-student-photo">
+    <img
+      src="images/arjunreddy.png"
+      alt="Young chess champion holding a trophy"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="ka-student-details">
+    <span class="ka-student-kicker">01 — TOURNAMENT CHAMPION</span>
+    <h3>Arjun Sharma</h3>
+    <p class="ka-student-event">State Chess Championship</p>
+    <p class="ka-student-description">
+      Celebrated for strategic thinking, focused preparation and
+      confident decision-making throughout the tournament.
+    </p>
+    <div class="ka-student-meta">
+      <span>Chess Champion</span>
+      <span>1st Place</span>
+    </div>
+  </div>
+
+  <div class="ka-student-award">
+    <span class="ka-award-crown">♛</span>
+    <strong>1<sup>st</sup></strong>
+    <span class="ka-award-label">PLACE</span>
+  </div>
+</article>
+
+<!-- STUDENT 02 — TEENAGE ACHIEVER -->
+<article class="ka-achievement-item">
+  <div class="ka-student-photo">
+    <img
+      src="images/abhigna1.png"
+      alt="Chess player celebrating a tournament achievement"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="ka-student-details">
+    <span class="ka-student-kicker">02 — OUTSTANDING PERFORMANCE</span>
+    <h3>Abhigna Reddy</h3>
+    <p class="ka-student-event">Open Chess Tournament</p>
+    <p class="ka-student-description">
+      Recognised for excellent preparation, positional understanding
+      and determination across competitive games.
+    </p>
+    <div class="ka-student-meta">
+      <span>Competitive Player</span>
+      <span>Runner-up</span>
+    </div>
+  </div>
+
+  <div class="ka-student-award ka-award-silver">
+    <span class="ka-award-crown">♛</span>
+    <strong>2<sup>nd</sup></strong>
+    <span class="ka-award-label">PLACE</span>
+  </div>
+</article>
+
+<!-- STUDENT 03 — ADULT PLAYER -->
+<article class="ka-achievement-item">
+  <div class="ka-student-photo">
+    <img
+      src="images/karthik menon.png"
+      alt="Adult chess player competing in a chess tournament"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="ka-student-details">
+    <span class="ka-student-kicker">03 — OPEN CATEGORY ACHIEVEMENT</span>
+    <h3>Karthik Menon</h3>
+    <p class="ka-student-event">City Open Chess Championship</p>
+    <p class="ka-student-description">
+      Demonstrated mature strategic planning, patience and
+      sportsmanship in a competitive chess environment.
+    </p>
+    <div class="ka-student-meta">
+      <span>Open Category</span>
+      <span>Special Recognition</span>
+    </div>
+  </div>
+
+  <div class="ka-student-award ka-award-special">
+    <span class="ka-award-crown">✦</span>
+    <strong>★</strong>
+    <span class="ka-award-label">AWARD</span>
+  </div>
+</article>
+
+
+      </div>
+
+    </div>
+
+    <!-- ACHIEVEMENT STATISTICS -->
+    <div class="ka-achievements-stats">
+
+      <div class="ka-stat-item">
+        <strong>25+</strong>
+        <span>TOURNAMENTS</span>
+      </div>
+
+      <div class="ka-stat-item">
+        <strong>18+</strong>
+        <span>STUDENT AWARDS</span>
+      </div>
+
+      <div class="ka-stat-item">
+        <strong>03</strong>
+        <span>FEATURED STUDENTS</span>
+      </div>
+
+      <div class="ka-stat-item">
+        <strong>∞</strong>
+        <span>ROOM TO GROW</span>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+</section>
+
+<!-- =============== END ACHIEVEMENTS =============== -->
+
+
+    <!-- 09. FAQ -->
+    <section class="ka-section ka-faq-section" id="tournament-faq">
+      <div class="ka-wrap ka-faq-layout">
+
+        <div class="ka-faq-intro" data-reveal>
+          <span class="ka-eyebrow ka-dark-eye"> — GOOD TO KNOW</span>
+
+          <h2>
+            A few questions
+            <em>before game day.</em>
+          </h2>
+
+          <p>
+            Not sure where to begin? These answers explain what to ask
+            before joining an event.
+          </p>
+
+          <a class="ka-text-link" href="contact.html">
+            Still have a question?
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+
+        <div class="ka-faq-list" data-reveal>
+
+          <details class="ka-faq-item">
+            <summary>
+              Can beginners participate in tournaments?
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>
+              Some friendly events may welcome beginners, while others may
+              have specific eligibility criteria. Ask the academy which
+              event best suits your current experience.
+            </p>
+          </details>
+
+          <details class="ka-faq-item">
+            <summary>
+              How do I know the tournament date?
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>
+              Contact the academy for confirmed dates, timings, venue,
+              registration deadlines and any participation requirements.
+            </p>
+          </details>
+
+          <details class="ka-faq-item">
+            <summary>
+              What should I bring on tournament day?
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>
+              Follow the organiser's instructions. Arrive on time and bring
+              any requested identification or equipment. Confirm whether
+              chess sets and clocks will be provided.
+            </p>
+          </details>
+
+          <details class="ka-faq-item">
+            <summary>
+              Do I need previous tournament experience?
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>
+              Not necessarily. The right event depends on its format and
+              eligibility rules. Ask the academy about suitable options
+              for your experience level.
+            </p>
+          </details>
+
+          <details class="ka-faq-item">
+            <summary>
+              Is this form a confirmed tournament booking?
+              <i data-lucide="plus"></i>
+            </summary>
+            <p>
+              No. This form is an enquiry interface. Your participation is
+              not confirmed until the academy provides the official event
+              details and registration confirmation.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 10. FINAL CTA -->
+    <section class="ka-final-cta ka-tourney-final">
+      <div class="ka-wrap ka-final-inner" data-reveal>
+
+        <div class="ka-final-copy">
+          <span class="ka-eyebrow ka-dark-eye"> — YOUR JOURNEY CONTINUES</span>
+          
+
+          <h2>
+            Play with purpose.
+            <em>Think beyond.</em>
+          </h2>
+
+          <p>
+            Every tournament begins with a decision to take the next step.
+            Prepare thoughtfully, compete respectfully and keep learning.
+          </p>
+
+          <div class="ka-final-actions">
+            <a class="ka-btn ka-btn-dark" href="#registration">
+              Register your interest <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="ka-btn ka-btn-outline" href="contact.html">
+              Contact the academy
+            </a>
+          </div>
+        </div>
+
+        <div class="ka-final-knight" aria-hidden="true">♞</div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- SHARED FOOTER -->
+    <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a class="brand footer-brand" href="index.html" aria-label="KnightAura home">
+            <span class="brand-mark">
+              <img src="assets/knightaura-mark.png" alt="KnightAura logo">
+            </span>
+
+            <span class="brand-copy">
+              <span class="brand-name">
+                <span class="brand-knight">Knight</span><span class="brand-aura">Aura</span>
+              </span>
+
+              <span class="brand-subtitle">The Art of Chess</span>
+            </span>
+          </a>
+
+
+          <p class="footer-about">A thoughtful chess academy built around strategy, discipline, and the beauty of the
+
+            next move. We help every player build confidence, patience, and a sharper understanding of the board.</p>
+
+          <div aria-label="Social media" class="social-links"><a aria-label="Instagram" href="#"><i
+                class="fa-brands fa-instagram"></i></a><a aria-label="Facebook" href="#"><i
+                class="fa-brands fa-facebook-f"></i></a><a aria-label="YouTube" href="#"><i
+                class="fa-brands fa-youtube"></i></a><a aria-label="LinkedIn" href="#"><i
+                class="fa-brands fa-linkedin-in"></i></a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Explore</h3>
+
+          <div class="footer-links"><a href="index.html">Home </a><a href="about.html">Our Approach</a><a
+              href="about.html">About the Academy</a><a href="programs.html">Coaching Programs</a><a
+              href="tournaments.html">Tournaments</a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Student</h3>
+
+          <div class="footer-links"><a href="login.html">Student Login</a><a href="signup.html">Create Account</a><a
+              href="dashboard.html">Student Dashboard</a><a href="coming soon.html">Coming Soon</a><a
+              href="404.html">404 Page</a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Contact</h3>
+
+          <p class="footer-contact-item"><i data-lucide="mail"></i><a
+              href="mailto:hello@knightaura.com">hello@knightaura.com</a></p>
+
+          <p class="footer-contact-item"><i data-lucide="phone"></i><a href="tel:+910000000000">+91 00000 00000</a></p>
+
+          <p class="footer-contact-item"><i data-lucide="map-pin"></i><span>India · By appointment</span></p>
+
+          <p class="footer-contact-item"><i data-lucide="clock-3"></i><span>Mon – Sat · 9:00 AM – 6:00 PM</span></p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom"><span>© <span data-current-year="">2026</span> KnightAura. All rights reserved.</span>
+
+        <div class="footer-legal-bottom"><a href="contact.html">Send an enquiry</a><a href="privacy.html">Privacy
+
+            Policy</a><a href="terms.html">Terms &amp; Conditions</a></div><span>Where Strategy Meets Elegance.</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

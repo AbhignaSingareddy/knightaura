@@ -1,0 +1,513 @@
+
+/* ==========================================
+   KNIGHT AURA CHESS ACADEMY
+   Minimal 404 Page
+   ========================================== */
+
+:root {
+    --cream: #fbf8f1;
+    --green: #103b30;
+    --green-hover: #1d5747;
+    --gold: #c88c43;
+    --gold-light: #efc58e;
+    --text: #244238;
+    --muted: #788b82;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body.error-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Lora", Georgia, serif;
+}
+
+/* Main page — content fits in the viewport */
+
+.error-main {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 24px;
+    background: var(--cream);
+}
+
+.error-content {
+    width: min(680px, 100%);
+    margin: auto;
+    text-align: center;
+}
+
+/* Eyebrow */
+
+.error-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.error-eyebrow i {
+    font-size: 14px;
+}
+
+/* 404 number */
+
+.error-number {
+    margin: 0;
+    color: var(--green);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(115px, 19vw, 190px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -5px;
+}
+
+/* Main heading */
+
+.error-content h2 {
+    margin-top: 14px;
+    color: var(--green);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(35px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.error-content h2 em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* Description */
+
+.error-description {
+    max-width: 500px;
+    margin: 16px auto 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Back to Home button */
+
+.error-button {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 26px;
+    padding: 13px 23px;
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    background: var(--green);
+    color: #ffffff;
+    font-family: "Lora", Georgia, serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.error-button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.error-button:focus-visible {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+.error-button .error-arrow {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.error-button:hover .error-arrow {
+    transform: translateX(3px);
+}
+
+/* Responsive tablet and mobile */
+
+@media (max-width: 600px) {
+    .error-main {
+        padding: 24px 20px;
+    }
+
+    .error-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .error-number {
+        font-size: clamp(110px, 30vw, 155px);
+        letter-spacing: -3px;
+    }
+
+    .error-content h2 {
+        margin-top: 12px;
+        font-size: clamp(32px, 8vw, 42px);
+    }
+
+    .error-description {
+        margin-top: 14px;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .error-button {
+        margin-top: 23px;
+        min-height: 46px;
+        padding: 12px 19px;
+    }
+}
+
+/* Short screens: keep content compact */
+
+@media (max-height: 600px) and (min-width: 601px) {
+    .error-main {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .error-eyebrow {
+        margin-bottom: 3px;
+    }
+
+    .error-number {
+        font-size: 105px;
+    }
+
+    .error-content h2 {
+        margin-top: 7px;
+        font-size: 34px;
+    }
+
+    .error-description {
+        margin-top: 9px;
+        font-size: 12px;
+    }
+
+    .error-button {
+        min-height: 42px;
+        margin-top: 15px;
+        padding: 10px 18px;
+    }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .error-button,
+    .error-button .error-arrow {
+        transition: none;
+    }
+}
+
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}

@@ -1,0 +1,6180 @@
+
+/* =====================================================
+   KNIGHTAURA — HOME 2 PREMIUM
+   Palette: Forest Green, Antique Gold, Warm Cream
+   Header and footer are shared with Home 1
+===================================================== */
+
+body.page-home-2 {
+  --ka2-green: #203c32;
+  --ka2-green-dark: #10271f;
+  --ka2-green-mid: #315346;
+  --ka2-gold: #b88a4a;
+  --ka2-gold-light: #dfbd82;
+  --ka2-cream: #fff9f0;
+  --ka2-paper: #f4eee3;
+  --ka2-white: #ffffff;
+  --ka2-text: #24332b;
+  --ka2-muted: #73776f;
+  --ka2-border: rgba(32, 60, 50, 0.14);
+
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--ka2-cream);
+  color: var(--ka2-text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+body.page-home-2 *,
+body.page-home-2 *::before,
+body.page-home-2 *::after {
+  box-sizing: border-box;
+}
+
+body.page-home-2 img {
+  display: block;
+  max-width: 100%;
+}
+
+body.page-home-2 a {
+  text-decoration: none;
+}
+
+body.page-home-2 h1,
+body.page-home-2 h2,
+body.page-home-2 h3,
+body.page-home-2 p {
+  margin-top: 0;
+}
+
+body.page-home-2 h1,
+body.page-home-2 h2,
+body.page-home-2 h3 {
+  color: inherit;
+}
+
+body.page-home-2 h1,
+body.page-home-2 h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+body.page-home-2 h1 em,
+body.page-home-2 h2 em {
+  color: var(--ka2-gold);
+  font-weight: 500;
+}
+
+body.page-home-2 .ka2-container {
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+body.page-home-2 .ka2-section {
+  padding-block: 100px;
+}
+
+/* EYEBROW */
+
+body.page-home-2 .ka2-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--ka2-green);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.6;
+}
+
+body.page-home-2 .ka2-eyebrow-line {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  flex: 0 0 32px;
+  background: var(--ka2-gold);
+}
+
+body.page-home-2 .ka2-eyebrow-light {
+  color: var(--ka2-gold-light);
+}
+
+/* BUTTONS */
+
+body.page-home-2 .ka2-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 54px;
+  padding: 15px 23px;
+  border: 1px solid var(--ka2-green);
+  border-radius: 2px;
+  background: var(--ka2-green);
+  color: var(--ka2-white);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition: background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
+
+body.page-home-2 .ka2-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+body.page-home-2 .ka2-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--ka2-gold);
+  background: var(--ka2-gold);
+  color: var(--ka2-green-dark);
+}
+
+body.page-home-2 .ka2-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 1px solid var(--ka2-gold);
+  color: var(--ka2-green);
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+body.page-home-2 .ka2-text-link:hover,
+body.page-home-2 .ka2-card-link:hover {
+  color: var(--ka2-gold);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+body.page-home-2 .ka2-hero {
+  position: relative;
+  padding-block: 82px 100px;
+  background:
+    radial-gradient(
+      circle at 4% 12%,
+      rgba(184, 138, 74, 0.1),
+      transparent 29%
+    ),
+    var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.93fr);
+  align-items: center;
+  gap: clamp(42px, 7vw, 100px);
+}
+
+body.page-home-2 .ka2-hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+body.page-home-2 .ka2-hero h1 {
+  margin-bottom: 25px;
+  color: var(--ka2-green);
+  font-size: clamp(45px, 5.3vw, 72px);
+  line-height: 1.12;
+}
+
+body.page-home-2 .ka2-hero-description {
+  max-width: 500px;
+  margin-bottom: 29px;
+  color: var(--ka2-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+body.page-home-2 .ka2-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+body.page-home-2 .ka2-hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ka2-border);
+}
+
+body.page-home-2 .ka2-hero-proof > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+body.page-home-2 .ka2-hero-proof strong {
+  color: var(--ka2-gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+body.page-home-2 .ka2-hero-proof span {
+  color: var(--ka2-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+body.page-home-2 .ka2-hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0 13px 16px 0;
+}
+
+body.page-home-2 .ka2-hero-image {
+  position: relative;
+  height: clamp(420px, 45vw, 570px);
+  overflow: hidden;
+  background: var(--ka2-paper);
+}
+
+body.page-home-2 .ka2-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+body.page-home-2 .ka2-hero-image:hover img {
+  transform: scale(1.035);
+}
+
+body.page-home-2 .ka2-hero-image::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(16, 39, 31, 0.72)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+body.page-home-2 .ka2-image-label {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ka2-white);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+body.page-home-2 .ka2-label-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-floating-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(260px, 85%);
+  padding: 15px 17px;
+  border: 1px solid rgba(32, 60, 50, 0.08);
+  background: var(--ka2-cream);
+  box-shadow: 0 12px 36px rgba(16, 39, 31, 0.12);
+}
+
+body.page-home-2 .ka2-floating-top {
+  top: 55px;
+  right: -25px;
+}
+
+body.page-home-2 .ka2-floating-bottom {
+  bottom: 52px;
+  left: -30px;
+}
+
+body.page-home-2 .ka2-icon-tile {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  background: var(--ka2-paper);
+  color: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-icon-tile svg {
+  width: 22px;
+  height: 22px;
+}
+
+body.page-home-2 .ka2-floating-card > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+body.page-home-2 .ka2-floating-card strong {
+  color: var(--ka2-green);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+body.page-home-2 .ka2-floating-card small {
+  color: var(--ka2-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   SHARED SECTION HEADINGS
+===================================================== */
+
+body.page-home-2 .ka2-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 48px;
+}
+
+body.page-home-2 .ka2-section-heading h2,
+body.page-home-2 .ka2-principles-heading h2,
+body.page-home-2 .ka2-journey-content h2 {
+  margin-bottom: 0;
+  color: var(--ka2-green);
+  font-size: clamp(36px, 4vw, 51px);
+  line-height: 1.2;
+}
+
+body.page-home-2 .ka2-section-heading > p {
+  max-width: 370px;
+  margin-bottom: 5px;
+  color: var(--ka2-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   COACHING PROGRAMS
+===================================================== */
+
+body.page-home-2 .ka2-training {
+  background: var(--ka2-paper);
+}
+
+body.page-home-2 .ka2-training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+body.page-home-2 .ka2-training-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 360px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 31px 27px;
+  border: 1px solid rgba(32, 60, 50, 0.11);
+  background: rgba(255, 249, 240, 0.72);
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(184, 138, 74, 0.6);
+  box-shadow: 0 16px 38px rgba(32, 60, 50, 0.07);
+}
+
+body.page-home-2 .ka2-training-featured {
+  border-color: var(--ka2-green);
+  background: var(--ka2-green);
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-card-number {
+  margin-bottom: 30px;
+  color: var(--ka2-gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+body.page-home-2 .ka2-card-icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 23px;
+  place-items: center;
+  border: 1px solid rgba(184, 138, 74, 0.48);
+  color: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-training-featured .ka2-card-icon {
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+body.page-home-2 .ka2-training-card h3 {
+  margin-bottom: 12px;
+  color: var(--ka2-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+body.page-home-2 .ka2-training-featured h3 {
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-training-card > p {
+  margin-bottom: 25px;
+  color: var(--ka2-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+body.page-home-2 .ka2-training-featured > p {
+  color: rgba(255, 249, 240, 0.76);
+}
+
+body.page-home-2 .ka2-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  color: var(--ka2-green);
+  font-size: 11px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+body.page-home-2 .ka2-training-featured .ka2-card-link {
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-card-link svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* =====================================================
+   CURRICULUM
+===================================================== */
+
+body.page-home-2 .ka2-curriculum {
+  background: var(--ka2-green);
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-curriculum-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 55px;
+}
+
+body.page-home-2 .ka2-curriculum-intro h2 {
+  margin-bottom: 0;
+  color: var(--ka2-cream);
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.2;
+}
+
+body.page-home-2 .ka2-curriculum-intro h2 em {
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-curriculum-intro > p {
+  max-width: 370px;
+  margin-bottom: 4px;
+  color: rgba(255, 249, 240, 0.7);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+body.page-home-2 .ka2-curriculum-list {
+  border-top: 1px solid rgba(255, 249, 240, 0.18);
+}
+
+body.page-home-2 .ka2-curriculum-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  padding: 28px 8px;
+  border-bottom: 1px solid rgba(255, 249, 240, 0.18);
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+body.page-home-2 .ka2-curriculum-row:hover {
+  padding-inline: 17px;
+  background: rgba(255, 249, 240, 0.035);
+}
+
+body.page-home-2 .ka2-curriculum-number {
+  align-self: start;
+  padding-top: 5px;
+  color: var(--ka2-gold-light);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+body.page-home-2 .ka2-curriculum-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ka2-gold-light);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+body.page-home-2 .ka2-curriculum-main h3 {
+  margin-bottom: 7px;
+  color: var(--ka2-cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+body.page-home-2 .ka2-curriculum-main p {
+  max-width: 650px;
+  margin-bottom: 0;
+  color: rgba(255, 249, 240, 0.68);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+body.page-home-2 .ka2-curriculum-level {
+  padding: 8px 12px;
+  border: 1px solid rgba(223, 189, 130, 0.43);
+  color: var(--ka2-gold-light);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   SESSION TIMELINE
+===================================================== */
+
+body.page-home-2 .ka2-session {
+  background: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-session-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+  gap: 65px;
+}
+
+body.page-home-2 .ka2-session-image {
+  position: relative;
+  min-height: 510px;
+  overflow: hidden;
+  background: var(--ka2-paper);
+}
+
+body.page-home-2 .ka2-session-image::after {
+  position: absolute;
+  inset: 48% 0 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(16, 39, 31, 0.86)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+body.page-home-2 .ka2-session-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+body.page-home-2 .ka2-session-image:hover img {
+  transform: scale(1.035);
+}
+
+body.page-home-2 .ka2-session-image-caption {
+  position: absolute;
+  z-index: 1;
+  right: 27px;
+  bottom: 27px;
+  left: 27px;
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-session-image-caption > span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--ka2-gold-light);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+body.page-home-2 .ka2-session-image-caption p {
+  max-width: 340px;
+  margin-bottom: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+body.page-home-2 .ka2-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+body.page-home-2 .ka2-timeline-item {
+  display: grid;
+  grid-template-columns: 60px 46px minmax(0, 1fr);
+  align-items: start;
+  gap: 17px;
+  padding-block: 24px;
+  border-bottom: 1px solid var(--ka2-border);
+}
+
+body.page-home-2 .ka2-timeline-item:first-child {
+  padding-top: 5px;
+}
+
+body.page-home-2 .ka2-timeline-item:last-child {
+  border-bottom: 0;
+}
+
+body.page-home-2 .ka2-timeline-time {
+  padding-top: 10px;
+  color: var(--ka2-gold);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.page-home-2 .ka2-timeline-marker {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(184, 138, 74, 0.48);
+  color: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-timeline-marker svg {
+  width: 23px;
+  height: 23px;
+}
+
+body.page-home-2 .ka2-timeline-item h3 {
+  margin-bottom: 6px;
+  color: var(--ka2-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+body.page-home-2 .ka2-timeline-item p {
+  margin-bottom: 0;
+  color: var(--ka2-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   COACHING PRINCIPLES
+===================================================== */
+
+body.page-home-2 .ka2-principles {
+  background: var(--ka2-paper);
+}
+
+body.page-home-2 .ka2-principles-heading {
+  max-width: 720px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+body.page-home-2 .ka2-principles-heading .ka2-eyebrow {
+  justify-content: center;
+}
+
+body.page-home-2 .ka2-principles-heading h2 {
+  margin-bottom: 17px;
+}
+
+body.page-home-2 .ka2-principles-heading > p {
+  max-width: 500px;
+  margin: 0 auto;
+  color: var(--ka2-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+body.page-home-2 .ka2-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+body.page-home-2 .ka2-principle-card {
+  position: relative;
+  min-width: 0;
+  min-height: 270px;
+  padding: 26px 22px;
+  border: 1px solid rgba(32, 60, 50, 0.12);
+  background: rgba(255, 249, 240, 0.72);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+body.page-home-2 .ka2-principle-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 138, 74, 0.65);
+}
+
+body.page-home-2 .ka2-principle-number {
+  position: absolute;
+  top: 23px;
+  right: 22px;
+  color: rgba(32, 60, 50, 0.33);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+}
+
+body.page-home-2 .ka2-principle-icon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 27px;
+  place-items: center;
+  background: var(--ka2-green);
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-principle-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+body.page-home-2 .ka2-principle-card h3 {
+  max-width: 200px;
+  margin-bottom: 11px;
+  color: var(--ka2-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+body.page-home-2 .ka2-principle-card p {
+  margin-bottom: 0;
+  color: var(--ka2-muted);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+/* =====================================================
+   PERSONAL LEARNING JOURNEY
+===================================================== */
+
+body.page-home-2 .ka2-journey {
+  background: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-journey-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(50px, 8vw, 100px);
+}
+
+body.page-home-2 .ka2-journey-visual {
+  position: relative;
+  min-height: 520px;
+  padding: 0 0 24px 22px;
+}
+
+body.page-home-2 .ka2-journey-visual::before {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 48%;
+  height: 48%;
+  border-top: 1px solid var(--ka2-gold);
+  border-left: 1px solid var(--ka2-gold);
+  content: "";
+  pointer-events: none;
+}
+
+body.page-home-2 .ka2-journey-visual > img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 495px;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.page-home-2 .ka2-journey-note {
+  position: absolute;
+  z-index: 2;
+  right: -26px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: min(340px, 88%);
+  padding: 20px;
+  border: 1px solid rgba(32, 60, 50, 0.08);
+  background: var(--ka2-paper);
+  box-shadow: 0 12px 35px rgba(16, 39, 31, 0.09);
+}
+
+body.page-home-2 .ka2-note-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  background: var(--ka2-green);
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-note-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+body.page-home-2 .ka2-journey-note strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ka2-green);
+  font-size: 12px;
+}
+
+body.page-home-2 .ka2-journey-note p {
+  margin-bottom: 0;
+  color: var(--ka2-muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+body.page-home-2 .ka2-journey-content h2 {
+  margin-bottom: 20px;
+}
+
+body.page-home-2 .ka2-journey-description {
+  margin-bottom: 26px;
+  color: var(--ka2-muted);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+body.page-home-2 .ka2-journey-steps {
+  margin-bottom: 30px;
+}
+
+body.page-home-2 .ka2-journey-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--ka2-border);
+}
+
+body.page-home-2 .ka2-step-check {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  margin-top: 1px;
+  place-items: center;
+  border: 1px solid rgba(184, 138, 74, 0.6);
+  color: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-step-check svg {
+  width: 16px;
+  height: 16px;
+}
+
+body.page-home-2 .ka2-journey-step h3 {
+  margin-bottom: 4px;
+  color: var(--ka2-green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+body.page-home-2 .ka2-journey-step p {
+  margin-bottom: 0;
+  color: var(--ka2-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   STUDENT FEEDBACK
+===================================================== */
+
+body.page-home-2 .ka2-reviews {
+  background: var(--ka2-paper);
+}
+
+body.page-home-2 .ka2-reviews-heading {
+  margin-bottom: 43px;
+}
+
+body.page-home-2 .ka2-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+body.page-home-2 .ka2-review-card {
+  display: flex;
+  min-width: 0;
+  min-height: 295px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 29px 25px;
+  border: 1px solid rgba(32, 60, 50, 0.12);
+  background: var(--ka2-cream);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.page-home-2 .ka2-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(32, 60, 50, 0.06);
+}
+
+body.page-home-2 .ka2-review-highlight {
+  border-color: var(--ka2-green);
+  background: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-review-stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 21px;
+  color: var(--ka2-gold);
+  font-size: 12px;
+}
+
+body.page-home-2 .ka2-review-card blockquote {
+  margin: 0 0 26px;
+  color: var(--ka2-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+body.page-home-2 .ka2-review-highlight blockquote {
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-review-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--ka2-border);
+}
+
+body.page-home-2 .ka2-review-highlight .ka2-review-person {
+  border-color: rgba(255, 249, 240, 0.2);
+}
+
+body.page-home-2 .ka2-avatar {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border: 1px solid rgba(184, 138, 74, 0.55);
+  background: var(--ka2-paper);
+  color: var(--ka2-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+}
+
+body.page-home-2 .ka2-review-person > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+body.page-home-2 .ka2-review-person strong {
+  color: var(--ka2-green);
+  font-size: 11px;
+}
+
+body.page-home-2 .ka2-review-person small {
+  color: var(--ka2-muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+body.page-home-2 .ka2-review-highlight .ka2-review-person strong {
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-review-highlight .ka2-review-person small {
+  color: rgba(255, 249, 240, 0.68);
+}
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+body.page-home-2 .ka2-final-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  min-height: 350px;
+  margin-top: 85px;
+  padding: 60px 70px;
+  overflow: hidden;
+  background: var(--ka2-green-dark);
+  color: var(--ka2-cream);
+}
+
+body.page-home-2 .ka2-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+}
+
+body.page-home-2 .ka2-final-cta h2 {
+  margin-bottom: 17px;
+  color: var(--ka2-cream);
+  font-size: clamp(35px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+body.page-home-2 .ka2-final-cta h2 em {
+  color: var(--ka2-gold-light);
+}
+
+body.page-home-2 .ka2-final-cta .ka2-cta-content > p {
+  max-width: 500px;
+  margin-bottom: 26px;
+  color: rgba(255, 249, 240, 0.7);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+body.page-home-2 .ka2-button-light {
+  border-color: var(--ka2-gold-light);
+  background: var(--ka2-gold-light);
+  color: var(--ka2-green-dark);
+}
+
+body.page-home-2 .ka2-button-light:hover {
+  border-color: var(--ka2-cream);
+  background: var(--ka2-cream);
+  color: var(--ka2-green-dark);
+}
+
+body.page-home-2 .ka2-cta-art {
+  display: grid;
+  width: clamp(150px, 23vw, 240px);
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--ka2-gold-light);
+  opacity: 0.8;
+}
+
+body.page-home-2 .ka2-cta-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  stroke-width: 0.8;
+}
+
+/* ACCESSIBILITY */
+
+body.page-home-2 a:focus-visible,
+body.page-home-2 button:focus-visible {
+  outline: 2px solid var(--ka2-gold);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  body.page-home-2 .ka2-container {
+    width: min(100% - 44px, 820px);
+  }
+
+  body.page-home-2 .ka2-section {
+    padding-block: 82px;
+  }
+
+  body.page-home-2 .ka2-hero {
+    padding-block: 68px 80px;
+  }
+
+  body.page-home-2 .ka2-hero-grid {
+    gap: 35px;
+  }
+
+  body.page-home-2 .ka2-hero h1 {
+    font-size: clamp(42px, 5.5vw, 57px);
+  }
+
+  body.page-home-2 .ka2-hero-image {
+    height: 460px;
+  }
+
+  body.page-home-2 .ka2-floating-card {
+    width: min(235px, 90%);
+    padding: 12px;
+  }
+
+  body.page-home-2 .ka2-floating-top {
+    right: -12px;
+  }
+
+  body.page-home-2 .ka2-floating-bottom {
+    left: -15px;
+  }
+
+  body.page-home-2 .ka2-training-card {
+    min-height: 380px;
+    padding: 25px 21px;
+  }
+
+  body.page-home-2 .ka2-training-card h3 {
+    font-size: 21px;
+  }
+
+  body.page-home-2 .ka2-session-layout {
+    gap: 35px;
+  }
+
+  body.page-home-2 .ka2-principles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.page-home-2 .ka2-principle-card {
+    min-height: 235px;
+  }
+
+  body.page-home-2 .ka2-journey-grid {
+    gap: 45px;
+  }
+
+  body.page-home-2 .ka2-journey-visual,
+  body.page-home-2 .ka2-journey-visual > img {
+    min-height: 450px;
+  }
+
+  body.page-home-2 .ka2-review-card {
+    padding: 24px 19px;
+  }
+
+  body.page-home-2 .ka2-review-card blockquote {
+    font-size: 17px;
+  }
+
+  body.page-home-2 .ka2-final-cta {
+    padding: 50px 42px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  body.page-home-2 .ka2-container {
+    width: calc(100% - 36px);
+  }
+
+  body.page-home-2 .ka2-section {
+    padding-block: 65px;
+  }
+
+  body.page-home-2 .ka2-hero {
+    padding-block: 55px 68px;
+  }
+
+  body.page-home-2 .ka2-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 43px;
+  }
+
+  body.page-home-2 .ka2-eyebrow {
+    margin-bottom: 17px;
+    font-size: 9px;
+  }
+
+  body.page-home-2 .ka2-hero h1 {
+    margin-bottom: 20px;
+    font-size: clamp(43px, 10vw, 61px);
+  }
+
+  body.page-home-2 .ka2-hero-description {
+    font-size: 13px;
+  }
+
+  body.page-home-2 .ka2-hero-actions {
+    align-items: flex-start;
+    gap: 12px 17px;
+  }
+
+  body.page-home-2 .ka2-button {
+    min-height: 49px;
+    padding: 13px 15px;
+    font-size: 11px;
+  }
+
+  body.page-home-2 .ka2-text-link {
+    font-size: 11px;
+  }
+
+  body.page-home-2 .ka2-hero-proof {
+    gap: 9px;
+    margin-top: 35px;
+    padding-top: 20px;
+  }
+
+  body.page-home-2 .ka2-hero-proof strong {
+    font-size: 23px;
+  }
+
+  body.page-home-2 .ka2-hero-proof span {
+    font-size: 9px;
+  }
+
+  body.page-home-2 .ka2-hero-visual {
+    padding-right: 5px;
+  }
+
+  body.page-home-2 .ka2-hero-image {
+    height: clamp(340px, 105vw, 480px);
+  }
+
+  body.page-home-2 .ka2-floating-top {
+    top: 24px;
+    right: -5px;
+  }
+
+  body.page-home-2 .ka2-floating-bottom {
+    bottom: 28px;
+    left: -5px;
+  }
+
+  body.page-home-2 .ka2-floating-card {
+    width: min(225px, 90%);
+    padding: 11px;
+  }
+
+  body.page-home-2 .ka2-section-heading,
+  body.page-home-2 .ka2-curriculum-intro {
+    display: block;
+    margin-bottom: 34px;
+  }
+
+  body.page-home-2 .ka2-section-heading h2,
+  body.page-home-2 .ka2-principles-heading h2,
+  body.page-home-2 .ka2-journey-content h2,
+  body.page-home-2 .ka2-curriculum-intro h2 {
+    font-size: clamp(35px, 8vw, 45px);
+  }
+
+  body.page-home-2 .ka2-section-heading > p,
+  body.page-home-2 .ka2-curriculum-intro > p {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+
+  body.page-home-2 .ka2-training-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  body.page-home-2 .ka2-training-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  body.page-home-2 .ka2-card-number {
+    margin-bottom: 24px;
+  }
+
+  body.page-home-2 .ka2-card-icon {
+    margin-bottom: 19px;
+  }
+
+  body.page-home-2 .ka2-training-card h3 {
+    font-size: 23px;
+  }
+
+  body.page-home-2 .ka2-training-card > p {
+    margin-bottom: 20px;
+  }
+
+  body.page-home-2 .ka2-curriculum-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 13px;
+    padding-block: 23px;
+  }
+
+  body.page-home-2 .ka2-curriculum-row:hover {
+    padding-inline: 4px;
+  }
+
+  body.page-home-2 .ka2-curriculum-number {
+    font-size: 23px;
+  }
+
+  body.page-home-2 .ka2-curriculum-main h3 {
+    font-size: 20px;
+  }
+
+  body.page-home-2 .ka2-curriculum-main p {
+    font-size: 11px;
+  }
+
+  body.page-home-2 .ka2-curriculum-level {
+    grid-column: 2;
+    justify-self: start;
+    padding: 6px 10px;
+    font-size: 9px;
+  }
+
+  body.page-home-2 .ka2-session-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 33px;
+  }
+
+  body.page-home-2 .ka2-session-image {
+    min-height: 380px;
+  }
+
+  body.page-home-2 .ka2-session-image-caption {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  body.page-home-2 .ka2-session-image-caption p {
+    font-size: 21px;
+  }
+
+  body.page-home-2 .ka2-timeline-item {
+    grid-template-columns: 49px 40px minmax(0, 1fr);
+    gap: 10px;
+    padding-block: 21px;
+  }
+
+  body.page-home-2 .ka2-timeline-time {
+    font-size: 9px;
+  }
+
+  body.page-home-2 .ka2-timeline-marker {
+    width: 38px;
+    height: 38px;
+  }
+
+  body.page-home-2 .ka2-timeline-marker svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  body.page-home-2 .ka2-timeline-item h3 {
+    font-size: 18px;
+  }
+
+  body.page-home-2 .ka2-timeline-item p {
+    font-size: 10px;
+  }
+
+  body.page-home-2 .ka2-principles-heading {
+    margin-bottom: 33px;
+  }
+
+  body.page-home-2 .ka2-principles-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  body.page-home-2 .ka2-principle-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  body.page-home-2 .ka2-principle-icon {
+    margin-bottom: 19px;
+  }
+
+  body.page-home-2 .ka2-principle-card h3 {
+    max-width: none;
+    font-size: 21px;
+  }
+
+  body.page-home-2 .ka2-journey-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 50px;
+  }
+
+  body.page-home-2 .ka2-journey-visual {
+    min-height: 390px;
+    padding-left: 12px;
+  }
+
+  body.page-home-2 .ka2-journey-visual > img {
+    min-height: 365px;
+  }
+
+  body.page-home-2 .ka2-journey-note {
+    right: -2px;
+    width: min(330px, 93%);
+    padding: 15px;
+  }
+
+  body.page-home-2 .ka2-journey-description {
+    font-size: 12px;
+  }
+
+  body.page-home-2 .ka2-review-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  body.page-home-2 .ka2-review-card {
+    min-height: 260px;
+    padding: 25px;
+  }
+
+  body.page-home-2 .ka2-review-card blockquote {
+    font-size: 19px;
+  }
+
+  body.page-home-2 .ka2-final-cta {
+    min-height: auto;
+    margin-top: 52px;
+    padding: 39px 25px;
+  }
+
+  body.page-home-2 .ka2-final-cta h2 {
+    font-size: clamp(34px, 8vw, 43px);
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-content > p {
+    font-size: 11px;
+  }
+
+  body.page-home-2 .ka2-cta-art {
+    position: absolute;
+    right: -35px;
+    bottom: -25px;
+    width: 130px;
+    opacity: 0.17;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  body.page-home-2 .ka2-container {
+    width: calc(100% - 28px);
+  }
+
+  body.page-home-2 .ka2-hero h1 {
+    font-size: 41px;
+  }
+
+  body.page-home-2 .ka2-floating-card {
+    width: min(205px, 90%);
+  }
+
+  body.page-home-2 .ka2-timeline-item {
+    grid-template-columns: 43px 35px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  body.page-home-2 .ka2-timeline-marker {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-home-2 *,
+  body.page-home-2 *::before,
+  body.page-home-2 *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   HOME 2 — TAGLINE COLOURS & TEXT SIZE FIX
+========================================= */
+
+/* Taglines / eyebrow labels: green kakunda gold */
+body.page-home-2 .ka2-eyebrow,
+body.page-home-2 .ka2-curriculum-kicker,
+body.page-home-2 .ka2-card-number,
+body.page-home-2 .ka2-image-label,
+body.page-home-2 .ka2-timeline-time {
+  color: #a97836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+/* Dark green section lo taglines readable ga */
+body.page-home-2 .ka2-curriculum .ka2-eyebrow,
+body.page-home-2 .ka2-curriculum .ka2-curriculum-kicker {
+  color: #dfbd82;
+}
+
+/* Hero text size */
+body.page-home-2 .ka2-hero-description {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+body.page-home-2 .ka2-hero-proof span {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Section descriptions */
+body.page-home-2 .ka2-section-heading > p,
+body.page-home-2 .ka2-curriculum-intro > p,
+body.page-home-2 .ka2-principles-heading > p,
+body.page-home-2 .ka2-journey-description {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Coaching cards */
+body.page-home-2 .ka2-training-card > p,
+body.page-home-2 .ka2-principle-card p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+body.page-home-2 .ka2-training-card h3,
+body.page-home-2 .ka2-principle-card h3 {
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+/* Curriculum text */
+body.page-home-2 .ka2-curriculum-main h3 {
+  font-size: 26px;
+}
+
+body.page-home-2 .ka2-curriculum-main p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+body.page-home-2 .ka2-curriculum-level {
+  font-size: 12px;
+}
+
+/* Session timeline */
+body.page-home-2 .ka2-timeline-item h3 {
+  font-size: 22px;
+}
+
+body.page-home-2 .ka2-timeline-item p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Journey steps */
+body.page-home-2 .ka2-journey-step h3 {
+  font-size: 14px;
+}
+
+body.page-home-2 .ka2-journey-step p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Floating cards */
+body.page-home-2 .ka2-floating-card strong {
+  font-size: 13px;
+}
+
+body.page-home-2 .ka2-floating-card small {
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* Review cards */
+body.page-home-2 .ka2-review-card blockquote {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+body.page-home-2 .ka2-review-person strong {
+  font-size: 13px;
+}
+
+body.page-home-2 .ka2-review-person small {
+  font-size: 11px;
+}
+
+/* Buttons and links */
+body.page-home-2 .ka2-button,
+body.page-home-2 .ka2-text-link,
+body.page-home-2 .ka2-card-link {
+  font-size: 13px;
+}
+
+/* Final CTA description */
+body.page-home-2 .ka2-final-cta .ka2-cta-content > p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Small labels inside images */
+body.page-home-2 .ka2-session-image-caption > span {
+  font-size: 11px;
+}
+
+/* Mobile readability */
+@media (max-width: 700px) {
+  body.page-home-2 .ka2-hero-description {
+    font-size: 15px;
+  }
+
+  body.page-home-2 .ka2-section-heading > p,
+  body.page-home-2 .ka2-curriculum-intro > p,
+  body.page-home-2 .ka2-principles-heading > p,
+  body.page-home-2 .ka2-journey-description {
+    font-size: 14px;
+  }
+
+  body.page-home-2 .ka2-training-card > p,
+  body.page-home-2 .ka2-principle-card p,
+  body.page-home-2 .ka2-curriculum-main p,
+  body.page-home-2 .ka2-timeline-item p,
+  body.page-home-2 .ka2-journey-step p {
+    font-size: 13px;
+  }
+
+  body.page-home-2 .ka2-hero-proof span {
+    font-size: 11px;
+  }
+
+  body.page-home-2 .ka2-review-card blockquote {
+    font-size: 19px;
+  }
+}
+
+/* ==========================================
+   KNIGHTAURA HOME 2 — FINAL DESIGN FIX
+   Sticky header, spacing, typography, alignment
+========================================== */
+
+body.page-home-2 {
+  --ka2-body-size: 17px;
+}
+
+/* 1. STICKY HEADER */
+body.page-home-2 .ka2-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  background: rgba(255, 249, 240, 0.97) !important;
+  border-bottom: 1px solid rgba(184, 138, 74, 0.3);
+  box-shadow: 0 5px 20px rgba(16, 39, 31, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* 2. COMPACT HERO HEIGHT */
+body.page-home-2 .ka2-hero {
+  min-height: 0 !important;
+  padding-block: 35px 25px !important;
+}
+
+body.page-home-2 .ka2-hero-grid {
+  min-height: 0 !important;
+  padding-block: 15px !important;
+  align-items: center !important;
+  gap: 55px;
+}
+
+body.page-home-2 .ka2-hero h1 {
+  margin-block: 15px !important;
+  line-height: 1.02 !important;
+}
+
+body.page-home-2 .ka2-hero-description {
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+  max-width: 580px;
+}
+
+body.page-home-2 .ka2-hero-image {
+  height: clamp(400px, 42vw, 510px) !important;
+  overflow: hidden;
+}
+
+body.page-home-2 .ka2-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3. HOME 1 STYLE — TWO MATCHING HERO BUTTONS */
+body.page-home-2 .ka2-hero-actions {
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px !important;
+  margin-top: 25px;
+}
+
+body.page-home-2 .ka2-hero-actions .ka2-button,
+body.page-home-2 .ka2-hero-actions .ka2-text-link {
+  display: inline-flex !important;
+  min-height: 48px !important;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 21px !important;
+  border: 1px solid #b88a4a !important;
+  border-radius: 3px !important;
+  font-size: 14px !important;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none !important;
+  transition: background .3s ease, color .3s ease,
+              transform .3s ease, box-shadow .3s ease;
+}
+
+/* Primary button */
+body.page-home-2 .ka2-hero-actions .ka2-button {
+  background: #203c32 !important;
+  color: #fff9f0 !important;
+  border-color: #203c32 !important;
+}
+
+/* Secondary button — same button format */
+body.page-home-2 .ka2-hero-actions .ka2-text-link {
+  background: transparent !important;
+  color: #203c32 !important;
+  border-color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-hero-actions .ka2-button:hover,
+body.page-home-2 .ka2-hero-actions .ka2-text-link:hover {
+  background: #b88a4a !important;
+  color: #10271f !important;
+  border-color: #b88a4a !important;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(16, 39, 31, .12);
+}
+
+/* 4. HOME 1 STYLE — SECTION-TO-SECTION SPACING */
+body.page-home-2 main > .ka2-section {
+  padding-top: 145px !important;
+  padding-bottom: 145px !important;
+}
+
+/* Hero is compact, not included in large section spacing */
+body.page-home-2 main > .ka2-hero {
+  padding-top: 35px !important;
+  padding-bottom: 25px !important;
+}
+
+body.page-home-2 .ka2-section-heading,
+body.page-home-2 .ka2-curriculum-intro {
+  margin-bottom: 60px !important;
+}
+
+/* 5. CENTER TAGLINE + HEADING + PARAGRAPH
+   Coaching, curriculum, learning experience */
+body.page-home-2 .ka2-training > .ka2-container
+.ka2-section-heading,
+body.page-home-2 .ka2-curriculum > .ka2-container
+.ka2-curriculum-intro,
+body.page-home-2 .ka2-experience > .ka2-container
+.ka2-section-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  text-align: center !important;
+}
+
+body.page-home-2 .ka2-training .ka2-section-heading > *,
+body.page-home-2 .ka2-curriculum .ka2-curriculum-intro > *,
+body.page-home-2 .ka2-experience .ka2-section-heading > * {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+body.page-home-2 .ka2-training .ka2-eyebrow,
+body.page-home-2 .ka2-curriculum .ka2-eyebrow,
+body.page-home-2 .ka2-experience .ka2-eyebrow {
+  justify-content: center !important;
+  color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-training .ka2-section-heading h2,
+body.page-home-2 .ka2-curriculum .ka2-curriculum-intro h2,
+body.page-home-2 .ka2-experience .ka2-section-heading h2 {
+  margin: 0 auto !important;
+}
+
+/* 6. READABLE MAIN AND SUPPORTING PARAGRAPHS */
+body.page-home-2 .ka2-section-heading > p,
+body.page-home-2 .ka2-curriculum-intro > p,
+body.page-home-2 .ka2-principles-heading > p,
+body.page-home-2 .ka2-journey-description {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+  color: #52675f !important;
+  opacity: 1 !important;
+}
+
+body.page-home-2 .ka2-training-card > p,
+body.page-home-2 .ka2-curriculum-main p,
+body.page-home-2 .ka2-timeline-item p,
+body.page-home-2 .ka2-principle-card p,
+body.page-home-2 .ka2-journey-step p {
+  font-size: 15px !important;
+  line-height: 1.85 !important;
+  opacity: 1 !important;
+}
+
+body.page-home-2 .ka2-training-card h3,
+body.page-home-2 .ka2-curriculum-main h3,
+body.page-home-2 .ka2-timeline-item h3 {
+  font-size: 24px !important;
+  line-height: 1.4 !important;
+}
+
+/* Small supporting text should remain readable */
+body.page-home-2 .ka2-floating-card small,
+body.page-home-2 .ka2-review-person small,
+body.page-home-2 .ka2-journey-step p {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* 7. SESSION SECTION — IMAGE AND CONTENT SAME HEIGHT */
+body.page-home-2 .ka2-session-layout {
+  display: grid;
+  align-items: stretch !important;
+  gap: 55px;
+}
+
+body.page-home-2 .ka2-session-layout > * {
+  min-width: 0;
+}
+
+body.page-home-2 .ka2-session-image {
+  height: auto !important;
+  min-height: 100% !important;
+  align-self: stretch !important;
+  overflow: hidden;
+}
+
+body.page-home-2 .ka2-session-image img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* 8. ICON ANIMATIONS AND SECTION HOVER EFFECTS */
+body.page-home-2 .ka2-icon-tile,
+body.page-home-2 .ka2-card-icon,
+body.page-home-2 .ka2-principle-icon,
+body.page-home-2 .ka2-timeline-marker {
+  transition: transform .35s ease, background .35s ease,
+              color .35s ease, border-color .35s ease;
+}
+
+body.page-home-2 .ka2-training-card,
+body.page-home-2 .ka2-principle-card,
+body.page-home-2 .ka2-review-card,
+body.page-home-2 .ka2-timeline-item {
+  transition: transform .35s ease, box-shadow .35s ease,
+              border-color .35s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover,
+body.page-home-2 .ka2-principle-card:hover,
+body.page-home-2 .ka2-review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(16, 39, 31, .12);
+  border-color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-training-card:hover .ka2-card-icon,
+body.page-home-2 .ka2-principle-card:hover .ka2-principle-icon,
+body.page-home-2 .ka2-timeline-item:hover .ka2-timeline-marker {
+  transform: translateY(-3px) scale(1.08);
+  border-color: #b88a4a;
+}
+
+body.page-home-2 .ka2-icon-tile svg,
+body.page-home-2 .ka2-card-icon svg,
+body.page-home-2 .ka2-principle-icon svg,
+body.page-home-2 .ka2-timeline-marker svg {
+  transition: transform .35s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover svg,
+body.page-home-2 .ka2-principle-card:hover svg {
+  transform: rotate(-6deg);
+}
+
+/* 9. TABLET */
+@media (max-width: 1000px) {
+  body.page-home-2 main > .ka2-section {
+    padding-block: 100px !important;
+  }
+
+  body.page-home-2 main > .ka2-hero {
+    padding-block: 30px 24px !important;
+  }
+
+  body.page-home-2 .ka2-section-heading,
+  body.page-home-2 .ka2-curriculum-intro {
+    margin-bottom: 45px !important;
+  }
+
+  body.page-home-2 .ka2-session-layout {
+    align-items: start !important;
+  }
+
+  body.page-home-2 .ka2-session-image {
+    min-height: 430px !important;
+  }
+}
+
+/* 10. MOBILE */
+@media (max-width: 700px) {
+  body.page-home-2 main > .ka2-section {
+    padding-block: 75px !important;
+  }
+
+  body.page-home-2 main > .ka2-hero {
+    padding-block: 25px 20px !important;
+  }
+
+  body.page-home-2 .ka2-section-heading,
+  body.page-home-2 .ka2-curriculum-intro {
+    margin-bottom: 32px !important;
+  }
+
+  body.page-home-2 .ka2-section-heading > p,
+  body.page-home-2 .ka2-curriculum-intro > p,
+  body.page-home-2 .ka2-principles-heading > p,
+  body.page-home-2 .ka2-journey-description {
+    font-size: 16px !important;
+  }
+
+  body.page-home-2 .ka2-training-card > p,
+  body.page-home-2 .ka2-curriculum-main p,
+  body.page-home-2 .ka2-timeline-item p,
+  body.page-home-2 .ka2-principle-card p,
+  body.page-home-2 .ka2-journey-step p {
+    font-size: 14px !important;
+  }
+
+  body.page-home-2 .ka2-hero-image {
+    height: 380px !important;
+  }
+
+  body.page-home-2 .ka2-session-layout {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  body.page-home-2 .ka2-session-image {
+    height: 380px !important;
+    min-height: 0 !important;
+  }
+
+  body.page-home-2 .ka2-session-image img {
+    height: 100% !important;
+  }
+
+  body.page-home-2 .ka2-hero-actions {
+    gap: 10px !important;
+  }
+
+  body.page-home-2 .ka2-hero-actions .ka2-button,
+  body.page-home-2 .ka2-hero-actions .ka2-text-link {
+    min-height: 46px !important;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Respect reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  body.page-home-2 *,
+  body.page-home-2 *::before,
+  body.page-home-2 *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* HOME 2 — STICKY HEADER FIX */
+html {
+  scroll-padding-top: 100px;
+}
+
+body.page-home-2 .site-header,
+body.page-home-2 .ka2-header {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 99999 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background: #fff9f0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Keep the header above page content */
+body.page-home-2 .site-header *,
+body.page-home-2 .ka2-header * {
+  scroll-margin-top: 100px;
+}
+
+/* Avoid accidental clipping on the page */
+body.page-home-2 {
+  overflow-x: clip !important;
+}
+
+/* HOME 2 — HERO CONTENT FIT FIX */
+
+body.page-home-2 .ka2-hero {
+  padding-top: 20px !important;
+  padding-bottom: 12px !important;
+}
+
+body.page-home-2 .ka2-hero-grid {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  gap: 35px !important;
+  align-items: center !important;
+}
+
+body.page-home-2 .ka2-hero-proof {
+  margin-top: 18px !important;
+  padding-top: 10px !important;
+  gap: 0 !important;
+  align-items: start !important;
+}
+
+body.page-home-2 .ka2-hero-proof > * {
+  align-self: start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.page-home-2 .ka2-hero-proof strong {
+  display: block;
+  margin: 0 0 3px !important;
+  line-height: 1.25 !important;
+}
+
+body.page-home-2 .ka2-hero-proof span {
+  display: block;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Keep hero image balanced with the text */
+body.page-home-2 .ka2-hero-image {
+  height: 480px !important;
+}
+
+/* Desktop first-screen fit */
+@media (min-width: 1001px) {
+  body.page-home-2 .ka2-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+  }
+
+  body.page-home-2 .ka2-hero-proof {
+    margin-top: 16px !important;
+  }
+
+  body.page-home-2 .ka2-hero-image {
+    height: 450px !important;
+  }
+}
+
+/* Mobile: don't compress content too much */
+@media (max-width: 700px) {
+  body.page-home-2 .ka2-hero {
+    padding-top: 25px !important;
+    padding-bottom: 20px !important;
+  }
+
+  body.page-home-2 .ka2-hero-grid {
+    gap: 25px !important;
+  }
+
+  body.page-home-2 .ka2-hero-proof {
+    margin-top: 20px !important;
+  }
+
+  body.page-home-2 .ka2-hero-image {
+    height: 380px !important;
+  }
+}
+
+/* ==================================================
+   KNIGHTAURA HOME 2 — FULL PAGE ANIMATION + IMAGE STYLE
+================================================== */
+
+body.page-home-2 {
+  --ka2-motion: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* 1. HERO CONTENT — SMOOTH ENTRANCE */
+@keyframes ka2-enter-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ka2-enter-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ka2-enter-up {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ka2-gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes ka2-gold-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(184,138,74,0); }
+  50% { box-shadow: 0 0 22px rgba(184,138,74,.2); }
+}
+
+@keyframes ka2-shine {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+body.page-home-2 .ka2-hero-content {
+  animation: ka2-enter-left .85s var(--ka2-motion) both;
+}
+
+body.page-home-2 .ka2-hero-visual {
+  animation: ka2-enter-right 1s var(--ka2-motion) .12s both;
+}
+
+body.page-home-2 .ka2-hero-description {
+  animation: ka2-enter-up .75s ease .2s both;
+}
+
+body.page-home-2 .ka2-hero-actions {
+  animation: ka2-enter-up .75s ease .3s both;
+}
+
+body.page-home-2 .ka2-hero-proof {
+  animation: ka2-enter-up .8s ease .4s both;
+}
+
+/* 2. PREMIUM IMAGE STYLE */
+body.page-home-2 .ka2-hero-image,
+body.page-home-2 .ka2-session-image,
+body.page-home-2 .ka2-journey-visual {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(184,138,74,.35);
+  box-shadow: 0 18px 42px rgba(16,39,31,.10);
+}
+
+body.page-home-2 .ka2-hero-image img,
+body.page-home-2 .ka2-session-image img,
+body.page-home-2 .ka2-journey-visual > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition:
+    transform 1s var(--ka2-motion),
+    filter .7s ease;
+  will-change: transform;
+}
+
+/* Warm, editorial image treatment */
+body.page-home-2 .ka2-hero-image img,
+body.page-home-2 .ka2-session-image img,
+body.page-home-2 .ka2-journey-visual > img {
+  filter: saturate(.9) contrast(1.02);
+}
+
+body.page-home-2 .ka2-hero-image:hover img,
+body.page-home-2 .ka2-session-image:hover img,
+body.page-home-2 .ka2-journey-visual:hover > img {
+  transform: scale(1.055);
+  filter: saturate(1.04) contrast(1.04);
+}
+
+body.page-home-2 .ka2-hero-image::after,
+body.page-home-2 .ka2-session-image::after,
+body.page-home-2 .ka2-journey-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(16,39,31,.3) 100%
+  );
+  opacity: .65;
+  transition: opacity .5s ease;
+}
+
+body.page-home-2 .ka2-hero-image:hover::after,
+body.page-home-2 .ka2-session-image:hover::after,
+body.page-home-2 .ka2-journey-visual:hover::after {
+  opacity: .25;
+}
+
+/* 3. FLOATING HERO CARDS */
+body.page-home-2 .ka2-floating-top {
+  animation: ka2-gentle-float 5s ease-in-out infinite;
+}
+
+body.page-home-2 .ka2-floating-bottom {
+  animation: ka2-gentle-float 5.8s ease-in-out 1s infinite;
+}
+
+body.page-home-2 .ka2-floating-card {
+  transition: box-shadow .35s ease, border-color .35s ease;
+  border: 1px solid rgba(184,138,74,.2);
+  box-shadow: 0 12px 32px rgba(16,39,31,.1);
+}
+
+body.page-home-2 .ka2-floating-card:hover {
+  border-color: #b88a4a;
+  box-shadow: 0 18px 38px rgba(16,39,31,.17);
+}
+
+/* 4. ALL SECTION HEADINGS */
+body.page-home-2 .ka2-section-heading,
+body.page-home-2 .ka2-curriculum-intro,
+body.page-home-2 .ka2-principles-heading,
+body.page-home-2 .ka2-journey-content {
+  animation: ka2-enter-up .8s var(--ka2-motion) both;
+}
+
+body.page-home-2 .ka2-eyebrow {
+  color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-eyebrow-line {
+  transition: width .35s ease;
+}
+
+body.page-home-2 .ka2-section-heading:hover .ka2-eyebrow-line,
+body.page-home-2 .ka2-curriculum-intro:hover .ka2-eyebrow-line {
+  width: 50px;
+}
+
+/* 5. TRAINING CARDS */
+body.page-home-2 .ka2-training-card,
+body.page-home-2 .ka2-principle-card,
+body.page-home-2 .ka2-review-card {
+  position: relative;
+  transition:
+    transform .4s var(--ka2-motion),
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover,
+body.page-home-2 .ka2-principle-card:hover,
+body.page-home-2 .ka2-review-card:hover {
+  transform: translateY(-7px);
+  border-color: #b88a4a !important;
+  box-shadow: 0 18px 38px rgba(16,39,31,.13);
+}
+
+/* Gold line grows on card hover */
+body.page-home-2 .ka2-training-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #b88a4a;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .4s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* 6. ICON HOVER ANIMATIONS */
+body.page-home-2 .ka2-card-icon,
+body.page-home-2 .ka2-principle-icon,
+body.page-home-2 .ka2-icon-tile,
+body.page-home-2 .ka2-timeline-marker {
+  transition:
+    transform .4s var(--ka2-motion),
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover .ka2-card-icon,
+body.page-home-2 .ka2-principle-card:hover .ka2-principle-icon {
+  transform: translateY(-4px) rotate(-5deg) scale(1.08);
+  border-color: #b88a4a;
+}
+
+body.page-home-2 .ka2-icon-tile:hover {
+  transform: scale(1.08);
+  background: #203c32;
+  color: #dfbd82;
+}
+
+body.page-home-2 .ka2-icon-tile svg,
+body.page-home-2 .ka2-card-icon svg,
+body.page-home-2 .ka2-principle-icon svg {
+  transition: transform .35s ease;
+}
+
+body.page-home-2 .ka2-training-card:hover svg,
+body.page-home-2 .ka2-principle-card:hover svg {
+  transform: rotate(8deg);
+}
+
+/* 7. CURRICULUM ROWS */
+body.page-home-2 .ka2-curriculum-row {
+  transition: padding .3s ease, background-color .3s ease;
+}
+
+body.page-home-2 .ka2-curriculum-row:hover {
+  padding-left: 12px;
+  padding-right: 12px;
+  background: rgba(184,138,74,.07);
+}
+
+body.page-home-2 .ka2-curriculum-level {
+  transition: background-color .3s ease, color .3s ease;
+}
+
+body.page-home-2 .ka2-curriculum-row:hover .ka2-curriculum-level {
+  background: #203c32;
+  color: #dfbd82;
+}
+
+/* 8. TIMELINE ITEMS */
+body.page-home-2 .ka2-timeline-item {
+  transition: transform .35s ease;
+}
+
+body.page-home-2 .ka2-timeline-item:hover {
+  transform: translateX(6px);
+}
+
+body.page-home-2 .ka2-timeline-item:hover .ka2-timeline-marker {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px rgba(184,138,74,.12);
+}
+
+/* 9. JOURNEY STEPS */
+body.page-home-2 .ka2-journey-step {
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+body.page-home-2 .ka2-journey-step:hover {
+  transform: translateY(-4px);
+  border-color: #b88a4a;
+}
+
+/* 10. BUTTONS AND LINKS */
+body.page-home-2 .ka2-button,
+body.page-home-2 .ka2-text-link,
+body.page-home-2 .ka2-card-link {
+  transition:
+    transform .3s ease,
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+body.page-home-2 .ka2-button:hover,
+body.page-home-2 .ka2-text-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(16,39,31,.12);
+}
+
+body.page-home-2 .ka2-button svg,
+body.page-home-2 .ka2-text-link svg,
+body.page-home-2 .ka2-card-link svg {
+  transition: transform .3s ease;
+}
+
+body.page-home-2 .ka2-button:hover svg,
+body.page-home-2 .ka2-text-link:hover svg,
+body.page-home-2 .ka2-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* 11. REVIEW CARDS */
+body.page-home-2 .ka2-review-card blockquote {
+  transition: color .3s ease;
+}
+
+body.page-home-2 .ka2-review-card:hover blockquote {
+  color: #b88a4a;
+}
+
+/* 12. SCROLL REVEAL — SUPPORTED BROWSERS */
+@supports (animation-timeline: view()) {
+  body.page-home-2 .ka2-training-card,
+  body.page-home-2 .ka2-curriculum-row,
+  body.page-home-2 .ka2-timeline-item,
+  body.page-home-2 .ka2-principle-card,
+  body.page-home-2 .ka2-journey-step,
+  body.page-home-2 .ka2-review-card {
+    animation: ka2-enter-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+/* 13. RESPONSIVE AND ACCESSIBLE MOTION */
+@media (max-width: 700px) {
+  body.page-home-2 .ka2-training-card:hover,
+  body.page-home-2 .ka2-principle-card:hover,
+  body.page-home-2 .ka2-review-card:hover {
+    transform: translateY(-3px);
+  }
+
+  body.page-home-2 .ka2-floating-top,
+  body.page-home-2 .ka2-floating-bottom {
+    animation-duration: 7s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-home-2 *,
+  body.page-home-2 *::before,
+  body.page-home-2 *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* HERO SECONDARY BUTTON — GOLD TEXT */
+body.page-home-2 .ka2-hero-actions .ka2-text-link {
+  color: #b88a4a !important;
+  border: 1px solid #b88a4a !important;
+  background: transparent !important;
+  border-radius: 4px !important;
+  transition: all .3s ease;
+}
+
+body.page-home-2 .ka2-hero-actions .ka2-text-link:hover {
+  color: #fff9f0 !important;
+  background: #b88a4a !important;
+  border-color: #b88a4a !important;
+}
+
+/* HERO IMAGE — ROUNDED CORNERS */
+body.page-home-2 .ka2-hero-image {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(184, 138, 74, .4);
+  box-shadow: 0 18px 42px rgba(16, 39, 31, .12);
+}
+
+body.page-home-2 .ka2-hero-image img {
+  border-radius: 16px !important;
+  transition: transform .8s ease, filter .6s ease;
+}
+
+body.page-home-2 .ka2-hero-image:hover img {
+  transform: scale(1.045);
+}
+
+/* Rounded corners for other main images */
+body.page-home-2 .ka2-session-image,
+body.page-home-2 .ka2-journey-visual {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+body.page-home-2 .ka2-session-image img,
+body.page-home-2 .ka2-journey-visual > img {
+  border-radius: 14px !important;
+}
+
+/* HERO IMAGE — SLIGHTLY TALLER */
+@media (min-width: 1001px) {
+  body.page-home-2 .ka2-hero-image {
+    min-height: 0 !important;
+    height: 490px !important;
+  }
+}
+
+/* HOME 2 — DARK GREEN SECTION TEXT VISIBILITY FIX */
+
+body.page-home-2 .ka2-method,
+body.page-home-2 .ka2-curriculum {
+  color: #fff9f0;
+}
+
+/* Main section description */
+body.page-home-2 .ka2-method .ka2-section-heading > p,
+body.page-home-2 .ka2-method > .ka2-container > p,
+body.page-home-2 .ka2-method p {
+  color: #f5f0e7 !important;
+  opacity: 1 !important;
+}
+
+/* Method section headings and descriptions */
+body.page-home-2 .ka2-method h2,
+body.page-home-2 .ka2-method h3,
+body.page-home-2 .ka2-method .ka2-timeline-item p {
+  color: #fff9f0 !important;
+  opacity: 1 !important;
+}
+
+/* Timeline supporting text */
+body.page-home-2 .ka2-method .ka2-timeline-item p,
+body.page-home-2 .ka2-method .ka2-timeline-item h3 {
+  color: #fff9f0 !important;
+}
+
+/* Curriculum paragraph visibility */
+body.page-home-2 .ka2-curriculum p,
+body.page-home-2 .ka2-curriculum h3 {
+  color: #fff9f0 !important;
+  opacity: 1 !important;
+}
+
+/* Keep taglines gold */
+body.page-home-2 .ka2-method .ka2-eyebrow,
+body.page-home-2 .ka2-method .ka2-curriculum-kicker {
+  color: #dfbd82 !important;
+}
+
+/* ==========================================
+   KNIGHTAURA HOME 2 — SECTION ALIGNMENT FIXES
+========================================== */
+
+/* 1. SECTION 3 — CENTER TAGLINE, HEADING, PARA */
+body.page-home-2 .ka2-experience .ka2-section-heading,
+body.page-home-2 .ka2-session .ka2-section-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
+
+body.page-home-2 .ka2-experience .ka2-eyebrow,
+body.page-home-2 .ka2-session .ka2-eyebrow {
+  justify-content: center !important;
+  color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-experience .ka2-section-heading h2,
+body.page-home-2 .ka2-experience .ka2-section-heading > p,
+body.page-home-2 .ka2-session .ka2-section-heading h2,
+body.page-home-2 .ka2-session .ka2-section-heading > p {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+body.page-home-2 .ka2-experience .ka2-section-heading > p,
+body.page-home-2 .ka2-session .ka2-section-heading > p {
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+}
+
+/* 2. JOURNEY IMAGE HEIGHT = RIGHT CONTENT HEIGHT */
+body.page-home-2 .ka2-journey-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 55px !important;
+}
+
+body.page-home-2 .ka2-journey-visual {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+body.page-home-2 .ka2-journey-visual > img {
+  flex: 1;
+  width: 100%;
+  height: 100% !important;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+body.page-home-2 .ka2-journey-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* 3. JOURNEY HEADINGS — BIGGER */
+body.page-home-2 .ka2-journey-step h3 {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  color: #203c32;
+  margin-bottom: 5px;
+}
+
+body.page-home-2 .ka2-journey-step p {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  color: #52675f;
+  opacity: 1 !important;
+}
+
+body.page-home-2 .ka2-journey-step {
+  padding-block: 17px !important;
+}
+
+/* 4. SECTION 5 — CENTER TAGLINE, HEADING, PARA */
+body.page-home-2 .ka2-reviews .ka2-section-heading,
+body.page-home-2 .ka2-testimonials .ka2-section-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
+
+body.page-home-2 .ka2-reviews .ka2-eyebrow,
+body.page-home-2 .ka2-testimonials .ka2-eyebrow {
+  justify-content: center !important;
+  color: #b88a4a !important;
+}
+
+body.page-home-2 .ka2-reviews .ka2-section-heading h2,
+body.page-home-2 .ka2-reviews .ka2-section-heading > p,
+body.page-home-2 .ka2-testimonials .ka2-section-heading h2,
+body.page-home-2 .ka2-testimonials .ka2-section-heading > p {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+body.page-home-2 .ka2-reviews .ka2-section-heading > p,
+body.page-home-2 .ka2-testimonials .ka2-section-heading > p {
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+}
+
+/* 5. REDUCE GAP BETWEEN FINAL CTA AND FOOTER */
+body.page-home-2 .ka2-final-cta {
+  margin-bottom: 0 !important;
+}
+
+body.page-home-2 main > .ka2-section:has(.ka2-final-cta) {
+  padding-bottom: 35px !important;
+}
+
+body.page-home-2 .ka2-footer {
+  margin-top: 0 !important;
+}
+
+/* 6. DARK MODE — ALL SECTIONS */
+body.page-home-2.dark-mode,
+body.page-home-2.dark-theme,
+body.page-home-2[data-theme="dark"] {
+  background: #101b17 !important;
+  color: #fff !important;
+}
+
+body.page-home-2.dark-mode .ka2-section,
+body.page-home-2.dark-theme .ka2-section,
+body.page-home-2[data-theme="dark"] .ka2-section {
+  background-color: #101b17 !important;
+  color: #fff !important;
+}
+
+body.page-home-2.dark-mode .ka2-section h1,
+body.page-home-2.dark-mode .ka2-section h2,
+body.page-home-2.dark-mode .ka2-section h3,
+body.page-home-2.dark-mode .ka2-section p,
+body.page-home-2.dark-mode .ka2-section li,
+body.page-home-2.dark-theme .ka2-section h1,
+body.page-home-2.dark-theme .ka2-section h2,
+body.page-home-2.dark-theme .ka2-section h3,
+body.page-home-2.dark-theme .ka2-section p,
+body.page-home-2.dark-theme .ka2-section li,
+body.page-home-2[data-theme="dark"] .ka2-section h1,
+body.page-home-2[data-theme="dark"] .ka2-section h2,
+body.page-home-2[data-theme="dark"] .ka2-section h3,
+body.page-home-2[data-theme="dark"] .ka2-section p,
+body.page-home-2[data-theme="dark"] .ka2-section li {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* Keep accent/tagline gold in dark mode */
+body.page-home-2.dark-mode .ka2-eyebrow,
+body.page-home-2.dark-mode h1 em,
+body.page-home-2.dark-mode h2 em,
+body.page-home-2.dark-theme .ka2-eyebrow,
+body.page-home-2.dark-theme h1 em,
+body.page-home-2.dark-theme h2 em,
+body.page-home-2[data-theme="dark"] .ka2-eyebrow,
+body.page-home-2[data-theme="dark"] h1 em,
+body.page-home-2[data-theme="dark"] h2 em {
+  color: #dfbd82 !important;
+}
+
+/* Dark cards */
+body.page-home-2.dark-mode .ka2-training-card,
+body.page-home-2.dark-mode .ka2-principle-card,
+body.page-home-2.dark-mode .ka2-review-card,
+body.page-home-2.dark-mode .ka2-journey-step,
+body.page-home-2.dark-theme .ka2-training-card,
+body.page-home-2.dark-theme .ka2-principle-card,
+body.page-home-2.dark-theme .ka2-review-card,
+body.page-home-2.dark-theme .ka2-journey-step,
+body.page-home-2[data-theme="dark"] .ka2-training-card,
+body.page-home-2[data-theme="dark"] .ka2-principle-card,
+body.page-home-2[data-theme="dark"] .ka2-review-card,
+body.page-home-2[data-theme="dark"] .ka2-journey-step {
+  background: #192b24 !important;
+  color: #fff !important;
+  border-color: rgba(223,189,130,.25) !important;
+}
+
+body.page-home-2.dark-mode .ka2-journey-step h3,
+body.page-home-2.dark-mode .ka2-journey-step p,
+body.page-home-2.dark-theme .ka2-journey-step h3,
+body.page-home-2.dark-theme .ka2-journey-step p,
+body.page-home-2[data-theme="dark"] .ka2-journey-step h3,
+body.page-home-2[data-theme="dark"] .ka2-journey-step p {
+  color: #fff !important;
+}
+
+/* Responsive layout */
+@media (max-width: 760px) {
+  body.page-home-2 .ka2-journey-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  body.page-home-2 .ka2-journey-visual {
+    height: 390px !important;
+  }
+
+  body.page-home-2 .ka2-journey-visual > img {
+    height: 100% !important;
+  }
+
+  body.page-home-2 .ka2-journey-step h3 {
+    font-size: 16px !important;
+  }
+
+  body.page-home-2 .ka2-journey-step p {
+    font-size: 14px !important;
+  }
+
+  body.page-home-2 main > .ka2-section:has(.ka2-final-cta) {
+    padding-bottom: 25px !important;
+  }
+}
+
+/* ===========================================
+   KNIGHTAURA HOME 2 — COMPLETE CTA REDESIGN
+=========================================== */
+
+/* CTA outer section spacing */
+body.page-home-2 .ka2-final-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr);
+  align-items: center;
+  gap: 60px;
+  margin: 80px 0 0 !important;
+  padding: 75px 75px !important;
+  overflow: hidden;
+  border: 1px solid rgba(223, 189, 130, .3) !important;
+  border-radius: 14px !important;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(223, 189, 130, .12),
+      transparent 35%
+    ),
+    #103b30 !important;
+  box-shadow: 0 24px 55px rgba(16, 39, 31, .12);
+}
+
+/* Decorative gold corner detail */
+body.page-home-2 .ka2-final-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 3px;
+  background: #dfbd82;
+}
+
+body.page-home-2 .ka2-final-cta::after {
+  content: "";
+  position: absolute;
+  right: -90px;
+  bottom: -120px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(223, 189, 130, .16);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Left content */
+body.page-home-2 .ka2-final-cta .ka2-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+/* Tagline */
+body.page-home-2 .ka2-final-cta .ka2-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px !important;
+  color: #dfbd82 !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+/* Main heading */
+body.page-home-2 .ka2-final-cta h2 {
+  max-width: 600px;
+  margin: 0 0 22px !important;
+  color: #fff9f0 !important;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.035em;
+}
+
+body.page-home-2 .ka2-final-cta h2 em {
+  color: #dfbd82 !important;
+  font-weight: 400;
+}
+
+/* Description */
+body.page-home-2 .ka2-final-cta .ka2-cta-content > p {
+  max-width: 520px;
+  margin: 0 0 28px !important;
+  color: #e7e9df !important;
+  font-size: 17px !important;
+  line-height: 1.9 !important;
+  opacity: 1 !important;
+}
+
+/* Button */
+body.page-home-2 .ka2-final-cta .ka2-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 54px;
+  padding: 16px 25px !important;
+  border: 1px solid #dfbd82 !important;
+  border-radius: 4px !important;
+  background: #dfbd82 !important;
+  color: #10352b !important;
+  font-size: 14px !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: none;
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    color .3s ease,
+    box-shadow .3s ease;
+}
+
+body.page-home-2 .ka2-final-cta .ka2-button:hover {
+  transform: translateY(-4px);
+  background: transparent !important;
+  color: #dfbd82 !important;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, .16);
+}
+
+body.page-home-2 .ka2-final-cta .ka2-button svg {
+  transition: transform .3s ease;
+}
+
+body.page-home-2 .ka2-final-cta .ka2-button:hover svg {
+  transform: translate(4px, -2px);
+}
+
+/* Right-side visual container */
+body.page-home-2 .ka2-final-cta .ka2-cta-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 230px;
+  border: 1px solid rgba(223, 189, 130, .2);
+  border-radius: 12px;
+  background: rgba(255, 249, 240, .035);
+  transition:
+    transform .4s ease,
+    border-color .4s ease,
+    background .4s ease;
+}
+
+body.page-home-2 .ka2-final-cta .ka2-cta-visual:hover {
+  transform: translateY(-5px);
+  border-color: rgba(223, 189, 130, .55);
+  background: rgba(255, 249, 240, .06);
+}
+
+/* Decorative icon — cleaner and smaller */
+body.page-home-2 .ka2-final-cta .ka2-cta-visual svg {
+  width: 115px !important;
+  height: 115px !important;
+  color: #dfbd82 !important;
+  stroke: #dfbd82 !important;
+  stroke-width: 1.15;
+  opacity: .9;
+  transition: transform .5s ease;
+}
+
+body.page-home-2 .ka2-final-cta:hover .ka2-cta-visual svg {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+/* CTA to footer spacing */
+body.page-home-2 main > .ka2-section:has(.ka2-final-cta) {
+  padding-top: 70px !important;
+  padding-bottom: 45px !important;
+}
+
+body.page-home-2 .ka2-footer {
+  margin-top: 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  body.page-home-2 .ka2-final-cta {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 30px;
+    padding: 48px 38px !important;
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-visual {
+    min-height: 190px;
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-visual svg {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
+
+@media (max-width: 650px) {
+  body.page-home-2 .ka2-final-cta {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 45px !important;
+    padding: 35px 24px !important;
+    border-radius: 10px !important;
+  }
+
+  body.page-home-2 .ka2-final-cta h2 {
+    font-size: 34px !important;
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-content > p {
+    font-size: 16px !important;
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-visual {
+    min-height: 140px;
+  }
+
+  body.page-home-2 .ka2-final-cta .ka2-cta-visual svg {
+    width: 75px !important;
+    height: 75px !important;
+  }
+
+  body.page-home-2 main > .ka2-section:has(.ka2-final-cta) {
+    padding-top: 40px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+/* ==========================================
+   COMPLETE CTA REDESIGN
+========================================== */
+
+body.page-home-2 .ka2-cta-redesign {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 65px;
+  margin: 65px 0 0;
+  padding: 65px;
+  overflow: hidden;
+  background: #fff9f0;
+  color: #153d32;
+  border: 1px solid #e7d9c4;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(30, 47, 37, .06);
+}
+
+body.page-home-2 .ka2-cta-redesign__content {
+  position: relative;
+  z-index: 2;
+}
+
+body.page-home-2 .ka2-cta-redesign__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  color: #a96c2d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+body.page-home-2 .ka2-cta-redesign__eyebrow > span {
+  width: 32px;
+  height: 1px;
+  background: #b77b3d;
+}
+
+body.page-home-2 .ka2-cta-redesign h2 {
+  margin: 0 0 22px;
+  color: #153d32;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+body.page-home-2 .ka2-cta-redesign h2 em {
+  display: block;
+  margin-top: 5px;
+  color: #c58a48;
+  font-weight: 400;
+}
+
+body.page-home-2 .ka2-cta-redesign__content > p {
+  max-width: 500px;
+  margin: 0 0 28px;
+  color: #53675e;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+body.page-home-2 .ka2-cta-redesign__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+body.page-home-2 .ka2-cta-redesign__primary,
+body.page-home-2 .ka2-cta-redesign__secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: 1px solid #173e32;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .3s ease, background .3s ease,
+              color .3s ease, box-shadow .3s ease;
+}
+
+body.page-home-2 .ka2-cta-redesign__primary {
+  background: #173e32;
+  color: #fff9f0;
+}
+
+body.page-home-2 .ka2-cta-redesign__secondary {
+  background: transparent;
+  color: #173e32;
+  border-color: #c58a48;
+}
+
+body.page-home-2 .ka2-cta-redesign__primary:hover,
+body.page-home-2 .ka2-cta-redesign__secondary:hover {
+  transform: translateY(-3px);
+  background: #c58a48;
+  border-color: #c58a48;
+  color: #10271f;
+  box-shadow: 0 9px 22px rgba(16, 39, 31, .12);
+}
+
+/* Chessboard visual */
+body.page-home-2 .ka2-cta-redesign__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  overflow: hidden;
+  background: #153d32;
+  border-radius: 5px;
+  isolation: isolate;
+}
+
+body.page-home-2 .ka2-cta-redesign__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 45%,
+    rgba(197, 138, 72, .19), transparent 65%);
+}
+
+body.page-home-2 .ka2-cta-redesign__visual-label {
+  position: absolute;
+  top: 23px;
+  left: 24px;
+  color: #dfbd82;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+body.page-home-2 .ka2-cta-redesign__board {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  transform: rotate(-8deg);
+  border: 1px solid rgba(223, 189, 130, .4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+  transition: transform .6s ease;
+}
+
+body.page-home-2 .ka2-cta-redesign__board span:nth-child(odd) {
+  background: rgba(255, 249, 240, .15);
+}
+
+body.page-home-2 .ka2-cta-redesign__board span:nth-child(even) {
+  background: rgba(9, 35, 27, .45);
+}
+
+body.page-home-2 .ka2-cta-redesign__piece {
+  position: relative;
+  z-index: 1;
+  color: #f0c887;
+  font-size: 150px;
+  line-height: 1;
+  text-shadow: 0 12px 20px rgba(0, 0, 0, .3);
+  transition: transform .5s ease;
+}
+
+body.page-home-2 .ka2-cta-redesign__visual:hover
+.ka2-cta-redesign__board {
+  transform: rotate(0deg) scale(1.04);
+}
+
+body.page-home-2 .ka2-cta-redesign__visual:hover
+.ka2-cta-redesign__piece {
+  transform: translateY(-8px);
+}
+
+body.page-home-2 .ka2-cta-redesign__note {
+  position: absolute;
+  right: 15px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 245px;
+  padding: 14px 16px;
+  background: #fff9f0;
+  color: #153d32;
+  border: 1px solid #e7d9c4;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+  animation: ka2-cta-note-float 4s ease-in-out infinite;
+}
+
+body.page-home-2 .ka2-cta-redesign__note-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background: #eee5d6;
+  color: #a96c2d;
+  font-size: 20px;
+}
+
+body.page-home-2 .ka2-cta-redesign__note strong,
+body.page-home-2 .ka2-cta-redesign__note small {
+  display: block;
+}
+
+body.page-home-2 .ka2-cta-redesign__note strong {
+  font-size: 12px;
+}
+
+body.page-home-2 .ka2-cta-redesign__note small {
+  margin-top: 4px;
+  color: #64736b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@keyframes ka2-cta-note-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Space before CTA and footer */
+body.page-home-2 main > .ka2-section:has(.ka2-cta-redesign) {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+body.page-home-2 .ka2-footer {
+  margin-top: 0 !important;
+}
+
+/* Dark mode */
+body.page-home-2.dark-mode .ka2-cta-redesign,
+body.page-home-2.dark-theme .ka2-cta-redesign,
+body.page-home-2[data-theme="dark"] .ka2-cta-redesign {
+  background: #101b17;
+  border-color: rgba(223, 189, 130, .3);
+  color: #fff;
+}
+
+body.page-home-2.dark-mode .ka2-cta-redesign h2,
+body.page-home-2.dark-mode .ka2-cta-redesign__content > p,
+body.page-home-2.dark-theme .ka2-cta-redesign h2,
+body.page-home-2.dark-theme .ka2-cta-redesign__content > p,
+body.page-home-2[data-theme="dark"] .ka2-cta-redesign h2,
+body.page-home-2[data-theme="dark"] .ka2-cta-redesign__content > p {
+  color: #fff !important;
+}
+
+body.page-home-2.dark-mode .ka2-cta-redesign h2 em,
+body.page-home-2.dark-theme .ka2-cta-redesign h2 em,
+body.page-home-2[data-theme="dark"] .ka2-cta-redesign h2 em {
+  color: #dfbd82 !important;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  body.page-home-2 .ka2-cta-redesign {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 40px;
+    padding: 35px 25px;
+  }
+
+  body.page-home-2 .ka2-cta-redesign__visual {
+    min-height: 300px;
+  }
+
+  body.page-home-2 .ka2-cta-redesign__board {
+    width: 190px;
+    height: 190px;
+  }
+
+  body.page-home-2 .ka2-cta-redesign__piece {
+    font-size: 125px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.page-home-2 .ka2-cta-redesign__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.page-home-2 .ka2-cta-redesign__primary,
+  body.page-home-2 .ka2-cta-redesign__secondary {
+    width: 100%;
+  }
+
+  body.page-home-2 .ka2-cta-redesign__visual {
+    min-height: 260px;
+  }
+}
+
+/* More space between Reviews and CTA */
+body.page-home-2 .ka2-cta-redesign {
+  margin-top: 150px !important;
+}
+
+/* Preserve the gap below CTA */
+body.page-home-2 main > .ka2-section:has(.ka2-cta-redesign) {
+  padding-top: 0 !important;
+  padding-bottom: 45px !important;
+}
+
+@media (max-width: 800px) {
+  body.page-home-2 .ka2-cta-redesign {
+    margin-top: 80px !important;
+  }
+
+  body.page-home-2 main > .ka2-section:has(.ka2-cta-redesign) {
+    padding-bottom: 30px !important;
+  }
+}
+
+/* FIX LEARNING EXPERIENCE SECTION POSITION */
+body.page-home-2 section.ka2-reviews.ka2-section {
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* Heading and review cards spacing */
+body.page-home-2 .ka2-reviews-heading {
+  margin-top: 0 !important;
+  margin-bottom: 43px !important;
+}
+
+/* CTA spacing — only increase space above CTA */
+body.page-home-2 .ka2-cta-redesign {
+  margin-top: 150px !important;
+}
+
+/* Keep CTA bottom spacing */
+body.page-home-2 main > .ka2-section:has(.ka2-cta-redesign) {
+  padding-bottom: 45px !important;
+}
+
+@media (max-width: 800px) {
+  body.page-home-2 section.ka2-reviews.ka2-section {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  body.page-home-2 .ka2-cta-redesign {
+    margin-top: 80px !important;
+  }
+}
+
+/* Talk to Our Team — force secondary/gold text */
+body.page-home-2 .ka2-cta-redesign__secondary {
+  color: #c58a48 !important;
+  -webkit-text-fill-color: #c58a48 !important;
+  border-color: #c58a48 !important;
+  background: transparent !important;
+}
+
+/* Arrow icon / arrow character */
+body.page-home-2 .ka2-cta-redesign__secondary span,
+body.page-home-2 .ka2-cta-redesign__secondary svg {
+  color: #c58a48 !important;
+  fill: none !important;
+  stroke: #c58a48 !important;
+  -webkit-text-fill-color: #c58a48 !important;
+}
+
+/* Hover state */
+body.page-home-2 .ka2-cta-redesign__secondary:hover {
+  background: #c58a48 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.page-home-2 .ka2-cta-redesign__secondary:hover span,
+body.page-home-2 .ka2-cta-redesign__secondary:hover svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ==========================================
+   COACHING PROGRAMS — IMAGE CARD DESIGN
+========================================== */
+
+body.page-home-2 .ka2-training-card {
+  padding: 0 0 28px !important;
+  overflow: hidden;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+body.page-home-2 .ka2-program-image {
+  display: block;
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 0 24px;
+  border-bottom: 2px solid #c58a48;
+  transition: transform .5s ease, filter .4s ease;
+}
+
+/* Card content spacing */
+body.page-home-2 .ka2-training-card > :not(.ka2-program-image) {
+  margin-left: 27px;
+  margin-right: 27px;
+}
+
+body.page-home-2 .ka2-training-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(20, 48, 37, .12);
+  border-color: #c58a48;
+}
+
+body.page-home-2 .ka2-training-card:hover .ka2-program-image {
+  filter: saturate(1.08);
+  transform: scale(1.025);
+}
+
+/* Dark green middle card */
+body.page-home-2 .ka2-training-card:nth-child(2) .ka2-program-image {
+  border-bottom-color: #dfbd82;
+}
+
+/* Responsive images */
+@media (max-width: 700px) {
+  body.page-home-2 .ka2-program-image {
+    height: 180px;
+  }
+
+  body.page-home-2 .ka2-training-card > :not(.ka2-program-image) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* ==========================================
+   COACHING CARDS — UNIFIED PREMIUM DESIGN
+========================================== */
+
+/* All three cards use the same layout */
+body.page-home-2 .ka2-program-redesign {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+}
+
+body.page-home-2 .ka2-program-redesign .ka2-program-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #fff9f0 !important;
+  border: 1px solid #e5d5bf !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 25px rgba(20, 48, 37, .06);
+  transition: transform .35s ease, box-shadow .35s ease,
+              border-color .35s ease;
+}
+
+/* Images fill the complete card width */
+body.page-home-2 .ka2-program-card__image {
+  position: relative !important;
+  width: 100% !important;
+  height: 270px !important;
+  flex: 0 0 270px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #e9decd !important;
+  border: 0 !important;
+}
+
+body.page-home-2 .ka2-program-card__image img {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: transform .55s ease, filter .4s ease;
+}
+
+/* Consistent image overlay */
+body.page-home-2 .ka2-program-card__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 37, 29, .65),
+    transparent 58%
+  );
+  pointer-events: none;
+}
+
+/* Gold image label */
+body.page-home-2 .ka2-program-card__badge {
+  position: absolute !important;
+  z-index: 2;
+  left: 22px !important;
+  bottom: 19px !important;
+  color: #fff9f0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .12em;
+}
+
+/* Matching content spacing for every card */
+body.page-home-2 .ka2-program-card__body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  padding: 27px 27px 30px !important;
+  background: transparent !important;
+}
+
+body.page-home-2 .ka2-program-card__icon {
+  display: grid !important;
+  place-items: center;
+  width: 46px !important;
+  height: 46px !important;
+  flex: 0 0 46px;
+  margin: 0 0 21px !important;
+  color: #bd803d !important;
+  background: #f7ead7 !important;
+  border: 1px solid #dfbd82 !important;
+  border-radius: 5px;
+  transition: transform .3s ease, background .3s ease;
+}
+
+body.page-home-2 .ka2-program-card__icon svg {
+  width: 23px !important;
+  height: 23px !important;
+  color: #bd803d !important;
+  stroke: #bd803d !important;
+}
+
+/* Matching heading and paragraph */
+body.page-home-2 .ka2-program-card h3 {
+  margin: 0 0 14px !important;
+  color: #153d32 !important;
+  font-size: 23px !important;
+  line-height: 1.4 !important;
+}
+
+body.page-home-2 .ka2-program-card__body > p {
+  margin: 0 0 25px !important;
+  color: #68736b !important;
+  font-size: 15px !important;
+  line-height: 1.85 !important;
+  opacity: 1 !important;
+}
+
+/* Align links along the bottom */
+body.page-home-2 .ka2-program-card .ka2-card-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  margin: auto 0 0 !important;
+  padding-top: 8px;
+  color: #174638 !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  transition: color .3s ease, gap .3s ease;
+}
+
+body.page-home-2 .ka2-program-card .ka2-card-link svg {
+  width: 17px;
+  height: 17px;
+  color: #bd803d !important;
+  stroke: #bd803d !important;
+  transition: transform .3s ease;
+}
+
+/* Hover animations */
+body.page-home-2 .ka2-program-card:hover {
+  transform: translateY(-7px);
+  border-color: #c58a48 !important;
+  box-shadow: 0 20px 38px rgba(20, 48, 37, .13);
+}
+
+body.page-home-2 .ka2-program-card:hover .ka2-program-card__image img {
+  transform: scale(1.055);
+}
+
+body.page-home-2 .ka2-program-card:hover .ka2-program-card__icon {
+  transform: translateY(-3px);
+  background: #f0d8b4 !important;
+}
+
+body.page-home-2 .ka2-program-card .ka2-card-link:hover {
+  gap: 15px;
+  color: #bd803d !important;
+}
+
+body.page-home-2 .ka2-program-card .ka2-card-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+  body.page-home-2 .ka2-program-redesign {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body.page-home-2 .ka2-program-card__image {
+    height: 230px !important;
+    flex-basis: 230px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  body.page-home-2 .ka2-program-redesign {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  body.page-home-2 .ka2-program-card__image {
+    height: 240px !important;
+    flex-basis: 240px !important;
+  }
+
+  body.page-home-2 .ka2-program-card__body {
+    padding: 23px 22px 26px !important;
+  }
+}
+
+/* Coaching cards — bigger images, compact content */
+
+/* Increase image height */
+body.page-home-2 .ka2-program-card__image {
+  height: 330px !important;
+  flex: 0 0 330px !important;
+}
+
+body.page-home-2 .ka2-program-card__image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Reduce content padding */
+body.page-home-2 .ka2-program-card__body {
+  padding: 18px 24px 22px !important;
+}
+
+/* Smaller icon and less spacing */
+body.page-home-2 .ka2-program-card__icon {
+  width: 38px !important;
+  height: 38px !important;
+  flex-basis: 38px !important;
+  margin-bottom: 12px !important;
+}
+
+/* Compact heading */
+body.page-home-2 .ka2-program-card h3 {
+  font-size: 21px !important;
+  margin-bottom: 9px !important;
+  line-height: 1.35 !important;
+}
+
+/* Compact description */
+body.page-home-2 .ka2-program-card__body > p {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 15px !important;
+}
+
+/* Reduce link spacing */
+body.page-home-2 .ka2-program-card .ka2-card-link {
+  padding-top: 3px !important;
+}
+
+/* Tablet */
+@media (max-width: 950px) {
+  body.page-home-2 .ka2-program-card__image {
+    height: 270px !important;
+    flex-basis: 270px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  body.page-home-2 .ka2-program-card__image {
+    height: 250px !important;
+    flex-basis: 250px !important;
+  }
+}
+
+/* HOME 2 — Change section icons to secondary colour */
+/* Header icons are intentionally excluded */
+
+body.page-home-2 main section:not(.site-header) .ka2-icon,
+body.page-home-2 main section:not(.site-header) .ka2-icon svg,
+body.page-home-2 main section:not(.site-header) .ka2-card-icon,
+body.page-home-2 main section:not(.site-header) .ka2-card-icon svg,
+body.page-home-2 main section:not(.site-header) .ka2-feature-icon,
+body.page-home-2 main section:not(.site-header) .ka2-feature-icon svg,
+body.page-home-2 main section:not(.site-header) .ka2-principle-icon,
+body.page-home-2 main section:not(.site-header) .ka2-principle-icon svg {
+  color: #bd803d !important;
+  stroke: #bd803d !important;
+}
+
+/* Icon backgrounds */
+body.page-home-2 main section:not(.site-header) .ka2-icon,
+body.page-home-2 main section:not(.site-header) .ka2-card-icon,
+body.page-home-2 main section:not(.site-header) .ka2-feature-icon,
+body.page-home-2 main section:not(.site-header) .ka2-principle-icon {
+  background-color: #f7ead8;
+}
+
+/* Session section — force icon stroke to secondary gold */
+body.page-home-2 .ka2-session img,
+body.page-home-2 .ka2-session svg,
+body.page-home-2 .ka2-session [data-lucide],
+body.page-home-2 .ka2-session .icon,
+body.page-home-2 .ka2-session [class*="icon"] svg,
+body.page-home-2 .ka2-session [class*="icon"] i {
+  color: #bd803d !important;
+  stroke: #bd803d !important;
+}
+
+/* Icon boxes */
+body.page-home-2 .ka2-session [class*="icon"] {
+  border-color: #bd803d !important;
+}
+
+/* Hover: primary green */
+body.page-home-2 .ka2-session [class*="icon"]:hover,
+body.page-home-2 .ka2-session [class*="icon"]:hover svg {
+  color: #123e32 !important;
+  stroke: #123e32 !important;
+}
+/* HOME 2 — DARK MODE BLACK BACKGROUND */
+
+html[data-theme="dark"] body.page-home-2,
+html[data-theme="dark"] body.page-home-2 main,
+html[data-theme="dark"] body.page-home-2 main > section,
+html[data-theme="dark"] body.page-home-2 .ka2-hero,
+html[data-theme="dark"] body.page-home-2 .ka2-training,
+html[data-theme="dark"] body.page-home-2 .ka2-curriculum,
+html[data-theme="dark"] body.page-home-2 .ka2-session,
+html[data-theme="dark"] body.page-home-2 .ka2-principles,
+html[data-theme="dark"] body.page-home-2 .ka2-journey,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Primary text becomes white */
+
+html[data-theme="dark"] body.page-home-2 h1,
+html[data-theme="dark"] body.page-home-2 h2,
+html[data-theme="dark"] body.page-home-2 h3,
+html[data-theme="dark"] body.page-home-2 p,
+html[data-theme="dark"] body.page-home-2 .brand-knight {
+  color: #ffffff !important;
+}
+
+/* Keep gold accents */
+
+html[data-theme="dark"] body.page-home-2 em,
+html[data-theme="dark"] body.page-home-2 .ka2-eyebrow,
+html[data-theme="dark"] body.page-home-2 .ka2-program-card__badge {
+  color: #dfbd82 !important;
+}
+
+/* ==========================================
+   KNIGHTAURA HOME 2 — DARK MODE FIX
+   Light mode remains unchanged
+========================================== */
+
+/* 1. Main page and all sections: pure black */
+html[data-theme="dark"] body.page-home-2,
+html[data-theme="dark"] body.page-home-2 main,
+html[data-theme="dark"] body.page-home-2 main > section,
+html[data-theme="dark"] body.page-home-2 .ka2-hero,
+html[data-theme="dark"] body.page-home-2 .ka2-training,
+html[data-theme="dark"] body.page-home-2 .ka2-curriculum,
+html[data-theme="dark"] body.page-home-2 .ka2-session,
+html[data-theme="dark"] body.page-home-2 .ka2-principles,
+html[data-theme="dark"] body.page-home-2 .ka2-journey,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* 2. Remove green/white backgrounds from content cards */
+html[data-theme="dark"] body.page-home-2 .ka2-program-card,
+html[data-theme="dark"] body.page-home-2 .ka2-feature-card,
+html[data-theme="dark"] body.page-home-2 .ka2-training-card,
+html[data-theme="dark"] body.page-home-2 .ka2-stats-card,
+html[data-theme="dark"] body.page-home-2 .ka2-journey-step,
+html[data-theme="dark"] body.page-home-2 .ka2-review-card,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article,
+html[data-theme="dark"] body.page-home-2 .ka2-session-item,
+html[data-theme="dark"] body.page-home-2 .ka2-principles article {
+  background-color: #111 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* 3. Header dark-mode and RTL buttons */
+html[data-theme="dark"] body.page-home-2 .icon-button,
+html[data-theme="dark"] body.page-home-2 [data-theme-toggle],
+html[data-theme="dark"] body.page-home-2 [data-rtl-toggle] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .icon-button:hover,
+html[data-theme="dark"] body.page-home-2 [data-theme-toggle]:hover,
+html[data-theme="dark"] body.page-home-2 [data-rtl-toggle]:hover {
+  background: #171717 !important;
+  color: #dfbd82 !important;
+  border-color: #dfbd82 !important;
+}
+
+/* 4. Make hero and other icons visible */
+html[data-theme="dark"] body.page-home-2 .ka2-hero svg,
+html[data-theme="dark"] body.page-home-2 .ka2-hero i,
+html[data-theme="dark"] body.page-home-2 .ka2-hero [data-lucide],
+html[data-theme="dark"] body.page-home-2 .ka2-button svg,
+html[data-theme="dark"] body.page-home-2 .ka2-hero-actions svg {
+  color: #fff !important;
+  stroke: #fff !important;
+}
+
+/* 5. Primary buttons: retain design, make text white */
+html[data-theme="dark"] body.page-home-2 .ka2-button,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign a,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign button {
+  color: #fff !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-button:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign a:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign button:hover {
+  border-color: #dfbd82 !important;
+  filter: brightness(1.12);
+}
+
+/* 6. All content text must be readable */
+html[data-theme="dark"] body.page-home-2 h1,
+html[data-theme="dark"] body.page-home-2 h2,
+html[data-theme="dark"] body.page-home-2 h3,
+html[data-theme="dark"] body.page-home-2 h4,
+html[data-theme="dark"] body.page-home-2 p,
+html[data-theme="dark"] body.page-home-2 li,
+html[data-theme="dark"] body.page-home-2 label,
+html[data-theme="dark"] body.page-home-2 strong,
+html[data-theme="dark"] body.page-home-2 .ka2-program-card a,
+html[data-theme="dark"] body.page-home-2 .ka2-journey-step *,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews *,
+html[data-theme="dark"] body.page-home-2 .ka2-feature-card * {
+  color: #fff !important;
+}
+
+/* 7. Keep gold highlights */
+html[data-theme="dark"] body.page-home-2 em,
+html[data-theme="dark"] body.page-home-2 .brand-aura,
+html[data-theme="dark"] body.page-home-2 .ka2-eyebrow,
+html[data-theme="dark"] body.page-home-2 .ka2-program-card__badge,
+html[data-theme="dark"] body.page-home-2 .ka2-program-card a:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews .rating {
+  color: #dfbd82 !important;
+}
+
+/* 8. Image-side captions: dark background and readable text */
+html[data-theme="dark"] body.page-home-2 .ka2-journey *,
+html[data-theme="dark"] body.page-home-2 .ka2-session *,
+html[data-theme="dark"] body.page-home-2 .ka2-principles * {
+  text-shadow: none;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="caption"],
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="overlay"],
+html[data-theme="dark"] body.page-home-2 .ka2-session [class*="caption"],
+html[data-theme="dark"] body.page-home-2 .ka2-session [class*="overlay"] {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+/* 9. Cards: visible gold hover effect */
+html[data-theme="dark"] body.page-home-2 .ka2-program-card,
+html[data-theme="dark"] body.page-home-2 .ka2-feature-card,
+html[data-theme="dark"] body.page-home-2 .ka2-training-card,
+html[data-theme="dark"] body.page-home-2 .ka2-review-card {
+  transition: border-color .25s ease, transform .25s ease,
+              background-color .25s ease !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-program-card:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-feature-card:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-training-card:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-review-card:hover {
+  border-color: #dfbd82 !important;
+  transform: translateY(-4px);
+}
+
+/* HOME 2 — DARK MODE BACKGROUND + ICON FIX */
+
+/* Main background: remove green and white areas */
+html[data-theme="dark"] body.page-home-2,
+html[data-theme="dark"] body.page-home-2 main,
+html[data-theme="dark"] body.page-home-2 main > section,
+html[data-theme="dark"] body.page-home-2 .ka2-section,
+html[data-theme="dark"] body.page-home-2 .ka2-container {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Header buttons */
+html[data-theme="dark"] body.page-home-2 .site-header .icon-button,
+html[data-theme="dark"] body.page-home-2 .site-header [data-theme-toggle],
+html[data-theme="dark"] body.page-home-2 .site-header [data-rtl-toggle] {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* Learning goals / journey content rows */
+html[data-theme="dark"] body.page-home-2 .ka2-journey article,
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="step"],
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="goal"],
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="item"],
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-item,
+html[data-theme="dark"] body.page-home-2 .ka2-curriculum-row {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* Remove unwanted coloured backgrounds from inner content */
+html[data-theme="dark"] body.page-home-2 .ka2-journey article > div,
+html[data-theme="dark"] body.page-home-2 .ka2-journey [class*="goal"] > div,
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-item > div {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Image captions: black background, white text */
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption,
+html[data-theme="dark"] body.page-home-2 .ka2-floating-card {
+  background: #111 !important;
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption *,
+html[data-theme="dark"] body.page-home-2 .ka2-floating-card * {
+  color: #fff !important;
+}
+
+/* Icons: visible in dark mode */
+html[data-theme="dark"] body.page-home-2 .ka2-session svg,
+html[data-theme="dark"] body.page-home-2 .ka2-journey svg,
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-marker,
+html[data-theme="dark"] body.page-home-2 .ka2-icon-tile,
+html[data-theme="dark"] body.page-home-2 [class*="goal"] i,
+html[data-theme="dark"] body.page-home-2 [class*="goal"] svg {
+  color: #dfbd82 !important;
+  stroke: #dfbd82 !important;
+}
+
+/* All important text readable */
+html[data-theme="dark"] body.page-home-2 .ka2-journey h2,
+html[data-theme="dark"] body.page-home-2 .ka2-journey h3,
+html[data-theme="dark"] body.page-home-2 .ka2-journey p,
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-item h3,
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-item p,
+html[data-theme="dark"] body.page-home-2 .ka2-curriculum-row h3,
+html[data-theme="dark"] body.page-home-2 .ka2-curriculum-row p {
+  color: #fff !important;
+}
+
+/* Primary buttons: white text */
+html[data-theme="dark"] body.page-home-2 .ka2-button,
+html[data-theme="dark"] body.page-home-2 .ka2-journey a,
+html[data-theme="dark"] body.page-home-2 .ka2-journey button {
+  color: #fff !important;
+}
+
+/* Gold hover effect */
+html[data-theme="dark"] body.page-home-2 .ka2-journey a:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-journey button:hover,
+html[data-theme="dark"] body.page-home-2 .ka2-timeline-item:hover {
+  border-color: #dfbd82 !important;
+}
+
+/* Testimonials */
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews [class*="card"] {
+  background: #111 !important;
+  background-color: #111 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-reviews h3,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews p,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews span,
+html[data-theme="dark"] body.page-home-2 .ka2-reviews strong {
+  color: #fff !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-reviews [class*="star"],
+html[data-theme="dark"] body.page-home-2 .ka2-reviews [class*="rating"] {
+  color: #dfbd82 !important;
+}
+
+/* 1. HERO RIGHT SIDE — ICONS VISIBLE IN GOLD */
+
+body.page-home-2 .ka2-floating-card .ka2-icon-tile {
+  background: #dfbd82 !important;
+  border: 1px solid #dfbd82 !important;
+  color: #000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.page-home-2 .ka2-floating-card .ka2-icon-tile svg,
+body.page-home-2 .ka2-floating-card .ka2-icon-tile i {
+  color: #000 !important;
+  stroke: #000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.page-home-2 .ka2-floating-card > span:last-child,
+body.page-home-2 .ka2-floating-card strong,
+body.page-home-2 .ka2-floating-card small {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+
+/* 2. REVIEW CARDS — MIDDLE TEXT VISIBILITY */
+
+body.page-home-2 .ka2-reviews article,
+body.page-home-2 .ka2-reviews [class*="card"] {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+body.page-home-2 .ka2-reviews article p,
+body.page-home-2 .ka2-reviews article h3,
+body.page-home-2 .ka2-reviews article h4,
+body.page-home-2 .ka2-reviews article span,
+body.page-home-2 .ka2-reviews article strong,
+body.page-home-2 .ka2-reviews article div {
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Review card divider */
+body.page-home-2 .ka2-reviews article hr,
+body.page-home-2 .ka2-reviews article [class*="divider"] {
+  border-color: #333 !important;
+  background-color: #333 !important;
+}
+
+/* Review stars — secondary gold */
+body.page-home-2 .ka2-reviews article [class*="star"],
+body.page-home-2 .ka2-reviews article [class*="rating"] {
+  color: #dfbd82 !important;
+}
+
+/* Student initials icons */
+body.page-home-2 .ka2-reviews article [class*="avatar"],
+body.page-home-2 .ka2-reviews article [class*="icon"] {
+  color: #dfbd82 !important;
+  opacity: 1 !important;
+}
+
+/* TESTIMONIAL INITIALS — S, L, P VISIBILITY */
+
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article [class*="avatar"],
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article [class*="initial"],
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article [class*="author"] > span:first-child {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #dfbd82 !important;
+  -webkit-text-fill-color: #dfbd82 !important;
+  border: 1px solid #dfbd82 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* If initials are directly inside a small box */
+html[data-theme="dark"] body.page-home-2 .ka2-reviews article span:first-child {
+  color: #dfbd82 !important;
+  -webkit-text-fill-color: #dfbd82 !important;
+  opacity: 1 !important;
+}
+
+/* FIX: YOUR JOURNEY, YOUR GOALS CAPTION */
+
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #dfbd82 !important;
+}
+
+/* Caption text wrapper */
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note > div,
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note strong,
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note p {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Caption heading in secondary gold */
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note strong {
+  color: #dfbd82 !important;
+  -webkit-text-fill-color: #dfbd82 !important;
+}
+
+/* Caption icon */
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note .ka2-note-icon {
+  background: #000 !important;
+  color: #dfbd82 !important;
+  border: 1px solid #dfbd82 !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-journey-note .ka2-note-icon svg {
+  color: #dfbd82 !important;
+  stroke: #dfbd82 !important;
+}
+
+/* ==========================================
+   KNIGHTAURA HOME 2 — LIGHT MODE REVIEWS
+   ========================================== */
+
+body:not(.dark-mode) .ka2-reviews .ka2-review-grid {
+    gap: 24px;
+}
+
+body:not(.dark-mode) .ka2-reviews .ka2-review-card {
+    background: linear-gradient(145deg, #fffdf8, #f8efe1) !important;
+    color: #17483d !important;
+    border: 1px solid #e7d4b9 !important;
+    border-radius: 14px !important;
+    padding: 32px 28px !important;
+    box-shadow: 0 8px 25px rgba(48, 55, 38, 0.06) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Subtle hover effect */
+body:not(.dark-mode) .ka2-reviews .ka2-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 34px rgba(48, 55, 38, 0.11) !important;
+    border-color: #c9975b !important;
+}
+
+/* Highlight the middle card elegantly */
+body:not(.dark-mode) .ka2-reviews .ka2-review-highlight {
+    background: linear-gradient(145deg, #fffaf0, #f6e8d3) !important;
+    border: 1px solid #c9975b !important;
+    box-shadow: 0 10px 28px rgba(184, 138, 74, 0.10) !important;
+}
+
+/* Star rating */
+body:not(.dark-mode) .ka2-reviews .ka2-review-stars {
+    color: #bd8540 !important;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* Review quote */
+body:not(.dark-mode) .ka2-reviews .ka2-review-card blockquote {
+    color: #17483d !important;
+    font-size: 19px;
+    line-height: 1.75;
+    margin: 0 0 25px;
+}
+
+/* Separator before reviewer details */
+body:not(.dark-mode) .ka2-reviews .ka2-review-person {
+    border-top: 1px solid #e7d8c4 !important;
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+/* Reviewer name */
+body:not(.dark-mode) .ka2-reviews .ka2-review-person strong {
+    color: #173d32 !important;
+    font-size: 14px;
+}
+
+/* Reviewer subtitle */
+body:not(.dark-mode) .ka2-reviews .ka2-review-person small {
+    color: #6a7c70 !important;
+    font-size: 14px;
+}
+
+/* Initial avatar */
+body:not(.dark-mode) .ka2-reviews .ka2-avatar {
+    background: #f5e8d5 !important;
+    color: #b77b36 !important;
+    border: 1px solid #e2bd8e !important;
+    border-radius: 4px;
+}
+
+/* ==========================================
+   KNIGHTAURA HOME 2 — COMPLETE MOTION SYSTEM
+   ========================================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reveal base: activated only when JavaScript is ready */
+.ka-motion {
+    opacity: 1;
+    transform: none;
+}
+
+html.ka-motion-ready .ka-motion {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--ka-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+html.ka-motion-ready .ka-motion.ka-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Content enters from the left */
+html.ka-motion-ready .ka-from-left {
+    transform: translate3d(-55px, 0, 0);
+}
+
+/* Content enters from the right */
+html.ka-motion-ready .ka-from-right {
+    transform: translate3d(55px, 0, 0);
+}
+
+/* Content rises gently */
+html.ka-motion-ready .ka-from-bottom {
+    transform: translate3d(0, 38px, 0);
+}
+
+/* Image reveal */
+.ka-image-motion {
+    overflow: hidden;
+}
+
+html.ka-motion-ready .ka-image-motion img {
+    transform: scale(1.08);
+    transition:
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+    filter: saturate(0.85);
+}
+
+html.ka-motion-ready .ka-image-motion.ka-visible img {
+    transform: scale(1);
+    filter: saturate(1);
+}
+
+/* Image hover zoom */
+.ka-image-motion img {
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.ka-image-motion:hover img {
+    transform: scale(1.045);
+}
+
+/* Card hover */
+.ka-motion-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.ka-motion-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Button hover */
+.ka-motion-button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.ka-motion-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+    box-shadow: 0 8px 20px rgba(30, 40, 30, 0.12);
+}
+
+.ka-motion-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Decorative chess accent */
+.ka-chess-float {
+    animation: kaChessFloat 4s ease-in-out infinite;
+}
+
+@keyframes kaChessFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+/* Elegant line reveal */
+.ka-motion-line {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease;
+}
+
+.ka-motion-line.ka-visible {
+    transform: scaleX(1);
+}
+
+/* Mobile: smaller movement */
+@media (max-width: 768px) {
+    html.ka-motion-ready .ka-from-left {
+        transform: translate3d(-24px, 0, 0);
+    }
+
+    html.ka-motion-ready .ka-from-right {
+        transform: translate3d(24px, 0, 0);
+    }
+
+    html.ka-motion-ready .ka-motion {
+        transition-duration: 0.65s;
+    }
+}
+
+/* Accessibility: respect reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    html.ka-motion-ready .ka-motion,
+    html.ka-motion-ready .ka-motion.ka-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    html.ka-motion-ready .ka-image-motion img,
+    .ka-chess-float {
+        animation: none;
+        transition: none;
+        transform: none;
+        filter: none;
+    }
+}
+
+/* Image animation — images themselves */
+html.ka-motion-ready img.ka-image-motion {
+    filter: saturate(0.85);
+    transition: filter 0.8s ease, transform 0.6s ease;
+}
+
+html.ka-motion-ready img.ka-image-motion.ka-visible {
+    filter: saturate(1);
+}
+
+html.ka-motion-ready img.ka-image-motion.ka-visible:hover {
+    transform: scale(1.045);
+}
+
+/* Home 2 reveal motion */
+body.page-home-2 .ka-reveal {
+    opacity: 0;
+    transition:
+        opacity 700ms ease,
+        transform 700ms cubic-bezier(.22, 1, .36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+body.page-home-2 .ka-reveal-left {
+    transform: translateX(-42px);
+}
+
+body.page-home-2 .ka-reveal-right {
+    transform: translateX(42px);
+}
+
+body.page-home-2 .ka-reveal-up {
+    transform: translateY(30px);
+}
+
+body.page-home-2 .ka-reveal.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+body.page-home-2 .ka2-review-card {
+    transition:
+        box-shadow 300ms ease,
+        border-color 300ms ease;
+}
+
+body.page-home-2 .ka2-review-card:hover {
+    box-shadow: 0 14px 32px rgba(30, 40, 30, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.page-home-2 .ka-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* =========================================
+   KNIGHTAURA HOME 2 — HERO FLOATING CARDS
+   ========================================= */
+
+/* Floating cards background */
+body.page-home-2 .ka2-hero .ka2-floating-card {
+    background: #fffaf2 !important;
+    color: #173d32 !important;
+    border: 1px solid #ead7bc !important;
+    box-shadow: 0 10px 28px rgba(32, 60, 50, 0.14) !important;
+}
+
+/* Main card heading */
+body.page-home-2 .ka2-hero .ka2-floating-card strong {
+    color: #173d32 !important;
+    display: block;
+    font-weight: 700;
+}
+
+/* Supporting description */
+body.page-home-2 .ka2-hero .ka2-floating-card small {
+    color: #52685d !important;
+    display: block;
+    line-height: 1.6;
+}
+
+/* Icon tile */
+body.page-home-2 .ka2-hero .ka2-icon-tile {
+    background: #f1d5a8 !important;
+    color: #173d32 !important;
+    flex-shrink: 0;
+}
+
+/* Lucide icon */
+body.page-home-2 .ka2-hero .ka2-icon-tile svg {
+    color: #173d32 !important;
+    stroke: #173d32 !important;
+}
+
+/* Keep floating card text readable in light mode */
+html[data-theme="light"] .ka2-hero .ka2-floating-card,
+html[data-theme="light"] .ka2-hero .ka2-floating-card strong,
+html[data-theme="light"] .ka2-hero .ka2-floating-card small {
+    color: #173d32 !important;
+}
+
+/* ==========================================
+   HOME 2 — DARK MODE HERO + CTA CARD VISIBILITY
+========================================== */
+
+/* Floating cards: readable dark background */
+html[data-theme="dark"] body.page-home-2 .ka2-floating-card {
+    background: #111111 !important;
+    background-color: #111111 !important;
+    color: #F8F5EF !important;
+    border: 1px solid #B88A4A !important;
+}
+
+/* Floating card headings */
+html[data-theme="dark"] body.page-home-2 .ka2-floating-card strong {
+    color: #DFBD82 !important;
+    -webkit-text-fill-color: #DFBD82 !important;
+}
+
+/* Floating card descriptions */
+html[data-theme="dark"] body.page-home-2 .ka2-floating-card small {
+    color: #F8F5EF !important;
+    -webkit-text-fill-color: #F8F5EF !important;
+    opacity: 1 !important;
+}
+
+/* Icon tile background and icon visibility */
+html[data-theme="dark"] body.page-home-2 .ka2-icon-tile {
+    background: #B88A4A !important;
+    color: #111111 !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-icon-tile i,
+html[data-theme="dark"] body.page-home-2 .ka2-icon-tile svg {
+    color: #111111 !important;
+    stroke: #111111 !important;
+    opacity: 1 !important;
+}
+
+/* CTA section image-side floating cards */
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign .ka2-floating-card,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign [class*="floating-card"] {
+    background: #111111 !important;
+    color: #F8F5EF !important;
+    border-color: #B88A4A !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign .ka2-floating-card strong,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign .ka2-floating-card small {
+    color: #F8F5EF !important;
+    -webkit-text-fill-color: #F8F5EF !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign .ka2-icon-tile i,
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign .ka2-icon-tile svg {
+    color: #111111 !important;
+    stroke: #111111 !important;
+}
+/* HOME 2 — Dark floating note card */
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign__note {
+  background: #101B17 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #B88A4A !important;
+}
+
+/* Icon box — dark background with gold icon */
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign__note-icon {
+  background: #263445 !important;
+  color: #B88A4A !important;
+  border: 1px solid #B88A4A !important;
+}
+
+/* Note title */
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign__note strong {
+  color: #B88A4A !important;
+  -webkit-text-fill-color: #B88A4A !important;
+}
+
+/* Note description */
+html[data-theme="dark"] body.page-home-2 .ka2-cta-redesign__note small {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+/* ==========================================
+   KNIGHT AURA — ANIMATED CENTER HERO
+========================================== */
+
+.page-home-2 {
+    --ka2-green: #203C32;
+    --ka2-gold: #B88A4A;
+    --ka2-ivory: #F7F5EF;
+}
+
+.ka2-motion-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 650px;
+    height: calc(100svh - 80px);
+    max-height: 850px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 85px 25px 80px;
+    background: #10271F;
+    color: var(--ka2-ivory);
+}
+
+/* ANIMATED BACKGROUND */
+
+.ka2-motion-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            #244638 0%,
+            #18382B 40%,
+            #10271F 78%
+        );
+}
+
+/* MOVING LIGHT */
+
+.ka2-motion-glow {
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    max-width: 750px;
+    max-height: 750px;
+    left: 50%;
+    top: 48%;
+
+    background: radial-gradient(
+        circle,
+        rgba(184, 138, 74, 0.18),
+        rgba(32, 60, 50, 0.08) 45%,
+        transparent 70%
+    );
+
+    transform: translate(-50%, -50%);
+    animation: ka2-glow-breathe 7s ease-in-out infinite;
+}
+
+/* AMBIENT ORBS */
+
+.ka2-motion-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.ka2-orb-one {
+    width: 180px;
+    height: 180px;
+    left: 8%;
+    top: 18%;
+
+    background: radial-gradient(
+        circle,
+        rgba(184, 138, 74, 0.19),
+        transparent 70%
+    );
+
+    animation: ka2-orb-float-one 12s ease-in-out infinite;
+}
+
+.ka2-orb-two {
+    width: 240px;
+    height: 240px;
+    right: 7%;
+    bottom: 10%;
+
+    background: radial-gradient(
+        circle,
+        rgba(80, 130, 100, 0.24),
+        transparent 70%
+    );
+
+    animation: ka2-orb-float-two 14s ease-in-out infinite;
+}
+
+.ka2-orb-three {
+    width: 120px;
+    height: 120px;
+    right: 25%;
+    top: 12%;
+
+    background: radial-gradient(
+        circle,
+        rgba(184, 138, 74, 0.13),
+        transparent 70%
+    );
+
+    animation: ka2-orb-float-one 10s ease-in-out infinite reverse;
+}
+
+/* SUBTLE CHESSBOARD ACROSS BACKGROUND */
+
+.ka2-motion-board {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    left: -7%;
+    top: -4%;
+
+    opacity: 0.12;
+    transform: perspective(900px) rotateX(55deg) rotateZ(-12deg);
+    transform-origin: center;
+
+    animation: ka2-board-motion 24s ease-in-out infinite alternate;
+}
+
+.ka2-motion-board-grid {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+
+    background-image:
+        conic-gradient(
+            from 90deg at 50% 50%,
+            rgba(184, 138, 74, 0.55) 25%,
+            transparent 0 50%,
+            rgba(184, 138, 74, 0.55) 0 75%,
+            transparent 0
+        );
+
+    background-size: 100px 100px;
+}
+
+/* FLOATING CHESS PIECES */
+
+.ka2-motion-piece {
+    position: absolute;
+    font-family: Georgia, serif;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.25));
+}
+
+.ka2-motion-knight {
+    top: 15%;
+    left: 13%;
+
+    color: rgba(184, 138, 74, 0.32);
+    font-size: clamp(100px, 14vw, 180px);
+
+    animation: ka2-piece-knight 9s ease-in-out infinite;
+}
+
+.ka2-motion-king {
+    right: 12%;
+    bottom: 13%;
+
+    color: rgba(247, 245, 239, 0.15);
+    font-size: clamp(120px, 17vw, 220px);
+
+    animation: ka2-piece-king 11s ease-in-out infinite;
+}
+
+.ka2-motion-bishop {
+    right: 20%;
+    top: 15%;
+
+    color: rgba(184, 138, 74, 0.18);
+    font-size: clamp(80px, 10vw, 130px);
+
+    animation: ka2-piece-bishop 8s ease-in-out infinite;
+}
+
+/* ROTATING RINGS */
+
+.ka2-motion-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(184, 138, 74, 0.14);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.ka2-ring-one {
+    width: min(65vw, 720px);
+    aspect-ratio: 1;
+
+    animation: ka2-ring-rotate 45s linear infinite;
+}
+
+.ka2-ring-two {
+    width: min(48vw, 520px);
+    aspect-ratio: 1;
+
+    border-style: dashed;
+    border-color: rgba(247, 245, 239, 0.10);
+
+    animation: ka2-ring-rotate 65s linear infinite reverse;
+}
+
+/* TOP BAR */
+
+.ka2-motion-top {
+    position: absolute;
+    top: 27px;
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(247, 245, 239, 0.2);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+}
+
+.ka2-motion-top span:first-child {
+    font-size: 14px;
+}
+
+.ka2-motion-top span:nth-child(2) {
+    color: var(--ka2-gold);
+    text-align: center;
+}
+
+/* CENTER CONTENT */
+
+.ka2-motion-content {
+    position: relative;
+    z-index: 3;
+
+    width: min(100%, 1000px);
+    margin: auto;
+    text-align: center;
+
+    animation: ka2-content-reveal 1.1s ease both;
+}
+
+.ka2-motion-kicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 27px;
+
+    color: var(--ka2-gold);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.ka2-motion-kicker span {
+    width: 26px;
+    height: 1px;
+    background: var(--ka2-gold);
+}
+
+/* HEADING */
+
+.ka2-motion-content h1 {
+    margin: 0;
+
+    color: var(--ka2-ivory);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+}
+
+.ka2-motion-content h1 span {
+    display: block;
+    margin-top: 8px;
+
+    color: var(--ka2-gold);
+    font-style: italic;
+    font-weight: 400;
+
+    transition: color 0.4s ease;
+}
+
+.ka2-motion-content h1 span:hover {
+    color: #E4C28C;
+}
+
+/* DESCRIPTION */
+
+.ka2-motion-content > p {
+    max-width: 560px;
+    margin: 25px auto 0;
+
+    color: rgba(247, 245, 239, 0.82);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+/* BUTTON */
+
+.ka2-motion-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+
+    min-height: 52px;
+    margin-top: 29px;
+    padding: 0 10px 0 22px;
+
+    background: var(--ka2-gold);
+    border: 1px solid var(--ka2-gold);
+    color: #FFFFFF;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    text-decoration: none;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.ka2-motion-button span {
+    display: grid;
+    place-items: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.ka2-motion-button:hover {
+    background: transparent;
+    color: var(--ka2-gold);
+    transform: translateY(-3px);
+}
+
+.ka2-motion-button:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* BOTTOM MOTTO */
+
+.ka2-motion-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 17px;
+
+    margin-top: 45px;
+
+    color: rgba(247, 245, 239, 0.72);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.ka2-motion-stats i {
+    width: 4px;
+    height: 4px;
+    background: var(--ka2-gold);
+    transform: rotate(45deg);
+}
+
+/* BOTTOM BAR */
+
+.ka2-motion-bottom {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding-top: 14px;
+    border-top: 1px solid rgba(247, 245, 239, 0.2);
+
+    color: rgba(247, 245, 239, 0.62);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+}
+
+.ka2-motion-scroll {
+    transition: color 0.3s ease;
+}
+
+.ka2-motion-scroll:hover {
+    color: var(--ka2-gold);
+}
+
+/* ANIMATIONS */
+
+@keyframes ka2-glow-breathe {
+    0%, 100% {
+        opacity: 0.65;
+        scale: 0.92;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.08;
+    }
+}
+
+@keyframes ka2-orb-float-one {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(45px, -35px);
+    }
+}
+
+@keyframes ka2-orb-float-two {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-40px, 30px);
+    }
+}
+
+@keyframes ka2-board-motion {
+    from {
+        translate: -10px 0;
+    }
+
+    to {
+        translate: 20px -15px;
+    }
+}
+
+@keyframes ka2-piece-knight {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-22px) rotate(2deg);
+    }
+}
+
+@keyframes ka2-piece-king {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(16px);
+    }
+}
+
+@keyframes ka2-piece-bishop {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-15px, 20px);
+    }
+}
+
+@keyframes ka2-ring-rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+@keyframes ka2-content-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .ka2-motion-hero {
+        min-height: 650px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .ka2-motion-content h1 {
+        font-size: clamp(45px, 8vw, 65px);
+    }
+
+    .ka2-motion-content > p {
+        max-width: 470px;
+        font-size: 18px;
+    }
+
+    .ka2-motion-top {
+        left: 4%;
+        right: 4%;
+    }
+
+    .ka2-motion-top span:nth-child(2) {
+        display: none;
+    }
+
+    .ka2-motion-knight {
+        left: 4%;
+        top: 20%;
+    }
+
+    .ka2-motion-king {
+        right: 4%;
+        bottom: 17%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .ka2-motion-hero {
+        min-height: 680px;
+        height: auto;
+        max-height: none;
+        padding: 100px 20px 90px;
+    }
+
+    .ka2-motion-top {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .ka2-motion-top span:first-child {
+        font-size: 12px;
+    }
+
+    .ka2-motion-top span:last-child {
+        font-size: 8px;
+    }
+
+    .ka2-motion-content h1 {
+        font-size: clamp(40px, 10vw, 52px);
+        line-height: 1.08;
+        letter-spacing: -0.5px;
+    }
+
+    .ka2-motion-kicker {
+        gap: 8px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .ka2-motion-kicker span {
+        width: 15px;
+    }
+
+    .ka2-motion-content > p {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+
+    .ka2-motion-stats {
+        gap: 10px;
+        margin-top: 32px;
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .ka2-motion-bottom {
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .ka2-motion-knight {
+        top: 15%;
+        left: -8%;
+        font-size: 100px;
+        opacity: 0.6;
+    }
+
+    .ka2-motion-king {
+        right: -8%;
+        bottom: 12%;
+        font-size: 125px;
+    }
+
+    .ka2-motion-bishop {
+        right: 8%;
+        top: 17%;
+        font-size: 75px;
+    }
+
+    .ka2-ring-one {
+        width: 90vw;
+    }
+
+    .ka2-ring-two {
+        width: 68vw;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .ka2-motion-glow,
+    .ka2-motion-orb,
+    .ka2-motion-board,
+    .ka2-motion-piece,
+    .ka2-motion-ring,
+    .ka2-motion-content {
+        animation: none;
+    }
+
+    .ka2-motion-button,
+    .ka2-motion-content h1 span {
+        transition: none;
+    }
+}
+/* HOME 2 — SLIGHTLY TALLER HERO */
+
+.ka2-motion-hero {
+    height: calc(100svh - 145px);
+    min-height: 560px;
+    max-height: 700px;
+    padding: 65px 25px 65px;
+}
+
+.ka2-motion-content h1 {
+    font-size: clamp(56px, 6.5vw, 80px);
+    line-height: 1.08;
+}
+
+.ka2-motion-content > p {
+    max-width: 600px;
+    margin: 20px auto 0;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.ka2-motion-kicker {
+    margin-bottom: 22px;
+}
+
+.ka2-motion-button {
+    min-height: 50px;
+    margin-top: 24px;
+}
+
+.ka2-motion-stats {
+    margin-top: 30px;
+}
+
+.ka2-motion-bottom {
+    bottom: 17px;
+}
+
+/* SHORT DESKTOP SCREENS */
+
+@media (min-width: 769px) and (max-height: 750px) {
+    .ka2-motion-hero {
+        height: calc(100svh - 145px);
+        min-height: 560px;
+        max-height: 650px;
+    }
+
+    .ka2-motion-content h1 {
+        font-size: clamp(54px, 5.8vw, 72px);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .ka2-motion-hero {
+        height: auto;
+        min-height: 640px;
+        max-height: none;
+        padding: 90px 20px 80px;
+    }
+
+    .ka2-motion-content h1 {
+        font-size: clamp(42px, 10vw, 52px);
+    }
+}
+/* HOME 2 — BUTTON STYLE */
+
+.ka2-motion-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    min-height: 51px;
+    padding: 0 20px;
+
+    background: #124638;
+    border: 1px solid #124638;
+    border-radius: 3px;
+
+    color: #FFFFFF;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.ka2-motion-button span {
+    display: grid;
+    place-items: center;
+
+    width: auto;
+    height: auto;
+    padding-left: 13px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 19px;
+    transition: transform 0.3s ease;
+}
+
+.ka2-motion-button:hover {
+    background: #B88A4A;
+    border-color: #B88A4A;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.ka2-motion-button:hover span {
+    transform: translate(2px, -2px);
+}
+/* HOME 2 — MAKE BEST. 2026 VISIBLE */
+
+.ka2-motion-top span:last-child {
+    color: #B88A4A;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 1;
+    visibility: visible;
+    text-shadow: 0 0 8px rgba(184, 138, 74, 0.2);
+}
+/* HOME 2 — DARK MODE FIX */
+
+html[data-theme="dark"] .ka2-motion-hero,
+body.dark-mode .ka2-motion-hero,
+[data-theme="dark"] .ka2-motion-hero {
+    background: #111310 !important;
+    background-color: #111310 !important;
+}
+
+/* Remove green background layers */
+html[data-theme="dark"] .ka2-motion-bg,
+body.dark-mode .ka2-motion-bg,
+[data-theme="dark"] .ka2-motion-bg {
+    background: #111310 !important;
+    background-image: none !important;
+}
+
+/* Remove green glow */
+html[data-theme="dark"] .ka2-motion-glow,
+body.dark-mode .ka2-motion-glow,
+[data-theme="dark"] .ka2-motion-glow {
+    background: radial-gradient(
+        circle,
+        rgba(184, 138, 74, 0.12),
+        transparent 70%
+    ) !important;
+}
+
+/* Main heading */
+html[data-theme="dark"] .ka2-motion-content h1,
+body.dark-mode .ka2-motion-content h1,
+[data-theme="dark"] .ka2-motion-content h1 {
+    color: #F7F5EF !important;
+}
+
+/* SECONDARY COLOUR — Changes Everything */
+html[data-theme="dark"] .ka2-motion-content h1 span,
+body.dark-mode .ka2-motion-content h1 span,
+[data-theme="dark"] .ka2-motion-content h1 span {
+    color: #B88A4A !important;
+}
+
+/* Kicker and labels */
+html[data-theme="dark"] .ka2-motion-kicker,
+body.dark-mode .ka2-motion-kicker,
+[data-theme="dark"] .ka2-motion-kicker {
+    color: #B88A4A !important;
+}
+
+/* Description */
+html[data-theme="dark"] .ka2-motion-content > p,
+body.dark-mode .ka2-motion-content > p,
+[data-theme="dark"] .ka2-motion-content > p {
+    color: #E2DED5 !important;
+}
+
+/* Gold board pattern */
+html[data-theme="dark"] .ka2-motion-board-grid,
+body.dark-mode .ka2-motion-board-grid,
+[data-theme="dark"] .ka2-motion-board-grid {
+    opacity: 0.12;
+}
+
+/* Top and bottom labels */
+html[data-theme="dark"] .ka2-motion-top,
+html[data-theme="dark"] .ka2-motion-bottom,
+body.dark-mode .ka2-motion-top,
+body.dark-mode .ka2-motion-bottom,
+[data-theme="dark"] .ka2-motion-top,
+[data-theme="dark"] .ka2-motion-bottom {
+    color: #D4CFC4 !important;
+}
+
+/* Button */
+html[data-theme="dark"] .ka2-motion-button,
+body.dark-mode .ka2-motion-button,
+[data-theme="dark"] .ka2-motion-button {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #111310 !important;
+}
+
+html[data-theme="dark"] .ka2-motion-button:hover,
+body.dark-mode .ka2-motion-button:hover,
+[data-theme="dark"] .ka2-motion-button:hover {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #111310 !important;
+}
+/* HOME 2 — SAME BUTTON IN LIGHT & DARK MODE */
+
+.ka2-motion-button,
+html[data-theme="dark"] .ka2-motion-button,
+[data-theme="dark"] .ka2-motion-button,
+body.dark-mode .ka2-motion-button {
+    background: #004D40 !important;
+    border: 1px solid #004D40 !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+    transition: background 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.ka2-motion-button span,
+html[data-theme="dark"] .ka2-motion-button span,
+[data-theme="dark"] .ka2-motion-button span,
+body.dark-mode .ka2-motion-button span {
+    color: #FFFFFF !important;
+    border-left-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Hover — Secondary Gold */
+
+.ka2-motion-button:hover,
+html[data-theme="dark"] .ka2-motion-button:hover,
+[data-theme="dark"] .ka2-motion-button:hover,
+body.dark-mode .ka2-motion-button:hover {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+}
+
+.ka2-motion-button:hover span,
+html[data-theme="dark"] .ka2-motion-button:hover span,
+[data-theme="dark"] .ka2-motion-button:hover span,
+body.dark-mode .ka2-motion-button:hover span {
+    color: #FFFFFF !important;
+}
+/* Home 2 — Uniform card content background in dark mode */
+
+html[data-theme="dark"] .page-home-2 .ka2-program-card,
+html[data-theme="dark"] .page-home-2 .ka2-program-card > div,
+body.dark-mode .page-home-2 .ka2-program-card,
+body.dark-mode .page-home-2 .ka2-program-card > div,
+[data-theme="dark"] .page-home-2 .ka2-program-card,
+[data-theme="dark"] .page-home-2 .ka2-program-card > div {
+    background-color: #111111 !important;
+    background-image: none !important;
+}
+
+/* Keep every content layer the same shade */
+
+html[data-theme="dark"] .page-home-2 .ka2-program-card-content,
+html[data-theme="dark"] .page-home-2 .ka2-program-info,
+html[data-theme="dark"] .page-home-2 .ka2-program-body,
+body.dark-mode .page-home-2 .ka2-program-card-content,
+body.dark-mode .page-home-2 .ka2-program-info,
+body.dark-mode .page-home-2 .ka2-program-body,
+[data-theme="dark"] .page-home-2 .ka2-program-card-content,
+[data-theme="dark"] .page-home-2 .ka2-program-info,
+[data-theme="dark"] .page-home-2 .ka2-program-body {
+    background: #111111 !important;
+    background-color: #111111 !important;
+}
+/* HOME 2 — DARK MODE: WIDER IMAGE CAPTION */
+
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption {
+    width: calc(100% + 28px) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    left: 0 !important;
+    right: auto !important;
+    padding: 8px 14px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep the label in secondary gold */
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption strong,
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption span {
+    color: #B88A4A !important;
+    -webkit-text-fill-color: #B88A4A !important;
+}
+
+/* Keep the main caption white */
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption h2,
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption h3,
+html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption p {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: transparent !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+    html[data-theme="dark"] body.page-home-2 .ka2-session-image-caption {
+        width: 100% !important;
+    }
+}
+
+/* REVIEWS SECTION */
+.ka2-reviews {
+  padding: 80px 6%;
+  background: #f7f0e6;
+  color: #164638;
+}
+
+.ka2-reviews-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 44px;
+}
+
+.ka2-reviews-heading .ka2-eyebrow {
+  color: #b88a4a;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.ka2-reviews-heading h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.25;
+  margin: 18px 0;
+}
+
+.ka2-reviews-heading h2 em {
+  color: #b88a4a;
+}
+
+.ka2-reviews-heading > p {
+  line-height: 1.8;
+  color: #64746c;
+}
+
+.ka2-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.ka2-review-card {
+  padding: 30px 28px;
+  border: 1px solid #ead1b5;
+  border-radius: 16px;
+  background: #fffaf3;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ka2-review-card:hover {
+  transform: translateY(-6px);
+  border-color: #b88a4a;
+}
+
+.ka2-review-stars {
+  color: #b88a4a;
+  letter-spacing: 5px;
+  margin-bottom: 24px;
+}
+
+.ka2-review-card blockquote {
+  margin: 0 0 26px;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.ka2-review-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 22px;
+  border-top: 1px solid #ead8c5;
+}
+
+.ka2-review-author img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #b88a4a;
+}
+
+.ka2-review-author h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.ka2-review-author p {
+  margin: 0;
+  font-size: 13px;
+  color: #64746c;
+}
+
+@media (max-width: 900px) {
+  .ka2-reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ka2-reviews {
+    padding: 55px 5%;
+  }
+
+  .ka2-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka2-review-card {
+    padding: 24px 20px;
+  }
+}
+
+/* DARK MODE */
+html[data-theme="dark"] .ka2-reviews {
+  background: #10110f;
+  color: #f7f0e6;
+}
+
+html[data-theme="dark"] .ka2-review-card {
+  background: #171815;
+  border-color: #38362f;
+}
+
+html[data-theme="dark"] .ka2-review-card:hover {
+  border-color: #b88a4a;
+}
+
+html[data-theme="dark"] .ka2-review-author {
+  border-color: #38362f;
+}
+
+html[data-theme="dark"] .ka2-reviews-heading > p,
+html[data-theme="dark"] .ka2-review-author p {
+  color: #c1bdb2;
+}
+/* HOME 2 CTA — REMOVE BLUE BACKGROUND FROM ARROW BOX */
+html[data-theme="dark"] body.page-home-2
+.ka2-cta-redesign .ka2-cta-redesign__note
+.ka2-cta-redesign__note-icon {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #B88A4A !important;
+    border: 1px solid #B88A4A !important;
+    box-shadow: none !important;
+}
+body.page-home-2 .ka2-journey-visual {
+  position: relative;
+  height: 640px !important;
+  min-height: 0 !important;
+  padding: 0 0 24px 22px;
+  box-sizing: border-box;
+}
+
+body.page-home-2 .ka2-journey-visual > img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover;
+}
+/* Fix student feedback text visibility */
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) .ka2-review-card,
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) h3,
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) p,
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) strong,
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) span {
+  color: var(--ka2-green) !important;
+}
+
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) {
+  color: var(--ka2-green);
+}
+
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) .ka2-review-person,
+body.page-home-2 .ka2-review-card:not(.ka2-review-highlight) .ka2-review-person span {
+  color: var(--ka2-green) !important;
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}
+/* HOME 2 — IMAGE FIRST, CONTENT BELOW */
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  .ka2-session-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  .ka2-session-layout .ka2-session-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    overflow: hidden !important;
+  }
+
+  .ka2-session-layout .ka2-session-image img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .ka2-session-layout .ka2-timeline {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}

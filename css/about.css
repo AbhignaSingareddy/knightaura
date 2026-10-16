@@ -1,0 +1,3659 @@
+
+/* ==========================================
+   KNIGHTAURA CHESS ACADEMY
+   ABOUT PAGE — COMPLETE CSS
+   Theme: Forest Green, Gold & Cream
+   Header/Footer: Controlled by shared.css
+========================================== */
+
+/* ---------- BASE ---------- */
+
+.ka-about-new {
+  --an-green: #203c32;
+  --an-deep: #10271f;
+  --an-gold: #b88a4a;
+  --an-gold-light: #d8b77e;
+  --an-cream: #fff9f0;
+  --an-paper: #f4eee3;
+  --an-text: #29382f;
+  --an-muted: #69766d;
+  --an-border: rgba(32, 60, 50, 0.15);
+  --an-serif: "Bodoni Moda", Georgia, serif;
+  --an-body: "Crimson Pro", Georgia, serif;
+
+  width: 100%;
+  overflow: hidden;
+  color: var(--an-text);
+  background: var(--an-cream);
+  font-family: var(--an-body);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.ka-about-new *,
+.ka-about-new *::before,
+.ka-about-new *::after {
+  box-sizing: border-box;
+}
+
+.ka-about-new img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ka-about-new h1,
+.ka-about-new h2,
+.ka-about-new h3,
+.ka-about-new p {
+  margin-top: 0;
+}
+
+.ka-about-new h1,
+.ka-about-new h2,
+.ka-about-new h3 {
+  font-family: var(--an-serif);
+  font-weight: 500;
+}
+
+.ka-about-new h1,
+.ka-about-new h2 {
+  line-height: 1.17;
+  letter-spacing: -1px;
+}
+
+.ka-about-new h1 em,
+.ka-about-new h2 em {
+  color: var(--an-gold);
+  font-weight: 400;
+}
+
+.ka-about-new a {
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ka-about-new .an-section {
+  padding: 100px max(6%, calc((100% - 1200px) / 2));
+}
+
+/* ---------- COMMON LABELS ---------- */
+
+.ka-about-new .an-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--an-gold);
+  font: 700 11px/1.6 Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ka-about-new .an-label::before {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 1px;
+  background: var(--an-gold);
+  content: "";
+}
+
+.ka-about-new .an-label-light {
+  color: var(--an-gold-light);
+}
+
+/* ---------- BUTTONS & LINKS ---------- */
+
+.ka-about-new .an-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.ka-about-new .an-btn {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 14px 22px;
+  font: 700 12px/1.5 Arial, sans-serif;
+  text-align: center;
+}
+
+.ka-about-new .an-btn-green {
+  color: #fff;
+  background: var(--an-green);
+}
+
+.ka-about-new .an-btn-green:hover {
+  color: #fff;
+  background: var(--an-gold);
+  transform: translateY(-2px);
+}
+
+.ka-about-new .an-btn-gold {
+  color: var(--an-deep);
+  background: var(--an-gold-light);
+}
+
+.ka-about-new .an-btn-gold:hover {
+  color: var(--an-green);
+  background: var(--an-cream);
+  transform: translateY(-2px);
+}
+
+/* About Hero — Discover Our Story button */
+.ka-about-new .an-hero .an-buttons .an-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+  border: 1px solid #B88A4A;
+  border-radius: 4px;
+  background: transparent;
+
+  color: #B88A4A;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ka-about-new .an-hero .an-buttons .an-link:hover {
+  background: #B88A4A;
+  border-color: #B88A4A;
+  color: #10271F;
+  text-decoration: none;
+}
+/* ==========================================
+   01. HERO SECTION
+========================================== */
+
+.ka-about-new .an-hero {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  min-height: 640px;
+  background: var(--an-paper);
+}
+
+.ka-about-new .an-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 75px 7% 75px max(7%, calc((100vw - 1200px) / 2));
+}
+
+.ka-about-new .an-hero h1 {
+  max-width: 650px;
+  margin: 25px 0;
+  color: var(--an-green);
+  font-size: clamp(44px, 4.7vw, 68px);
+  line-height: 1.13;
+  letter-spacing: -1.7px;
+}
+
+.ka-about-new .an-hero-copy > p {
+  max-width: 510px;
+  margin-bottom: 28px;
+  color: var(--an-muted);
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 37px;
+}
+
+.ka-about-new .an-note-icon {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid var(--an-gold);
+  border-radius: 50%;
+  color: var(--an-gold);
+  font-size: 25px;
+}
+
+.ka-about-new .an-hero-note b,
+.ka-about-new .an-hero-note small {
+  display: block;
+}
+
+.ka-about-new .an-hero-note b {
+  color: var(--an-green);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ka-about-new .an-hero-note small {
+  color: var(--an-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-hero-image {
+  position: relative;
+  min-width: 0;
+  min-height: 640px;
+  padding: 24px 24px 24px 0;
+  background: var(--an-green);
+}
+
+.ka-about-new .an-hero-image > img {
+  min-height: 592px;
+}
+
+.ka-about-new .an-image-card {
+  position: absolute;
+  bottom: 75px;
+  left: -30px;
+  padding: 22px 26px;
+  background: var(--an-cream);
+  box-shadow: 0 12px 35px rgba(16, 39, 31, 0.15);
+}
+
+.ka-about-new .an-image-card small {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--an-gold);
+  font: 700 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1.6px;
+}
+
+.ka-about-new .an-image-card strong {
+  display: block;
+  color: var(--an-green);
+  font: 500 25px/1.4 var(--an-serif);
+}
+
+.ka-about-new .an-image-number {
+  position: absolute;
+  right: 35px;
+  bottom: 22px;
+  color: rgba(255, 249, 240, 0.8);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+/* ==========================================
+   02. OUR STORY
+========================================== */
+
+.ka-about-new .an-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.ka-about-new .an-story-images {
+  position: relative;
+  min-width: 0;
+  min-height: 490px;
+  padding: 0 42px 35px 0;
+}
+
+.ka-about-new .an-story-images::before {
+  position: absolute;
+  inset: 25px 17px 12px 25px;
+  border: 1px solid var(--an-gold);
+  content: "";
+}
+
+.ka-about-new .an-story-main {
+  position: relative;
+  z-index: 1;
+  min-height: 455px;
+}
+
+.ka-about-new .an-story-small {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: 43%;
+  height: 150px;
+  padding: 8px;
+  background: var(--an-cream);
+  box-shadow: 0 10px 30px rgba(16, 39, 31, 0.15);
+}
+
+.ka-about-new .an-number {
+  position: absolute;
+  z-index: 2;
+  top: -24px;
+  right: 0;
+  color: var(--an-gold);
+  font: 500 64px/1 var(--an-serif);
+}
+
+.ka-about-new .an-copy h2 {
+  margin: 22px 0;
+  color: var(--an-green);
+  font-size: clamp(38px, 4vw, 53px);
+}
+
+.ka-about-new .an-copy p {
+  margin-bottom: 18px;
+  color: var(--an-muted);
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.ka-about-new .an-copy .an-lead {
+  color: var(--an-green);
+  font-size: 22px;
+  line-height: 1.65;
+}
+
+.ka-about-new .an-copy .an-link {
+  margin-top: 12px;
+}
+
+/* ==========================================
+   03. MISSION & VISION
+========================================== */
+
+.ka-about-new .an-purpose {
+  background: var(--an-paper);
+}
+
+.ka-about-new .an-heading {
+  max-width: 730px;
+  margin: 0 auto 48px;
+}
+
+.ka-about-new .an-heading > h2 {
+  margin: 19px 0;
+  color: var(--an-green);
+  font-size: clamp(39px, 4.4vw, 56px);
+}
+
+.ka-about-new .an-heading > p {
+  color: var(--an-muted);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-purpose .an-heading {
+  text-align: center;
+}
+
+.ka-about-new .an-purpose .an-heading > .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ka-about-new .an-purpose-card {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 340px;
+  padding: 32px;
+  border: 1px solid var(--an-border);
+  background: var(--an-cream);
+}
+
+.ka-about-new .an-purpose-dark {
+  color: var(--an-cream);
+  background: var(--an-green);
+}
+
+.ka-about-new .an-card-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin-bottom: 24px;
+  border: 1px solid var(--an-gold);
+  border-radius: 50%;
+  color: var(--an-gold);
+  font-size: 26px;
+}
+
+.ka-about-new .an-purpose-card > small {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--an-gold);
+  font: 700 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1.7px;
+}
+
+.ka-about-new .an-purpose-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 15px;
+  color: var(--an-green);
+  font-size: clamp(27px, 2.6vw, 35px);
+  line-height: 1.35;
+}
+
+.ka-about-new .an-purpose-dark h3 {
+  color: var(--an-cream);
+}
+
+.ka-about-new .an-purpose-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--an-muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-purpose-dark p {
+  color: rgba(255, 249, 240, 0.78);
+}
+
+.ka-about-new .an-card-bottom {
+  display: block;
+  margin-top: 25px;
+  padding-top: 16px;
+  border-top: 1px solid var(--an-border);
+  color: var(--an-gold);
+  font: 700 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1.4px;
+}
+
+.ka-about-new .an-purpose-dark .an-card-bottom {
+  border-color: rgba(255, 249, 240, 0.25);
+}
+
+.ka-about-new .an-watermark {
+  position: absolute;
+  right: 0;
+  bottom: -45px;
+  color: rgba(255, 255, 255, 0.045);
+  font-size: 175px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ==========================================
+   04. HOW WE TEACH
+========================================== */
+
+.ka-about-new .an-heading-wide {
+  display: flex;
+  max-width: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.ka-about-new .an-heading-wide > div {
+  flex: 1;
+}
+
+.ka-about-new .an-heading-wide > p {
+  max-width: 440px;
+  margin-bottom: 8px;
+}
+
+.ka-about-new .an-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ka-about-new .an-learning-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--an-border);
+  background: #fffdf8;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ka-about-new .an-learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(16, 39, 31, 0.1);
+}
+
+.ka-about-new .an-learning-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.ka-about-new .an-learning-image img {
+  height: 220px;
+  transition: transform 0.4s ease;
+}
+
+.ka-about-new .an-learning-card:hover .an-learning-image img {
+  transform: scale(1.05);
+}
+
+.ka-about-new .an-learning-image > span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  background: var(--an-cream);
+  color: var(--an-green);
+  font: 500 19px var(--an-serif);
+}
+
+.ka-about-new .an-learning-copy {
+  padding: 23px 19px 26px;
+}
+
+.ka-about-new .an-learning-copy small {
+  display: block;
+  color: var(--an-gold);
+  font: 700 9px/1.6 Arial, sans-serif;
+  letter-spacing: 1.3px;
+}
+
+.ka-about-new .an-learning-copy h3 {
+  margin: 12px 0;
+  color: var(--an-green);
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.ka-about-new .an-learning-copy p {
+  margin-bottom: 0;
+  color: var(--an-muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   05. SKILLS BEYOND CHESS
+========================================== */
+
+.ka-about-new .an-skills {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  align-items: center;
+  gap: 75px;
+  color: var(--an-cream);
+  background: var(--an-deep);
+}
+
+.ka-about-new .an-skills-visual {
+  position: relative;
+  min-width: 0;
+  min-height: 490px;
+}
+
+.ka-about-new .an-skills-visual > img {
+  min-height: 490px;
+}
+
+.ka-about-new .an-quote {
+  position: absolute;
+  bottom: 22px;
+  left: -18px;
+  padding: 19px 24px;
+  color: var(--an-green);
+  background: var(--an-cream);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ka-about-new .an-quote > span {
+  color: var(--an-gold);
+  font: 500 38px/1 var(--an-serif);
+}
+
+.ka-about-new .an-quote p {
+  margin: 0;
+  font: 500 21px/1.5 var(--an-serif);
+}
+
+.ka-about-new .an-skills-copy h2 {
+  margin: 20px 0;
+  color: var(--an-cream);
+  font-size: clamp(39px, 4.2vw, 54px);
+}
+
+.ka-about-new .an-skills-copy > p {
+  margin-bottom: 28px;
+  color: rgba(255, 249, 240, 0.77);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-skill {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 15px;
+  padding: 19px 0;
+  border-top: 1px solid rgba(255, 249, 240, 0.17);
+}
+
+.ka-about-new .an-skill > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(184, 138, 74, 0.7);
+  border-radius: 50%;
+  color: var(--an-gold-light);
+  font-size: 23px;
+}
+
+.ka-about-new .an-skill h3 {
+  margin-bottom: 5px;
+  color: var(--an-cream);
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.ka-about-new .an-skill p {
+  margin-bottom: 0;
+  color: rgba(255, 249, 240, 0.73);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-skill > b {
+  color: var(--an-gold-light);
+  font-family: Arial, sans-serif;
+}
+
+/* ==========================================
+   06. COACHING APPROACH
+========================================== */
+
+.ka-about-new .an-coaching-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding: 25px;
+  border: 1px solid var(--an-border);
+  background: var(--an-paper);
+}
+
+.ka-about-new .an-coaching-image {
+  position: relative;
+  min-width: 0;
+  min-height: 440px;
+}
+
+.ka-about-new .an-coaching-image img {
+  min-height: 440px;
+}
+
+.ka-about-new .an-coaching-image > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 14px 17px;
+  color: #fff;
+  background: var(--an-green);
+  font: 700 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1.3px;
+}
+
+.ka-about-new .an-coaching-copy > small {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--an-gold);
+  font: 700 10px/1.6 Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.ka-about-new .an-coaching-copy h3 {
+  margin: 16px 0;
+  color: var(--an-green);
+  font-size: clamp(31px, 3.2vw, 43px);
+  line-height: 1.3;
+}
+
+.ka-about-new .an-coaching-copy > p {
+  color: var(--an-muted);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-coaching-copy ul {
+  display: grid;
+  gap: 13px;
+  margin: 25px 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.ka-about-new .an-coaching-copy li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--an-text);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-coaching-copy li span {
+  flex: 0 0 auto;
+  color: var(--an-gold);
+  font: 700 17px/1.8 Arial, sans-serif;
+}
+
+/* ==========================================
+   07. FINAL CALL TO ACTION
+========================================== */
+
+.ka-about-new .an-final {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+  min-height: 450px;
+  color: var(--an-cream);
+  background: var(--an-green);
+}
+
+.ka-about-new .an-final-image {
+  min-width: 0;
+  min-height: 450px;
+}
+
+.ka-about-new .an-final-image img {
+  min-height: 450px;
+}
+
+.ka-about-new .an-final-copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  padding: 65px 9%;
+}
+
+.ka-about-new .an-final-copy h2 {
+  margin: 22px 0;
+  color: var(--an-cream);
+  font-size: clamp(39px, 4.2vw, 55px);
+  line-height: 1.2;
+}
+
+.ka-about-new .an-final-copy > p {
+  max-width: 490px;
+  margin-bottom: 28px;
+  color: rgba(255, 249, 240, 0.8);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.ka-about-new .an-final-knight {
+  position: absolute;
+  right: 20px;
+  bottom: -65px;
+  color: rgba(255, 255, 255, 0.045);
+  font-size: 220px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 1100px) {
+  .ka-about-new .an-section {
+    padding: 80px 5%;
+  }
+
+  .ka-about-new .an-hero-copy {
+    padding-left: 6%;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: clamp(42px, 5vw, 58px);
+  }
+
+  .ka-about-new .an-story,
+  .ka-about-new .an-skills {
+    gap: 45px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 250px;
+  }
+
+  .ka-about-new .an-coaching-grid {
+    gap: 32px;
+  }
+
+  .ka-about-new .an-coaching-copy h3 {
+    font-size: 34px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 760px) {
+  .ka-about-new {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .ka-about-new .an-section {
+    padding: 65px 6%;
+  }
+
+  /* Hero */
+  .ka-about-new .an-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-hero-copy {
+    padding: 55px 6%;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: clamp(39px, 9vw, 53px);
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+  }
+
+  .ka-about-new .an-hero-copy > p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .ka-about-new .an-hero-image {
+    min-height: 410px;
+    padding: 15px;
+  }
+
+  .ka-about-new .an-hero-image > img {
+    min-height: 380px;
+    max-height: 480px;
+  }
+
+  .ka-about-new .an-image-card {
+    bottom: 52px;
+    left: 0;
+    padding: 18px 20px;
+  }
+
+  .ka-about-new .an-image-card strong {
+    font-size: 23px;
+  }
+
+  /* Story */
+  .ka-about-new .an-story {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .ka-about-new .an-story-images {
+    min-height: 365px;
+    padding-right: 35px;
+    padding-bottom: 32px;
+  }
+
+  .ka-about-new .an-story-main {
+    min-height: 335px;
+  }
+
+  .ka-about-new .an-story-small {
+    height: 115px;
+  }
+
+  .ka-about-new .an-number {
+    font-size: 52px;
+  }
+
+  .ka-about-new .an-copy h2,
+  .ka-about-new .an-heading > h2,
+  .ka-about-new .an-skills-copy h2,
+  .ka-about-new .an-final-copy h2 {
+    font-size: clamp(34px, 7.5vw, 44px);
+    line-height: 1.22;
+  }
+
+  .ka-about-new .an-copy p,
+  .ka-about-new .an-heading > p,
+  .ka-about-new .an-skills-copy > p,
+  .ka-about-new .an-coaching-copy > p,
+  .ka-about-new .an-final-copy > p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .ka-about-new .an-copy .an-lead {
+    font-size: 20px;
+  }
+
+  /* Mission and vision */
+  .ka-about-new .an-purpose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-purpose-card {
+    min-height: 300px;
+    padding: 26px;
+  }
+
+  .ka-about-new .an-purpose-card h3 {
+    font-size: 29px;
+  }
+
+  .ka-about-new .an-purpose-card p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  /* Learning */
+  .ka-about-new .an-heading-wide {
+    display: block;
+  }
+
+  .ka-about-new .an-heading-wide > p {
+    margin-top: 20px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 255px;
+  }
+
+  .ka-about-new .an-learning-copy {
+    padding: 22px 20px 25px;
+  }
+
+  .ka-about-new .an-learning-copy h3 {
+    font-size: 24px;
+  }
+
+  .ka-about-new .an-learning-copy p {
+    font-size: 17px;
+  }
+
+  /* Skills */
+  .ka-about-new .an-skills {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ka-about-new .an-skills-visual,
+  .ka-about-new .an-skills-visual > img {
+    min-height: 340px;
+  }
+
+  .ka-about-new .an-quote {
+    left: -8px;
+  }
+
+  .ka-about-new .an-skill {
+    grid-template-columns: 40px minmax(0, 1fr) 15px;
+    gap: 12px;
+  }
+
+  .ka-about-new .an-skill > span {
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+  }
+
+  .ka-about-new .an-skill h3 {
+    font-size: 20px;
+  }
+
+  .ka-about-new .an-skill p {
+    font-size: 16px;
+  }
+
+  /* Coaching */
+  .ka-about-new .an-coaching-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 15px;
+  }
+
+  .ka-about-new .an-coaching-image,
+  .ka-about-new .an-coaching-image img {
+    min-height: 330px;
+  }
+
+  .ka-about-new .an-coaching-copy {
+    padding: 8px 5px 12px;
+  }
+
+  .ka-about-new .an-coaching-copy h3 {
+    font-size: 32px;
+  }
+
+  .ka-about-new .an-coaching-copy li {
+    font-size: 16px;
+  }
+
+  /* Final CTA */
+  .ka-about-new .an-final {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-final-image {
+    min-height: 260px;
+    max-height: 330px;
+  }
+
+  .ka-about-new .an-final-image img {
+    min-height: 260px;
+    max-height: 330px;
+  }
+
+  .ka-about-new .an-final-copy {
+    padding: 45px 6% 55px;
+  }
+
+  .ka-about-new .an-final-copy h2 {
+    font-size: 39px;
+  }
+
+  .ka-about-new .an-final-knight {
+    right: 5px;
+    bottom: -30px;
+    font-size: 140px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 420px) {
+  .ka-about-new .an-section {
+    padding: 55px 5%;
+  }
+
+  .ka-about-new .an-hero-copy {
+    padding: 45px 5%;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: 37px;
+  }
+
+  .ka-about-new .an-hero-copy > p {
+    font-size: 17px;
+  }
+
+  .ka-about-new .an-hero .an-buttons,
+  .ka-about-new .an-final-copy .an-buttons {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .ka-about-new .an-hero .an-btn,
+  .ka-about-new .an-final-copy .an-btn {
+    width: 100%;
+  }
+
+  .ka-about-new .an-story-images {
+    min-height: 305px;
+  }
+
+  .ka-about-new .an-story-main {
+    min-height: 275px;
+  }
+
+  .ka-about-new .an-story-small {
+    width: 45%;
+    height: 95px;
+  }
+
+  .ka-about-new .an-copy h2,
+  .ka-about-new .an-heading > h2,
+  .ka-about-new .an-skills-copy h2,
+  .ka-about-new .an-final-copy h2 {
+    font-size: 32px;
+  }
+
+  .ka-about-new .an-purpose-card {
+    padding: 23px 20px;
+  }
+
+  .ka-about-new .an-learning-copy {
+    padding: 20px 17px;
+  }
+
+  .ka-about-new .an-skill {
+    grid-template-columns: 35px minmax(0, 1fr) 12px;
+    gap: 10px;
+  }
+
+  .ka-about-new .an-skill > span {
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+  }
+
+  .ka-about-new .an-skill h3 {
+    font-size: 19px;
+  }
+
+  .ka-about-new .an-btn {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .ka-about-new *,
+  .ka-about-new *::before,
+  .ka-about-new *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* About page-only composition */
+body.page-about .section:nth-of-type(2) .section-head{margin-bottom:48px}
+body.page-about .section:nth-of-type(3) .split-section{border-inline-start:2px solid var(--color-secondary);padding-inline-start:28px}
+body.page-about .section:nth-of-type(4) .feature-card{border:0;border-bottom:1px solid var(--color-border);background:transparent}
+body.page-about .section:nth-of-type(4) .feature-card img{aspect-ratio:4/3}
+
+/* ==========================================
+   ABOUT PAGE — MEDIUM TEXT SIZE
+========================================== */
+
+/* Normal paragraph text */
+.ka-about-new .an-hero-copy > p,
+.ka-about-new .an-copy p,
+.ka-about-new .an-heading > p,
+.ka-about-new .an-skills-copy > p,
+.ka-about-new .an-coaching-copy > p,
+.ka-about-new .an-final-copy > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Lead paragraphs */
+.ka-about-new .an-copy .an-lead {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Mission and vision cards */
+.ka-about-new .an-purpose-card p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Learning cards */
+.ka-about-new .an-learning-copy p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Coaching list */
+.ka-about-new .an-coaching-copy li {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Skill descriptions */
+.ka-about-new .an-skill p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Tablet and mobile */
+@media (max-width: 760px) {
+  .ka-about-new .an-hero-copy > p,
+  .ka-about-new .an-copy p,
+  .ka-about-new .an-heading > p,
+  .ka-about-new .an-skills-copy > p,
+  .ka-about-new .an-coaching-copy > p,
+  .ka-about-new .an-final-copy > p,
+  .ka-about-new .an-purpose-card p,
+  .ka-about-new .an-learning-copy p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ka-about-new .an-copy .an-lead {
+    font-size: 17px;
+  }
+
+  .ka-about-new .an-coaching-copy li {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   KNIGHTAURA ABOUT PAGE — FINAL OVERRIDES
+   Paste at the END of about.css
+========================================== */
+
+.ka-about-new {
+  --an-green: #123f32;
+  --an-deep: #0b2d24;
+  --an-gold: #B88A4A;
+  --an-gold-light: #e3bd7e;
+  --an-cream: #fff9f0;
+  --an-paper: #f4eee3;
+  --an-text: #29382f;
+  --an-muted: #69766d;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ka-about-new p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-copy .an-lead {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-purpose-card p,
+.ka-about-new .an-learning-copy p,
+.ka-about-new .an-coaching-copy > p,
+.ka-about-new .an-final-copy > p,
+.ka-about-new .an-skills-copy > p,
+.ka-about-new .an-hero-copy > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Consistent section spacing */
+.ka-about-new .an-section {
+  padding-block: 76px;
+}
+
+/* 01 — Centered background hero */
+.ka-about-new .an-hero {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  grid-template-columns: 1fr;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 70px 24px;
+  color: var(--an-cream);
+  background: var(--an-deep);
+}
+
+/* Use the existing hero image as a full background */
+.ka-about-new .an-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  min-height: 0;
+  padding: 0;
+  background: var(--an-deep);
+}
+
+.ka-about-new .an-hero-image > img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 48%;
+  opacity: 0.68;
+}
+
+.ka-about-new .an-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    135deg,
+    rgba(11, 45, 36, 0.93),
+    rgba(18, 63, 50, 0.72)
+  );
+}
+
+.ka-about-new .an-hero-copy {
+  width: min(850px, 100%);
+  align-items: center;
+  padding: 0;
+  text-align: center;
+}
+
+.ka-about-new .an-hero .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-hero h1 {
+  max-width: 850px;
+  margin: 20px 0;
+  color: var(--an-cream);
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.15;
+}
+
+.ka-about-new .an-hero h1 em {
+  color: var(--an-gold-light);
+}
+
+.ka-about-new .an-hero-copy > p {
+  max-width: 650px;
+  margin-bottom: 24px;
+  color: rgba(255, 249, 240, 0.9);
+}
+
+.ka-about-new .an-hero-note,
+.ka-about-new .an-image-card,
+.ka-about-new .an-image-number {
+  display: none;
+}
+
+/* Buttons — primary by default, secondary on hover */
+.ka-about-new .an-btn {
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ka-about-new .an-btn-green {
+  color: var(--an-cream);
+  background: var(--an-green);
+}
+
+.ka-about-new .an-btn-green:hover,
+.ka-about-new .an-btn-green:focus-visible {
+  color: var(--an-deep);
+  background: var(--an-gold-light);
+  border-color: var(--an-gold-light);
+  transform: translateY(-2px);
+}
+
+.ka-about-new .an-btn-gold {
+  color: var(--an-deep);
+  background: var(--an-gold-light);
+}
+
+.ka-about-new .an-btn-gold:hover,
+.ka-about-new .an-btn-gold:focus-visible {
+  color: var(--an-cream);
+  background: var(--an-green);
+  border-color: var(--an-gold-light);
+  transform: translateY(-2px);
+}
+
+.ka-about-new .an-link {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ka-about-new .an-link:hover {
+  color: var(--an-gold);
+}
+
+/* 02 — Story: image and content equal height */
+.ka-about-new .an-story {
+  gap: 48px;
+}
+
+.ka-about-new .an-story-images {
+  min-height: 430px;
+}
+
+.ka-about-new .an-story-main {
+  height: 100%;
+  min-height: 430px;
+}
+
+.ka-about-new .an-story-main img {
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+}
+
+/* 03 — Mission and vision */
+.ka-about-new .an-purpose .an-heading {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.ka-about-new .an-purpose .an-heading > .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-purpose-grid {
+  gap: 22px;
+}
+
+.ka-about-new .an-purpose-card {
+  min-height: 300px;
+  padding: 28px;
+}
+
+/* 04 — Learning section centered introduction */
+.ka-about-new .an-heading-wide {
+  display: block;
+  max-width: 780px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.ka-about-new .an-heading-wide .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-heading-wide > p {
+  max-width: 650px;
+  margin: 15px auto 0;
+}
+
+.ka-about-new .an-learning-grid {
+  gap: 18px;
+}
+
+.ka-about-new .an-learning-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-learning-copy {
+  padding: 20px 18px 22px;
+}
+
+.ka-about-new .an-learning-copy h3 {
+  font-size: 23px;
+}
+
+.ka-about-new .an-learning-copy p {
+  font-size: 16px;
+}
+
+/* 05 — Skills section */
+.ka-about-new .an-skills {
+  gap: 48px;
+}
+
+.ka-about-new .an-skills-visual,
+.ka-about-new .an-skills-visual > img {
+  min-height: 430px;
+}
+
+.ka-about-new .an-skill {
+  padding-block: 15px;
+}
+
+.ka-about-new .an-skill h3 {
+  font-size: 20px;
+}
+
+.ka-about-new .an-skill p {
+  font-size: 15px;
+}
+
+/* 06 — Coaching section */
+.ka-about-new .an-coaching-grid {
+  gap: 36px;
+  padding: 22px;
+}
+
+.ka-about-new .an-coaching-image,
+.ka-about-new .an-coaching-image img {
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-coaching-copy h3 {
+  margin-block: 12px;
+}
+
+.ka-about-new .an-coaching-copy > p {
+  font-size: 16px;
+}
+
+.ka-about-new .an-coaching-copy li {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* 07 — CTA: compact height and smaller footer gap */
+.ka-about-new .an-final {
+  min-height: 350px;
+  margin-bottom: 18px;
+}
+
+.ka-about-new .an-final-image,
+.ka-about-new .an-final-image img {
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-final-copy {
+  padding: 38px 7%;
+}
+
+.ka-about-new .an-final-copy h2 {
+  margin-block: 14px;
+  font-size: clamp(32px, 3.7vw, 46px);
+}
+
+.ka-about-new .an-final-copy > p {
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* Animations */
+@keyframes anFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anSoftZoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.ka-about-new .an-hero-copy > * {
+  animation: anFadeUp 0.7s ease both;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.ka-about-new .an-hero-image > img {
+  animation: anSoftZoom 1.2s ease both;
+}
+
+.ka-about-new .an-learning-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ka-about-new .an-learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(11, 45, 36, 0.12);
+}
+
+.ka-about-new .an-learning-card img,
+.ka-about-new .an-story-main img,
+.ka-about-new .an-coaching-image img {
+  transition: transform 0.45s ease;
+}
+
+.ka-about-new .an-learning-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Dark mode: follows existing root/body theme classes */
+html.dark .ka-about-new,
+body.dark-mode .ka-about-new,
+body[data-theme="dark"] .ka-about-new {
+  --an-cream: #172b23;
+  --an-paper: #20382e;
+  --an-text: #f4eee3;
+  --an-muted: #d0d6ce;
+  --an-border: rgba(227, 189, 126, 0.22);
+}
+
+html.dark .ka-about-new .an-learning-card,
+body.dark-mode .ka-about-new .an-learning-card,
+body[data-theme="dark"] .ka-about-new .an-learning-card {
+  background: var(--an-paper);
+}
+
+html.dark .ka-about-new .an-copy h2,
+html.dark .ka-about-new .an-purpose-card h3,
+html.dark .ka-about-new .an-learning-copy h3,
+body.dark-mode .ka-about-new .an-copy h2,
+body.dark-mode .ka-about-new .an-purpose-card h3,
+body.dark-mode .ka-about-new .an-learning-copy h3,
+body[data-theme="dark"] .ka-about-new .an-copy h2,
+body[data-theme="dark"] .ka-about-new .an-purpose-card h3,
+body[data-theme="dark"] .ka-about-new .an-learning-copy h3 {
+  color: var(--an-cream);
+}
+
+/* RTL support */
+html[dir="rtl"] .ka-about-new .an-hero-copy,
+html[dir="rtl"] .ka-about-new .an-heading-wide,
+html[dir="rtl"] .ka-about-new .an-purpose .an-heading {
+  text-align: center;
+}
+
+html[dir="rtl"] .ka-about-new .an-story,
+html[dir="rtl"] .ka-about-new .an-skills,
+html[dir="rtl"] .ka-about-new .an-coaching-grid,
+html[dir="rtl"] .ka-about-new .an-final {
+  direction: rtl;
+}
+
+html[dir="rtl"] .ka-about-new .an-label::before {
+  order: 2;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ka-about-new .an-section {
+    padding-block: 60px;
+  }
+
+  .ka-about-new .an-hero {
+    min-height: 450px;
+  }
+
+  .ka-about-new .an-story,
+  .ka-about-new .an-skills {
+    gap: 30px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ka-about-new .an-coaching-grid {
+    gap: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ka-about-new p,
+  .ka-about-new .an-hero-copy > p,
+  .ka-about-new .an-copy p,
+  .ka-about-new .an-heading > p,
+  .ka-about-new .an-purpose-card p,
+  .ka-about-new .an-learning-copy p,
+  .ka-about-new .an-skills-copy > p,
+  .ka-about-new .an-coaching-copy > p,
+  .ka-about-new .an-final-copy > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ka-about-new .an-copy .an-lead {
+    font-size: 17px;
+  }
+
+  .ka-about-new .an-hero {
+    min-height: 420px;
+    padding: 52px 20px;
+  }
+
+  .ka-about-new .an-hero-copy {
+    align-items: center;
+    padding: 0;
+    text-align: center;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: clamp(34px, 7vw, 46px);
+  }
+
+  .ka-about-new .an-hero .an-buttons {
+    justify-content: center;
+  }
+
+  .ka-about-new .an-section {
+    padding: 52px 6%;
+  }
+
+  .ka-about-new .an-story,
+  .ka-about-new .an-skills,
+  .ka-about-new .an-coaching-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-story-images,
+  .ka-about-new .an-story-main,
+  .ka-about-new .an-story-main img {
+    min-height: 300px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 175px;
+  }
+
+  .ka-about-new .an-skills-visual,
+  .ka-about-new .an-skills-visual > img {
+    min-height: 300px;
+  }
+
+  .ka-about-new .an-coaching-image,
+  .ka-about-new .an-coaching-image img {
+    min-height: 280px;
+  }
+
+  .ka-about-new .an-final {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin-bottom: 12px;
+  }
+
+  .ka-about-new .an-final-image,
+  .ka-about-new .an-final-image img {
+    min-height: 220px;
+    max-height: 260px;
+  }
+
+  .ka-about-new .an-final-copy {
+    padding: 32px 6% 38px;
+  }
+}
+
+/* Small mobile — 360px */
+@media (max-width: 420px) {
+  .ka-about-new .an-hero {
+    min-height: 390px;
+    padding: 42px 18px;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: 33px;
+    letter-spacing: -0.5px;
+  }
+
+  .ka-about-new .an-section {
+    padding: 42px 5%;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 210px;
+  }
+
+  .ka-about-new .an-buttons {
+    gap: 12px;
+  }
+
+  .ka-about-new .an-btn {
+    min-height: 44px;
+    padding: 11px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ka-about-new *,
+  .ka-about-new *::before,
+  .ka-about-new *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==================================================
+   KNIGHTAURA ABOUT PAGE — FINAL DESIGN OVERRIDES
+   Hero • Spacing • Typography • Buttons • Footer
+   Responsive • Dark Mode • RTL • Animations
+================================================== */
+
+.ka-about-new {
+  --an-green: #123f32;
+  --an-deep: #0b2d24;
+  --an-gold: #B88A4A;
+  --an-gold-light: #e3bd7e;
+  --an-cream: #fff9f0;
+  --an-paper: #f4eee3;
+  --an-text: #29382f;
+  --an-muted: #69766d;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ka-about-new *,
+.ka-about-new *::before,
+.ka-about-new *::after {
+  box-sizing: border-box;
+}
+
+.ka-about-new p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ka-about-new .an-copy .an-lead {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* SECTION SPACING */
+
+.ka-about-new .an-section {
+  padding-block: 100px;
+}
+
+.ka-about-new .an-purpose .an-heading {
+  margin-bottom: 55px;
+}
+
+.ka-about-new .an-heading-wide {
+  display: block;
+  max-width: 780px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.ka-about-new .an-heading-wide .an-label,
+.ka-about-new .an-purpose .an-heading > .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-heading-wide > p {
+  max-width: 650px;
+  margin: 15px auto 0;
+}
+
+.ka-about-new .an-purpose-grid,
+.ka-about-new .an-learning-grid {
+  row-gap: 28px;
+}
+
+.ka-about-new .an-story,
+.ka-about-new .an-skills {
+  gap: 60px;
+}
+
+.ka-about-new .an-coaching-grid {
+  gap: 45px;
+}
+
+/* HERO — CENTERED IMAGE BACKGROUND */
+
+.ka-about-new .an-hero {
+  position: relative;
+  display: grid;
+  min-height: 580px;
+  grid-template-columns: 1fr;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 80px 24px;
+  color: var(--an-cream);
+  background: #101410;
+}
+
+.ka-about-new .an-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  min-height: 0;
+  padding: 0;
+  background: #101410;
+}
+
+.ka-about-new .an-hero-image > img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  animation: kaAboutZoom 1.2s ease both;
+}
+
+.ka-about-new .an-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.ka-about-new .an-hero-copy {
+  width: min(950px, 100%);
+  align-items: center;
+  padding: 0;
+  text-align: center;
+}
+
+.ka-about-new .an-hero .an-label {
+  justify-content: center;
+}
+
+.ka-about-new .an-hero h1 {
+  max-width: 950px;
+  margin: 20px 0;
+  color: var(--an-cream);
+  font-size: clamp(46px, 5.5vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+
+.ka-about-new .an-hero h1 em {
+  color: var(--an-gold-light);
+}
+
+.ka-about-new .an-hero-copy > p {
+  max-width: 720px;
+  margin-bottom: 24px;
+  color: rgba(255, 249, 240, 0.92);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.ka-about-new .an-hero .an-buttons {
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.ka-about-new .an-hero-note,
+.ka-about-new .an-image-card,
+.ka-about-new .an-image-number {
+  display: none;
+}
+
+/* BUTTONS — PRIMARY DEFAULT, SECONDARY ON HOVER */
+
+.ka-about-new .an-btn {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ka-about-new .an-btn-green {
+  color: var(--an-cream);
+  background: var(--an-green);
+}
+
+.ka-about-new .an-btn-green:hover,
+.ka-about-new .an-btn-green:focus-visible {
+  color: var(--an-deep);
+  background: var(--an-gold-light);
+  border-color: var(--an-gold-light);
+  transform: translateY(-2px);
+}
+
+.ka-about-new .an-btn-gold {
+  color: var(--an-deep);
+  background: var(--an-gold-light);
+}
+
+.ka-about-new .an-btn-gold:hover,
+.ka-about-new .an-btn-gold:focus-visible {
+  color: var(--an-cream);
+  background: var(--an-green);
+  border-color: var(--an-gold-light);
+  transform: translateY(-2px);
+}
+
+.ka-about-new .an-link:hover,
+.ka-about-new .an-final-link:hover {
+  color: var(--an-gold);
+}
+
+/* STORY IMAGE AND CONTENT HEIGHT */
+
+.ka-about-new .an-story-images {
+  min-height: 430px;
+}
+
+.ka-about-new .an-story-main {
+  height: 100%;
+  min-height: 430px;
+}
+
+.ka-about-new .an-story-main img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+}
+
+/* MISSION AND VISION */
+
+.ka-about-new .an-purpose-card {
+  min-height: 300px;
+  padding: 28px;
+}
+
+.ka-about-new .an-purpose-card p,
+.ka-about-new .an-learning-copy p,
+.ka-about-new .an-skills-copy > p,
+.ka-about-new .an-coaching-copy > p,
+.ka-about-new .an-final-copy > p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* LEARNING CARDS */
+
+.ka-about-new .an-learning-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-learning-copy {
+  padding: 20px 18px 22px;
+}
+
+.ka-about-new .an-learning-copy h3 {
+  font-size: 23px;
+}
+
+.ka-about-new .an-learning-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ka-about-new .an-learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(11, 45, 36, 0.12);
+}
+
+.ka-about-new .an-learning-card img,
+.ka-about-new .an-story-main img,
+.ka-about-new .an-coaching-image img {
+  transition: transform 0.45s ease;
+}
+
+.ka-about-new .an-learning-card:hover img {
+  transform: scale(1.04);
+}
+
+/* SKILLS */
+
+.ka-about-new .an-skills-visual,
+.ka-about-new .an-skills-visual > img {
+  min-height: 430px;
+}
+
+.ka-about-new .an-skill {
+  padding-block: 15px;
+}
+
+.ka-about-new .an-skill h3 {
+  font-size: 20px;
+}
+
+.ka-about-new .an-skill p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* COACHING */
+
+.ka-about-new .an-coaching-grid {
+  padding: 22px;
+}
+
+.ka-about-new .an-coaching-image,
+.ka-about-new .an-coaching-image img {
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-coaching-copy h3 {
+  margin-block: 12px;
+}
+
+.ka-about-new .an-coaching-copy li {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* FINAL CTA — COMPACT AND CLOSE TO FOOTER */
+
+.ka-about-new .an-final {
+  min-height: 350px;
+  margin-bottom: 12px;
+}
+
+.ka-about-new .an-final-image,
+.ka-about-new .an-final-image img {
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+.ka-about-new .an-final-copy {
+  padding: 38px 7%;
+}
+
+.ka-about-new .an-final-copy h2 {
+  margin-block: 14px;
+  font-size: clamp(32px, 3.7vw, 46px);
+}
+
+.ka-about-new .an-final-copy > p {
+  margin-bottom: 18px;
+}
+
+/* ANIMATIONS */
+
+@keyframes kaAboutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kaAboutZoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+.ka-about-new .an-hero-copy > * {
+  animation: kaAboutFadeUp 0.7s ease both;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.ka-about-new .an-hero-copy > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* DARK MODE — USES COMMON THEME CLASSES */
+
+html.dark .ka-about-new,
+body.dark-mode .ka-about-new,
+body[data-theme="dark"] .ka-about-new {
+  --an-cream: #172b23;
+  --an-paper: #20382e;
+  --an-text: #f4eee3;
+  --an-muted: #d0d6ce;
+  --an-border: rgba(227, 189, 126, 0.22);
+}
+
+html.dark .ka-about-new .an-learning-card,
+body.dark-mode .ka-about-new .an-learning-card,
+body[data-theme="dark"] .ka-about-new .an-learning-card {
+  background: var(--an-paper);
+}
+
+/* RTL */
+
+html[dir="rtl"] .ka-about-new .an-hero-copy,
+html[dir="rtl"] .ka-about-new .an-heading-wide,
+html[dir="rtl"] .ka-about-new .an-purpose .an-heading {
+  text-align: center;
+}
+
+html[dir="rtl"] .ka-about-new .an-story,
+html[dir="rtl"] .ka-about-new .an-skills,
+html[dir="rtl"] .ka-about-new .an-coaching-grid,
+html[dir="rtl"] .ka-about-new .an-final {
+  direction: rtl;
+}
+
+/* FOOTER — REMOVE TOP LINE ONLY ON ABOUT PAGE */
+
+body.page-about footer,
+body.page-about .site-footer {
+  border-top: none !important;
+  box-shadow: none;
+}
+
+/* TABLET — 768px TO 1024px */
+
+@media (max-width: 1024px) {
+  .ka-about-new .an-section {
+    padding-block: 75px;
+  }
+
+  .ka-about-new .an-story,
+  .ka-about-new .an-skills {
+    gap: 30px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ka-about-new .an-coaching-grid {
+    gap: 24px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .ka-about-new p,
+  .ka-about-new .an-hero-copy > p,
+  .ka-about-new .an-copy p,
+  .ka-about-new .an-heading > p,
+  .ka-about-new .an-purpose-card p,
+  .ka-about-new .an-learning-copy p,
+  .ka-about-new .an-skills-copy > p,
+  .ka-about-new .an-coaching-copy > p,
+  .ka-about-new .an-final-copy > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ka-about-new .an-copy .an-lead {
+    font-size: 17px;
+  }
+
+  .ka-about-new .an-hero {
+    min-height: 540px;
+    padding: 55px 20px;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: clamp(37px, 8vw, 52px);
+  }
+
+  .ka-about-new .an-section {
+    padding: 60px 6%;
+  }
+
+  .ka-about-new .an-story,
+  .ka-about-new .an-skills,
+  .ka-about-new .an-coaching-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-story-images,
+  .ka-about-new .an-story-main,
+  .ka-about-new .an-story-main img {
+    min-height: 300px;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 175px;
+  }
+
+  .ka-about-new .an-skills-visual,
+  .ka-about-new .an-skills-visual > img {
+    min-height: 300px;
+  }
+
+  .ka-about-new .an-coaching-image,
+  .ka-about-new .an-coaching-image img {
+    min-height: 280px;
+  }
+
+  .ka-about-new .an-final {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin-bottom: 12px;
+  }
+
+  .ka-about-new .an-final-image,
+  .ka-about-new .an-final-image img {
+    min-height: 220px;
+    max-height: 260px;
+  }
+
+  .ka-about-new .an-final-copy {
+    padding: 32px 6% 38px;
+  }
+}
+
+/* SMALL MOBILE — 360px */
+
+@media (max-width: 420px) {
+  .ka-about-new .an-hero {
+    min-height: 500px;
+    padding: 45px 18px;
+  }
+
+  .ka-about-new .an-hero h1 {
+    font-size: 35px;
+  }
+
+  .ka-about-new .an-section {
+    padding: 42px 5%;
+  }
+
+  .ka-about-new .an-learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ka-about-new .an-learning-image img {
+    height: 210px;
+  }
+
+  .ka-about-new .an-buttons {
+    gap: 12px;
+  }
+
+  .ka-about-new .an-btn {
+    min-height: 44px;
+    padding: 11px 16px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .ka-about-new *,
+  .ka-about-new *::before,
+  .ka-about-new *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Increase gap before WHO WE ARE section */
+body.page-about .ka-about-new section.an-story.an-section {
+    margin-block-start: 90px !important;
+    padding-block-start: 70px !important;
+}
+/* ABOUT PAGE — Learning Approach Heading Style */
+body.page-about .ka-about-new .an-learning .an-heading,
+body.page-about .ka-about-new .an-learning-heading {
+    text-align: center;
+}
+
+body.page-about .ka-about-new .an-learning .an-label,
+body.page-about .ka-about-new .an-learning-heading .an-label {
+    font-size: 13px !important;
+    letter-spacing: 3px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
+
+body.page-about .ka-about-new .an-learning h2,
+body.page-about .ka-about-new .an-learning-heading h2 {
+    font-size: clamp(38px, 4vw, 52px) !important;
+    line-height: 1.2 !important;
+    color: var(--an-green) !important;
+    margin: 20px 0 !important;
+}
+
+body.page-about .ka-about-new .an-learning h2 em,
+body.page-about .ka-about-new .an-learning-heading h2 em {
+    color: var(--an-gold) !important;
+    font-style: italic !important;
+}
+/* =========================================
+   LEARNING APPROACH — HEADING AND CARDS
+========================================= */
+
+/* Match the small section labels used elsewhere */
+.ka-about-new .an-learning .an-label {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 1.7px !important;
+    font-weight: 700 !important;
+}
+
+/* Keep the heading size consistent with other sections */
+.ka-about-new .an-learning .an-heading h2 {
+    font-size: clamp(38px, 4vw, 52px) !important;
+    line-height: 1.2 !important;
+}
+
+/* Make all four card images taller and show the full image */
+.ka-about-new .an-learning-image {
+    height: 270px !important;
+    background: #FFFAF2;
+}
+
+.ka-about-new .an-learning-image img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Secondary gold border on hover */
+.ka-about-new .an-learning-card {
+    border: 1px solid var(--an-border);
+    cursor: pointer;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.ka-about-new .an-learning-card:hover,
+.ka-about-new .an-learning-card:focus-within {
+    border: 2px solid var(--an-gold) !important;
+    box-shadow: 0 12px 28px rgba(18, 63, 50, 0.12);
+    transform: translateY(-4px);
+}
+
+/* Keep images responsive on smaller screens */
+@media (max-width: 760px) {
+    .ka-about-new .an-learning-image {
+        height: 260px !important;
+    }
+}
+html body.page-about .ka-about-new section.an-section.an-learning
+.an-heading .an-label {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    line-height: 1.6 !important;
+}
+/* Add gap between Learning and Beyond the Board sections */
+.ka-about-new .an-learning {
+    margin-bottom: 70px !important;
+}
+/* Center the Guidance section content */
+.ka-about-new .an-coaching > .an-heading,
+.ka-about-new .an-coaching .an-heading {
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto 45px !important;
+}
+
+/* Center the tagline */
+.ka-about-new .an-coaching .an-label {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Keep heading text on one centered line where space allows */
+.ka-about-new .an-coaching .an-heading h2 {
+    text-align: center !important;
+    max-width: 100%;
+    margin: 10px auto !important;
+}
+
+/* Center the paragraph */
+.ka-about-new .an-coaching .an-heading > p {
+    text-align: center !important;
+    max-width: 750px;
+    margin: 0 auto !important;
+}
+/* Add space above the Guidance section */
+.ka-about-new .an-coaching {
+    margin-top: 80px !important;
+}
+/* Add space above the final CTA section */
+.ka-about-new .an-final {
+    margin-top: 80px !important;
+}
+
+
+/* ==========================================
+   KNIGHTAURA ABOUT PAGE
+   BUTTON STYLE — MATCH HOME PAGE
+========================================== */
+
+/* Common button styling */
+.ka-about-new .an-btn {
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    min-height: 0 !important;
+    padding: 14px 22px !important;
+
+    border: 1px solid #203C32 !important;
+    border-radius: 3px !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+
+    cursor: pointer;
+    transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        border-color 0.28s ease,
+        transform 0.28s ease,
+        box-shadow 0.28s ease !important;
+}
+
+/* Primary button — forest green */
+.ka-about-new .an-btn-green {
+    background: #203C32 !important;
+    border-color: #203C32 !important;
+    color: #FFF9F0 !important;
+}
+
+/* Primary button hover — antique gold */
+.ka-about-new .an-btn-green:hover,
+.ka-about-new .an-btn-green:focus-visible {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #10271F !important;
+
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(16, 39, 31, 0.18);
+}
+
+/* Secondary button — transparent with gold border */
+.ka-about-new .an-btn-gold {
+    background: transparent !important;
+    border-color: #B88A4A !important;
+    color: #B88A4A !important;
+}
+
+/* Secondary button hover */
+.ka-about-new .an-btn-gold:hover,
+.ka-about-new .an-btn-gold:focus-visible {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #10271F !important;
+
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(16, 39, 31, 0.18);
+}
+
+/* Button icons and arrows */
+.ka-about-new .an-btn span,
+.ka-about-new .an-btn svg {
+    transition: color 0.28s ease, transform 0.28s ease;
+}
+
+.ka-about-new .an-btn:hover span,
+.ka-about-new .an-btn:hover svg {
+    color: inherit !important;
+}
+
+/* Button spacing */
+.ka-about-new .an-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mobile responsive buttons */
+@media (max-width: 420px) {
+    .ka-about-new .an-btn {
+        padding: 12px 18px !important;
+        font-size: 13px !important;
+    }
+
+    .ka-about-new .an-buttons {
+        gap: 12px;
+    }
+}
+
+/* Keyboard accessibility */
+.ka-about-new .an-btn:focus-visible {
+    outline: 2px solid #B88A4A;
+    outline-offset: 4px;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .ka-about-new .an-btn {
+        transition: none !important;
+    }
+}
+
+/* ==========================================
+   KNIGHTAURA ABOUT PAGE — SCROLL ANIMATIONS
+   Scoped to About page content only
+========================================== */
+
+/* Reveal base */
+.ka-about-new .an-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.ka-about-new.an-motion-ready .an-reveal {
+    opacity: 0;
+    transition:
+        opacity 0.8s ease var(--an-reveal-delay, 0ms),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+            var(--an-reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.ka-about-new.an-motion-ready .an-reveal.an-in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Different entrance directions */
+.ka-about-new.an-motion-ready .an-reveal-up {
+    transform: translate3d(0, 32px, 0);
+}
+
+.ka-about-new.an-motion-ready .an-reveal-left {
+    transform: translate3d(-38px, 0, 0);
+}
+
+.ka-about-new.an-motion-ready .an-reveal-right {
+    transform: translate3d(38px, 0, 0);
+}
+
+.ka-about-new.an-motion-ready .an-reveal-scale {
+    transform: scale(0.96);
+}
+
+/* Hero image — slow, elegant zoom */
+@keyframes anHeroImageZoom {
+    from {
+        transform: scale(1.09);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.ka-about-new .an-hero-image > img {
+    animation: anHeroImageZoom 1.6s cubic-bezier(0.2, 0.65, 0.3, 1)
+        both;
+}
+
+/* Gentle card interaction */
+.ka-about-new .an-purpose-card,
+.ka-about-new .an-learning-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.ka-about-new .an-purpose-card:hover,
+.ka-about-new .an-learning-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(16, 39, 31, 0.12);
+}
+
+/* Smooth image zoom on hover */
+.ka-about-new .an-story-main,
+.ka-about-new .an-coaching-image {
+    overflow: hidden;
+}
+
+.ka-about-new .an-story-main img,
+.ka-about-new .an-coaching-image img {
+    transition: transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.ka-about-new .an-story-main:hover img,
+.ka-about-new .an-coaching-image:hover img {
+    transform: scale(1.045);
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    .ka-about-new.an-motion-ready .an-reveal,
+    .ka-about-new.an-motion-ready .an-reveal.an-in-view {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
+
+    .ka-about-new .an-hero-image > img {
+        animation: none;
+    }
+
+    .ka-about-new .an-purpose-card,
+    .ka-about-new .an-learning-card,
+    .ka-about-new .an-story-main img,
+    .ka-about-new .an-coaching-image img {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   KNIGHTAURA ABOUT — PREMIUM HOVER EFFECTS
+   Cards • Text • Headings • Icons • Images
+========================================== */
+
+/* 1. ALL ABOUT CARDS */
+.ka-about-new .an-purpose-card,
+.ka-about-new .an-learning-card,
+.ka-about-new .an-coaching-grid {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.ka-about-new .an-purpose-card:hover,
+.ka-about-new .an-learning-card:hover,
+.ka-about-new .an-coaching-grid:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(16, 39, 31, 0.13);
+    border-color: var(--an-gold);
+}
+
+/* 2. ALL SECTION HEADINGS */
+.ka-about-new .an-copy h2,
+.ka-about-new .an-heading h2,
+.ka-about-new .an-skills-copy h2,
+.ka-about-new .an-coaching-copy h3,
+.ka-about-new .an-final-copy h2 {
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.ka-about-new .an-copy h2:hover,
+.ka-about-new .an-heading h2:hover,
+.ka-about-new .an-skills-copy h2:hover,
+.ka-about-new .an-coaching-copy h3:hover,
+.ka-about-new .an-final-copy h2:hover {
+    color: var(--an-gold);
+    letter-spacing: 0.3px;
+}
+
+/* 3. GOLD ACCENT ON IMPORTANT TEXT */
+.ka-about-new .an-copy .an-lead,
+.ka-about-new .an-purpose-card h3,
+.ka-about-new .an-learning-copy h3,
+.ka-about-new .an-skill h3 {
+    transition: color 0.3s ease;
+}
+
+.ka-about-new .an-copy .an-lead:hover,
+.ka-about-new .an-purpose-card h3:hover,
+.ka-about-new .an-learning-copy h3:hover,
+.ka-about-new .an-skill h3:hover {
+    color: var(--an-gold);
+}
+
+/* 4. PARAGRAPHS — SUBTLE TEXT HOVER */
+.ka-about-new .an-copy p,
+.ka-about-new .an-heading > p,
+.ka-about-new .an-purpose-card p,
+.ka-about-new .an-learning-copy p,
+.ka-about-new .an-skills-copy > p,
+.ka-about-new .an-coaching-copy > p,
+.ka-about-new .an-final-copy > p,
+.ka-about-new .an-skill p {
+    transition: color 0.3s ease;
+}
+
+.ka-about-new .an-copy p:hover,
+.ka-about-new .an-heading > p:hover,
+.ka-about-new .an-purpose-card p:hover,
+.ka-about-new .an-learning-copy p:hover,
+.ka-about-new .an-skills-copy > p:hover,
+.ka-about-new .an-coaching-copy > p:hover,
+.ka-about-new .an-final-copy > p:hover,
+.ka-about-new .an-skill p:hover {
+    color: var(--an-gold);
+}
+
+/* 5. SECTION LABELS */
+.ka-about-new .an-label {
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.ka-about-new .an-label:hover {
+    color: var(--an-gold-light);
+    letter-spacing: 2.5px;
+}
+
+/* 6. ICONS */
+.ka-about-new .an-card-icon,
+.ka-about-new .an-skill > span,
+.ka-about-new .an-note-icon {
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.ka-about-new .an-purpose-card:hover .an-card-icon,
+.ka-about-new .an-skill:hover > span {
+    transform: rotateY(180deg);
+    color: var(--an-cream);
+    background-color: var(--an-gold);
+    border-color: var(--an-gold);
+}
+
+/* 7. CARD IMAGES */
+.ka-about-new .an-learning-image img,
+.ka-about-new .an-story-main img,
+.ka-about-new .an-coaching-image img,
+.ka-about-new .an-skills-visual img,
+.ka-about-new .an-final-image img {
+    transition: transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.ka-about-new .an-learning-card:hover .an-learning-image img,
+.ka-about-new .an-story-images:hover .an-story-main img,
+.ka-about-new .an-coaching-image:hover img,
+.ka-about-new .an-skills-visual:hover img,
+.ka-about-new .an-final-image:hover img {
+    transform: scale(1.045);
+}
+
+/* 8. LIST ITEMS */
+.ka-about-new .an-coaching-copy li {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.ka-about-new .an-coaching-copy li:hover {
+    color: var(--an-gold);
+    transform: translateX(5px);
+}
+
+/* 9. CARD BOTTOM LABELS */
+.ka-about-new .an-card-bottom {
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.ka-about-new .an-purpose-card:hover .an-card-bottom {
+    color: var(--an-gold);
+    letter-spacing: 2px;
+}
+
+/* 10. TOUCH DEVICES & ACCESSIBILITY */
+@media (hover: none) {
+    .ka-about-new .an-purpose-card:hover,
+    .ka-about-new .an-learning-card:hover,
+    .ka-about-new .an-coaching-grid:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ka-about-new .an-purpose-card,
+    .ka-about-new .an-learning-card,
+    .ka-about-new .an-coaching-grid,
+    .ka-about-new .an-purpose-card *,
+    .ka-about-new .an-learning-card *,
+    .ka-about-new .an-coaching-grid *,
+    .ka-about-new h2,
+    .ka-about-new h3,
+    .ka-about-new p,
+    .ka-about-new img {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+/* =========================================
+   KNIGHTAURA — SOFT HOVER + IMAGE FIT FIX
+   ========================================= */
+
+/* Card: very light border, no dark orange */
+.ka-about-new .an-learning-card {
+    overflow: hidden;
+    padding: 0 !important;
+    border: 1px solid #eadfce !important;
+    border-radius: 13px !important;
+    background: #fffdf8 !important;
+    box-shadow: 0 2px 7px rgba(20, 43, 74, 0.025) !important;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+/* Soft hover — no strong orange outline */
+.ka-about-new .an-learning-card:hover {
+    transform: translateY(-3px);
+    border-color: #e9d9b8 !important;
+    background: #fffdf8 !important;
+    box-shadow: 0 5px 14px rgba(20, 43, 74, 0.055) !important;
+}
+
+/* Image container must touch both card sides */
+.ka-about-new .an-learning-card .an-learning-image {
+    position: relative;
+    display: block;
+    width: 100% !important;
+    height: 235px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+    line-height: 0;
+    background: transparent !important;
+}
+
+/* Image fills the entire container */
+.ka-about-new .an-learning-card .an-learning-image img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    transform: scale(1);
+    transition: transform 0.4s ease !important;
+}
+
+/* Very gentle image zoom */
+.ka-about-new .an-learning-card:hover .an-learning-image img {
+    transform: scale(1.025);
+}
+
+/* Light champagne number box */
+.ka-about-new .an-learning-image > span {
+    background: #fff8eb !important;
+    color: #17483d !important;
+    border: 1px solid #eee0c5 !important;
+    border-radius: 0 0 0 7px !important;
+}
+
+/* Text: retain original green and muted grey */
+.ka-about-new .an-learning-copy {
+    background: transparent !important;
+}
+
+.ka-about-new .an-learning-copy small {
+    color: #bd9460 !important;
+}
+
+.ka-about-new .an-learning-copy h3 {
+    color: #17483d !important;
+    transition: color 0.25s ease;
+}
+
+.ka-about-new .an-learning-copy p {
+    color: #78847d !important;
+}
+
+/* Only a subtle heading change on hover */
+.ka-about-new .an-learning-card:hover .an-learning-copy h3 {
+    color: #987546 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ka-about-new .an-learning-card .an-learning-image {
+        height: 200px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ka-about-new .an-learning-card,
+    .ka-about-new .an-learning-image img,
+    .ka-about-new .an-learning-copy h3 {
+        transition: none !important;
+    }
+
+    .ka-about-new .an-learning-card:hover {
+        transform: none;
+    }
+}
+/* Increase chess card image height */
+.ka-about-new .an-learning-card .an-learning-image {
+    height: 300px !important;
+}
+
+.ka-about-new .an-learning-card .an-learning-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .ka-about-new .an-learning-card .an-learning-image {
+        height: 260px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .ka-about-new .an-learning-card .an-learning-image {
+        height: 230px !important;
+    }
+}
+/* ABOUT PAGE — REMOVE ALL TEXT HOVER EFFECTS */
+
+.ka-about-new h1,
+.ka-about-new h2,
+.ka-about-new h3,
+.ka-about-new p,
+.ka-about-new small,
+.ka-about-new b,
+.ka-about-new strong,
+.ka-about-new .an-label,
+.ka-about-new .an-card-bottom,
+.ka-about-new .an-coaching-copy li,
+.ka-about-new .an-learning-copy,
+.ka-about-new .an-purpose-card,
+.ka-about-new .an-skill {
+    transition: none !important;
+    text-decoration: none !important;
+    letter-spacing: inherit;
+    transform: none;
+}
+
+/* Disable heading hover colour and spacing changes */
+.ka-about-new h1:hover,
+.ka-about-new h2:hover,
+.ka-about-new h3:hover,
+.ka-about-new p:hover,
+.ka-about-new small:hover,
+.ka-about-new b:hover,
+.ka-about-new strong:hover,
+.ka-about-new .an-label:hover,
+.ka-about-new .an-card-bottom:hover,
+.ka-about-new .an-coaching-copy li:hover,
+.ka-about-new .an-copy .an-lead:hover,
+.ka-about-new .an-purpose-card h3:hover,
+.ka-about-new .an-learning-copy h3:hover,
+.ka-about-new .an-skill h3:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+    letter-spacing: inherit !important;
+    transform: none !important;
+    text-shadow: none !important;
+}
+/* Keep "potential." beside "has" */
+.ka-about-new .an-copy h2 {
+    max-width: 100% !important;
+    white-space: normal;
+}
+
+.ka-about-new .an-copy h2 em {
+    white-space: nowrap;
+}
+/* ABOUT PAGE — KEEP TEXT FORMAT, REMOVE TEXT HOVER MOVEMENT */
+
+body.page-about .ka-about-new .an-label,
+body.page-about .ka-about-new .an-heading h1,
+body.page-about .ka-about-new .an-heading h2,
+body.page-about .ka-about-new .an-heading p,
+body.page-about .ka-about-new .an-hero-copy,
+body.page-about .ka-about-new .an-hero-copy p {
+    transform: none !important;
+    text-shadow: none !important;
+}
+
+/* Prevent hover movement without changing font formatting */
+body.page-about .ka-about-new .an-label:hover,
+body.page-about .ka-about-new .an-heading h1:hover,
+body.page-about .ka-about-new .an-heading h2:hover,
+body.page-about .ka-about-new .an-heading p:hover,
+body.page-about .ka-about-new .an-hero-copy:hover,
+body.page-about .ka-about-new .an-hero-copy p:hover {
+    transform: none !important;
+    text-shadow: none !important;
+}
+/* ABOUT PAGE — DARK MODE PRIMARY TEXT WHITE */
+
+html[data-theme="dark"] body.page-about .ka-about-new .an-hero h1,
+html[data-theme="dark"] body.page-about .ka-about-new .an-hero-copy h1,
+html[data-theme="dark"] body.page-about .ka-about-new .an-heading h2,
+html[data-theme="dark"] body.page-about .ka-about-new .an-copy h2,
+html[data-theme="dark"] body.page-about .ka-about-new .an-copy p,
+html[data-theme="dark"] body.page-about .ka-about-new .an-hero-copy p {
+    color: #FFFFFF !important;
+}
+
+/* Keep gold-highlighted words gold */
+html[data-theme="dark"] body.page-about .ka-about-new h1 em,
+html[data-theme="dark"] body.page-about .ka-about-new h2 em {
+    color: #B88A4A !important;
+}
+/* ABOUT HERO — TAGLINE SECONDARY GOLD */
+
+html[data-theme="dark"] body.page-about .ka-about-new .an-hero .an-label,
+html[data-theme="dark"] body.page-about .ka-about-new .an-hero-copy .an-label,
+html[data-theme="dark"] body.page-about .ka-about-new .an-label {
+    color: var(--color-secondary) !important;
+    -webkit-text-fill-color: var(--color-secondary) !important;
+}
+/* ABOUT PAGE — DARK MODE CARD TEXT VISIBILITY */
+
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card h3,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card p,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card .an-card-bottom,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card .an-label {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Keep gold accents visible */
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card .an-label {
+    color: #B88A4A !important;
+    -webkit-text-fill-color: #B88A4A !important;
+}
+
+/* Text hover: no colour or formatting change */
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card h3:hover,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card p:hover,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card .an-card-bottom:hover,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card .an-label:hover {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    transform: none !important;
+    text-shadow: none !important;
+    letter-spacing: inherit !important;
+}
+
+/* Preserve card and image animations; disable text transitions only */
+body.page-about .ka-about-new .an-learning-card h3,
+body.page-about .ka-about-new .an-learning-card p,
+body.page-about .ka-about-new .an-learning-card .an-card-bottom,
+body.page-about .ka-about-new .an-learning-card .an-label {
+    transition: none !important;
+}
+/* ABOUT PAGE — FIX LEARNING CARD HOVER TEXT VISIBILITY */
+
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card:hover h3,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card:hover p,
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card:hover .an-card-bottom {
+    color: #203C32 !important;
+    -webkit-text-fill-color: #203C32 !important;
+}
+
+/* Keep the small category label gold */
+html[data-theme="dark"] body.page-about .ka-about-new .an-learning-card:hover .an-label {
+    color: #B88A4A !important;
+    -webkit-text-fill-color: #B88A4A !important;
+}
+body.page-about .an-skills-visual .an-quote {
+  left: -4px;
+  bottom: 0;
+  transform: translateY(18px);
+}
+body.page-about .an-skills-visual .an-quote {
+  position: absolute;
+  left: -4px;
+  bottom: -70px;
+  width: 255px;
+  max-width: 72%;
+  padding: 12px 18px;
+  margin: 0;
+  transform: none;
+  box-sizing: border-box;
+}
+
+body.page-about .an-skills-visual .an-quote > span {
+  margin-bottom: 5px;
+  font-size: 21px;
+  line-height: 1;
+}
+
+body.page-about .an-skills-visual .an-quote p {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0;
+}
+body.page-about .an-skills-visual .an-quote {
+  bottom: -18px;
+  width: 235px;
+  max-width: 68%;
+  padding: 8px 15px;
+  margin: 0;
+  transform: none;
+  box-sizing: border-box;
+}
+
+body.page-about .an-skills-visual .an-quote > span {
+  margin-bottom: 3px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+body.page-about .an-skills-visual .an-quote p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+/* About page — match image height with content */
+body.page-about .an-skills-visual {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+}
+
+body.page-about .an-skills-visual > img {
+  display: block;
+  width: 100%;
+  height: 640px;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 760px) {
+  body.page-about .an-skills-visual > img {
+    height: 390px;
+    min-height: 390px;
+  }
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}
+
+/* MOBILE: REMOVE OVERSIZED HORSE DECORATIONS */
+@media screen and (max-width: 768px) {
+  body.page-about .an-watermark,
+  body.page-about .an-final-knight {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    font-size: 0 !important;
+    background: none !important;
+    content: none !important;
+    pointer-events: none !important;
+  }
+}
+/* ABOUT PAGE — CONSISTENT SECONDARY GOLD */
+body.page-about {
+    --secondary-color: #B88A4A;
+}
+
+/* All section labels: WHO WE ARE, OUR PURPOSE, etc. */
+body.page-about .ka-eyebrow,
+body.page-about .ka2-eyebrow,
+body.page-about .an-label,
+body.page-about .an-copy small,
+body.page-about .an-heading small,
+body.page-about .an-purpose-card small,
+body.page-about .an-learning-copy small,
+body.page-about .an-coaching-copy small {
+    color: #B88A4A !important;
+}
+
+/* All highlighted heading text throughout About page */
+body.page-about .ka-about-new h1 em,
+body.page-about .ka-about-new h2 em,
+body.page-about .ka-about-new h3 em,
+body.page-about .ka-about-new h1 i,
+body.page-about .ka-about-new h2 i,
+body.page-about .ka-about-new h3 i {
+    color: #B88A4A !important;
+}
+
+/* Section numbers and gold accent elements */
+body.page-about .an-number,
+body.page-about .an-image-number,
+body.page-about .an-learning-image > span {
+    color: #B88A4A !important;
+}
+/* ABOUT PAGE — MATCH GOLD WITH WEBSITE THEME */
+.ka-about-new {
+    --an-gold: #B88A4A !important;
+}

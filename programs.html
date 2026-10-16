@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203C32">
+  <meta name="description" content="Explore KnightAura chess coaching programs for beginners, developing players and tournament competitors.">
+  <title>Chess Programs | KnightAura</title>
+
+  <link rel="icon" type="image/png" href="assets/knightaura-mark.png">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/programs.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="page-programs">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- EXISTING SHARED HEADER -->
+  <header class="site-header">
+    <div class="container">
+
+      <a class="brand" href="index.html" aria-label="KnightAura home">
+        <span class="brand-mark">
+          <img src="assets/knightaura-mark.png" alt="" aria-hidden="true">
+        </span>
+
+        <span class="brand-copy">
+          <span class="brand-name">
+            <span class="brand-knight">Knight</span>
+            <span class="brand-aura">Aura</span>
+          </span>
+          <span class="brand-subtitle">The Art of Chess</span>
+        </span>
+      </a>
+
+      <button class="icon-button mobile-toggle"
+              type="button"
+              data-mobile-toggle
+              aria-label="Toggle navigation"
+              aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="nav" data-main-nav aria-label="Main navigation">
+        <div class="dropdown" data-home-dropdown>
+          <button class="dropdown-trigger"
+                  type="button"
+                  data-home-trigger
+                  aria-expanded="false">
+            Home <i data-lucide="chevron-down"></i>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="index.html">Home 1 </a>
+            <a href="home-2.html">Home 2</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link is-active" href="programs.html" aria-current="page">Programs</a>
+        <a class="nav-link" href="tournaments.html">Tournaments</a>
+        
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+      
+          <a class="mobile-login-link" href="login.html">Login</a>
+        </nav>
+
+      <div class="header-actions">
+        <button class="icon-button desktop-action"
+                type="button"
+                data-theme-toggle
+                aria-label="Toggle dark mode">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button class="icon-button desktop-action"
+                type="button"
+                data-rtl-toggle
+                aria-label="Toggle text direction">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+
+        <a class="btn desktop-action login-action" href="login.html">Login</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- SECTION 1: HERO -->
+    <section class="program-hero">
+      <div class="ka-wrap hero-grid">
+
+        <div class="hero-copy" data-reveal>
+          <span class="ka-eyebrow">KNIGHTAURA CHESS ACADEMY</span>
+
+          <h1>
+            Find your path.
+            <em>Build your edge.</em>
+          </h1>
+
+          <p>
+            Every great chess player starts with a single move.
+            Discover a learning path that matches your skills,
+            builds your confidence and helps you understand the
+            game more deeply.
+          </p>
+
+          <div class="hero-actions">
+            <a class="ka-btn ka-btn-gold" href="#program-tracks">
+              Explore Programs <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="ka-text-link" href="contact.html">
+              Talk to a coach <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div>
+              <strong>01</strong>
+              <span>Learn the basics</span>
+            </div>
+            <div>
+              <strong>02</strong>
+              <span>Build your strategy</span>
+            </div>
+            <div>
+              <strong>03</strong>
+              <span>Play with purpose</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="hero-image-frame">
+            <img
+              src="images/programs-hero.jpg"
+              alt="Chess pieces arranged on a chessboard"
+              fetchpriority="high">
+
+            <span class="image-corner image-corner-top"></span>
+            <span class="image-corner image-corner-bottom"></span>
+          </div>
+
+          
+    </section>
+
+    <!-- SECTION 2: PROGRAM TRACKS -->
+    <section class="ka-section programs-section" id="program-tracks">
+      <div class="ka-wrap">
+
+        <div class="section-heading centered-heading" data-reveal>
+          <span class="ka-eyebrow"> — CHOOSE YOUR TRACK</span>
+
+          <h2>
+            Start where you are.
+            <em>Grow from there.</em>
+          </h2>
+
+          <p>
+            Whether you are learning your first moves or preparing
+            for competitive games, find the coaching path that
+            supports your next goal.
+          </p>
+        </div>
+
+        <div class="program-grid">
+
+          <article class="program-card" data-reveal>
+            <div class="program-image">
+              <img
+                src="images/programs-foundation.gif"
+                alt="Chessboard for beginner training"
+                loading="lazy">
+              <span class="program-number">TRACK 01</span>
+            </div>
+
+            <div class="program-content">
+              <span class="program-level">START STRONG</span>
+              <h3>Foundation</h3>
+
+              <p>
+                Learn the rules, understand each piece and build
+                confidence through guided practice.
+              </p>
+
+              <ul>
+                <li>Board setup and piece movement</li>
+                <li>Check, checkmate and stalemate</li>
+                <li>Basic tactics and piece safety</li>
+                <li>Good thinking habits</li>
+              </ul>
+
+              <a class="program-link" href="contact.html">
+                Explore this program <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="program-card program-card-featured" data-reveal>
+            <div class="program-image">
+              <img
+                src="images/programs-connect the ideas.gif"
+                alt="Chess position for strategic training"
+                loading="lazy">
+              <span class="program-number">TRACK 02</span>
+            </div>
+
+            <div class="program-content">
+              <span class="program-level">CONNECT THE IDEAS</span>
+              <h3>Developing Player</h3>
+
+              <p>
+                Learn to create plans, calculate variations and
+                understand positions beyond individual tactics.
+              </p>
+
+              <ul>
+                <li>Opening principles and planning</li>
+                <li>Calculation and candidate moves</li>
+                
+                <li>Game review and analysis</li>
+              </ul>
+
+              <a class="program-link" href="contact.html">
+                Explore this program <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="program-card" data-reveal>
+            <div class="program-image">
+              <img
+                src="images/programs-tournment.gif"
+                alt="Competitive chess game in progress"
+                loading="lazy">
+              <span class="program-number">TRACK 03</span>
+            </div>
+
+            <div class="program-content">
+              <span class="program-level">PREPARE TO COMPETE</span>
+              <h3>Tournament Track</h3>
+
+              <p>
+                Develop tournament habits, improve decision-making
+                and prepare for competitive play.
+              </p>
+
+              <ul>
+                <li>Timed calculation practice</li>
+                <li>Opening preparation routines</li>
+                <li>Endgame technique</li>
+                
+              </ul>
+
+              <a class="program-link" href="tournaments.html">
+                Explore tournaments <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: COACHING APPROACH -->
+    <section class="ka-section coaching-section">
+      <div class="ka-wrap">
+
+        <div class="section-heading centered-heading" data-reveal>
+          <span class="ka-eyebrow"> — OUR APPROACH</span>
+
+          <h2>
+            More than moves.
+            <em>A way to think.</em>
+          </h2>
+
+          <p>
+            Chess encourages patience, concentration and logical
+            thinking. Our learning approach helps students understand
+            ideas, practise them and learn from every decision.
+          </p>
+        </div>
+
+        <div class="coaching-grid">
+          <div class="coaching-visual" data-reveal>
+            <img
+              src="images/programs-our approach.jpg"
+              alt="Chessboard prepared for a focused training session"
+              loading="lazy">
+
+            <div class="coaching-image-caption">
+              <i data-lucide="book-open"></i>
+              <div>
+                <strong>Learn with intention.</strong>
+                <span>Practice with purpose.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="coaching-copy" data-reveal>
+            <div class="approach-list">
+
+              <div class="approach-item">
+                <span class="approach-number">01</span>
+                <div>
+                  <h3>Understand</h3>
+                  <p>
+                    Explore chess concepts through clear explanations
+                    and practical board positions.
+                  </p>
+                </div>
+              </div>
+
+              <div class="approach-item">
+                <span class="approach-number">02</span>
+                <div>
+                  <h3>Apply</h3>
+                  <p>
+                    Solve challenges, calculate variations and learn
+                    why a move makes sense.
+                  </p>
+                </div>
+              </div>
+
+              <div class="approach-item">
+                <span class="approach-number">03</span>
+                <div>
+                  <h3>Improve</h3>
+                  <p>
+                    Review your decisions, learn from mistakes and
+                    set a clear practice goal.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <a class="ka-btn ka-btn-green" href="about.html">
+              Discover Our Approach <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: SKILL LEVELS -->
+    <section class="ka-section skill-levels-section" id="skill-levels">
+      <div class="ka-wrap">
+
+        <div class="section-heading centered-heading" data-reveal>
+          <span class="ka-eyebrow"> — FIND YOUR LEVEL</span>
+
+          <h2>
+            Every player has
+            <em>a next level.</em>
+          </h2>
+
+          <p>
+            Start with the skills you have today. Build your
+            understanding step by step and move forward with confidence.
+          </p>
+        </div>
+
+        <div class="levels-grid">
+
+          <article class="level-card" data-reveal>
+            <div class="level-image">
+              <img
+                src="images/programs-begginer.jpg"
+                alt="Chess pieces for beginner practice"
+                loading="lazy">
+              <span class="level-badge">LEVEL 01</span>
+            </div>
+
+            <div class="level-content">
+              <i data-lucide="book-open" class="level-icon"></i>
+              <h3>Beginner</h3>
+              <p class="level-subtitle">Build a strong foundation</p>
+
+              <p>
+                Ideal for new players who want to learn the rules,
+                understand the pieces and begin playing complete games.
+              </p>
+
+              <ul>
+                <li>Rules and piece movement</li>
+                <li>Check and checkmate</li>
+                <li>Basic tactics and safe moves</li>
+                <li>How to start and finish a game</li>
+              </ul>
+
+              <a class="program-link" href="contact.html">
+                Start learning <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="level-card level-card-featured" data-reveal>
+            <div class="level-image">
+              <img
+                src="images/program-intermediate.jpg"
+                alt="Chessboard position for intermediate training"
+                loading="lazy">
+              <span class="level-badge">LEVEL 02</span>
+            </div>
+
+            <div class="level-content">
+              <i data-lucide="brain" class="level-icon"></i>
+              <h3>Intermediate</h3>
+              <p class="level-subtitle">Develop your strategy</p>
+
+              <p>
+                For players who know the basics and want to improve
+                calculation, planning and positional understanding.
+              </p>
+
+              <ul>
+                <li>Opening principles</li>
+                <li>Combinations and tactical patterns</li>
+                <li>Strategic planning</li>
+                <li>Game analysis and improvement</li>
+              </ul>
+
+              <a class="program-link" href="contact.html">
+                Improve your game <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="level-card" data-reveal>
+            <div class="level-image">
+              <img
+                src="images/programs-advaced.jpg"
+                alt="Competitive chessboard for advanced training"
+                loading="lazy">
+              <span class="level-badge">LEVEL 03</span>
+            </div>
+
+            <div class="level-content">
+              <i data-lucide="trophy" class="level-icon"></i>
+              <h3>Advanced</h3>
+              <p class="level-subtitle">Prepare for competition</p>
+
+              <p>
+                For experienced players looking to refine their
+                preparation, calculation and competitive decision-making.
+              </p>
+
+              <ul>
+                <li>Advanced calculation</li>
+                <li>Opening repertoire preparation</li>
+                <li>Complex endgame technique</li>
+                <li>Tournament game review</li>
+              </ul>
+
+              <a class="program-link" href="tournaments.html">
+                Prepare to compete <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: LEARNING FORMATS -->
+    <section class="ka-section formats-section">
+      <div class="ka-wrap">
+
+        <div class="section-heading centered-heading" data-reveal>
+          <span class="ka-eyebrow"> — FIND YOUR FORMAT</span>
+
+          <h2>
+            Learning that fits
+            <em>your routine.</em>
+          </h2>
+
+          <p>
+            Choose a learning format that suits your goals,
+            preferred learning style and schedule.
+          </p>
+        </div>
+
+        <div class="format-grid">
+
+          <article class="format-card" data-reveal>
+            <div class="format-image">
+              <img
+                src="images/programs-small group running.jpg"
+                alt="Chessboard for group learning"
+                loading="lazy">
+            </div>
+
+            <div class="format-content">
+              <span class="format-number">01 / GROUP</span>
+              <h3>Small-Group Learning</h3>
+              <p>
+                Discuss positions, solve challenges together and
+                discover different ways to approach a problem.
+              </p>
+              <a class="program-link" href="contact.html">
+                Ask about group sessions <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="format-card" data-reveal>
+            <div class="format-image">
+              <img
+                src="images/programs-personal.jpg"
+                alt="Chess position for individual coaching"
+                loading="lazy">
+            </div>
+
+            <div class="format-content">
+              <span class="format-number">02 / PERSONAL</span>
+              <h3>One-to-One Coaching</h3>
+              <p>
+                Focus on individual goals, review your games and
+                work through the areas where you need support.
+              </p>
+              <a class="program-link" href="contact.html">
+                Ask about personal coaching <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="format-card" data-reveal>
+            <div class="format-image">
+              <img
+                src="images/programs-online coaching.jpg"
+                alt="Chess pieces used for guided practice"
+                loading="lazy">
+            </div>
+
+            <div class="format-content">
+              <span class="format-number">03 / FLEXIBLE</span>
+              <h3>Online Practice</h3>
+              <p>
+                Keep building your skills through guided positions,
+                remote review and a consistent practice routine.
+              </p>
+              <a class="program-link" href="contact.html">
+                Ask about online learning <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SKILLS YOU BUILD -->
+    <section class="skills-section">
+      <div class="ka-wrap skills-layout">
+
+        <div class="skills-heading" data-reveal>
+          <span class="ka-eyebrow"> — THE SKILLS BEHIND THE GAME</span>
+
+          <h2>
+            Think clearly.
+            <em>Move confidently.</em>
+          </h2>
+
+          <p>
+            Develop habits that help you make thoughtful,
+            consistent and confident chess decisions.
+          </p>
+
+          <a class="ka-btn ka-btn-gold" href="contact.html">
+            Find Your Program <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-item" data-reveal>
+            <i data-lucide="target" class="skill-icon"></i>
+            <h3>Board Vision</h3>
+            <p>Recognise threats, opportunities and piece relationships.</p>
+          </article>
+
+          <article class="skill-item" data-reveal>
+            <i data-lucide="brain" class="skill-icon"></i>
+            <h3>Calculation</h3>
+            <p>Compare possible moves before deciding on your next step.</p>
+          </article>
+
+          <article class="skill-item" data-reveal>
+            <i data-lucide="compass" class="skill-icon"></i>
+            <h3>Strategic Planning</h3>
+            <p>Build plans around pawn structures, activity and position.</p>
+          </article>
+
+          <article class="skill-item" data-reveal>
+            <i data-lucide="trophy" class="skill-icon"></i>
+            <h3>Decision-Making</h3>
+            <p>Balance risks, opportunities and time during a game.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FAQ -->
+    <section class="ka-section faq-section">
+      <div class="ka-wrap faq-layout">
+
+        <div class="faq-intro" data-reveal>
+          <span class="ka-eyebrow"> — GOOD TO KNOW</span>
+
+          <h2>
+            Questions before
+            <em>your first move?</em>
+          </h2>
+
+          <p>
+            Find answers to common questions before choosing
+            your chess learning path.
+          </p>
+
+         
+        </div>
+
+        <div class="faq-list" data-reveal>
+
+          <details class="faq-item">
+            <summary>Which program should a beginner choose?</summary>
+            <p>
+              The Foundation track is a useful starting point if
+              you are learning piece movement, rules, basic tactics
+              and how to play a complete game.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I join if I already know the basics?</summary>
+            <p>
+              Yes. The Developing Player track focuses on calculation,
+              planning, positional understanding and game review.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I prepare for tournaments?</summary>
+            <p>
+              The Tournament Track focuses on practical preparation,
+              timed calculation, endgames and reviewing competitive games.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How do I choose my skill level?</summary>
+            <p>
+              Consider your knowledge of the rules, your playing
+              experience and the areas you want to improve.
+              Contact the academy to discuss a suitable learning path.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I enquire about joining?</summary>
+            <p>
+              Visit the Contact page and share your chess experience
+              and learning goals to explore a suitable program.
+            </p>
+          </details>
+
+          <details class="faq-item">
+  <summary>How often should I practise chess?</summary>
+  <p>
+    Regular practice is more effective than occasional long sessions.
+    Start with short, focused sessions and gradually improve your
+    calculation, tactics and game analysis as you progress.
+  </p>
+</details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FINAL CTA -->
+    <section class="program-cta">
+      <div class="ka-wrap cta-inner" data-reveal>
+
+        <div class="cta-copy">
+          <span class="ka-eyebrow"> — YOUR NEXT MOVE STARTS HERE</span>
+
+          <h2>
+            Every master was
+            <em>once a beginner.</em>
+          </h2>
+
+          <p>
+            Tell us where you are in your chess journey and what
+            you would like to improve. Let’s find your next step.
+          </p>
+        </div>
+
+        <div class="cta-actions">
+          <a class="ka-btn ka-btn-green" href="contact.html">
+            Talk to the Academy <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EXISTING SHARED FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <a class="brand footer-brand" href="index.html" aria-label="KnightAura home">
+            <span class="brand-mark">
+              <img src="assets/knightaura-mark.png" alt="KnightAura logo">
+            </span>
+
+            <span class="brand-copy">
+              <span class="brand-name">
+                <span class="brand-knight">Knight</span><span class="brand-aura">Aura</span>
+              </span>
+
+              <span class="brand-subtitle">The Art of Chess</span>
+            </span>
+          </a>
+
+
+          <p class="footer-about">A thoughtful chess academy built around strategy, discipline, and the beauty of the
+
+            next move. We help every player build confidence, patience, and a sharper understanding of the board.</p>
+
+          <div aria-label="Social media" class="social-links"><a aria-label="Instagram" href="#"><i
+                class="fa-brands fa-instagram"></i></a><a aria-label="Facebook" href="#"><i
+                class="fa-brands fa-facebook-f"></i></a><a aria-label="YouTube" href="#"><i
+                class="fa-brands fa-youtube"></i></a><a aria-label="LinkedIn" href="#"><i
+                class="fa-brands fa-linkedin-in"></i></a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Explore</h3>
+
+          <div class="footer-links"><a href="index.html">Home </a><a href="about.html">Our Approach</a><a
+              href="about.html">About the Academy</a><a href="coming soon.html">Coming Soon</a><a
+              href="tournaments.html">Tournaments</a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Student</h3>
+
+          <div class="footer-links"><a href="login.html">Student Login</a><a href="signup.html">Create Account</a><a
+              href="dashboard.html">Student Dashboard</a><a href="maintenance.html">Coming Soon</a><a
+              href="404.html">404 Page</a></div>
+
+        </div>
+
+        <div>
+
+          <h3 class="footer-title">Contact</h3>
+
+          <p class="footer-contact-item"><i data-lucide="mail"></i><a
+              href="mailto:hello@knightaura.com">hello@knightaura.com</a></p>
+
+          <p class="footer-contact-item"><i data-lucide="phone"></i><a href="tel:+910000000000">+91 00000 00000</a></p>
+
+          <p class="footer-contact-item"><i data-lucide="map-pin"></i><span>India · By appointment</span></p>
+
+          <p class="footer-contact-item"><i data-lucide="clock-3"></i><span>Mon – Sat · 9:00 AM – 6:00 PM</span></p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom"><span>© <span data-current-year="">2026</span> KnightAura. All rights reserved.</span>
+
+        <div class="footer-legal-bottom"><a href="contact.html">Send an enquiry</a><a href="privacy.html">Privacy
+
+            Policy</a><a href="terms.html">Terms &amp; Conditions</a></div><span>Where Strategy Meets Elegance.</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.querySelectorAll("[data-current-year]").forEach((element) => {
+      element.textContent = new Date().getFullYear();
+    });
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1677 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | Knight Aura Chess Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="js/main.js" defer></script>
+</head>
+
+<body class="dashboard-page">
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- BRAND LOGO: matching Knight Aura website -->
+    <a href="index.html" class="brand" aria-label="Knight Aura home">
+    <img
+        src="assets/knightaura-mark.png"
+        alt="Knight Aura"
+        class="brand-mark"
+    >
+
+    <span class="brand-copy">
+        <span class="brand-name">
+            <span class="brand-knight">Knight</span><span class="brand-aura">Aura</span>
+        </span>
+
+        <span class="brand-subtitle">The Art of Chess</span>
+    </span>
+</a>
+
+
+    <div class="student-profile">
+        <div class="avatar" id="sidebarAvatar">A</div>
+        <div class="student-details">
+            <strong id="sidebarName">Aarav Sharma</strong>
+            <span>Student Account</span>
+            <span class="online-status"><i></i> Learning Portal</span>
+        </div>
+    </div>
+
+    <div class="nav-label">STUDENT PORTAL</div>
+
+    <nav class="sidebar-navigation">
+        <button class="nav-link active" data-view="overview">
+            <i class="fa-solid fa-house"></i><span>Overview</span>
+        </button>
+
+        <button class="nav-link" data-view="enrollment">
+            <i class="fa-solid fa-chess-pawn"></i><span>Batch Enrollment</span>
+        </button>
+
+        <button class="nav-link" data-view="schedule">
+            <i class="fa-regular fa-calendar-days"></i><span>Class Schedule</span>
+        </button>
+
+        <button class="nav-link" data-view="tournaments">
+            <i class="fa-solid fa-trophy"></i><span>Tournament Registration</span>
+        </button>
+        <!-- MY PROGRESS -->
+<a href="#progress" class="nav-link" data-view="progress">
+  <i class="fa-solid fa-chart-line"></i>
+  <span>My Progress</span>
+</a>
+
+<!-- FEES & PAYMENTS -->
+<a href="#payments" class="nav-link" data-view="payments">
+  <i class="fa-solid fa-credit-card"></i>
+  <span>Fees &amp; Payments</span>
+</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <a href="index.html" class="bottom-link">
+            <i class="fa-solid fa-arrow-left"></i><span>Back to Website</span>
+        </a>
+
+        <button class="bottom-link logout-button" id="logoutButton">
+            <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+        </button>
+    </div>
+</aside>
+
+<main class="dashboard-main">
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="icon-button menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+<div class="welcome-heading">
+    <span class="welcome-eyebrow">
+        KNIGHTAURA  STUDENT PORTAL
+    </span>
+
+    <h2>
+        Welcome to Your
+        <span>Learning Journey.</span>
+    </h2>
+
+   
+</div>
+        </div>
+
+        <div class="dashboard-theme-controls">
+    <button
+        class="icon-button"
+        type="button"
+        data-theme-toggle
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode"
+    >
+        <i data-lucide="moon"></i>
+    </button>
+
+    <button
+        class="icon-button"
+        type="button"
+        data-rtl-toggle
+        aria-label="Switch to right-to-left layout"
+        title="Switch to right-to-left layout"
+    >
+        <i data-lucide="arrow-left-right"></i>
+    </button>
+</div>
+
+            <div class="header-dropdown">
+                <button class="icon-button notification-button" id="notificationToggle"
+                        aria-label="Notifications" aria-expanded="false">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="dropdown-panel notification-panel" id="notificationPanel" hidden>
+                    <div class="dropdown-heading">
+                        <strong>Notifications</strong>
+                        <span>Your academy updates</span>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </span>
+                        <div>
+                            <strong>Class preparation</strong>
+                            <p>Review your previous game before your next coaching session.</p>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </span>
+                        <div>
+                            <strong>Tournament corner</strong>
+                            <p>Explore academy competition opportunities and prepare to participate.</p>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <span class="notification-icon">
+                            <i class="fa-solid fa-chess-knight"></i>
+                        </span>
+                        <div>
+                            <strong>Practice reminder</strong>
+                            <p>Consistent tactical practice helps strengthen your decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-dropdown">
+                <button class="account-trigger" id="accountToggle" aria-expanded="false">
+                    <span class="avatar avatar-small" id="headerAvatar">A</span>
+                    <span class="account-trigger-text">
+                        <strong id="headerName">Aarav Sharma</strong>
+                        <small>Student account</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-down account-chevron"></i>
+                </button>
+
+                <div class="dropdown-panel account-panel" id="accountPanel" hidden>
+                    <div class="account-panel-profile">
+                        <span class="avatar avatar-small">A</span>
+                        <div>
+                            <strong>Aarav Sharma</strong>
+                            <small>Student account</small>
+                        </div>
+                    </div>
+
+                    <button class="dropdown-item" data-view="profile">
+                        <i class="fa-regular fa-user"></i> Profile
+                    </button>
+
+                    <button class="dropdown-item" data-view="settings">
+                        <i class="fa-solid fa-gear"></i> Settings
+                    </button>
+
+                    <button class="dropdown-item" data-view="learning">
+                        <i class="fa-solid fa-book-open"></i> My Learning
+                    </button>
+
+                    <button class="dropdown-item dropdown-logout" id="accountLogout">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+
+        <!-- OVERVIEW -->
+        <!-- OVERVIEW -->
+<section class="dashboard-view active" id="overview">
+
+    <!-- PAGE HEADING -->
+    <div class="page-heading">
+        <div>
+            <span class="eyebrow">YOUR CHESS JOURNEY</span>
+            <h1>Welcome back, <span class="gold-text">Aarav!</span></h1>
+            <p>Every thoughtful move brings you closer to becoming a stronger player.</p>
+        </div>
+
+        <div class="date-chip">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="currentDate"></span>
+        </div>
+    </div>
+
+    <!-- WELCOME BANNER -->
+    <div class="welcome-banner">
+        <div class="welcome-copy">
+            <span class="banner-eyebrow">PLAY WITH PURPOSE. THINK BEYOND.</span>
+            <h2>Your Next Great Move<br>Starts Here.</h2>
+            <p>
+                Build strategic thinking, sharpen your tactics and develop
+                confidence with Knight Aura Chess Academy.
+            </p>
+
+            <button class="button button-gold" data-open-view="enrollment">
+                Explore Coaching
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <div class="banner-art">
+            <div class="chess-orbit orbit-one"></div>
+            <div class="chess-orbit orbit-two"></div>
+            <i class="fa-solid fa-chess-knight"></i>
+            <span class="art-star star-one">✦</span>
+            <span class="art-star star-two">✧</span>
+        </div>
+    </div>
+
+    <!-- LEARNING OVERVIEW -->
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">STUDENT SNAPSHOT</span>
+            <h2>Your Learning Overview</h2>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+
+        <article class="stat-card">
+            <div class="stat-icon green-icon">
+                <i class="fa-solid fa-chess-pawn"></i>
+            </div>
+            <div class="stat-info">
+                <span>Coaching Programs</span>
+                <h3>3 Levels</h3>
+                <small>Beginner to advanced learning</small>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon gold-icon">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+            <div class="stat-info">
+                <span>Learning Plan</span>
+                <h3>Weekly</h3>
+                <small>Structured chess practice</small>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon purple-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="stat-info">
+                <span>Competition</span>
+                <h3>Explore</h3>
+                <small>Prepare for your next challenge</small>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- QUICK ACCESS -->
+    <div class="section-heading section-heading-spaced">
+        <div>
+            <span class="eyebrow">YOUR ACADEMY</span>
+            <h2>Everything in One Place</h2>
+        </div>
+    </div>
+
+    <div class="quick-grid">
+
+        <button class="quick-card" data-open-view="enrollment">
+            <span class="quick-icon">
+                <i class="fa-solid fa-chess-knight"></i>
+            </span>
+            <span class="quick-copy">
+                <strong>Coaching Programs</strong>
+                <small>Explore learning levels and curriculum</small>
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </button>
+
+        <button class="quick-card" data-open-view="schedule">
+            <span class="quick-icon quick-icon-gold">
+                <i class="fa-regular fa-calendar-days"></i>
+            </span>
+            <span class="quick-copy">
+                <strong>Class Schedule</strong>
+                <small>Review your weekly training plan</small>
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </button>
+
+        <button class="quick-card" data-open-view="tournaments">
+            <span class="quick-icon quick-icon-purple">
+                <i class="fa-solid fa-trophy"></i>
+            </span>
+            <span class="quick-copy">
+                <strong>Tournament Arena</strong>
+                <small>Explore competitive chess events</small>
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </button>
+
+        <button class="quick-card" data-open-view="progress">
+            <span class="quick-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <span class="quick-copy">
+                <strong>My Progress</strong>
+                <small>Review your learning journey</small>
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </button>
+
+        <button class="quick-card" data-open-view="payments">
+            <span class="quick-icon quick-icon-gold">
+                <i class="fa-solid fa-wallet"></i>
+            </span>
+            <span class="quick-copy">
+                <strong>Fees &amp; Payments</strong>
+                <small>View your fee and payment details</small>
+            </span>
+            <i class="fa-solid fa-arrow-up-right-from-square quick-arrow"></i>
+        </button>
+
+    </div>
+
+    <!-- NEXT STEPS -->
+    <div class="section-heading section-heading-spaced">
+        <div>
+            <span class="eyebrow">STAY ON TRACK</span>
+            <h2>Your Next Steps</h2>
+        </div>
+    </div>
+
+    <div class="content-panel getting-started">
+        <div class="steps-grid">
+
+            <div class="step-item">
+                <span class="step-number">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </span>
+                <div>
+                    <strong>Check Your Classes</strong>
+                    <p>
+                        Review your upcoming training sessions and weekly schedule.
+                    </p>
+                    <button class="button button-gold" data-open-view="schedule">
+                        View Schedule
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <span class="step-number">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                    <strong>Track Your Improvement</strong>
+                    <p>
+                        Review your progress and identify areas where you can improve.
+                    </p>
+                    <button class="button button-gold" data-open-view="progress">
+                        View Progress
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <span class="step-number">
+                    <i class="fa-solid fa-wallet"></i>
+                </span>
+                <div>
+                    <strong>Manage Your Academy Fees</strong>
+                    <p>
+                        Check the available fee information in your payments section.
+                    </p>
+                    <button class="button button-gold" data-open-view="payments">
+                        View Payments
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- KNIGHT AURA METHOD -->
+    <div class="content-panel getting-started">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">THE KNIGHT AURA METHOD</span>
+                <h2>Train With Purpose</h2>
+            </div>
+        </div>
+
+        <div class="steps-grid">
+
+            <div class="step-item">
+                <span class="step-number">01</span>
+                <div>
+                    <strong>Understand the Position</strong>
+                    <p>
+                        Learn to evaluate threats, piece activity and king safety
+                        before choosing a move.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <span class="step-number">02</span>
+                <div>
+                    <strong>Calculate With Confidence</strong>
+                    <p>
+                        Practise more tactical patterns and compare candidate moves
+                        before deciding.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <span class="step-number">03</span>
+                <div>
+                    <strong>Review and Improve</strong>
+                    <p>
+                        Analyse completed games, identify mistakes and turn
+                        lessons into better decisions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+        <!-- ENROLLMENT -->
+        <!-- BATCH ENROLLMENT -->
+<section class="dashboard-view" id="enrollment" hidden>
+    <div class="enrollment-page">
+
+  <div class="enrollment-heading">
+    <span class="enrollment-eyebrow">KNIGHTAURA CHESS ACADEMY</span>
+    <h1>Find Your Perfect Chess Batch</h1>
+    <p>
+      Choose your learning level, explore our chess programs, understand
+      the enrollment process, and take your first step toward mastering chess.
+    </p>
+  </div>
+
+  <div class="enrollment-banner">
+    <div class="enrollment-banner-content">
+      <span class="enrollment-eyebrow">YOUR CHESS JOURNEY STARTS HERE</span>
+      <h2>Every Champion Begins with a Move.</h2>
+      <p>
+        Develop strategic thinking, improve your decision-making, practise
+        with confidence, and prepare for competitive chess through structured
+        learning programs.
+      </p>
+
+      <div class="enrollment-highlights">
+        <span><i class="fa-solid fa-chess-knight"></i> Expert Guidance</span>
+        <span><i class="fa-solid fa-calendar-check"></i> Structured Learning</span>
+        <span><i class="fa-solid fa-trophy"></i> Tournament Preparation</span>
+      </div>
+
+      <a href="#available-batches" class="enrollment-primary-btn">
+        Explore Programs <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="enrollment-hero-art">
+      <i class="fa-solid fa-chess-knight"></i>
+      <span>THINK. PLAN. WIN.</span>
+    </div>
+  </div>
+
+  <div class="enrollment-section">
+    <div class="enrollment-section-heading">
+      <span class="enrollment-eyebrow">FOUR SIMPLE STEPS</span>
+      <h2>How to Enroll</h2>
+      <p>Follow these steps to join your preferred chess batch.</p>
+    </div>
+
+    <div class="enrollment-steps">
+      <article class="enrollment-step">
+        <span class="enrollment-step-number">01</span>
+        <div class="enrollment-step-icon">
+          <i class="fa-solid fa-chess-board"></i>
+        </div>
+        <h3>Choose Your Level</h3>
+        <p>
+          Select a beginner, intermediate, or advanced program according
+          to your chess knowledge and learning goals.
+        </p>
+      </article>
+
+      <article class="enrollment-step">
+        <span class="enrollment-step-number">02</span>
+        <div class="enrollment-step-icon">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <h3>Review the Details</h3>
+        <p>
+          Check all the syllabus, duration, class schedule, fees, and seat availability before proceeding with your enrollment.
+        </p>
+      </article>
+
+      <article class="enrollment-step">
+        <span class="enrollment-step-number">03</span>
+        <div class="enrollment-step-icon">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <h3>Express Interest</h3>
+        <p>
+          Select your preferred program and contact the academy to confirm
+          your schedule, eligibility, and registration requirements.
+        </p>
+      </article>
+
+      <article class="enrollment-step">
+        <span class="enrollment-step-number">04</span>
+        <div class="enrollment-step-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3>Finalize Admission</h3>
+        <p>
+          Complete the registration requirements and follow the academy's
+          official payment and admission confirmation instructions.
+        </p>
+      </article>
+    </div>
+  </div>
+
+  <div class="enrollment-section" id="available-batches">
+    <div class="enrollment-section-heading">
+      <span class="enrollment-eyebrow">FIND YOUR LEARNING PATH</span>
+      <h2>Explore Our Chess Programs</h2>
+      <p>
+        Choose a program that matches your experience, interests,
+        and chess ambitions.
+      </p>
+    </div>
+
+    <div class="enrollment-grid">
+
+      <article class="enrollment-card">
+        <div class="enrollment-card-header">
+          <div class="enrollment-card-icon">
+            <i class="fa-solid fa-chess-pawn"></i>
+          </div>
+          <span class="enrollment-level">BEGINNER</span>
+        </div>
+
+        <h3>Chess Foundations</h3>
+        <p class="enrollment-description">
+          Start with the basics and develop confidence in playing complete
+          chess games.
+        </p>
+
+        <div class="enrollment-divider"></div>
+
+        <h4>What You Will Learn</h4>
+        <ul class="enrollment-list">
+          <li><i class="fa-solid fa-check"></i> Chessboard setup and notation</li>
+          <li><i class="fa-solid fa-check"></i> Movement of all chess pieces</li>
+          <li><i class="fa-solid fa-check"></i> Checkmate and stalemate</li>
+          <li><i class="fa-solid fa-check"></i> Basic tactics and safe moves</li>
+          <li><i class="fa-solid fa-check"></i> Practice games and chess rules</li>
+        </ul>
+
+        <div class="enrollment-info">
+          <div>
+            <i class="fa-regular fa-clock"></i>
+            <span><strong>Duration</strong> Confirm with academy</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span><strong>Class Timings</strong> Based on availability</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-user-graduate"></i>
+            <span><strong>Suitable For</strong> New learners</span>
+          </div>
+        </div>
+
+        <div class="enrollment-fee">
+          <span>Course Fee</span>
+          <strong>Contact Academy</strong>
+          <small>Confirm the current fee before enrolling.</small>
+        </div>
+
+        <button class="enrollment-btn" type="button"
+                data-enroll="Chess Foundations">
+          Express Interest <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </article>
+
+      <article class="enrollment-card enrollment-featured">
+        <div class="enrollment-popular">BUILD YOUR STRATEGY</div>
+
+        <div class="enrollment-card-header">
+          <div class="enrollment-card-icon">
+            <i class="fa-solid fa-chess-knight"></i>
+          </div>
+          <span class="enrollment-level">INTERMEDIATE</span>
+        </div>
+
+        <h3>Strategic Play</h3>
+        <p class="enrollment-description">
+          Improve your tactics, recognize opportunities, and learn to plan
+          several moves ahead.
+        </p>
+
+        <div class="enrollment-divider"></div>
+
+        <h4>What You Will Learn</h4>
+        <ul class="enrollment-list">
+          <li><i class="fa-solid fa-check"></i> Opening principles</li>
+          <li><i class="fa-solid fa-check"></i> Forks, pins, and skewers</li>
+          <li><i class="fa-solid fa-check"></i> Positional play and planning</li>
+          <li><i class="fa-solid fa-check"></i> Tactical combinations</li>
+          <li><i class="fa-solid fa-check"></i> Endgame techniques</li>
+        </ul>
+
+        <div class="enrollment-info">
+          <div>
+            <i class="fa-regular fa-clock"></i>
+            <span><strong>Duration</strong> Confirm with academy</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span><strong>Class Timings</strong> Based on availability</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-user-graduate"></i>
+            <span><strong>Suitable For</strong> Players with basic knowledge</span>
+          </div>
+        </div>
+
+        <div class="enrollment-fee">
+          <span>Course Fee</span>
+          <strong>Contact Academy</strong>
+          <small>Confirm the current fee before enrolling.</small>
+        </div>
+
+        <button class="enrollment-btn" type="button"
+                data-enroll="Strategic Play">
+          Express Interest <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </article>
+
+      <article class="enrollment-card">
+        <div class="enrollment-card-header">
+          <div class="enrollment-card-icon">
+            <i class="fa-solid fa-chess-king"></i>
+          </div>
+          <span class="enrollment-level">ADVANCED</span>
+        </div>
+
+        <h3>Advanced Play</h3>
+        <p class="enrollment-description">
+          Prepare for challenging games through advanced analysis,
+          strategic preparation, and competitive practice.
+        </p>
+
+        <div class="enrollment-divider"></div>
+
+        <h4>What You Will Learn</h4>
+        <ul class="enrollment-list">
+          <li><i class="fa-solid fa-check"></i> Advanced opening preparation</li>
+          <li><i class="fa-solid fa-check"></i> Positional analysis</li>
+          <li><i class="fa-solid fa-check"></i> Advanced endgames</li>
+          <li><i class="fa-solid fa-check"></i> Tournament strategies</li>
+          <li><i class="fa-solid fa-check"></i> Game analysis and improvement</li>
+        </ul>
+
+        <div class="enrollment-info">
+          <div>
+            <i class="fa-regular fa-clock"></i>
+            <span><strong>Duration</strong> Confirm with academy</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span><strong>Class Timings</strong> Based on availability</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-user-graduate"></i>
+            <span><strong>Suitable For</strong> Experienced players</span>
+          </div>
+        </div>
+
+        <div class="enrollment-fee">
+          <span>Course Fee</span>
+          <strong>Contact Academy</strong>
+          <small>Confirm the current fee before enrolling.</small>
+        </div>
+
+        <button class="enrollment-btn" type="button"
+                data-enroll="Mastery & Competition">
+          Express Interest <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="enrollment-next">
+    <div class="enrollment-next-icon">
+      <i class="fa-solid fa-flag-checkered"></i>
+    </div>
+
+    <div class="enrollment-next-content">
+      <span class="enrollment-eyebrow">YOUR NEXT STEPS</span>
+      <h2>What Happens After You Select a Batch?</h2>
+      <p>
+        Selecting a program expresses your interest. Admission is confirmed
+        only after the academy verifies your details and completes its
+        registration process.
+      </p>
+
+      <div class="enrollment-next-step">
+        <span>01</span>
+        <div>
+          <h4>Batch Selection</h4>
+          <p>Your preferred chess program is identified.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-next-step">
+        <span>02</span>
+        <div>
+          <h4>Schedule and Seat Verification</h4>
+          <p>Confirm available seats, class timings, and course duration.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-next-step">
+        <span>03</span>
+        <div>
+          <h4>Registration and Fee Details</h4>
+          <p>Receive the applicable fee and official payment instructions.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-next-step">
+        <span>04</span>
+        <div>
+          <h4>Admission Confirmation</h4>
+          <p>Receive joining instructions and your confirmed class schedule.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enrollment-section">
+    <div class="enrollment-section-heading">
+      <span class="enrollment-eyebrow">BE PREPARED</span>
+      <h2>Enrollment Checklist</h2>
+      <p>Keep these details ready before contacting the academy.</p>
+    </div>
+
+    <div class="enrollment-checklist">
+      <div class="enrollment-check-item">
+        <i class="fa-solid fa-user"></i>
+        <div>
+          <h3>Student Details</h3>
+          <p>Your name and contact information,guardian details.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-check-item">
+        <i class="fa-solid fa-bullseye"></i>
+        <div>
+          <h3>Learning Goals</h3>
+          <p>Your chess experience and the skills you want to improve.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-check-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <div>
+          <h3>Preferred Timings</h3>
+          <p>Days and times that work for your regular class attendance.</p>
+        </div>
+      </div>
+
+      <div class="enrollment-check-item">
+        <i class="fa-solid fa-receipt"></i>
+        <div>
+          <h3>Fees and Policies</h3>
+          <p>Verify the course fee, payment method, and refund policy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enrollment-section">
+    <div class="enrollment-section-heading">
+      <span class="enrollment-eyebrow">COMMON QUESTIONS</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <details class="enrollment-faq">
+      <summary>Which batch should I choose as a beginner?</summary>
+      <p>
+        Chess Foundations is intended for learners who are new to chess.
+        If you already know the rules, ask the academy which level best
+        matches your current skills.
+      </p>
+    </details>
+
+    <details class="enrollment-faq">
+      <summary>Does selecting a batch confirm my admission?</summary>
+      <p>
+        No. Selection records your interest in this dashboard demo.
+        The academy must confirm seat availability and admission separately.
+      </p>
+    </details>
+
+    <details class="enrollment-faq">
+      <summary>How can I find the actual fees and timings?</summary>
+      <p>
+        Contact the academy to confirm current fees, schedules, course
+        duration, and registration requirements.
+      </p>
+    </details>
+
+    <details class="enrollment-faq">
+      <summary>When can I start attending classes?</summary>
+      <p>
+        You can begin according to the schedule provided after your
+        admission has been confirmed by the academy.
+      </p>
+    </details>
+  </div>
+
+  <div class="enrollment-final-cta">
+    <span class="enrollment-eyebrow">MAKE YOUR NEXT MOVE</span>
+    <h2>Ready to Begin Your Chess Journey?</h2>
+    <p>
+      Choose your learning path, confirm the details, and start building
+      stronger chess skills with KnightAura.
+    </p>
+    <a href="#available-batches" class="enrollment-primary-btn">
+      Choose Your Batch <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+</div>
+</section>
+
+        <!-- SCHEDULE -->
+        <section class="dashboard-view" id="schedule" hidden>
+            <div class="schedule-page">
+
+  <!-- PAGE HEADER -->
+  <div class="schedule-heading">
+    <span class="schedule-eyebrow">PLAN YOUR PRACTICE</span>
+    <h1>Class Schedule</h1>
+    <p>
+      Stay organised with your weekly chess classes, guided practice,
+      strategy sessions, and game analysis.
+    </p>
+  </div>
+
+  <!-- NEXT CLASS -->
+  <div class="schedule-next-class">
+    <div class="schedule-next-icon">
+      <i class="fa-regular fa-calendar-check"></i>
+    </div>
+
+    <div class="schedule-next-content">
+      <span class="schedule-eyebrow">YOUR LEARNING PLAN</span>
+      <h2>Make Every Move Count</h2>
+      <p>
+        Check your class timings, prepare for each lesson, and follow
+        your weekly chess training plan.
+      </p>
+    </div>
+
+    <div class="schedule-next-badge">
+      <i class="fa-solid fa-chess-knight"></i>
+      Student Timetable
+    </div>
+  </div>
+
+  <!-- WEEKLY TIMETABLE -->
+  <div class="schedule-section">
+    <div class="schedule-section-header">
+      <div>
+        <span class="schedule-eyebrow">YOUR WEEK AT A GLANCE</span>
+        <h2>Weekly Class Timetable</h2>
+        <p>Review your daily learning activities and planned sessions.</p>
+      </div>
+    </div>
+
+    <div class="schedule-table-wrapper">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class Time</th>
+            <th>Training Session</th>
+            <th>Learning Focus</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <strong>Monday</strong>
+              <small>Day 01</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Chess Fundamentals</td>
+            <td>Piece movement and opening principles</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Tuesday</strong>
+              <small>Day 02</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Tactical Training</td>
+            <td>Forks, pins, and tactical patterns</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Wednesday</strong>
+              <small>Day 03</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Guided Practice</td>
+            <td>Practice positions and decision-making</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Thursday</strong>
+              <small>Day 04</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Strategy Session</td>
+            <td>Positional play and planning</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Friday</strong>
+              <small>Day 05</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Game Analysis</td>
+            <td>Review mistakes and improve decisions</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Saturday</strong>
+              <small>Day 06</small>
+            </td>
+            <td>To be confirmed</td>
+            <td>Practice Match</td>
+            <td>Apply weekly lessons in chess games</td>
+            <td><span class="schedule-status">Scheduled</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Sunday</strong>
+              <small>Day 07</small>
+            </td>
+            <td>Flexible</td>
+            <td>Self-Practice</td>
+            <td>Revision and puzzle solving</td>
+            <td><span class="schedule-status schedule-self">Self-study</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="schedule-note">
+      <i class="fa-solid fa-circle-info"></i>
+      Class timings and training days are sample entries. Replace them
+      with the academy's confirmed timetable before publishing.
+    </p>
+  </div>
+
+  <!-- CLASS FORMAT -->
+  <div class="schedule-section">
+    <div class="schedule-section-header">
+      <div>
+        <span class="schedule-eyebrow">HOW YOUR CLASSES WORK</span>
+        <h2>Inside a Training Session</h2>
+        <p>Understand how a typical chess lesson can be organised.</p>
+      </div>
+    </div>
+
+    <div class="schedule-format-grid">
+
+      <article class="schedule-format-card">
+        <div class="schedule-format-icon">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <span class="schedule-format-time">PART 01</span>
+        <h3>Coach Instruction</h3>
+        <p>
+          Learn new concepts, understand chess principles, and explore
+          positions with guided explanations.
+        </p>
+      </article>
+
+      <article class="schedule-format-card">
+        <div class="schedule-format-icon">
+          <i class="fa-solid fa-puzzle-piece"></i>
+        </div>
+        <span class="schedule-format-time">PART 02</span>
+        <h3>Tactical Practice</h3>
+        <p>
+          Solve chess puzzles, identify tactical opportunities, and
+          practise applying the concepts learned.
+        </p>
+      </article>
+
+      <article class="schedule-format-card">
+        <div class="schedule-format-icon">
+          <i class="fa-solid fa-chess"></i>
+        </div>
+        <span class="schedule-format-time">PART 03</span>
+        <h3>Practice Games</h3>
+        <p>
+          Apply your knowledge through practice games, develop
+          better decision-making skills and solve chess puzzels.
+        </p>
+      </article>
+
+      <article class="schedule-format-card">
+        <div class="schedule-format-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <span class="schedule-format-time">PART 04</span>
+        <h3>Review & Feedback</h3>
+        <p>
+          Review important positions, understand your mistakes, and identify
+          areas for improvement, go through the lessons.
+        </p>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- CLASS PREPARATION -->
+  <div class="schedule-preparation">
+    <div class="schedule-preparation-icon">
+      <i class="fa-solid fa-book-open"></i>
+    </div>
+
+    <div>
+      <span class="schedule-eyebrow">BE READY FOR CLASS</span>
+      <h2>Prepare for Your Next Session</h2>
+      <p>
+        Arrive on time, review your previous lesson, and keep your
+        chessboard or learning materials ready.
+      </p>
+
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Review the previous lesson.</li>
+        <li><i class="fa-solid fa-check"></i> Practise the assigned chess puzzles.</li>
+        <li><i class="fa-solid fa-check"></i> Note down questions for your coach.</li>
+        <li><i class="fa-solid fa-check"></i> Check the confirmed class time.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCHEDULE REMINDER -->
+  <div class="schedule-reminder">
+    <i class="fa-regular fa-bell"></i>
+
+    <div>
+      <h3>Stay Updated With Your Classes</h3>
+      <p>
+        Check your timetable regularly for schedule changes and academy
+        announcements. Confirm any changes with your coach.
+      </p>
+    </div>
+  </div>
+
+</div>
+        </section>
+
+        <!-- TOURNAMENTS -->
+        <section class="dashboard-view" id="tournaments" hidden>
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">PLAY. COMPETE. IMPROVE.</span>
+                    <h1>Tournament Arena</h1>
+                    <p>Develop composure, decision-making and competitive experience through chess.</p>
+                </div>
+            </div>
+
+            <div class="tournament-banner">
+                <div>
+                    <span class="banner-eyebrow">YOUR NEXT CHALLENGE</span>
+                    <h2>Think Clearly. Play Bravely.</h2>
+                    <p>Every game is an opportunity to test your preparation and learn something new.</p>
+                </div>
+                <div class="tournament-banner-art"><i class="fa-solid fa-trophy"></i></div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">COMPETITION PATHWAYS</span>
+                    <h2>Explore Chess Events</h2>
+                </div>
+            </div>
+
+            <div class="tournament-grid">
+                <article class="tournament-card">
+                    <div class="tournament-card-top">
+                        <div class="tournament-icon"><i class="fa-solid fa-chess"></i></div>
+                        <span class="pill-label">Academy Event</span>
+                    </div>
+                    <h2>Knight Aura Chess Championship</h2>
+                    <p>A competitive setting for students to apply their skills, practise tournament discipline and learn from each round.</p>
+                    <div class="tournament-meta">
+                        <span><i class="fa-solid fa-chess-board"></i> Classical chess principles</span>
+                        <span><i class="fa-solid fa-users"></i> Student participation</span>
+                        <span><i class="fa-solid fa-medal"></i> Performance and sportsmanship</span>
+                    </div>
+                    <button class="button button-primary button-full" data-tournament="Knight Aura Chess Championship">Register Interest</button>
+                </article>
+
+                <article class="tournament-card">
+                    <div class="tournament-card-top">
+                        <div class="tournament-icon tournament-icon-gold"><i class="fa-solid fa-stopwatch"></i></div>
+                        <span class="pill-label">Rapid Format</span>
+                    </div>
+                    <h2>Rapid Chess Challenge</h2>
+                    <p>Practise quick evaluation, time management and decisive play in a faster-paced competition format.</p>
+                    <div class="tournament-meta">
+                        <span><i class="fa-solid fa-bolt"></i> Rapid-play skills</span>
+                        <span><i class="fa-solid fa-brain"></i> Decision-making under time pressure</span>
+                        <span><i class="fa-solid fa-chart-line"></i> Learning through competition</span>
+                    </div>
+                    <button class="button button-primary button-full" data-tournament="Rapid Chess Challenge">Register Interest</button>
+                </article>
+
+                <article class="tournament-card">
+                    <div class="tournament-card-top">
+                        <div class="tournament-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="pill-label">Junior Players</span>
+                    </div>
+                    <h2>Junior Chess Challenge</h2>
+                    <p>An encouraging competition pathway for young learners to build confidence and develop good playing habits.</p>
+                    <div class="tournament-meta">
+                        <span><i class="fa-solid fa-seedling"></i> Skill development</span>
+                        <span><i class="fa-solid fa-handshake"></i> Respectful competition</span>
+                        <span><i class="fa-solid fa-puzzle-piece"></i> Practical chess learning</span>
+                    </div>
+                    <button class="button button-primary button-full" data-tournament="Junior Chess Challenge">Register Interest</button>
+                </article>
+
+                <article class="tournament-card">
+                    <div class="tournament-card-top">
+                        <div class="tournament-icon tournament-icon-gold"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <span class="pill-label">Skill Event</span>
+                    </div>
+                    <h2>Tactical Masters Challenge</h2>
+                    <p>Put pattern recognition and calculation to the test through tactical positions and problem-solving rounds.</p>
+                    <div class="tournament-meta">
+                        <span><i class="fa-solid fa-bullseye"></i> Tactical awareness</span>
+                        <span><i class="fa-solid fa-stopwatch"></i> Calculation practice</span>
+                        <span><i class="fa-solid fa-lightbulb"></i> Precision and focus</span>
+                    </div>
+                    <button class="button button-primary button-full" data-tournament="Tactical Masters Challenge">Register Interest</button>
+                </article>
+            </div>
+        </section>
+        <!-- MY PROGRESS -->
+<section class="dashboard-view" id="progress" hidden>
+
+  <div class="page-heading">
+    <div>
+      <span class="eyebrow">YOUR CHESS JOURNEY</span>
+      <h1>My Progress</h1>
+      <p>Track your learning, review your achievements, and discover where you can improve.</p>
+    </div>
+  </div>
+
+  <!-- PROGRESS OVERVIEW -->
+  <div class="progress-summary-grid">
+
+    <article class="content-panel progress-stat-card">
+      <div class="progress-stat-icon">
+        <i class="fa-solid fa-book-open"></i>
+      </div>
+      <span>Lessons Completed</span>
+      <h2>12 <small>/ 20</small></h2>
+      <p>Sample learning record</p>
+    </article>
+
+    <article class="content-panel progress-stat-card">
+      <div class="progress-stat-icon">
+        <i class="fa-solid fa-puzzle-piece"></i>
+      </div>
+      <span>Puzzles Solved</span>
+      <h2>48</h2>
+      <p>Sample practice record</p>
+    </article>
+
+    <article class="content-panel progress-stat-card">
+      <div class="progress-stat-icon">
+        <i class="fa-solid fa-chess-knight"></i>
+      </div>
+      <span>Current Skill Level</span>
+      <h2>Beginner</h2>
+      <p>Update after coach assessment</p>
+    </article>
+
+    <article class="content-panel progress-stat-card">
+      <div class="progress-stat-icon">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+      <span>Achievements</span>
+      <h2>3</h2>
+      <p>Sample achievement count</p>
+    </article>
+
+  </div>
+
+  <!-- LEARNING PROGRESS -->
+  <div class="content-panel progress-main-panel">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">LEARNING DEVELOPMENT</span>
+        <h2>Skill Progress</h2>
+      </div>
+    </div>
+
+    <div class="skill-progress-item">
+      <div class="skill-progress-heading">
+        <span>Opening Principles</span>
+        <strong>75%</strong>
+      </div>
+      <div class="skill-progress-track">
+        <div class="skill-progress-fill" style="width: 75%"></div>
+      </div>
+      <p>Piece development, centre control, and king safety.</p>
+    </div>
+
+    <div class="skill-progress-item">
+      <div class="skill-progress-heading">
+        <span>Tactical Awareness</span>
+        <strong>60%</strong>
+      </div>
+      <div class="skill-progress-track">
+        <div class="skill-progress-fill" style="width: 60%"></div>
+      </div>
+      <p>Forks, pins, skewers, and tactical combinations.</p>
+    </div>
+
+    <div class="skill-progress-item">
+      <div class="skill-progress-heading">
+        <span>Endgame Knowledge</span>
+        <strong>40%</strong>
+      </div>
+      <div class="skill-progress-track">
+        <div class="skill-progress-fill" style="width: 40%"></div>
+      </div>
+      <p>King activity, pawn promotion, and basic endgames.</p>
+    </div>
+
+    <div class="skill-progress-item">
+      <div class="skill-progress-heading">
+        <span>Game Analysis</span>
+        <strong>55%</strong>
+      </div>
+      <div class="skill-progress-track">
+        <div class="skill-progress-fill" style="width: 55%"></div>
+      </div>
+      <p>Reviewing mistakes and finding stronger moves.</p>
+    </div>
+
+  </div>
+
+  <!-- COACH FEEDBACK -->
+  <div class="content-panel progress-feedback-panel">
+    <div class="progress-feedback-icon">
+      <i class="fa-solid fa-chalkboard-user"></i>
+    </div>
+
+    <div>
+      <span class="eyebrow">COACH'S GUIDANCE</span>
+      <h2>Keep Building Your Chess Skills</h2>
+      <p>
+        Practise consistently, explain your thinking before making a move,
+        and review important positions after every game.
+      </p>
+      <small>Example feedback — replace with the student's actual coach feedback.</small>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section-heading progress-achievements-heading">
+    <div>
+      <span class="eyebrow">MILESTONES</span>
+      <h2>Your Achievements</h2>
+    </div>
+  </div>
+
+  <div class="progress-achievements-grid">
+
+    <article class="content-panel progress-achievement-card">
+      <i class="fa-solid fa-medal"></i>
+      <h3>Learning Starter</h3>
+      <p>Begin your structured chess learning journey.</p>
+    </article>
+
+    <article class="content-panel progress-achievement-card">
+      <i class="fa-solid fa-puzzle-piece"></i>
+      <h3>Puzzle Explorer</h3>
+      <p>Build tactical awareness through regular puzzles.</p>
+    </article>
+
+    <article class="content-panel progress-achievement-card">
+      <i class="fa-solid fa-chess-board"></i>
+      <h3>Practice Player</h3>
+      <p>Develop confidence through guided games.</p>
+    </article>
+
+  </div>
+
+  <p class="progress-demo-note">
+    <i class="fa-solid fa-circle-info"></i>
+    The progress values and achievements above are demonstration data.
+    Connect them to actual student records before using them as real results.
+  </p>
+
+</section>
+<!-- FEES & PAYMENTS -->
+<section class="dashboard-view" id="payments" hidden>
+
+  <div class="page-heading">
+    <div>
+      <span class="eyebrow">YOUR ACADEMY ACCOUNT</span>
+      <h1>Fees &amp; Payments</h1>
+      <p>Review your academy fee details, payment status, and transaction history.</p>
+    </div>
+  </div>
+
+  <!-- PAYMENT SUMMARY -->
+  <div class="payment-summary-grid">
+
+    <article class="content-panel payment-summary-card">
+      <div class="payment-summary-icon">
+        <i class="fa-solid fa-receipt"></i>
+      </div>
+      <span>Total Course Fee</span>
+      <h2>₹ —</h2>
+      <p>Confirm your enrolled batch fee</p>
+    </article>
+
+    <article class="content-panel payment-summary-card">
+      <div class="payment-summary-icon">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <span>Amount Paid</span>
+      <h2>₹ —</h2>
+      <p>Updated payment total</p>
+    </article>
+
+    <article class="content-panel payment-summary-card">
+      <div class="payment-summary-icon">
+        <i class="fa-solid fa-wallet"></i>
+      </div>
+      <span>Outstanding Balance</span>
+      <h2>₹ —</h2>
+      <p>Check with the academy</p>
+    </article>
+
+  </div>
+
+  <!-- FEE DETAILS -->
+  <div class="content-panel payment-details-panel">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">ENROLMENT BILLING</span>
+        <h2>Fee Details</h2>
+      </div>
+      <span class="payment-status payment-status-pending">
+        Awaiting Confirmation
+      </span>
+    </div>
+
+    <div class="payment-detail-row">
+      <span>Student Name</span>
+      <strong>Aarav Sharma</strong>
+    </div>
+
+    <div class="payment-detail-row">
+      <span>Academy</span>
+      <strong>Knight Aura Chess Academy</strong>
+    </div>
+
+    <div class="payment-detail-row">
+      <span>Enrolled Program</span>
+      <strong>To be confirmed</strong>
+    </div>
+
+    <div class="payment-detail-row">
+      <span>Payment Plan</span>
+      <strong>To be confirmed</strong>
+    </div>
+
+    <div class="payment-detail-row">
+      <span>Next Due Date</span>
+      <strong>Not assigned</strong>
+    </div>
+
+    <p class="payment-info-note">
+      <i class="fa-solid fa-circle-info"></i>
+      Fee amounts, due dates, and payment status must be provided by
+      the academy. No payment is collected through this demo page.
+    </p>
+
+  </div>
+
+  <!-- PAYMENT HISTORY -->
+  <div class="content-panel payment-history-panel">
+
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">TRANSACTION RECORDS</span>
+        <h2>Payment History</h2>
+      </div>
+    </div>
+
+    <div class="payment-table-wrapper">
+      <table class="payment-table">
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="5" class="payment-empty-state">
+              <i class="fa-regular fa-folder-open"></i>
+              <strong>No payment records yet</strong>
+              <span>Your confirmed transactions will appear here.</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- PAYMENT HELP -->
+  <div class="content-panel payment-help-panel">
+    <div class="payment-help-icon">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+
+    <div>
+      <span class="eyebrow">NEED ASSISTANCE?</span>
+      <h2>Questions About Your Fees?</h2>
+      <p>
+        Contact the academy administration to confirm your batch fee,
+        instalment options, payment deadline, or receipt.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+        <!-- PROFILE -->
+        <section class="dashboard-view" id="profile" hidden>
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">YOUR ACCOUNT</span>
+                    <h1>Student Profile</h1>
+                    <p>Review your student information and chess learning preferences.</p>
+                </div>
+            </div>
+
+            <div class="profile-layout">
+                <div class="content-panel profile-card">
+                    <div class="large-avatar">A</div>
+                    <h2>Aarav Sharma</h2>
+                    <p>Student • Knight Aura Chess Academy</p>
+                    <span class="pill-label">Chess Learner</span>
+                </div>
+
+                <div class="content-panel profile-details">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">PERSONAL INFORMATION</span>
+                            <h2>Account Details</h2>
+                        </div>
+                    </div>
+
+                    <div class="profile-field"><span>Full Name</span><strong>Aarav Sharma</strong></div>
+                    <div class="profile-field"><span>Account Type</span><strong>Student</strong></div>
+                    <div class="profile-field"><span>Academy</span><strong>Knight Aura Chess Academy</strong></div>
+                    <div class="profile-field"><span>Learning Interest</span><strong>Chess strategy and tactics</strong></div>
+
+                    <button class="button button-primary" data-open-view="settings">Manage Preferences</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="dashboard-view" id="settings" hidden>
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">PERSONALISE YOUR PORTAL</span>
+                    <h1>Settings</h1>
+                    <p>Adjust the dashboard appearance to suit your preferences.</p>
+                </div>
+            </div>
+
+            <div class="content-panel settings-panel">
+                <div class="setting-row">
+                    <div class="setting-icon"><i class="fa-solid fa-circle-half-stroke"></i></div>
+                    <div class="setting-copy">
+                        <strong>Appearance</strong>
+                        <p>Switch between light and dark dashboard themes.</p>
+                    </div>
+                    <button class="button button-outline" data-setting="theme">Toggle Theme</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                    <div class="setting-copy">
+                        <strong>Layout Direction</strong>
+                        <p>Switch between left-to-right and right-to-left layouts.</p>
+                    </div>
+                    <button class="button button-outline" data-setting="direction">Toggle RTL/LTR</button>
+                </div>
+
+                <div class="setting-row">
+                    <div class="setting-icon"><i class="fa-regular fa-bell"></i></div>
+                    <div class="setting-copy">
+                        <strong>Academy Notifications</strong>
+                        <p>View coaching reminders, learning updates and competition announcements.</p>
+                    </div>
+                    <button class="button button-outline" data-open-notifications>View Updates</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY LEARNING -->
+        <section class="dashboard-view" id="learning" hidden>
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow">GROW YOUR GAME</span>
+                    <h1>My Learning</h1>
+                    <p>Your personal guide to building consistent chess skills.</p>
+                </div>
+            </div>
+
+            <div class="learning-grid">
+                <article class="content-panel learning-card">
+                    <div class="learning-icon"><i class="fa-solid fa-chess-knight"></i></div>
+                    <h2>Opening Principles</h2>
+                    <p>Control the centre, develop your pieces and protect your king before launching an attack.</p>
+                    <button class="text-action" data-open-view="schedule">View training plan <i class="fa-solid fa-arrow-right"></i></button>
+                </article>
+
+                <article class="content-panel learning-card">
+                    <div class="learning-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <h2>Tactical Awareness</h2>
+                    <p>Look for checks, captures and threats. Practise forks, pins and combinations to improve calculation.</p>
+                    <button class="text-action" data-open-view="schedule">View training plan <i class="fa-solid fa-arrow-right"></i></button>
+                </article>
+
+                <article class="content-panel learning-card">
+                    <div class="learning-icon"><i class="fa-solid fa-chess-board"></i></div>
+                    <h2>Game Analysis</h2>
+                    <p>Review critical positions, identify missed opportunities and write down one lesson from every game.</p>
+                    <button class="text-action" data-open-view="schedule">View training plan <i class="fa-solid fa-arrow-right"></i></button>
+                </article>
+
+                <article class="content-panel learning-card">
+                    <div class="learning-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h2>Competitive Preparation</h2>
+                    <p>Practise with a clock, follow tournament etiquette and stay focused after both wins and losses.</p>
+                    <button class="text-action" data-open-view="tournaments">Explore events <i class="fa-solid fa-arrow-right"></i></button>
+                </article>
+            </div>
+        </section>
+
+        <footer class="dashboard-footer">
+            <span>&copy; <span id="currentYear"></span> Knight Aura Chess Academy</span>
+            <span>Where Strategy Meets Elegance.</span>
+        </footer>
+
+    </div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage"></span>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

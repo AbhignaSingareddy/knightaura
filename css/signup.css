@@ -1,0 +1,2340 @@
+/* =========================================
+   KNIGHTAURA SIGNUP
+   Matching login page and Home 1 branding
+========================================= */
+
+body.auth-page.page-signup {
+  --auth-green: #203C32;
+  --auth-gold: #B88A4A;
+  --auth-cream: #F7F5EF;
+  --auth-ink: #26352D;
+  --auth-muted: #777D75;
+  --auth-border: #D5DED7;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+
+  background: var(--auth-cream);
+  color: var(--auth-ink);
+
+  font-family: "Lora", Georgia, serif;
+}
+
+body.auth-page.page-signup *,
+body.auth-page.page-signup *::before,
+body.auth-page.page-signup *::after {
+  box-sizing: border-box;
+}
+
+/* Top-right theme and direction controls */
+body.auth-page.page-signup .auth-tools {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  inset-inline-end: 24px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.auth-page.page-signup .auth-tools .icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+
+  border: 1px solid rgba(184, 138, 74, 0.65);
+  border-radius: 50%;
+
+  color: var(--auth-green);
+  background: transparent;
+
+  cursor: pointer;
+  box-shadow: none;
+  transition: background .2s ease, color .2s ease;
+}
+
+body.auth-page.page-signup .auth-tools .icon-button svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+body.auth-page.page-signup .auth-tools .icon-button:hover {
+  color: var(--auth-gold);
+  background: rgba(184, 138, 74, 0.06);
+}
+
+/* Centered page */
+body.auth-page.page-signup .auth-main {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 54px 16px 12px;
+  overflow: hidden;
+}
+
+/* Signup card */
+body.auth-page.page-signup .signup-card {
+  width: 100%;
+  max-width: 510px;
+  max-height: 100%;
+
+  margin: 0 auto;
+  padding: 18px 32px 17px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(184, 138, 74, 0.38);
+  border-radius: 16px;
+
+  background: #FFFFFF;
+  box-shadow: 0 14px 36px rgba(32, 60, 50, 0.07);
+}
+
+/* Brand: reuse Home 1 logo markup */
+body.auth-page.page-signup .auth-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+body.auth-page.page-signup .auth-brand .brand-mark {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 48px !important;
+  height: 48px !important;
+  flex: 0 0 48px !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-mark img {
+  display: block !important;
+
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  border: 0 !important;
+  background: transparent !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  min-width: 0;
+}
+
+body.auth-page.page-signup .auth-brand .brand-name {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+
+  margin: 0 !important;
+
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-size: 29px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-knight {
+  color: var(--auth-green) !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-aura {
+  color: var(--auth-gold) !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-subtitle {
+  display: block !important;
+  margin: 0 !important;
+
+  color: var(--auth-green) !important;
+  font-family: "Lora", Georgia, serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.035em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+/* Divider */
+body.auth-page.page-signup .auth-divider {
+  width: 100%;
+  height: 1px;
+  margin: 9px 0 9px;
+  background: var(--auth-border);
+}
+
+/* Heading */
+body.auth-page.page-signup .auth-heading {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+body.auth-page.page-signup .auth-heading h1 {
+  margin: 0;
+
+  color: var(--auth-green);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+body.auth-page.page-signup .auth-heading h1 em {
+  color: var(--auth-gold);
+  font-style: normal;
+}
+
+body.auth-page.page-signup .auth-heading p {
+  margin: 4px auto 10px;
+
+  color: var(--auth-muted);
+  font-family: "Lora", Georgia, serif;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Form layout */
+body.auth-page.page-signup .auth-form {
+  display: grid;
+  gap: 8px;
+
+  width: 100%;
+  margin: 0;
+}
+
+body.auth-page.page-signup .auth-field {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+body.auth-page.page-signup .auth-field > label {
+  display: block;
+  margin: 0 0 4px;
+
+  color: var(--auth-ink);
+  font-family: "Lora", Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+body.auth-page.page-signup .auth-field > label span {
+  color: var(--auth-gold);
+}
+
+/* Inputs and select */
+body.auth-page.page-signup .auth-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: 100%;
+  height: 38px;
+  min-height: 38px;
+  padding: 0 10px;
+
+  border: 1px solid #CEDBD3;
+  border-radius: 10px;
+
+  background: #FAF9F5;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+body.auth-page.page-signup .auth-input-wrap:focus-within {
+  border-color: var(--auth-gold);
+  box-shadow: 0 0 0 2px rgba(184, 138, 74, 0.12);
+}
+
+body.auth-page.page-signup .auth-input-wrap > svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+
+  color: #58756B;
+}
+
+body.auth-page.page-signup .auth-input-wrap input,
+body.auth-page.page-signup .auth-input-wrap select {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  color: var(--auth-ink);
+  background: transparent;
+
+  font-family: "Lora", Georgia, serif;
+  font-size: 12px;
+  line-height: normal;
+}
+
+body.auth-page.page-signup .auth-input-wrap input::placeholder {
+  color: #91A79E;
+  opacity: 1;
+}
+
+body.auth-page.page-signup .auth-input-wrap select {
+  cursor: pointer;
+}
+
+body.auth-page.page-signup .auth-input-wrap select:invalid {
+  color: #91A79E;
+}
+
+body.auth-page.page-signup .auth-input-wrap select option {
+  color: var(--auth-ink);
+  background: #FFFFFF;
+}
+
+/* Keep select arrow at the end */
+body.auth-page.page-signup .auth-input-wrap .auth-select-arrow {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  pointer-events: none;
+}
+
+/* Password eye buttons */
+body.auth-page.page-signup .auth-password-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 30px;
+  min-width: 26px;
+  flex: 0 0 26px;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  color: #58756B;
+  background: transparent;
+  cursor: pointer;
+}
+
+body.auth-page.page-signup .auth-password-toggle svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+/* Terms and conditions */
+body.auth-page.page-signup .signup-terms {
+  margin: 2px 0 0;
+}
+
+body.auth-page.page-signup .signup-terms .auth-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin: 0;
+
+  color: var(--auth-muted);
+  font-family: "Lora", Georgia, serif;
+  font-size: 10px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+body.auth-page.page-signup .signup-terms .auth-check input {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+
+  margin: 1px 0 0;
+  accent-color: var(--auth-green);
+}
+
+body.auth-page.page-signup .signup-terms a {
+  color: var(--auth-gold);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.auth-page.page-signup .signup-terms a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Submit button */
+body.auth-page.page-signup .auth-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  padding: 9px 16px;
+
+  border: 1px solid var(--auth-green);
+  border-radius: 8px;
+
+  color: #F7F5EF;
+  background: var(--auth-green);
+
+  font-family: "Lora", Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+body.auth-page.page-signup .auth-submit:hover {
+  color: var(--auth-green);
+  background: var(--auth-gold);
+  border-color: var(--auth-gold);
+}
+
+body.auth-page.page-signup .auth-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+body.auth-page.page-signup .auth-status {
+  margin: 0;
+
+  color: var(--auth-green);
+  font-family: "Lora", Georgia, serif;
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+body.auth-page.page-signup .auth-status:empty {
+  display: none;
+}
+
+/* Social divider */
+body.auth-page.page-signup .auth-social-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  margin: 9px 0 7px;
+
+  color: var(--auth-green);
+  font-family: "Lora", Georgia, serif;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+body.auth-page.page-signup .auth-social-divider::before,
+body.auth-page.page-signup .auth-social-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--auth-border);
+}
+
+/* Google and Apple */
+body.auth-page.page-signup .auth-social {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+
+  width: 100%;
+}
+
+body.auth-page.page-signup .auth-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 8px;
+
+  border: 1px solid #D0DDD5;
+  border-radius: 9px;
+
+  color: var(--auth-ink);
+  background: #FFFFFF;
+
+  font-family: "Lora", Georgia, serif;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+body.auth-page.page-signup .auth-social-button:hover {
+  border-color: var(--auth-gold);
+  background: #FAF8F1;
+}
+
+body.auth-page.page-signup .google-logo {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+body.auth-page.page-signup .apple-logo {
+  width: 16px;
+  height: 18px;
+  flex: 0 0 16px;
+}
+
+/* Login link */
+body.auth-page.page-signup .auth-switch {
+  margin: 8px 0 0;
+
+  color: var(--auth-muted);
+  font-family: "Lora", Georgia, serif;
+  font-size: 11px;
+  text-align: center;
+}
+
+body.auth-page.page-signup .auth-switch a {
+  color: var(--auth-gold);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.auth-page.page-signup .auth-switch a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Dark mode: use the same data-theme attribute as the website */
+html[data-theme="dark"] body.auth-page.page-signup {
+  --auth-cream: #14251D;
+  --auth-ink: #F1EEE5;
+  --auth-muted: #C0C4BA;
+  --auth-border: rgba(247, 245, 239, 0.18);
+
+  color: var(--auth-ink);
+  background: var(--auth-cream);
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .signup-card {
+  background: #1B3026;
+  border-color: rgba(184, 138, 74, 0.4);
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-heading h1,
+html[data-theme="dark"] body.auth-page.page-signup .auth-field > label {
+  color: #F7F5EF;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap {
+  background: #14251D;
+  border-color: rgba(247, 245, 239, 0.2);
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap input,
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap select {
+  color: #F7F5EF;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap select option {
+  color: #F7F5EF;
+  background: #1B3026;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-button {
+  color: #F7F5EF;
+  background: #203C32;
+  border-color: rgba(247, 245, 239, 0.2);
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-tools .icon-button {
+  color: #F7F5EF;
+  background: #203C32;
+}
+
+/* RTL support */
+html[dir="rtl"] body.auth-page.page-signup .auth-brand {
+  direction: ltr;
+}
+
+html[dir="rtl"] body.auth-page.page-signup .auth-field,
+html[dir="rtl"] body.auth-page.page-signup .signup-terms {
+  text-align: right;
+}
+
+html[dir="rtl"] body.auth-page.page-signup .auth-input-wrap input,
+html[dir="rtl"] body.auth-page.page-signup .auth-input-wrap select {
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  body.auth-page.page-signup .auth-tools {
+    top: 8px;
+    right: 12px;
+    inset-inline-end: 12px;
+    gap: 7px;
+  }
+
+  body.auth-page.page-signup .auth-tools .icon-button {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  body.auth-page.page-signup .auth-main {
+    padding: 49px 10px 10px;
+  }
+
+  body.auth-page.page-signup .signup-card {
+    max-width: 440px;
+    padding: 14px 17px 13px;
+  }
+
+  body.auth-page.page-signup .auth-brand .brand-mark,
+  body.auth-page.page-signup .auth-brand .brand-mark img {
+    width: 42px !important;
+    height: 42px !important;
+    flex-basis: 42px !important;
+  }
+
+  body.auth-page.page-signup .auth-brand .brand-name {
+    font-size: 26px !important;
+  }
+
+  body.auth-page.page-signup .auth-brand .brand-subtitle {
+    font-size: 8px !important;
+  }
+
+  body.auth-page.page-signup .auth-heading h1 {
+    font-size: 24px;
+  }
+
+  body.auth-page.page-signup .auth-heading p {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  body.auth-page.page-signup .auth-form {
+    gap: 7px;
+  }
+
+  body.auth-page.page-signup .auth-input-wrap {
+    height: 36px;
+    min-height: 36px;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    gap: 4px;
+    padding-inline: 4px;
+    font-size: 9px;
+  }
+}
+
+/* Compact spacing for short desktop screens */
+@media (max-height: 760px) and (min-width: 521px) {
+  body.auth-page.page-signup .auth-main {
+    padding-top: 47px;
+    padding-bottom: 8px;
+  }
+
+  body.auth-page.page-signup .signup-card {
+    padding-top: 12px;
+    padding-bottom: 11px;
+  }
+
+  body.auth-page.page-signup .auth-divider {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  body.auth-page.page-signup .auth-heading p {
+    margin-bottom: 7px;
+  }
+
+  body.auth-page.page-signup .auth-form {
+    gap: 6px;
+  }
+
+  body.auth-page.page-signup .auth-input-wrap {
+    height: 35px;
+    min-height: 35px;
+  }
+
+  body.auth-page.page-signup .auth-social-divider {
+    margin-top: 7px;
+    margin-bottom: 6px;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    min-height: 35px;
+  }
+
+  body.auth-page.page-signup .auth-switch {
+    margin-top: 6px;
+  }
+}
+/* Make the signup footer visible */
+body.auth-page.page-signup .signup-card {
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+body.auth-page.page-signup .auth-switch {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  margin: 10px 0 2px !important;
+  padding: 4px 0 !important;
+
+  color: var(--auth-muted, #777D75);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+body.auth-page.page-signup .auth-switch a {
+  display: inline;
+  color: #B88A4A !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Allow the card to fit on short screens */
+body.auth-page.page-signup .auth-main {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* =========================================
+   SIGNUP PAGE — WIDTH, FIT & FOOTER FIX
+========================================= */
+
+html,
+body.auth-page.page-signup {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+body.auth-page.page-signup {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.auth-page.page-signup .auth-main {
+  height: 100%;
+  min-height: 0;
+  padding: 48px 20px 10px;
+  overflow: hidden;
+}
+
+body.auth-page.page-signup .signup-card {
+  width: min(100%, 570px);
+  max-width: 570px;
+  max-height: 100%;
+  flex-shrink: 1;
+
+  padding: 13px 32px 12px;
+  overflow: visible;
+}
+
+/* Logo and brand */
+body.auth-page.page-signup .auth-divider {
+  margin: 7px 0;
+}
+
+body.auth-page.page-signup .auth-heading h1 {
+  font-size: 28px;
+}
+
+body.auth-page.page-signup .auth-heading p {
+  margin: 3px auto 7px;
+  font-size: 12px;
+}
+
+/* Reduce vertical space between fields */
+body.auth-page.page-signup .auth-form {
+  gap: 5px;
+}
+
+body.auth-page.page-signup .auth-field > label {
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+body.auth-page.page-signup .auth-input-wrap {
+  height: 35px;
+  min-height: 35px;
+}
+
+/* Terms */
+body.auth-page.page-signup .signup-terms {
+  margin-top: 1px;
+}
+
+body.auth-page.page-signup .signup-terms .auth-check {
+  font-size: 11px;
+}
+
+/* Main button */
+body.auth-page.page-signup .auth-submit {
+  min-height: 40px;
+  padding: 8px 14px;
+}
+
+/* Google and Apple */
+body.auth-page.page-signup .auth-social-divider {
+  margin: 7px 0 6px;
+}
+
+body.auth-page.page-signup .auth-social-button {
+  min-height: 37px;
+  font-size: 11px;
+}
+
+/* Sign in footer — keep visible */
+body.auth-page.page-signup .auth-switch {
+  display: block;
+  width: 100%;
+  margin: 7px 0 0 !important;
+  padding: 2px 0 !important;
+
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Keep theme and RTL buttons unchanged */
+body.auth-page.page-signup .auth-tools {
+  z-index: 100;
+}
+
+/* Smaller screens */
+@media (max-width: 520px) {
+  body.auth-page.page-signup .auth-main {
+    padding: 48px 10px 8px;
+  }
+
+  body.auth-page.page-signup .signup-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 12px 17px 10px;
+  }
+
+  body.auth-page.page-signup .auth-social {
+    gap: 7px;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    gap: 4px;
+    padding: 6px 3px;
+    font-size: 9px;
+  }
+}
+
+/* Short viewport: fit the entire card */
+@media (max-height: 700px) {
+  body.auth-page.page-signup .auth-main {
+    padding-top: 43px;
+    padding-bottom: 5px;
+  }
+
+  body.auth-page.page-signup .signup-card {
+    padding-top: 9px;
+    padding-bottom: 7px;
+  }
+
+  body.auth-page.page-signup .auth-brand .brand-mark,
+  body.auth-page.page-signup .auth-brand .brand-mark img {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px !important;
+  }
+
+  body.auth-page.page-signup .auth-brand .brand-name {
+    font-size: 26px !important;
+  }
+
+  body.auth-page.page-signup .auth-heading h1 {
+    font-size: 25px;
+  }
+
+  body.auth-page.page-signup .auth-heading p {
+    margin-bottom: 5px;
+  }
+
+  body.auth-page.page-signup .auth-form {
+    gap: 4px;
+  }
+
+  body.auth-page.page-signup .auth-input-wrap {
+    height: 32px;
+    min-height: 32px;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    min-height: 33px;
+  }
+
+  body.auth-page.page-signup .auth-switch {
+    margin-top: 4px !important;
+  }
+}
+/* =========================================
+   SIGNUP FINAL TUNING
+   Preserve original logo size
+========================================= */
+
+/* Restore logo section size */
+body.auth-page.page-signup .auth-brand .brand-mark,
+body.auth-page.page-signup .auth-brand .brand-mark img {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  flex: 0 0 48px !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-name {
+  font-size: 29px !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-subtitle {
+  font-size: 10px !important;
+}
+
+/* Preserve logo section spacing */
+body.auth-page.page-signup .auth-divider {
+  margin: 7px 0 8px !important;
+}
+
+/* Keep heading readable */
+body.auth-page.page-signup .auth-heading h1 {
+  font-size: 29px !important;
+}
+
+body.auth-page.page-signup .auth-heading p {
+  font-size: 13px !important;
+  margin: 4px auto 7px !important;
+}
+
+/* Reduce only form spacing */
+body.auth-page.page-signup .auth-form {
+  gap: 4px !important;
+}
+
+body.auth-page.page-signup .auth-field > label {
+  font-size: 12px !important;
+  margin-bottom: 2px !important;
+}
+
+body.auth-page.page-signup .auth-input-wrap {
+  height: 34px !important;
+  min-height: 34px !important;
+}
+
+/* Keep input text readable */
+body.auth-page.page-signup .auth-input-wrap input,
+body.auth-page.page-signup .auth-input-wrap select,
+body.auth-page.page-signup .auth-input-wrap input::placeholder {
+  font-size: 12px !important;
+}
+
+/* Terms */
+body.auth-page.page-signup .signup-terms .auth-check {
+  font-size: 10px !important;
+}
+
+/* Buttons */
+body.auth-page.page-signup .auth-submit {
+  min-height: 38px !important;
+  font-size: 12px !important;
+}
+
+body.auth-page.page-signup .auth-social-divider {
+  margin: 6px 0 !important;
+}
+
+body.auth-page.page-signup .auth-social-button {
+  min-height: 35px !important;
+  font-size: 10px !important;
+}
+
+/* Sign in footer */
+body.auth-page.page-signup .auth-switch {
+  display: block !important;
+  margin: 5px 0 0 !important;
+  font-size: 11px !important;
+}
+/* =========================================
+   SIGNUP — READABLE TEXT & BETTER SPACING
+========================================= */
+
+/* Keep the existing logo size unchanged */
+
+/* Main heading */
+body.auth-page.page-signup .auth-heading h1 {
+  font-size: 32px !important;
+  line-height: 1.2;
+}
+
+body.auth-page.page-signup .auth-heading p {
+  font-size: 14px !important;
+  line-height: 1.6;
+  margin: 6px auto 11px !important;
+}
+
+/* Field labels */
+body.auth-page.page-signup .auth-field > label {
+  font-size: 14px !important;
+  line-height: 1.5;
+  margin-bottom: 4px !important;
+}
+
+/* Input fields */
+body.auth-page.page-signup .auth-input-wrap {
+  height: 39px !important;
+  min-height: 39px !important;
+  padding-inline: 12px !important;
+}
+
+body.auth-page.page-signup .auth-input-wrap input,
+body.auth-page.page-signup .auth-input-wrap select,
+body.auth-page.page-signup .auth-input-wrap input::placeholder {
+  font-size: 14px !important;
+}
+
+/* Space between fields */
+body.auth-page.page-signup .auth-form {
+  gap: 7px !important;
+}
+
+/* Terms text */
+body.auth-page.page-signup .signup-terms .auth-check {
+  font-size: 12px !important;
+  line-height: 1.6;
+}
+
+/* Create account button */
+body.auth-page.page-signup .auth-submit {
+  min-height: 43px !important;
+  font-size: 14px !important;
+  margin-top: 2px;
+}
+
+/* Social section */
+body.auth-page.page-signup .auth-social-divider {
+  margin: 9px 0 8px !important;
+  font-size: 12px !important;
+}
+
+body.auth-page.page-signup .auth-social-button {
+  min-height: 40px !important;
+  font-size: 12px !important;
+}
+
+/* Sign-in footer */
+body.auth-page.page-signup .auth-switch {
+  margin-top: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.6;
+}
+
+/* Short screens: preserve the full layout */
+@media (max-height: 760px) {
+  body.auth-page.page-signup .auth-main {
+    padding-top: 44px;
+    padding-bottom: 6px;
+  }
+
+  body.auth-page.page-signup .auth-heading h1 {
+    font-size: 29px !important;
+  }
+
+  body.auth-page.page-signup .auth-heading p {
+    margin-bottom: 7px !important;
+  }
+
+  body.auth-page.page-signup .auth-form {
+    gap: 5px !important;
+  }
+
+  body.auth-page.page-signup .auth-input-wrap {
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+
+  body.auth-page.page-signup .auth-social-divider {
+    margin: 6px 0 !important;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    min-height: 36px !important;
+  }
+
+  body.auth-page.page-signup .auth-switch {
+    margin-top: 5px !important;
+  }
+}
+/* ==========================================
+   KNIGHTAURA SIGNUP — DARK MODE + NO SCROLL
+   Keep original logo size and layout
+========================================== */
+
+/* ---------- DARK MODE BACKGROUND ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup,
+body.auth-page.page-signup:has(html[data-theme="dark"]) {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-card {
+  background: #171717 !important;
+  border-color: #4a3926 !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ---------- LOGO: KEEP SIZE, MAKE TEXT WHITE ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-brand .brand-name,
+html[data-theme="dark"] body.auth-page.page-signup .auth-brand .brand-knight,
+html[data-theme="dark"] body.auth-page.page-signup .auth-brand .brand-subtitle {
+  color: #ffffff !important;
+}
+
+/* Keep the gold accent in KnightAura */
+html[data-theme="dark"] body.auth-page.page-signup .auth-brand .brand-aura {
+  color: #B88A4A !important;
+}
+
+/* Do not add a background or box behind the logo */
+body.auth-page.page-signup .auth-brand .brand-mark {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body.auth-page.page-signup .auth-brand .brand-mark img {
+  object-fit: contain !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Divider */
+html[data-theme="dark"] body.auth-page.page-signup .auth-divider {
+  border-color: #414141 !important;
+  background-color: #414141 !important;
+}
+
+/* ---------- HEADING AND LABELS ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-heading h1,
+html[data-theme="dark"] body.auth-page.page-signup .auth-heading p,
+html[data-theme="dark"] body.auth-page.page-signup .auth-field > label,
+html[data-theme="dark"] body.auth-page.page-signup .auth-check,
+html[data-theme="dark"] body.auth-page.page-signup .auth-switch {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-heading h1 em,
+html[data-theme="dark"] body.auth-page.page-signup .auth-switch a,
+html[data-theme="dark"] body.auth-page.page-signup .auth-check a {
+  color: #B88A4A !important;
+}
+
+/* ---------- BLACK INPUT FIELDS ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap {
+  background: #080808 !important;
+  border-color: #444444 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap input,
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap select {
+  color: #ffffff !important;
+  background: transparent !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap input::placeholder {
+  color: #bdbdbd !important;
+  -webkit-text-fill-color: #bdbdbd !important;
+  opacity: 1 !important;
+}
+
+/* Input icons */
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap > i,
+html[data-theme="dark"] body.auth-page.page-signup .auth-password-toggle,
+html[data-theme="dark"] body.auth-page.page-signup .auth-password-toggle i {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Dropdown options */
+html[data-theme="dark"] body.auth-page.page-signup .auth-input-wrap select option {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+/* ---------- CHECKBOX ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-check input {
+  accent-color: #B88A4A !important;
+}
+
+/* ---------- BUTTONS ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-submit {
+  background: #080808 !important;
+  color: #ffffff !important;
+  border: 1px solid #444444 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-submit:hover {
+  background: #B88A4A !important;
+  color: #080808 !important;
+  border-color: #B88A4A !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-button {
+  background: #080808 !important;
+  color: #ffffff !important;
+  border-color: #444444 !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-button:hover {
+  border-color: #B88A4A !important;
+  background: #202020 !important;
+}
+
+/* Google logo retains its original colours */
+body.auth-page.page-signup .google-logo {
+  flex-shrink: 0;
+}
+
+/* Apple icon */
+html[data-theme="dark"] body.auth-page.page-signup .apple-logo {
+  color: #ffffff !important;
+}
+
+/* Divider and footer */
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-divider {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-divider::before,
+html[data-theme="dark"] body.auth-page.page-signup .auth-social-divider::after {
+  border-color: #414141 !important;
+}
+
+/* ---------- DARK MODE / RTL CONTROLS ---------- */
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-tools .icon-button {
+  background: #080808 !important;
+  color: #ffffff !important;
+  border-color: #B88A4A !important;
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-tools .icon-button i,
+html[data-theme="dark"] body.auth-page.page-signup .auth-tools .icon-button svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* ---------- FIT THE SCREEN WITHOUT PAGE SCROLL ---------- */
+
+html:has(body.page-signup),
+body.auth-page.page-signup {
+  min-height: 100%;
+}
+
+body.auth-page.page-signup {
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+body.auth-page.page-signup .auth-main {
+  box-sizing: border-box !important;
+  min-height: 100svh !important;
+  height: 100svh !important;
+  padding: 58px 20px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+body.auth-page.page-signup .auth-card {
+  box-sizing: border-box !important;
+  width: min(100%, 570px) !important;
+  max-width: 570px !important;
+  max-height: calc(100svh - 80px) !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+}
+
+/* Prevent form children from forcing extra height */
+body.auth-page.page-signup .auth-form {
+  min-height: 0 !important;
+}
+
+/* Short laptop screens */
+@media (max-height: 760px) {
+  body.auth-page.page-signup .auth-main {
+    padding: 48px 16px 8px !important;
+  }
+
+  body.auth-page.page-signup .auth-card {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  body.auth-page.page-signup .auth-heading p {
+    margin-bottom: 6px !important;
+  }
+
+  body.auth-page.page-signup .auth-form {
+    gap: 4px !important;
+  }
+
+  body.auth-page.page-signup .auth-input-wrap {
+    min-height: 34px !important;
+    height: 34px !important;
+  }
+
+  body.auth-page.page-signup .auth-social-divider {
+    margin: 5px 0 !important;
+  }
+
+  body.auth-page.page-signup .auth-social-button {
+    min-height: 34px !important;
+  }
+
+  body.auth-page.page-signup .auth-switch {
+    margin-top: 4px !important;
+  }
+}
+
+/* Small screens: keep the form usable */
+@media (max-width: 480px) {
+  body.auth-page.page-signup .auth-main {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  body.auth-page.page-signup .auth-card {
+    width: 100% !important;
+  }
+}
+
+
+/* ==========================================
+   KNIGHTAURA SIGNUP — RTL BRAND & TOOLBAR
+========================================== */
+
+/* Brand layout */
+body.page-signup .auth-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  direction: ltr !important;
+}
+
+/* RTL brand layout */
+html[dir="rtl"] body.page-signup .auth-brand {
+  flex-direction: row-reverse !important;
+  direction: rtl !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-mark {
+  order: 2 !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-copy {
+  order: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  direction: ltr !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+/* Keep KnightAura spelling correct */
+html[dir="rtl"] body.page-signup .auth-brand .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-knight,
+html[dir="rtl"] body.page-signup .auth-brand .brand-aura {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-subtitle {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+
+/* Logo image size */
+html[dir="rtl"] body.page-signup .auth-brand .brand-mark img {
+  display: block !important;
+  width: 48px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* Toolbar default position: top-right */
+body.page-signup .auth-tools {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  z-index: 1000 !important;
+}
+
+/* RTL: move toolbar to top-left */
+html[dir="rtl"] body.page-signup .auth-tools {
+  right: auto !important;
+  left: 20px !important;
+}
+
+/* LTR: move toolbar back to top-right */
+html[dir="ltr"] body.page-signup .auth-tools {
+  right: 20px !important;
+  left: auto !important;
+}
+
+/* Restore brand layout in LTR */
+html[dir="ltr"] body.page-signup .auth-brand {
+  flex-direction: row !important;
+  direction: ltr !important;
+}
+
+html[dir="ltr"] body.page-signup .auth-brand .brand-mark {
+  order: 1 !important;
+}
+
+html[dir="ltr"] body.page-signup .auth-brand .brand-copy {
+  order: 2 !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+/* Move only KnightAura name to the right in RTL */
+html[dir="rtl"] body.page-signup .auth-brand .brand-name {
+  position: relative !important;
+  left: 70px !important;
+  right: auto !important;
+}
+/* Hide browser's extra password reveal icons */
+body.page-signup input[type="password"]::-ms-reveal,
+body.page-signup input[type="password"]::-ms-clear {
+  display: none !important;
+}
+
+/* Hide Edge/Chrome autofill password reveal controls where supported */
+body.page-signup input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden !important;
+  display: none !important;
+  pointer-events: none !important;
+}
+/* ==========================================
+   SIGNUP PAGE — DISABLE ALL PAGE SCROLLING
+========================================== */
+
+html,
+body.page-signup {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+/* Keep the signup page fixed inside the screen */
+body.page-signup {
+  min-height: 100vh !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Prevent horizontal overflow from signup content */
+body.page-signup .auth-page,
+body.page-signup .auth-container,
+body.page-signup .auth-wrapper,
+body.page-signup .auth-card {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep the signup card within the viewport */
+body.page-signup .auth-card {
+  max-height: calc(100vh - 32px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Prevent elements from creating horizontal scrolling */
+body.page-signup * {
+  box-sizing: border-box;
+}
+
+body.page-signup img,
+body.page-signup input,
+body.page-signup button {
+  max-width: 100%;
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  html,
+  body.page-signup {
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body.page-signup .auth-card {
+    max-height: calc(100vh - 24px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+}
+/* ==========================================
+   KNIGHTAURA — PREMIUM CHESS BACKGROUND
+   No dots | No form animations
+========================================== */
+
+body.auth-page.page-signup {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+/* 1. Ambient emerald and gold light */
+body.auth-page.page-signup::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 20%,
+      rgba(184, 138, 74, 0.22),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 90% 78%,
+      rgba(32, 60, 50, 0.20),
+      transparent 40%
+    );
+
+  animation: kaAmbientLight 12s ease-in-out infinite alternate;
+}
+
+/* 2. Large, subtle moving chessboard */
+body.auth-page.page-signup .auth-main {
+  position: relative;
+  z-index: 0;
+  isolation: auto;
+}
+
+body.auth-page.page-signup .auth-main::before {
+  content: "";
+  position: fixed;
+  inset: -100%;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(184, 138, 74, 0.09) 49%,
+      rgba(184, 138, 74, 0.09) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(184, 138, 74, 0.07) 49%,
+      rgba(184, 138, 74, 0.07) 50%,
+      transparent 51%
+    );
+
+  background-size: 100px 100px;
+
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    transparent 68%
+  );
+
+  animation: kaBoardDrift 35s linear infinite;
+}
+
+/* 3. Elegant floating chess knight */
+body.auth-page.page-signup .auth-main::after {
+  content: "♞";
+  position: fixed;
+  left: 6%;
+  top: 23%;
+  z-index: -1;
+  pointer-events: none;
+
+  font-family: Georgia, serif;
+  font-size: clamp(90px, 12vw, 165px);
+  line-height: 1;
+
+  color: rgba(184, 138, 74, 0.32);
+  text-shadow: 0 0 45px rgba(184, 138, 74, 0.12);
+
+  animation: kaKnightMotion 10s ease-in-out infinite;
+}
+
+/* 4. Additional chess queen */
+body.auth-page.page-signup .signup-card::before {
+  content: "♛";
+  position: fixed;
+  right: 7%;
+  bottom: 12%;
+  z-index: -1;
+  pointer-events: none;
+
+  font-family: Georgia, serif;
+  font-size: clamp(95px, 12vw, 160px);
+  line-height: 1;
+
+  color: rgba(184, 138, 74, 0.28);
+  text-shadow: 0 0 40px rgba(184, 138, 74, 0.10);
+
+  animation: kaQueenMotion 12s ease-in-out infinite;
+}
+
+/* 5. Subtle golden light sweep */
+body.auth-page.page-signup .signup-card::after {
+  content: "";
+  position: fixed;
+  top: -30%;
+  left: -30%;
+  width: 24%;
+  height: 160%;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 138, 74, 0.10),
+    transparent
+  );
+
+  transform: rotate(24deg);
+  animation: kaGoldSweep 13s ease-in-out infinite;
+}
+
+/* Light movement */
+@keyframes kaAmbientLight {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+  }
+
+  100% {
+    transform: scale(1.1);
+    filter: brightness(1);
+  }
+}
+
+/* Chessboard slowly moves diagonally */
+@keyframes kaBoardDrift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(100px, 100px, 0);
+  }
+}
+
+/* Knight: gentle floating and rotation */
+@keyframes kaKnightMotion {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  35% {
+    transform: translate3d(20px, -22px, 0) rotate(2deg);
+  }
+
+  70% {
+    transform: translate3d(-5px, -38px, 0) rotate(8deg);
+  }
+}
+
+/* Queen: slower independent movement */
+@keyframes kaQueenMotion {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(5deg);
+  }
+
+  40% {
+    transform: translate3d(-22px, -28px, 0) rotate(-3deg);
+  }
+
+  75% {
+    transform: translate3d(8px, -15px, 0) rotate(4deg);
+  }
+}
+
+/* Golden light passes behind the form */
+@keyframes kaGoldSweep {
+  0%, 15% {
+    left: -35%;
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0.7;
+  }
+
+  85%, 100% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+/* Dark mode */
+html[data-theme="dark"] body.auth-page.page-signup::before {
+  background:
+    radial-gradient(
+      ellipse at 12% 20%,
+      rgba(184, 138, 74, 0.14),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 90% 78%,
+      rgba(20, 85, 65, 0.28),
+      transparent 40%
+    );
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-main::before {
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(184, 138, 74, 0.10) 49%,
+      rgba(184, 138, 74, 0.10) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(184, 138, 74, 0.08) 49%,
+      rgba(184, 138, 74, 0.08) 50%,
+      transparent 51%
+    );
+}
+
+html[data-theme="dark"] body.auth-page.page-signup .auth-main::after,
+html[data-theme="dark"] body.auth-page.page-signup .signup-card::before {
+  color: rgba(214, 166, 85, 0.36);
+}
+
+/* Mobile: keep background effects subtle */
+@media (max-width: 600px) {
+  body.auth-page.page-signup .auth-main::after {
+    left: 1%;
+    font-size: 75px;
+  }
+
+  body.auth-page.page-signup .signup-card::before {
+    right: 1%;
+    font-size: 80px;
+  }
+
+  body.auth-page.page-signup .auth-main::before {
+    background-size: 70px 70px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  body.auth-page.page-signup::before,
+  body.auth-page.page-signup .auth-main::before,
+  body.auth-page.page-signup .auth-main::after,
+  body.auth-page.page-signup .signup-card::before,
+  body.auth-page.page-signup .signup-card::after {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}
+/* =========================================
+   KNIGHTAURA SIGNUP — RTL FINAL FIX
+========================================= */
+
+/* RTL form alignment */
+html[dir="rtl"] body.page-signup .signup-card,
+html[dir="rtl"] body.page-signup .auth-card {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Heading and description */
+html[dir="rtl"] body.page-signup .auth-heading,
+html[dir="rtl"] body.page-signup .auth-heading h1,
+html[dir="rtl"] body.page-signup .auth-heading p {
+    direction: rtl !important;
+    text-align: center !important;
+}
+
+/* Labels */
+html[dir="rtl"] body.page-signup .auth-field,
+html[dir="rtl"] body.page-signup .auth-field > label {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Input containers */
+html[dir="rtl"] body.page-signup .auth-input-wrap {
+    direction: rtl !important;
+    flex-direction: row !important;
+}
+
+/* Input text and placeholders */
+html[dir="rtl"] body.page-signup .auth-input-wrap input,
+html[dir="rtl"] body.page-signup .auth-input-wrap select {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Password eye buttons */
+html[dir="rtl"] body.page-signup .auth-password-toggle {
+    order: -1 !important;
+}
+
+/* Terms and checkbox */
+html[dir="rtl"] body.page-signup .signup-terms,
+html[dir="rtl"] body.page-signup .signup-terms .auth-check {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Keep English brand logo readable and correctly aligned */
+html[dir="rtl"] body.page-signup .auth-brand {
+    direction: ltr !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-copy {
+    direction: ltr !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-brand .brand-name {
+    direction: ltr !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+/* Social buttons and footer */
+html[dir="rtl"] body.page-signup .auth-social {
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body.page-signup .auth-switch {
+    direction: rtl !important;
+    text-align: center !important;
+}
+
+/* Toolbar moves to top-left in RTL */
+html[dir="rtl"] body.page-signup .auth-tools {
+    left: 20px !important;
+    right: auto !important;
+}
+
+/* Restore toolbar position in LTR */
+html[dir="ltr"] body.page-signup .auth-tools {
+    right: 20px !important;
+    left: auto !important;
+}
+
+@media (max-width: 520px) {
+    html[dir="rtl"] body.page-signup .auth-tools {
+        left: 12px !important;
+        right: auto !important;
+    }
+}
+/* ===== Signup tagline: Match Login page exactly ===== */
+
+body.page-signup .auth-brand .brand-copy .brand-subtitle {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.06em !important;
+
+    color: #203C32 !important;
+    opacity: 1 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+}
+
+/* Keep the same gap between KnightAura and tagline */
+body.page-signup .auth-brand .brand-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    line-height: 1 !important;
+}
+
+/* Keep wordmark spacing consistent */
+body.page-signup .auth-brand .brand-name {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.1 !important;
+}
+
+/* Mobile: preserve tagline size */
+@media (max-width: 520px) {
+    body.page-signup .auth-brand .brand-copy .brand-subtitle {
+        font-size: 11px !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.06em !important;
+    }
+}
+/* Signup tagline — match Login page */
+body.page-signup .auth-brand .brand-subtitle {
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.06em !important;
+    color: #203C32 !important;
+    opacity: 1 !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 !important;
+}
+
+/* Keep the same gap as Login */
+body.page-signup .auth-brand .brand-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    line-height: 1 !important;
+}
+/* Move signup form slightly upward */
+body.page-signup .auth-card {
+    padding-top: 12px !important;
+    padding-bottom: 28px !important;
+}
+
+/* Add space below the final sign-in text */
+body.page-signup .auth-switch {
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+}
+
+/* Keep the signup card centered */
+body.page-signup .auth-card {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}

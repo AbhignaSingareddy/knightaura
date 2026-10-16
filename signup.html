@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#203C32">
+
+  <title>Sign Up | KnightAura Chess Academy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/signup.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="auth-page page-signup">
+
+  <!-- Theme and RTL controls -->
+  <div class="auth-tools">
+    <button
+      class="icon-button"
+      type="button"
+      data-theme-toggle
+      aria-label="Toggle dark mode"
+      title="Toggle dark mode">
+      <i data-lucide="moon"></i>
+    </button>
+
+    <button
+      class="icon-button"
+      type="button"
+      data-rtl-toggle
+      aria-label="Toggle text direction"
+      title="Toggle text direction">
+      <i data-lucide="arrow-left-right"></i>
+    </button>
+  </div>
+
+  <main class="auth-main">
+    <section class="auth-card signup-card" aria-labelledby="signup-title">
+
+      <!-- KnightAura branding -->
+      <a class="brand auth-brand" href="index.html" aria-label="KnightAura home">
+        <span class="brand-mark">
+          <img src="assets/knightaura-mark.png" alt="" aria-hidden="true">
+        </span>
+
+        <span class="brand-copy">
+         <span class="brand-name" dir="ltr">
+  <bdi dir="ltr"><span class="brand-knight">Knight</span><span class="brand-aura">Aura</span></bdi>
+</span>
+
+          <span class="brand-subtitle">The Art of Chess</span>
+        </span>
+      </a>
+
+      <div class="auth-divider"></div>
+
+      <!-- Heading -->
+      <div class="auth-heading">
+        <h1 id="signup-title">Create your <em>account</em></h1>
+        <p>Begin your chess learning journey with KnightAura.</p>
+      </div>
+
+      <!-- Signup form -->
+      <form id="signupForm" class="auth-form" novalidate>
+
+        <!-- Full name -->
+        <div class="auth-field">
+          <label for="signupName">Full Name <span>*</span></label>
+
+          <div class="auth-input-wrap">
+            <i data-lucide="user-round"></i>
+
+            <input
+              id="signupName"
+              name="name"
+              type="text"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="auth-field">
+          <label for="signupEmail">Email Address <span>*</span></label>
+
+          <div class="auth-input-wrap">
+            <i data-lucide="mail"></i>
+
+            <input
+              id="signupEmail"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required>
+          </div>
+        </div>
+
+        
+        <!-- Password -->
+        <div class="auth-field">
+          <label for="signupPassword">Password <span>*</span></label>
+
+          <div class="auth-input-wrap">
+            <i data-lucide="lock-keyhole"></i>
+
+            <input
+              id="signupPassword"
+              name="password"
+              type="password"
+              placeholder="Create a password (6+ characters)"
+              autocomplete="new-password"
+              minlength="6"
+              required>
+
+            <button
+              class="auth-password-toggle"
+              type="button"
+              data-password-toggle="signupPassword"
+              aria-label="Show password"
+              title="Show password">
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm password -->
+        <div class="auth-field">
+          <label for="confirmPassword">Confirm Password <span>*</span></label>
+
+          <div class="auth-input-wrap">
+            <i data-lucide="shield-check"></i>
+
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required>
+
+            <button
+              class="auth-password-toggle"
+              type="button"
+              data-password-toggle="confirmPassword"
+              aria-label="Show password"
+              title="Show password">
+              <i data-lucide="eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="signup-terms">
+          <label class="auth-check">
+            <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+            <span>
+              I agree to the
+              <a href="terms.html">Terms</a> and
+              <a href="privacy.html">Privacy Policy</a>.
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <button class="auth-submit" type="submit">
+          <span>CREATE ACCOUNT</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
+
+        <p
+          class="auth-status"
+          id="signupStatus"
+          role="status"
+          aria-live="polite">
+        </p>
+      </form>
+
+      <!-- Social signup -->
+      <div class="auth-social-divider">
+        <span>OR</span>
+      </div>
+
+      <div class="auth-social">
+        <button
+          class="auth-social-button"
+          type="button"
+          data-social-login="Google">
+
+          <svg class="google-logo" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-15z"/>
+            <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.6-5.1c-1.8 1.2-4.1 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44z"/>
+            <path fill="#FBBC05" d="M12.6 27.5a12 12 0 0 1 0-7V15H5.8a20 20 0 0 0 0 18l6.8-5.5z"/>
+            <path fill="#EA4335" d="M24 12.1c3 0 5.6 1 7.7 3l5.8-5.8A19.5 19.5 0 0 0 24 4 20 20 0 0 0 5.8 15l6.8 5.5c1.6-4.8 6.1-8.4 11.4-8.4z"/>
+          </svg>
+
+          <span>Continue with Google</span>
+        </button>
+
+        <button
+          class="auth-social-button"
+          type="button"
+          data-social-login="Apple">
+
+          <svg class="apple-logo" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M16.37 12.26c.02 2.2 1.93 2.93 1.95 2.94-.02.05-.3 1.04-.99 2.06-.6.9-1.22 1.8-2.2 1.82-.96.02-1.27-.58-2.37-.58-1.1 0-1.45.56-2.36.6-.95.04-1.67-.97-2.28-1.86-1.24-1.8-2.19-5.08-.92-7.3.63-1.1 1.76-1.8 2.99-1.82.93-.02 1.8.63 2.37.63.56 0 1.62-.78 2.73-.67.47.02 1.8.19 2.65 1.43-.07.04-1.58.92-1.57 2.75zM14.57 6.91c.5-.6.84-1.44.75-2.28-.72.03-1.59.48-2.1 1.08-.46.53-.86 1.38-.75 2.2.8.06 1.6-.4 2.1-1z"/>
+          </svg>
+
+          <span>Continue with Apple</span>
+        </button>
+      </div>
+
+      <p class="auth-switch">
+  Already have an account?
+  <a href="login.html">Sign in</a>
+</p>
+      
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

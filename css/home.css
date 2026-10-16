@@ -1,0 +1,3725 @@
+ /* KnightAura Home 1 — extra sections + motion system
+       Brand palette only: forest green, antique gold, warm cream and paper. */
+ :root {
+   --ka-green: #203c32;
+   --ka-green-dark: #10271f;
+   --ka-green-light: #315747;
+   --ka-gold: #b88a4a;
+   --ka-gold-light: #dfbd82;
+   --ka-cream: #fff9f0;
+   --ka-paper: #f4eee3;
+   --ka-white: #fffdf8;
+   --ka-text: #293a31;
+   --ka-muted: #69766e;
+   --ka-border: #e1d6c5
+ }
+
+ html {
+   scroll-behavior: smooth;
+   overflow-x: clip
+ }
+
+ body {
+   overflow-x: clip;
+   max-width: 100%
+ }
+
+ img {
+   max-width: 100%;
+   height: auto
+ }
+
+ #main {
+   min-width: 0;
+   overflow: clip
+ }
+
+ /* Keep all interactive colours on-brand */
+ .btn,
+ .ka-btn,
+ .login-action {
+   background: var(--ka-green) !important;
+   border-color: var(--ka-green) !important;
+   color: var(--ka-cream) !important;
+   transition: background .28s ease, color .28s ease, border-color .28s ease, transform .28s cubic-bezier(.2, .8, .2, 1), box-shadow .28s ease
+ }
+
+ .btn:hover,
+ .ka-btn:hover,
+ .login-action:hover {
+   background: var(--ka-gold) !important;
+   border-color: var(--ka-gold) !important;
+   color: var(--ka-green-dark) !important;
+   transform: translateY(-4px);
+   box-shadow: 0 14px 30px rgba(16, 39, 31, .2)
+ }
+
+ .site-header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   backdrop-filter: blur(14px);
+   -webkit-backdrop-filter: blur(14px)
+ }
+
+ .site-header .nav-link,
+ .site-header .dropdown-trigger {
+   transition: color .25s ease, transform .25s ease
+ }
+
+ .site-header .nav-link:hover,
+ .site-header .dropdown-trigger:hover {
+   color: var(--ka-gold) !important;
+   transform: translateY(-2px)
+ }
+
+ /* Warm image treatment avoids cool blue casts without tinting the brand logo */
+ #main img:not(.brand-mark img) {
+   filter: saturate(.88) sepia(.30) hue-rotate(-10deg);
+   transition: filter .55s ease, transform .8s cubic-bezier(.2, .75, .2, 1)
+ }
+
+ #main img:not(.brand-mark img):hover {
+   filter: saturate(.92) sepia(.24) hue-rotate(-10deg);
+   transform: scale(1.045)
+ }
+
+ .ka-hero,
+ .ka-ink,
+ .ka-event-band,
+ .ka-final-cta {
+   background-color: var(--ka-green-dark)
+ }
+
+ .ka-hero {
+   isolation: isolate
+ }
+
+ .ka-hero-glow {
+   animation: kaGlowDrift 9s ease-in-out infinite alternate
+ }
+
+ .ka-hero-art,
+ .ka-board-art,
+ .ka-journal-visual {
+   perspective: 1000px
+ }
+
+ .ka-art-frame {
+   animation: kaImageFloat 7s ease-in-out infinite;
+   transform-origin: center
+ }
+
+ .ka-orbit {
+   animation: kaOrbitSpin 24s linear infinite
+ }
+
+ .ka-float-top {
+   animation: kaFloatCard 5s ease-in-out infinite
+ }
+
+ .ka-float-bottom {
+   animation: kaFloatCard 6s ease-in-out infinite reverse
+ }
+
+ .ka-path,
+ .ka-feature-wide,
+ .ka-feature-tall,
+ .ka-event-card,
+ .ka-training-card,
+ .ka-journal-list>div {
+   transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease, border-color .35s ease, background .35s ease
+ }
+
+ .ka-path:hover,
+ .ka-feature-wide:hover,
+ .ka-feature-tall:hover,
+ .ka-event-card:hover,
+ .ka-training-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 22px 45px rgba(16, 39, 31, .14)
+ }
+
+ .ka-round-arrow {
+   transition: transform .3s ease, background .3s ease, color .3s ease
+ }
+
+ .ka-path:hover .ka-round-arrow {
+   transform: rotate(45deg);
+   background: var(--ka-gold);
+   color: var(--ka-green-dark)
+ }
+
+ [data-reveal] {
+   opacity: 0;
+   transform: translateY(24px);
+   transition: opacity .75s ease, transform .75s cubic-bezier(.2, .75, .2, 1)
+ }
+
+ [data-reveal].ka-revealed {
+   opacity: 1;
+   transform: translateY(0)
+ }
+
+ .ka-training-lab {
+   position: relative;
+   isolation: isolate;
+   background: var(--ka-paper);
+   overflow: hidden
+ }
+
+ .ka-training-lab:before {
+   content: "♞";
+   position: absolute;
+   z-index: -1;
+   right: -.02em;
+   top: -.45em;
+   font: clamp(230px, 35vw, 520px)/1 Georgia, serif;
+   color: var(--ka-gold);
+   opacity: .065;
+   pointer-events: none;
+   animation: kaKnightDrift 11s ease-in-out infinite alternate
+ }
+
+ .ka-training-heading {
+   margin-bottom: 38px
+ }
+
+ .ka-training-grid {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: 18px
+ }
+
+ .ka-training-card {
+   position: relative;
+   min-height: 300px;
+   padding: 30px 28px 26px;
+   background: var(--ka-white);
+   border: 1px solid var(--ka-border);
+   overflow: hidden
+ }
+
+ .ka-training-card:before {
+   content: "";
+   position: absolute;
+   inset: 0 auto 0 0;
+   width: 3px;
+   background: var(--ka-gold);
+   transform: scaleY(0);
+   transform-origin: bottom;
+   transition: transform .4s ease
+ }
+
+ .ka-training-card:hover:before {
+   transform: scaleY(1)
+ }
+
+ .ka-training-index {
+   position: absolute;
+   right: 22px;
+   top: 20px;
+   color: var(--ka-gold);
+   font-size: 12px;
+   letter-spacing: .14em
+ }
+
+ .ka-training-icon {
+   display: grid;
+   place-items: center;
+   width: 58px;
+   height: 58px;
+   margin-bottom: 25px;
+   border: 1px solid var(--ka-gold);
+   border-radius: 50%;
+   color: var(--ka-gold);
+   font-size: 27px;
+   transition: transform .45s ease, background .35s ease, color .35s ease
+ }
+
+ .ka-training-card:hover .ka-training-icon {
+   transform: rotate(12deg) scale(1.08);
+   background: var(--ka-green);
+   color: var(--ka-gold-light)
+ }
+
+ .ka-training-label {
+   margin: 0 0 8px;
+   color: var(--ka-gold);
+   font-size: 10px;
+   letter-spacing: .16em;
+   font-weight: 700
+ }
+
+ .ka-training-card h3 {
+   margin: 0 0 12px;
+   color: var(--ka-green);
+   font-size: clamp(24px, 2.5vw, 31px);
+   line-height: 1.1
+ }
+
+ .ka-training-card>p:last-of-type {
+   color: var(--ka-muted);
+   font-size: 13px;
+   line-height: 1.85
+ }
+
+ .ka-training-line {
+   display: block;
+   width: 44px;
+   height: 2px;
+   margin-top: 22px;
+   background: var(--ka-gold);
+   transition: width .4s ease
+ }
+
+ .ka-training-card:hover .ka-training-line {
+   width: 100%
+ }
+
+ .ka-player-journal {
+   background: var(--ka-cream);
+   overflow: hidden
+ }
+
+ .ka-journal-layout {
+   display: grid;
+   grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+   align-items: center;
+   gap: clamp(38px, 7vw, 90px)
+ }
+
+ .ka-journal-visual {
+   position: relative;
+   min-height: 490px;
+   display: grid;
+   place-items: center
+ }
+
+ .ka-journal-image {
+   position: absolute;
+   inset: 35px 42px 35px 0;
+   overflow: hidden;
+   border-radius: 48% 48% 4px 4px;
+   background: var(--ka-green)
+ }
+
+ .ka-journal-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   filter: sepia(.22) saturate(.72) !important
+ }
+
+ .ka-journal-visual:hover .ka-journal-image img {
+   transform: scale(1.08) rotate(-1deg)
+ }
+
+ .ka-journal-stamp {
+   position: absolute;
+   right: 0;
+   bottom: 28px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 3px;
+   padding: 22px 27px;
+   background: var(--ka-green);
+   color: var(--ka-cream);
+   box-shadow: 0 18px 38px rgba(16, 39, 31, .18);
+   animation: kaFloatCard 5.5s ease-in-out infinite
+ }
+
+ .ka-journal-stamp span {
+   font-size: 9px;
+   letter-spacing: .2em;
+   color: var(--ka-gold-light)
+ }
+
+ .ka-journal-stamp strong {
+   font: 600 25px/1.1 Georgia, serif;
+   letter-spacing: .04em
+ }
+
+ .ka-journal-stamp i {
+   position: absolute;
+   right: 16px;
+   top: -20px;
+   font-size: 27px;
+   color: var(--ka-gold-light);
+   font-style: normal
+ }
+
+ .ka-journal-orbit {
+   position: absolute;
+   width: 330px;
+   height: 330px;
+   border: 1px solid rgba(184, 138, 74, .42);
+   border-radius: 50%;
+   pointer-events: none
+ }
+
+ .ka-journal-orbit-one {
+   animation: kaOrbitSpin 22s linear infinite
+ }
+
+ .ka-journal-orbit-two {
+   width: 390px;
+   height: 390px;
+   border-style: dashed;
+   opacity: .55;
+   animation: kaOrbitSpin 34s linear infinite reverse
+ }
+
+ .ka-journal-copy h2 {
+   margin: 10px 0 16px;
+   color: var(--ka-green);
+   font: 600 clamp(37px, 4.4vw, 56px)/1.04 Georgia, serif;
+   letter-spacing: -.03em
+ }
+
+ .ka-journal-copy h2 em {
+   color: var(--ka-gold);
+   font-weight: 500
+ }
+
+ .ka-journal-copy>p {
+   color: var(--ka-muted);
+   font-size: 14px;
+   line-height: 1.9
+ }
+
+ .ka-journal-list {
+   display: grid;
+   gap: 0;
+   margin: 25px 0 28px;
+   border-top: 1px solid var(--ka-border)
+ }
+
+ .ka-journal-list>div {
+   display: grid;
+   grid-template-columns: 36px 1fr 20px;
+   align-items: center;
+   gap: 12px;
+   padding: 15px 12px;
+   border-bottom: 1px solid var(--ka-border)
+ }
+
+ .ka-journal-list>div:hover {
+   padding-left: 18px;
+   background: var(--ka-paper)
+ }
+
+ .ka-journal-list>div>span {
+   color: var(--ka-gold);
+   font-size: 11px
+ }
+
+ .ka-journal-list p {
+   display: grid;
+   gap: 4px;
+   margin: 0
+ }
+
+ .ka-journal-list strong {
+   color: var(--ka-green);
+   font-size: 13px
+ }
+
+ .ka-journal-list small {
+   color: var(--ka-muted);
+   font-size: 11px;
+   line-height: 1.6
+ }
+
+ .ka-journal-list>div>b {
+   color: var(--ka-gold);
+   transition: transform .25s ease
+ }
+
+ .ka-journal-list>div:hover>b {
+   transform: translate(3px, -3px)
+ }
+
+ @keyframes kaGlowDrift {
+   0% {
+     transform: translate3d(-2%, 0, 0) scale(.96);
+     opacity: .55
+   }
+
+   100% {
+     transform: translate3d(3%, 4%, 0) scale(1.08);
+     opacity: 1
+   }
+ }
+
+ @keyframes kaImageFloat {
+
+   0%,
+   100% {
+     transform: translateY(0) rotateY(0)
+   }
+
+   50% {
+     transform: translateY(-8px) rotateY(-1deg)
+   }
+ }
+
+ @keyframes kaOrbitSpin {
+   to {
+     transform: rotate(360deg)
+   }
+ }
+
+ @keyframes kaFloatCard {
+
+   0%,
+   100% {
+     transform: translateY(0)
+   }
+
+   50% {
+     transform: translateY(-10px)
+   }
+ }
+
+ @keyframes kaKnightDrift {
+   0% {
+     transform: translateY(0) rotate(-5deg)
+   }
+
+   100% {
+     transform: translateY(22px) rotate(4deg)
+   }
+ }
+
+ @media(max-width:800px) {
+   .ka-training-grid {
+     grid-template-columns: 1fr
+   }
+
+   .ka-training-card {
+     min-height: 0
+   }
+
+   .ka-journal-layout {
+     grid-template-columns: 1fr;
+     gap: 34px
+   }
+
+   .ka-journal-visual {
+     min-height: 390px;
+     max-width: 560px;
+     width: 100%;
+     margin-inline: auto
+   }
+
+   .ka-journal-image {
+     inset: 25px 34px 25px 0
+   }
+
+   .ka-journal-orbit-one {
+     width: 270px;
+     height: 270px
+   }
+
+   .ka-journal-orbit-two {
+     width: 320px;
+     height: 320px
+   }
+ }
+
+ @media(max-width:480px) {
+   .ka-journal-visual {
+     min-height: 320px
+   }
+
+   .ka-journal-stamp {
+     padding: 16px 18px;
+     bottom: 16px
+   }
+
+   .ka-journal-stamp strong {
+     font-size: 21px
+   }
+
+   .ka-journal-orbit-one {
+     width: 220px;
+     height: 220px
+   }
+
+   .ka-journal-orbit-two {
+     width: 270px;
+     height: 270px
+   }
+
+   .ka-training-card {
+     padding: 25px 22px
+   }
+ }
+
+ @media(prefers-reduced-motion:reduce) {
+   html {
+     scroll-behavior: auto
+   }
+
+   *,
+   *::before,
+   *::after {
+     animation-duration: .01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: .01ms !important;
+     scroll-behavior: auto !important
+   }
+
+   [data-reveal] {
+     opacity: 1;
+     transform: none
+   }
+ }
+
+ /* Header action buttons */
+ .site-header .header-actions {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .site-header .header-actions .icon-button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 42px;
+   height: 42px;
+   flex-shrink: 0;
+   border: 1px solid var(--color-border);
+   border-radius: 50%;
+   background: var(--color-card);
+   color: var(--color-text);
+   cursor: pointer;
+   transition:
+     background .3s ease,
+     color .3s ease,
+     transform .3s ease,
+     border-color .3s ease;
+ }
+
+ .site-header .header-actions .icon-button svg {
+   display: block;
+   width: 19px;
+   height: 19px;
+   stroke: currentColor;
+ }
+
+ .site-header .header-actions .icon-button:hover {
+   background: var(--color-surface);
+   color: var(--color-secondary);
+   border-color: var(--color-secondary);
+   transform: translateY(-3px);
+ }
+
+ .site-header .header-actions .login-action {
+   background: var(--ka-green) !important;
+   color: var(--ka-cream) !important;
+ }
+
+ .site-header .header-actions .login-action:hover {
+   background: var(--ka-gold) !important;
+   color: var(--ka-green) !important;
+ }
+
+ /* =========================================
+   KNIGHTAURA — TRUE BLACK DARK MODE
+   Backgrounds: black / charcoal
+   Text: white
+   Accents: antique gold
+========================================= */
+
+ body.page-home.dark-mode,
+ body.page-home[data-theme="dark"] {
+   background: #0B0B0B !important;
+   color: #F8F5EF !important;
+
+   --ka-cream: #0B0B0B;
+   --ka-paper: #111111;
+   --ka-white: #181818;
+   --ka-text: #F8F5EF;
+   --ka-muted: #C8C3BA;
+   --ka-border: #33302A;
+
+   /* Preserve the brand green for button accents only */
+   --ka-green: #203C32;
+   --ka-green-dark: #080808;
+   --ka-green-light: #315747;
+
+   --ka-gold: #B88A4A;
+   --ka-gold-light: #DFBD82;
+ }
+
+ /* Force all major page sections to dark backgrounds */
+ body.page-home.dark-mode main,
+ body.page-home[data-theme="dark"] main,
+ body.page-home.dark-mode main>section,
+ body.page-home[data-theme="dark"] main>section {
+   background-color: #0B0B0B !important;
+   color: #F8F5EF !important;
+ }
+
+ /* Cream and paper sections */
+ body.page-home.dark-mode .ka-light,
+ body.page-home.dark-mode .ka-paper,
+ body.page-home.dark-mode .ka-training-lab,
+ body.page-home.dark-mode .ka-player-journal,
+ body.page-home[data-theme="dark"] .ka-light,
+ body.page-home[data-theme="dark"] .ka-paper,
+ body.page-home[data-theme="dark"] .ka-training-lab,
+ body.page-home[data-theme="dark"] .ka-player-journal {
+   background: #111111 !important;
+   color: #F8F5EF !important;
+ }
+
+ /* Keep hero and event sections dark */
+ body.page-home.dark-mode .ka-home-hero,
+ body.page-home.dark-mode .ka-event-band,
+ body.page-home.dark-mode .ka-ink,
+ body.page-home.dark-mode .ka-final-cta,
+ body.page-home[data-theme="dark"] .ka-home-hero,
+ body.page-home[data-theme="dark"] .ka-event-band,
+ body.page-home[data-theme="dark"] .ka-ink,
+ body.page-home[data-theme="dark"] .ka-final-cta {
+   background-color: #0B0B0B !important;
+   color: #F8F5EF !important;
+ }
+
+ /* Remove green gradient from hero */
+ body.page-home.dark-mode .ka-home-hero,
+ body.page-home[data-theme="dark"] .ka-home-hero {
+   background-image: none !important;
+ }
+
+ body.page-home.dark-mode .ka-hero-glow,
+ body.page-home[data-theme="dark"] .ka-hero-glow {
+   background: radial-gradient(circle,
+       rgba(184, 138, 74, 0.12),
+       transparent 70%) !important;
+ }
+
+ /* All headings white */
+ body.page-home.dark-mode h1,
+ body.page-home.dark-mode h2,
+ body.page-home.dark-mode h3,
+ body.page-home.dark-mode h4,
+ body.page-home.dark-mode .ka-path-copy h3,
+ body.page-home.dark-mode .ka-training-card h3,
+ body.page-home.dark-mode .ka-journal-copy h2,
+ body.page-home[data-theme="dark"] h1,
+ body.page-home[data-theme="dark"] h2,
+ body.page-home[data-theme="dark"] h3,
+ body.page-home[data-theme="dark"] h4,
+ body.page-home[data-theme="dark"] .ka-path-copy h3,
+ body.page-home[data-theme="dark"] .ka-training-card h3,
+ body.page-home[data-theme="dark"] .ka-journal-copy h2 {
+   color: #F8F5EF !important;
+ }
+
+ /* Body copy */
+ body.page-home.dark-mode p,
+ body.page-home.dark-mode small,
+ body.page-home.dark-mode .ka-journal-list small,
+ body.page-home[data-theme="dark"] p,
+ body.page-home[data-theme="dark"] small,
+ body.page-home[data-theme="dark"] .ka-journal-list small {
+   color: #C8C3BA !important;
+ }
+
+ /* Cards */
+ body.page-home.dark-mode .ka-path,
+ body.page-home.dark-mode .ka-training-card,
+ body.page-home.dark-mode .ka-feature-wide,
+ body.page-home.dark-mode .ka-feature-tall,
+ body.page-home.dark-mode .ka-journal-list>div,
+ body.page-home.dark-mode .ka-event-card,
+ body.page-home[data-theme="dark"] .ka-path,
+ body.page-home[data-theme="dark"] .ka-training-card,
+ body.page-home[data-theme="dark"] .ka-feature-wide,
+ body.page-home[data-theme="dark"] .ka-feature-tall,
+ body.page-home[data-theme="dark"] .ka-journal-list>div,
+ body.page-home[data-theme="dark"] .ka-event-card {
+   background: #181818 !important;
+   color: #F8F5EF !important;
+   border-color: #39342C !important;
+ }
+
+ /* Header and dropdown */
+ body.page-home.dark-mode .site-header,
+ body.page-home[data-theme="dark"] .site-header {
+   background: #080808 !important;
+   border-bottom-color: #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-header .nav-link,
+ body.page-home.dark-mode .site-header .dropdown-trigger,
+ body.page-home[data-theme="dark"] .site-header .nav-link,
+ body.page-home[data-theme="dark"] .site-header .dropdown-trigger {
+   color: #F8F5EF !important;
+ }
+
+ body.page-home.dark-mode .dropdown-menu,
+ body.page-home[data-theme="dark"] .dropdown-menu {
+   background: #181818 !important;
+   border-color: #39342C !important;
+ }
+
+ body.page-home.dark-mode .dropdown-menu a,
+ body.page-home[data-theme="dark"] .dropdown-menu a {
+   color: #F8F5EF !important;
+ }
+
+ /* Gold highlights */
+ body.page-home.dark-mode .ka-eyebrow,
+ body.page-home.dark-mode .ka-training-label,
+ body.page-home.dark-mode .brand-aura,
+ body.page-home[data-theme="dark"] .ka-eyebrow,
+ body.page-home[data-theme="dark"] .ka-training-label,
+ body.page-home[data-theme="dark"] .brand-aura {
+   color: #DFBD82 !important;
+ }
+
+ /* Marquee */
+ body.page-home.dark-mode .ka-marquee,
+ body.page-home[data-theme="dark"] .ka-marquee {
+   background: #141414 !important;
+   color: #DFBD82 !important;
+ }
+
+ /* Footer */
+ body.page-home.dark-mode .site-footer,
+ body.page-home[data-theme="dark"] .site-footer {
+   background: #050505 !important;
+   color: #F8F5EF !important;
+   border-top: 1px solid #39342C;
+ }
+
+ /* Buttons: green normally, gold on hover */
+ body.page-home.dark-mode .ka-btn-dark,
+ body.page-home.dark-mode .login-action,
+ body.page-home[data-theme="dark"] .ka-btn-dark,
+ body.page-home[data-theme="dark"] .login-action {
+   background: #203C32 !important;
+   border-color: #B88A4A !important;
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .ka-btn-dark:hover,
+ body.page-home.dark-mode .login-action:hover,
+ body.page-home[data-theme="dark"] .ka-btn-dark:hover,
+ body.page-home[data-theme="dark"] .login-action:hover {
+   background: #B88A4A !important;
+   border-color: #B88A4A !important;
+   color: #101010 !important;
+ }
+
+ /* ==========================================
+   KNIGHTAURA — DARK MODE HEADER & FOOTER FIX
+   White text + visible icons + gold accents
+========================================== */
+
+ /* HEADER */
+ body.page-home.dark-mode .site-header,
+ body.page-home[data-theme="dark"] .site-header {
+   background: #080808 !important;
+   color: #FFFFFF !important;
+   border-bottom: 1px solid #B88A4A !important;
+ }
+
+ /* Brand name */
+ body.page-home.dark-mode .site-header .brand-knight,
+ body.page-home[data-theme="dark"] .site-header .brand-knight {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-header .brand-aura,
+ body.page-home[data-theme="dark"] .site-header .brand-aura {
+   color: #B88A4A !important;
+ }
+
+ /* Brand tagline */
+ body.page-home.dark-mode .site-header .brand-subtitle,
+ body.page-home[data-theme="dark"] .site-header .brand-subtitle {
+   color: #FFFFFF !important;
+ }
+
+ /* Navigation links */
+ body.page-home.dark-mode .site-header .nav-link,
+ body.page-home.dark-mode .site-header .dropdown-trigger,
+ body.page-home[data-theme="dark"] .site-header .nav-link,
+ body.page-home[data-theme="dark"] .site-header .dropdown-trigger {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-header .nav-link:hover,
+ body.page-home.dark-mode .site-header .dropdown-trigger:hover,
+ body.page-home[data-theme="dark"] .site-header .nav-link:hover,
+ body.page-home[data-theme="dark"] .site-header .dropdown-trigger:hover {
+   color: #B88A4A !important;
+ }
+
+ /* Header action icons */
+ body.page-home.dark-mode .site-header .icon-button,
+ body.page-home[data-theme="dark"] .site-header .icon-button {
+   background: #181818 !important;
+   color: #F8F5EF !important;
+   border: 1px solid #39342C !important;
+ }
+
+ body.page-home.dark-mode .site-header .icon-button svg,
+ body.page-home[data-theme="dark"] .site-header .icon-button svg {
+   stroke: currentColor !important;
+ }
+
+ body.page-home.dark-mode .site-header .icon-button:hover,
+ body.page-home[data-theme="dark"] .site-header .icon-button:hover {
+   background: #24211C !important;
+   color: #B88A4A !important;
+   border-color: #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-header .icon-button:hover svg,
+ body.page-home[data-theme="dark"] .site-header .icon-button:hover svg {
+   stroke: currentColor !important;
+ }
+
+ /* LOGIN BUTTON */
+ body.page-home.dark-mode .site-header .login-action,
+ body.page-home[data-theme="dark"] .site-header .login-action {
+   background: #203C32 !important;
+   border-color: #B88A4A !important;
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-header .login-action:hover,
+ body.page-home[data-theme="dark"] .site-header .login-action:hover {
+   background: #B88A4A !important;
+   color: #101010 !important;
+ }
+
+ /* FOOTER */
+ body.page-home.dark-mode .site-footer,
+ body.page-home[data-theme="dark"] .site-footer {
+   background: #050505 !important;
+   color: #FFFFFF !important;
+   border-top: 1px solid #B88A4A !important;
+ }
+
+ /* Footer logo text */
+ body.page-home.dark-mode .site-footer .brand-knight,
+ body.page-home[data-theme="dark"] .site-footer .brand-knight {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-footer .brand-aura,
+ body.page-home[data-theme="dark"] .site-footer .brand-aura {
+   color: #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-footer .brand-subtitle,
+ body.page-home[data-theme="dark"] .site-footer .brand-subtitle {
+   color: #FFFFFF !important;
+ }
+
+ /* Footer descriptions and contact text */
+ body.page-home.dark-mode .site-footer .footer-about,
+ body.page-home.dark-mode .site-footer .footer-contact-item,
+ body.page-home.dark-mode .site-footer .footer-contact-item a,
+ body.page-home.dark-mode .site-footer .footer-bottom,
+ body.page-home.dark-mode .site-footer .footer-bottom a,
+ body.page-home[data-theme="dark"] .site-footer .footer-about,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item a,
+ body.page-home[data-theme="dark"] .site-footer .footer-bottom,
+ body.page-home[data-theme="dark"] .site-footer .footer-bottom a {
+   color: #FFFFFF !important;
+ }
+
+ /* Footer headings */
+ body.page-home.dark-mode .site-footer .footer-title,
+ body.page-home[data-theme="dark"] .site-footer .footer-title {
+   color: #B88A4A !important;
+ }
+
+ /* Footer navigation */
+ body.page-home.dark-mode .site-footer .footer-links a,
+ body.page-home[data-theme="dark"] .site-footer .footer-links a {
+   color: #FFFFFF !important;
+   transition: color .25s ease, transform .25s ease;
+ }
+
+ body.page-home.dark-mode .site-footer .footer-links a:hover,
+ body.page-home[data-theme="dark"] .site-footer .footer-links a:hover {
+   color: #B88A4A !important;
+ }
+
+ /* Footer icons: mail, phone, map, clock */
+ body.page-home.dark-mode .site-footer .footer-contact-item i,
+ body.page-home.dark-mode .site-footer .footer-contact-item svg,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item i,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item svg {
+   color: #B88A4A !important;
+   stroke: #B88A4A !important;
+   fill: none;
+   flex-shrink: 0;
+ }
+
+ /* Social media icons */
+ body.page-home.dark-mode .site-footer .social-links a,
+ body.page-home[data-theme="dark"] .site-footer .social-links a {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   color: #FFFFFF !important;
+   background: #203C32 !important;
+   border: 1px solid #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a i,
+ body.page-home[data-theme="dark"] .site-footer .social-links a i {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a:hover,
+ body.page-home[data-theme="dark"] .site-footer .social-links a:hover {
+   background: #B88A4A !important;
+   transform: translateY(-4px);
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a:hover i,
+ body.page-home[data-theme="dark"] .site-footer .social-links a:hover i {
+   color: #101010 !important;
+ }
+
+ /* Footer separators */
+ body.page-home.dark-mode .site-footer .footer-bottom,
+ body.page-home[data-theme="dark"] .site-footer .footer-bottom {
+   border-color: #B88A4A !important;
+ }
+
+ /* Dropdown remains readable */
+ body.page-home.dark-mode .site-header .dropdown-menu,
+ body.page-home[data-theme="dark"] .site-header .dropdown-menu {
+   background: #151515 !important;
+   border: 1px solid #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-header .dropdown-menu a,
+ body.page-home[data-theme="dark"] .site-header .dropdown-menu a {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-header .dropdown-menu a:hover,
+ body.page-home[data-theme="dark"] .site-header .dropdown-menu a:hover {
+   background: #203C32 !important;
+   color: #FFFFFF !important;
+ }
+
+ /* ==========================================
+   KNIGHTAURA — FOOTER VISIBILITY FIX
+   Dark mode: white text + gold accents
+========================================== */
+
+ body.page-home.dark-mode .site-footer,
+ body.page-home[data-theme="dark"] .site-footer {
+   background: #050505 !important;
+   color: #FFFFFF !important;
+ }
+
+ /* Force ALL footer text to white by default */
+ body.page-home.dark-mode .site-footer,
+ body.page-home.dark-mode .site-footer p,
+ body.page-home.dark-mode .site-footer span,
+ body.page-home.dark-mode .site-footer a,
+ body.page-home.dark-mode .site-footer li,
+ body.page-home.dark-mode .site-footer small,
+ body.page-home[data-theme="dark"] .site-footer,
+ body.page-home[data-theme="dark"] .site-footer p,
+ body.page-home[data-theme="dark"] .site-footer span,
+ body.page-home[data-theme="dark"] .site-footer a,
+ body.page-home[data-theme="dark"] .site-footer li,
+ body.page-home[data-theme="dark"] .site-footer small {
+   color: #FFFFFF !important;
+ }
+
+ /* Footer headings stay antique gold */
+ body.page-home.dark-mode .site-footer .footer-title,
+ body.page-home.dark-mode .site-footer .brand-aura,
+ body.page-home.dark-mode .site-footer .footer-title *,
+ body.page-home[data-theme="dark"] .site-footer .footer-title,
+ body.page-home[data-theme="dark"] .site-footer .brand-aura,
+ body.page-home[data-theme="dark"] .site-footer .footer-title * {
+   color: #B88A4A !important;
+ }
+
+ /* Knight brand name stays white */
+ body.page-home.dark-mode .site-footer .brand-knight,
+ body.page-home[data-theme="dark"] .site-footer .brand-knight {
+   color: #FFFFFF !important;
+ }
+
+ /* Footer tagline stays white */
+ body.page-home.dark-mode .site-footer .brand-subtitle,
+ body.page-home[data-theme="dark"] .site-footer .brand-subtitle {
+   color: #FFFFFF !important;
+ }
+
+ /* Footer links remain readable */
+ body.page-home.dark-mode .site-footer .footer-links a,
+ body.page-home.dark-mode .site-footer .footer-legal-bottom a,
+ body.page-home[data-theme="dark"] .site-footer .footer-links a,
+ body.page-home[data-theme="dark"] .site-footer .footer-legal-bottom a {
+   color: #FFFFFF !important;
+   opacity: 1 !important;
+ }
+
+ body.page-home.dark-mode .site-footer .footer-links a:hover,
+ body.page-home.dark-mode .site-footer .footer-legal-bottom a:hover,
+ body.page-home[data-theme="dark"] .site-footer .footer-links a:hover,
+ body.page-home[data-theme="dark"] .site-footer .footer-legal-bottom a:hover {
+   color: #B88A4A !important;
+ }
+
+ /* Contact icons */
+ body.page-home.dark-mode .site-footer .footer-contact-item i,
+ body.page-home.dark-mode .site-footer .footer-contact-item svg,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item i,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item svg {
+   color: #B88A4A !important;
+   stroke: #B88A4A !important;
+ }
+
+ /* Social buttons */
+ body.page-home.dark-mode .site-footer .social-links a,
+ body.page-home[data-theme="dark"] .site-footer .social-links a {
+   background: #203C32 !important;
+   border: 1px solid #B88A4A !important;
+   color: #FFFFFF !important;
+   opacity: 1 !important;
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a i,
+ body.page-home[data-theme="dark"] .site-footer .social-links a i {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a:hover,
+ body.page-home[data-theme="dark"] .site-footer .social-links a:hover {
+   background: #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-footer .social-links a:hover i,
+ body.page-home[data-theme="dark"] .site-footer .social-links a:hover i {
+   color: #050505 !important;
+ }
+
+ /* Footer divider */
+ body.page-home.dark-mode .site-footer .footer-bottom,
+ body.page-home[data-theme="dark"] .site-footer .footer-bottom {
+   border-top: 1px solid #B88A4A !important;
+ }
+
+ /* Preserve the original logo image colours */
+ body.page-home.dark-mode .site-footer .brand-mark img,
+ body.page-home[data-theme="dark"] .site-footer .brand-mark img {
+   filter: none !important;
+ }
+
+ /* ==========================================
+   KNIGHTAURA — FOOTER LAYOUT & OVERFLOW FIX
+========================================== */
+
+ .site-footer {
+   width: 100%;
+   max-width: 100%;
+   overflow-x: clip;
+   background: var(--color-primary);
+   color: var(--color-on-primary);
+ }
+
+ .site-footer .container {
+   width: min(100% - 48px, 1200px);
+   max-width: 1200px;
+   margin-inline: auto;
+   min-width: 0;
+ }
+
+ /* Keep all four footer columns inside the page */
+ .site-footer .footer-grid {
+   display: grid;
+   grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+   gap: 38px;
+   width: 100%;
+   min-width: 0;
+ }
+
+ .site-footer .footer-grid>div {
+   min-width: 0;
+   max-width: 100%;
+ }
+
+ /* Fix brand logo and tagline wrapping */
+ .site-footer .footer-brand {
+   display: inline-flex;
+   align-items: center;
+   gap: 12px;
+   max-width: 100%;
+   text-decoration: none;
+ }
+
+ .site-footer .brand-copy {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   min-width: 0;
+   max-width: 100%;
+ }
+
+ .site-footer .brand-name {
+   white-space: nowrap;
+ }
+
+ .site-footer .brand-subtitle {
+   display: block;
+   max-width: 100%;
+   white-space: normal;
+   line-height: 1.5;
+   overflow-wrap: normal;
+   word-break: normal;
+ }
+
+ /* Description */
+ .site-footer .footer-about {
+   max-width: 100%;
+   line-height: 1.8;
+   overflow-wrap: break-word;
+ }
+
+ /* Links should wrap instead of extending beyond the viewport */
+ .site-footer .footer-links {
+   display: grid;
+   gap: 13px;
+   min-width: 0;
+ }
+
+ .site-footer .footer-links a,
+ .site-footer .footer-contact-item a {
+   min-width: 0;
+   overflow-wrap: anywhere;
+   word-break: normal;
+ }
+
+ .site-footer .footer-contact-item {
+   display: flex;
+   align-items: flex-start;
+   gap: 12px;
+   min-width: 0;
+   line-height: 1.7;
+ }
+
+ .site-footer .footer-contact-item i,
+ .site-footer .footer-contact-item svg {
+   flex: 0 0 16px;
+   margin-top: 4px;
+ }
+
+ /* Bottom copyright and legal links */
+ .site-footer .footer-bottom {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 16px 24px;
+   width: 100%;
+   min-width: 0;
+   padding-block: 22px;
+ }
+
+ .site-footer .footer-bottom>*,
+ .site-footer .footer-legal-bottom {
+   min-width: 0;
+   max-width: 100%;
+ }
+
+ .site-footer .footer-legal-bottom {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 12px 22px;
+ }
+
+ .site-footer .footer-bottom a {
+   overflow-wrap: anywhere;
+ }
+
+ /* Tablet */
+ @media (max-width: 1000px) {
+   .site-footer .footer-grid {
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 32px;
+   }
+
+   .site-footer .footer-bottom {
+     justify-content: flex-start;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 560px) {
+   .site-footer .container {
+     width: calc(100% - 32px);
+   }
+
+   .site-footer .footer-grid {
+     grid-template-columns: minmax(0, 1fr);
+     gap: 28px;
+   }
+
+   .site-footer .footer-about {
+     max-width: 420px;
+   }
+
+   .site-footer .footer-bottom {
+     flex-direction: column;
+     align-items: flex-start;
+   }
+
+   .site-footer .footer-legal-bottom {
+     gap: 12px 16px;
+   }
+ }
+
+ /* Dark mode footer colours */
+ body.page-home.dark-mode .site-footer,
+ body.page-home[data-theme="dark"] .site-footer {
+   background: #050505 !important;
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-footer p,
+ body.page-home.dark-mode .site-footer span,
+ body.page-home.dark-mode .site-footer a,
+ body.page-home[data-theme="dark"] .site-footer p,
+ body.page-home[data-theme="dark"] .site-footer span,
+ body.page-home[data-theme="dark"] .site-footer a {
+   color: #FFFFFF !important;
+ }
+
+ body.page-home.dark-mode .site-footer .footer-title,
+ body.page-home.dark-mode .site-footer .brand-aura,
+ body.page-home[data-theme="dark"] .site-footer .footer-title,
+ body.page-home[data-theme="dark"] .site-footer .brand-aura {
+   color: #B88A4A !important;
+ }
+
+ body.page-home.dark-mode .site-footer .footer-contact-item svg,
+ body.page-home.dark-mode .site-footer .footer-contact-item i,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item svg,
+ body.page-home[data-theme="dark"] .site-footer .footer-contact-item i {
+   color: #B88A4A !important;
+   stroke: #B88A4A !important;
+ }
+
+ /* ==========================================
+   KNIGHT AURA HOME 1 — DESIGN CORRECTIONS
+   Brand colours: Green, Gold and Cream
+========================================== */
+
+ :root {
+   --ka-green: #203C32;
+   --ka-green-dark: #10271F;
+   --ka-gold: #B88A4A;
+   --ka-cream: #FFF9F0;
+   --ka-paper: #F4EEE3;
+   --ka-border: #E1D6C5;
+ }
+
+ /* 1. HERO — reduce height so the first screen
+   shows more content without excess scrolling */
+ .ka-home-hero {
+   min-height: 0 !important;
+   height: auto !important;
+   padding-top: clamp(42px, 6vh, 64px) !important;
+   padding-bottom: 40px !important;
+   background-color: var(--ka-green-dark) !important;
+ }
+
+ .ka-home-hero .ka-hero-grid {
+   min-height: 0 !important;
+   align-items: center;
+ }
+
+ .ka-home-hero .ka-hero-copy h1 {
+   margin-top: 18px;
+   margin-bottom: 18px;
+ }
+
+ .ka-home-hero .ka-hero-copy>p {
+   margin-bottom: 22px;
+ }
+
+ .ka-home-hero .ka-hero-art {
+   min-height: 0;
+ }
+
+ .ka-home-hero .ka-art-frame {
+   max-height: 430px;
+ }
+
+ .ka-home-hero .ka-art-frame img {
+   width: 100%;
+   max-height: 430px;
+   object-fit: cover;
+ }
+
+ /* Hide the scroll note if it adds unnecessary
+   height to the hero */
+ .ka-home-hero .ka-scroll-note {
+   margin-top: 20px;
+ }
+
+ /* 2, 4 and 6 — center section tagline,
+   heading and paragraph together */
+
+ /* Center the complete section heading and paragraph */
+ .ka-section-top {
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 18px !important;
+   text-align: center !important;
+   margin-bottom: 42px;
+ }
+
+ .ka-section-top>div {
+   width: 100% !important;
+   text-align: center !important;
+ }
+
+ .ka-section-top .ka-eyebrow {
+   display: block !important;
+   text-align: center !important;
+   margin-bottom: 14px;
+ }
+
+ .ka-section-top h2 {
+   width: 100%;
+   margin: 0 auto !important;
+   text-align: center !important;
+ }
+
+ .ka-section-top>p {
+   width: min(100%, 650px) !important;
+   max-width: 650px !important;
+   margin: 0 auto !important;
+   text-align: center !important;
+   line-height: 1.9;
+ }
+
+ /* 3 — chess knight board art:
+   remove blue/navy appearance */
+ .ka-board-art {
+   background-color: #203C32 !important;
+   background-image:
+     linear-gradient(135deg,
+       rgba(184, 138, 74, 0.08),
+       transparent 60%) !important;
+   border: 1px solid rgba(184, 138, 74, 0.35);
+ }
+
+ .ka-board-lines {
+   border-color: rgba(184, 138, 74, 0.65) !important;
+ }
+
+ .ka-board-label {
+   color: #F4EEE3 !important;
+ }
+
+ .ka-board-label span {
+   color: #B88A4A !important;
+ }
+
+ .ka-board-note {
+   color: #B88A4A !important;
+ }
+
+ .ka-chess-symbol {
+   color: #B88A4A !important;
+   text-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+ }
+
+ /* Explore our approach — make it visibly a button */
+ .ka-split-copy .ka-btn-outline {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+   padding: 14px 22px;
+   margin-top: 22px;
+   color: #B88A4A !important;
+   background: transparent !important;
+   border: 1px solid #B88A4A !important;
+   border-radius: 3px;
+   text-decoration: none;
+   transition:
+     background-color 0.25s ease,
+     color 0.25s ease,
+     transform 0.25s ease;
+ }
+
+ .ka-split-copy .ka-btn-outline:hover {
+   background: #B88A4A !important;
+   color: #10271F !important;
+   border-color: #B88A4A !important;
+   transform: translateY(-3px);
+ }
+
+ /* 4 — remove blue from training cards */
+ .ka-training-card {
+   background: #FFF9F0 !important;
+   border: 1px solid #E1D6C5 !important;
+   color: #203C32 !important;
+ }
+
+ .ka-training-card h3 {
+   color: #203C32 !important;
+ }
+
+ .ka-training-card p {
+   color: #69766E !important;
+ }
+
+ .ka-training-icon {
+   color: #B88A4A !important;
+   border-color: #B88A4A !important;
+ }
+
+ .ka-training-card:hover {
+   border-color: #B88A4A !important;
+ }
+
+ /* 5 — event section: use brand green, not blue */
+ .ka-event-band {
+   background: #10271F !important;
+   background-image:
+     radial-gradient(circle at 85% 20%,
+       rgba(184, 138, 74, 0.09),
+       transparent 38%) !important;
+ }
+
+ .ka-event-card {
+   background: transparent !important;
+   border-color: rgba(244, 238, 227, 0.22) !important;
+ }
+
+ .ka-event-card strong {
+   color: #FFF9F0 !important;
+ }
+
+ .ka-event-card p {
+   color: #E0D8CA !important;
+ }
+
+ .ka-event-card>span:last-child,
+ .ka-event-date,
+ .ka-event-card small {
+   color: #B88A4A !important;
+ }
+
+ /* 7 — CTA: remove excessive empty space and
+   align the text and button as one composition */
+ .ka-final-cta {
+   background: #F4EEE3 !important;
+   padding: clamp(55px, 7vw, 90px) 0 !important;
+   overflow: hidden;
+ }
+
+ .ka-final-inner {
+   display: grid;
+   grid-template-columns: minmax(0, 1fr) auto;
+   align-items: center;
+   gap: 30px !important;
+   position: relative;
+ }
+
+ .ka-final-inner>div:first-child {
+   max-width: 680px;
+   position: relative;
+   z-index: 1;
+ }
+
+ .ka-final-inner .ka-eyebrow {
+   color: #B88A4A !important;
+ }
+
+ .ka-final-inner h2 {
+   margin: 12px 0 16px;
+   color: #203C32 !important;
+ }
+
+ .ka-final-inner h2 em {
+   color: #B88A4A !important;
+ }
+
+ .ka-final-inner p {
+   max-width: 540px;
+   margin: 0;
+   color: #293A31 !important;
+   line-height: 1.85;
+ }
+
+ .ka-final-inner>.ka-btn {
+   justify-self: end;
+   position: relative;
+   z-index: 2;
+   white-space: nowrap;
+ }
+
+ .ka-final-inner .ka-cta-knight {
+   position: absolute;
+   right: 20%;
+   top: 50%;
+   transform: translateY(-50%);
+   color: #B88A4A !important;
+   opacity: 0.08;
+   pointer-events: none;
+ }
+
+ /* Responsive layout */
+ @media (max-width: 800px) {
+   .ka-home-hero {
+     padding-top: 42px !important;
+     padding-bottom: 36px !important;
+   }
+
+   .ka-home-hero .ka-art-frame,
+   .ka-home-hero .ka-art-frame img {
+     max-height: 360px;
+   }
+
+   .ka-final-inner {
+     grid-template-columns: 1fr;
+     gap: 24px !important;
+   }
+
+   .ka-final-inner>.ka-btn {
+     justify-self: start;
+   }
+
+   .ka-final-inner .ka-cta-knight {
+     right: 5%;
+   }
+ }
+
+ @media (max-width: 560px) {
+   .ka-home-hero {
+     padding-top: 32px !important;
+     padding-bottom: 30px !important;
+   }
+
+   .ka-home-hero .ka-art-frame,
+   .ka-home-hero .ka-art-frame img {
+     max-height: 300px;
+   }
+
+   .ka-section-top {
+     margin-bottom: 28px;
+   }
+
+   .ka-final-cta {
+     padding: 48px 0 !important;
+   }
+
+   .ka-final-inner h2 {
+     font-size: clamp(34px, 10vw, 46px);
+   }
+ }
+
+ /* Center only the "One board" section */
+ .ka-light>.ka-wrap>.ka-section-top {
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 18px !important;
+   text-align: center !important;
+ }
+
+ .ka-light>.ka-wrap>.ka-section-top>div {
+   width: 100% !important;
+   text-align: center !important;
+ }
+
+ .ka-light>.ka-wrap>.ka-section-top .ka-eyebrow,
+ .ka-light>.ka-wrap>.ka-section-top h2 {
+   text-align: center !important;
+ }
+
+ .ka-light>.ka-wrap>.ka-section-top>p {
+   width: min(100%, 700px) !important;
+   max-width: 700px !important;
+   margin: 0 auto !important;
+   text-align: center !important;
+   font-size: 17px !important;
+   line-height: 1.9 !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+ }
+
+ /* =========================================
+   HOME 1 — EXTRA LARGE SECTION GAPS
+========================================= */
+
+ .page-home main>section.ka-section,
+ .page-home main>section.ka-training-lab,
+ .page-home main>section.ka-player-journal {
+   padding-top: 145px !important;
+   padding-bottom: 145px !important;
+ }
+
+ /* Hero section */
+ .page-home main>section.ka-home-hero {
+   padding-top: 50px !important;
+   padding-bottom: 80px !important;
+ }
+
+ /* Space below section headings */
+ .page-home .ka-section-top {
+   margin-top: 0 !important;
+   margin-bottom: 75px !important;
+ }
+
+ /* Final CTA */
+ .page-home main>section.ka-final-cta {
+   margin-top: 0 !important;
+   padding-top: 140px !important;
+   padding-bottom: 140px !important;
+ }
+
+ /* Tablet */
+ @media (max-width: 800px) {
+
+   .page-home main>section.ka-section,
+   .page-home main>section.ka-training-lab,
+   .page-home main>section.ka-player-journal {
+     padding-top: 100px !important;
+     padding-bottom: 100px !important;
+   }
+
+   .page-home .ka-section-top {
+     margin-bottom: 50px !important;
+   }
+
+   .page-home main>section.ka-final-cta {
+     padding-top: 100px !important;
+     padding-bottom: 100px !important;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 560px) {
+
+   .page-home main>section.ka-section,
+   .page-home main>section.ka-training-lab,
+   .page-home main>section.ka-player-journal {
+     padding-top: 75px !important;
+     padding-bottom: 75px !important;
+   }
+
+   .page-home main>section.ka-home-hero {
+     padding-top: 30px !important;
+     padding-bottom: 45px !important;
+   }
+
+   .page-home .ka-section-top {
+     margin-bottom: 35px !important;
+   }
+
+   .page-home main>section.ka-final-cta {
+     padding-top: 75px !important;
+     padding-bottom: 75px !important;
+   }
+ }
+
+ /* ===== HOME 1 HERO — BOTTOM SPACE ===== */
+
+ /* Remove Scroll to Explore text and arrow */
+ .page-home .ka-home-hero .ka-scroll,
+ .page-home .ka-home-hero .ka-scroll-cue,
+ .page-home .ka-home-hero .ka-scroll-indicator {
+   display: none !important;
+ }
+
+ /* Reduce hero section height */
+ .page-home main>section.ka-home-hero {
+   padding-bottom: 25px !important;
+   min-height: 0 !important;
+ }
+
+ /* Reduce extra space around the hero bottom content */
+ .page-home .ka-home-hero .ka-hero-inner {
+   padding-bottom: 20px !important;
+   margin-bottom: 0 !important;
+ }
+
+ /* ===== SECONDARY BUTTON ===== */
+
+ .page-home .ka-home-hero a.ka-btn-outline {
+   display: inline-flex !important;
+   align-items: center;
+   justify-content: center;
+   padding: 14px 20px !important;
+   border: 1px solid #B88A4A !important;
+   border-radius: 3px !important;
+   background: transparent !important;
+   color: #B88A4A !important;
+   text-decoration: none !important;
+   transition: background 0.25s ease, color 0.25s ease;
+ }
+
+ /* Button hover */
+ .page-home .ka-home-hero a.ka-btn-outline:hover {
+   background: #B88A4A !important;
+   color: #10271F !important;
+   border-color: #B88A4A !important;
+ }
+
+ /* Home 1 — Discover Our Philosophy Secondary Button */
+ .page-home .ka-home-hero a.ka-text-link {
+   display: inline-flex !important;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+
+   padding: 14px 22px !important;
+   border: 1px solid #B88A4A !important;
+   border-radius: 4px !important;
+   background: transparent !important;
+
+   color: #B88A4A !important;
+   text-decoration: none !important;
+
+   font-weight: 600;
+   line-height: 1.5;
+   transition: background-color 0.25s ease,
+     color 0.25s ease,
+     border-color 0.25s ease;
+ }
+
+ /* Arrow color */
+ .page-home .ka-home-hero a.ka-text-link span {
+   color: #B88A4A !important;
+ }
+
+ /* Hover effect */
+ .page-home .ka-home-hero a.ka-text-link:hover {
+   background: #B88A4A !important;
+   border-color: #B88A4A !important;
+   color: #10271F !important;
+   text-decoration: none !important;
+ }
+
+ .page-home .ka-home-hero a.ka-text-link:hover span {
+   color: #10271F !important;
+ }
+
+ /* ===== KNIGHTAURA HOME 1 — COMPACT HERO ===== */
+
+ .page-home main>section.ka-home-hero {
+   min-height: auto !important;
+   padding-top: 55px !important;
+   padding-bottom: 35px !important;
+ }
+
+ /* Reduce hero heading size */
+ .page-home .ka-home-hero h1 {
+   font-size: clamp(48px, 5.2vw, 76px) !important;
+   line-height: 0.98 !important;
+   margin-bottom: 20px !important;
+ }
+
+ /* Reduce description text slightly */
+ .page-home .ka-home-hero p {
+   font-size: 16px !important;
+   line-height: 1.65 !important;
+ }
+
+ /* Keep buttons compact */
+ .page-home .ka-home-hero .ka-btn,
+ .page-home .ka-home-hero .ka-text-link {
+   padding: 12px 18px !important;
+ }
+
+ /* Reduce extra space below hero content */
+ .page-home .ka-home-hero .ka-hero-inner {
+   padding-bottom: 0 !important;
+   margin-bottom: 0 !important;
+ }
+
+ /* Tablet */
+ @media (max-width: 800px) {
+   .page-home main>section.ka-home-hero {
+     padding-top: 40px !important;
+     padding-bottom: 30px !important;
+   }
+
+   .page-home .ka-home-hero h1 {
+     font-size: clamp(44px, 7vw, 60px) !important;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 560px) {
+   .page-home main>section.ka-home-hero {
+     padding-top: 30px !important;
+     padding-bottom: 25px !important;
+   }
+
+   .page-home .ka-home-hero h1 {
+     font-size: clamp(38px, 10vw, 48px) !important;
+   }
+ }
+
+ /* =========================================
+   KNIGHTAURA — METHOD SECTION TEXT FIX
+========================================= */
+
+ /* Main paragraph: slightly smaller */
+ .page-home .ka-split-copy>p {
+   font-size: 17px !important;
+   line-height: 1.75 !important;
+   color: #FFF9F0 !important;
+   opacity: 1 !important;
+ }
+
+ /* Understand, Apply, Reflect headings — gold */
+ .page-home .ka-steps>div>span>strong {
+   color: #B88A4A !important;
+   font-size: 18px !important;
+   line-height: 1.5 !important;
+   font-weight: 600 !important;
+   opacity: 1 !important;
+ }
+
+ /* Actual descriptions: Learn, Practice, Turn */
+ .page-home .ka-steps>div>span>small {
+   display: block !important;
+   color: #FFF9F0 !important;
+   font-size: 16px !important;
+   line-height: 1.8 !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+   margin-top: 5px !important;
+ }
+
+ /* Step numbers */
+ .page-home .ka-steps>div>b {
+   color: #B88A4A !important;
+   font-size: 14px !important;
+ }
+
+ /* =========================================
+   BUTTONS — CONSISTENT SIZE WITH HERO
+========================================= */
+
+ /* Keep all main action buttons consistent */
+ .page-home main .ka-btn {
+   box-sizing: border-box !important;
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 10px !important;
+   padding: 14px 22px !important;
+   min-height: 0 !important;
+   font-size: 14px !important;
+   line-height: 1.4 !important;
+   border-radius: 3px !important;
+ }
+
+ /* Hero secondary button uses matching dimensions */
+ .page-home .ka-home-hero .ka-text-link {
+   box-sizing: border-box !important;
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 10px !important;
+   padding: 14px 22px !important;
+   font-size: 14px !important;
+   line-height: 1.4 !important;
+   border-radius: 3px !important;
+ }
+
+ /* Explore our approach — matching button dimensions */
+ .page-home .ka-split-copy>a.ka-btn-outline {
+   width: auto !important;
+   min-width: 0 !important;
+   min-height: 0 !important;
+   padding: 14px 22px !important;
+   margin-top: 22px !important;
+   font-size: 14px !important;
+   line-height: 1.4 !important;
+   border: 1px solid #B88A4A !important;
+   border-radius: 3px !important;
+   background: transparent !important;
+   color: #B88A4A !important;
+   text-decoration: none !important;
+ }
+
+ .page-home .ka-split-copy>a.ka-btn-outline:hover {
+   background: #B88A4A !important;
+   color: #10271F !important;
+ }
+
+ /* Reduce Method section height */
+ .page-home main>section.ka-ink {
+   padding-top: 65px !important;
+   padding-bottom: 65px !important;
+ }
+
+ /* Keep the image and text aligned */
+ .page-home .ka-ink .ka-split {
+   align-items: center !important;
+   gap: 45px !important;
+ }
+
+ /* Reduce unnecessary spacing inside the text */
+ .page-home .ka-ink .ka-split-copy h2 {
+   margin-bottom: 14px !important;
+ }
+
+ .page-home .ka-ink .ka-split-copy>p {
+   margin-bottom: 18px !important;
+ }
+
+ .page-home .ka-ink .ka-steps {
+   margin-top: 18px !important;
+   margin-bottom: 20px !important;
+ }
+
+ /* Tablet */
+ @media (max-width: 800px) {
+   .page-home main>section.ka-ink {
+     padding-top: 45px !important;
+     padding-bottom: 45px !important;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 560px) {
+   .page-home main>section.ka-ink {
+     padding-top: 35px !important;
+     padding-bottom: 35px !important;
+   }
+ }
+
+ /* Review card — match KnightAura brand colours */
+ .page-home .ka-feature-tall {
+   background: #203C32 !important;
+   color: #FFF9F0 !important;
+   border-color: #B88A4A !important;
+ }
+
+ /* Keep review card heading and description readable */
+ .page-home .ka-feature-tall h3,
+ .page-home .ka-feature-tall p {
+   color: #FFF9F0 !important;
+   opacity: 1 !important;
+ }
+
+ /* Gold accent text and icon */
+ .page-home .ka-feature-tall>span,
+ .page-home .ka-feature-tall a {
+   color: #B88A4A !important;
+ }
+
+ /* Hover effect */
+ .page-home .ka-feature-tall a:hover {
+   color: #FFF9F0 !important;
+ }
+
+ /* Keep review card link gold on hover */
+ .page-home .ka-feature-tall a:hover,
+ .page-home .ka-feature-tall a:focus {
+   color: #B88A4A !important;
+   text-decoration: none !important;
+ }
+
+ /* ===== EVENT SECTION — BALANCED TEXT ===== */
+
+ /* Left-side description */
+ .page-home .ka-event-band .ka-event-grid>div:first-child>p {
+   font-size: 16px !important;
+   line-height: 1.8 !important;
+   color: #FFF9F0 !important;
+   max-width: 480px !important;
+ }
+
+ /* Small category labels */
+ .page-home .ka-event-band .ka-event-card small {
+   display: block !important;
+   font-size: 11px !important;
+   letter-spacing: 1.6px !important;
+   color: #B88A4A !important;
+   margin-bottom: 7px !important;
+ }
+
+ /* Card headings */
+ .page-home .ka-event-band .ka-event-card strong {
+   display: block !important;
+   font-size: 17px !important;
+   line-height: 1.5 !important;
+   color: #FFF9F0 !important;
+   margin-bottom: 6px !important;
+ }
+
+ /* Supporting text — visibly secondary */
+ .page-home .ka-event-band .ka-event-card p {
+   font-size: 14px !important;
+   line-height: 1.7 !important;
+   color: #D8D0C3 !important;
+   opacity: 1 !important;
+   margin-top: 0 !important;
+ }
+
+ /* ===== PLAYER JOURNAL — IMPROVE TEXT VISIBILITY ===== */
+
+ /* Main paragraph */
+ .page-home .ka-journal-copy>p {
+   font-size: 17px !important;
+   line-height: 1.85 !important;
+   color: #52675F !important;
+   opacity: 1 !important;
+   max-width: 100% !important;
+   margin-bottom: 24px !important;
+ }
+
+ /* Journal item headings */
+ .page-home .ka-journal-list>div>p>strong {
+   display: block !important;
+   font-size: 17px !important;
+   line-height: 1.5 !important;
+   font-weight: 700 !important;
+   color: #203C32 !important;
+   opacity: 1 !important;
+   margin-bottom: 5px !important;
+ }
+
+ /* Journal item descriptions */
+ .page-home .ka-journal-list>div>p>small {
+   display: block !important;
+   font-size: 15px !important;
+   line-height: 1.7 !important;
+   color: #52675F !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+ }
+
+ /* Journal item numbers */
+ .page-home .ka-journal-list>div>span {
+   color: #B88A4A !important;
+   font-size: 13px !important;
+ }
+
+ /* Keep existing button size unchanged */
+
+ /* =====================================
+   KNIGHTAURA — PREMIUM CTA REDESIGN
+===================================== */
+
+ .page-home main>section.ka-final-cta {
+   position: relative !important;
+   isolation: isolate;
+   overflow: hidden;
+   padding: 68px 0 !important;
+   background: #F4EEE3 !important;
+   border-top: 1px solid #B88A4A !important;
+   border-bottom: 1px solid #B88A4A !important;
+ }
+
+ /* Premium forest-green panel */
+ .page-home .ka-final-inner {
+   position: relative !important;
+   isolation: isolate;
+   display: grid !important;
+   grid-template-columns: minmax(0, 1fr) auto !important;
+   align-items: center !important;
+   gap: 36px !important;
+   padding: 48px 54px !important;
+   background-color: #10271F !important;
+   background-image:
+     linear-gradient(45deg,
+       transparent 48%,
+       rgba(184, 138, 74, 0.055) 49%,
+       rgba(184, 138, 74, 0.055) 51%,
+       transparent 52%);
+   background-size: 42px 42px;
+   border: 1px solid rgba(184, 138, 74, 0.65);
+   box-shadow: 0 16px 38px rgba(16, 39, 31, 0.10);
+ }
+
+ /* Gold accent line */
+ .page-home .ka-final-inner::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 54px;
+   width: 74px;
+   height: 3px;
+   background: #B88A4A;
+ }
+
+ /* Text content */
+ .page-home .ka-final-inner>div:first-child {
+   position: relative;
+   z-index: 2;
+   max-width: 760px !important;
+ }
+
+ .page-home .ka-final-inner .ka-eyebrow {
+   color: #D7AD70 !important;
+   letter-spacing: 3px !important;
+ }
+
+ .page-home .ka-final-inner h2 {
+   display: block !important;
+   max-width: 760px;
+   margin: 18px 0 !important;
+   color: #FFF9F0 !important;
+   font-size: clamp(34px, 3.7vw, 50px) !important;
+   line-height: 1.12 !important;
+   letter-spacing: -1.2px !important;
+ }
+
+ .page-home .ka-final-inner h2 br {
+   display: none !important;
+ }
+
+ .page-home .ka-final-inner h2 em {
+   display: inline !important;
+   color: #D7AD70 !important;
+   font-weight: 500 !important;
+ }
+
+ .page-home .ka-final-inner>div:first-child p {
+   max-width: 570px !important;
+   margin: 0 !important;
+   color: #E7DFD2 !important;
+   font-size: 15px !important;
+   line-height: 1.85 !important;
+   opacity: 1 !important;
+ }
+
+ /* Decorative knight */
+ .page-home .ka-final-inner .ka-cta-knight {
+   display: block !important;
+   position: absolute !important;
+   z-index: 0 !important;
+   right: 230px !important;
+   bottom: -35px !important;
+   color: #B88A4A !important;
+   font-size: 155px !important;
+   line-height: 1 !important;
+   opacity: 0.12 !important;
+   pointer-events: none !important;
+ }
+
+ /* CTA button — retain hero-button sizing */
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn {
+   position: relative !important;
+   z-index: 3 !important;
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 10px !important;
+   justify-self: end !important;
+   width: auto !important;
+   min-width: 0 !important;
+   min-height: 0 !important;
+   margin: 0 !important;
+   padding: 14px 22px !important;
+   font-size: 14px !important;
+   line-height: 1.4 !important;
+   white-space: nowrap !important;
+   color: #10271F !important;
+   background: #FFF9F0 !important;
+   border: 1px solid #FFF9F0 !important;
+   border-radius: 3px !important;
+   box-shadow: none !important;
+   transform: none !important;
+   transition: background 0.25s ease,
+     color 0.25s ease,
+     border-color 0.25s ease !important;
+ }
+
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn span {
+   color: #10271F !important;
+ }
+
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn:hover {
+   color: #10271F !important;
+   background: #D7AD70 !important;
+   border-color: #D7AD70 !important;
+   transform: translateY(-2px) !important;
+ }
+
+ /* Tablet */
+ @media (max-width: 900px) {
+   .page-home main>section.ka-final-cta {
+     padding: 48px 0 !important;
+   }
+
+   .page-home .ka-final-inner {
+     grid-template-columns: 1fr !important;
+     gap: 26px !important;
+     padding: 40px 32px !important;
+   }
+
+   .page-home .ka-final-inner::before {
+     left: 32px;
+   }
+
+   .page-home main .ka-final-cta .ka-final-inner>a.ka-btn {
+     justify-self: start !important;
+   }
+
+   .page-home .ka-final-inner .ka-cta-knight {
+     right: 20px !important;
+     bottom: 10px !important;
+     font-size: 110px !important;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 560px) {
+   .page-home main>section.ka-final-cta {
+     padding: 28px 0 !important;
+   }
+
+   .page-home .ka-final-inner {
+     gap: 22px !important;
+     padding: 36px 22px !important;
+   }
+
+   .page-home .ka-final-inner::before {
+     left: 22px;
+   }
+
+   .page-home .ka-final-inner h2 {
+     font-size: clamp(31px, 8vw, 39px) !important;
+     line-height: 1.16 !important;
+   }
+
+   .page-home .ka-final-inner>div:first-child p {
+     font-size: 14px !important;
+   }
+
+   .page-home .ka-final-inner .ka-cta-knight {
+     right: 8px !important;
+     bottom: 65px !important;
+     font-size: 78px !important;
+     opacity: 0.08 !important;
+   }
+ }
+
+ /* Reduce space between CTA and footer */
+ .page-home main>section.ka-final-cta {
+   margin-bottom: 0 !important;
+   padding-bottom: 32px !important;
+ }
+
+ .page-home footer {
+   margin-top: 0 !important;
+ }
+
+ /* Add space above the CTA section */
+ .page-home main>section.ka-final-cta {
+   margin-top: 64px !important;
+ }
+
+ /* Restore forest-green CTA button */
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn {
+   background: #203C32 !important;
+   border-color: #B88A4A !important;
+   color: #FFF9F0 !important;
+ }
+
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn span {
+   color: #FFF9F0 !important;
+ }
+
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn:hover {
+   background: #B88A4A !important;
+   border-color: #B88A4A !important;
+   color: #10271F !important;
+ }
+
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn:hover span {
+   color: #10271F !important;
+ }
+
+ /* CTA button text and arrow — antique gold */
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn,
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn span {
+   color: #B88A4A !important;
+ }
+
+ /* Hover: dark green text */
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn:hover,
+ .page-home main .ka-final-cta .ka-final-inner>a.ka-btn:hover span {
+   color: #10271F !important;
+ }
+
+ /* Match Explore our approach button style */
+ .page-home main .ka-event-band a.ka-btn {
+   background: transparent !important;
+   border: 1px solid #B88A4A !important;
+   color: #B88A4A !important;
+   border-radius: 3px !important;
+   box-shadow: none !important;
+ }
+
+ .page-home main .ka-event-band a.ka-btn span {
+   color: #B88A4A !important;
+ }
+
+ .page-home main .ka-event-band a.ka-btn:hover {
+   background: #B88A4A !important;
+   border-color: #B88A4A !important;
+   color: #10271F !important;
+ }
+
+ .page-home main .ka-event-band a.ka-btn:hover span {
+   color: #10271F !important;
+ }
+
+ /* Programs cards — increase image height */
+ .page-home main .ka-path-grid .ka-path-img {
+   height: 260px !important;
+   min-height: 260px !important;
+   overflow: hidden;
+ }
+
+ .page-home main .ka-path-grid .ka-path-img img {
+   width: 100% !important;
+   height: 100% !important;
+   object-fit: cover !important;
+   object-position: center center !important;
+   display: block;
+ }
+
+ /* Slightly taller images on larger screens */
+ @media (min-width: 1100px) {
+   .page-home main .ka-path-grid .ka-path-img {
+     height: 290px !important;
+     min-height: 290px !important;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 600px) {
+   .page-home main .ka-path-grid .ka-path-img {
+     height: 230px !important;
+     min-height: 230px !important;
+   }
+ }
+
+ /* KnightAura — premium chess card image hover */
+ .page-home main .ka-path-grid .ka-path {
+   overflow: hidden;
+   transition:
+     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+     box-shadow 0.6s ease;
+ }
+
+ .page-home main .ka-path-grid .ka-path-img {
+   overflow: hidden;
+ }
+
+ .page-home main .ka-path-grid .ka-path-img img {
+   transform: scale(1);
+   transition:
+     transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+     filter 0.8s ease;
+   will-change: transform;
+ }
+
+ /* Image zoom on hover */
+ .page-home main .ka-path-grid .ka-path:hover .ka-path-img img {
+   transform: scale(1.07);
+   filter: saturate(1.05) contrast(1.03);
+ }
+
+ /* Gentle card lift */
+ .page-home main .ka-path-grid .ka-path:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 18px 38px rgba(16, 39, 31, 0.14);
+ }
+
+ /* Gold arrow interaction */
+ .page-home main .ka-path-grid .ka-path .ka-round-arrow {
+   transition:
+     transform 0.45s ease,
+     background-color 0.45s ease,
+     color 0.45s ease,
+     border-color 0.45s ease;
+ }
+
+ .page-home main .ka-path-grid .ka-path:hover .ka-round-arrow {
+   transform: rotate(45deg);
+   background: #B88A4A;
+   border-color: #B88A4A;
+   color: #10271F;
+ }
+
+ /* Keyboard accessibility */
+ .page-home main .ka-path-grid .ka-path:focus-visible {
+   outline: 2px solid #B88A4A;
+   outline-offset: 4px;
+ }
+
+ /* Respect reduced-motion preferences */
+ @media (prefers-reduced-motion: reduce) {
+
+   .page-home main .ka-path-grid .ka-path,
+   .page-home main .ka-path-grid .ka-path-img img,
+   .page-home main .ka-path-grid .ka-path .ka-round-arrow {
+     transition: none !important;
+   }
+
+   .page-home main .ka-path-grid .ka-path:hover,
+   .page-home main .ka-path-grid .ka-path:hover .ka-path-img img {
+     transform: none !important;
+   }
+ }
+
+ /* KnightAura — card border hover effect */
+ .page-home main .ka-path-grid .ka-path {
+   border: 1px solid rgba(184, 138, 74, 0.28) !important;
+   transition:
+     border-color 0.6s ease,
+     box-shadow 0.6s ease,
+     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ /* Antique gold border on hover */
+ .page-home main .ka-path-grid .ka-path:hover {
+   border-color: #B88A4A !important;
+   box-shadow: 0 18px 38px rgba(16, 39, 31, 0.14);
+ }
+
+ /* Keyboard focus */
+ .page-home main .ka-path-grid .ka-path:focus-visible {
+   outline: 2px solid #B88A4A;
+   outline-offset: 3px;
+ }
+
+ /* Remove circular orbit borders from Journal image */
+ .page-home .ka-journal-orbit,
+ .page-home .ka-journal-orbit-one,
+ .page-home .ka-journal-orbit-two {
+   display: none !important;
+ }
+
+ /* =====================================
+   HOME 1 - COACH CREDENTIALS
+===================================== */
+
+ .home-coach-credentials {
+   --hcc-green: #203c32;
+   --hcc-deep: #10271f;
+   --hcc-gold: #b88a4a;
+   --hcc-cream: #fff9f0;
+   --hcc-paper: #f4eee3;
+   --hcc-muted: #68736a;
+
+   padding: clamp(70px, 8vw, 110px) 24px;
+   background: var(--hcc-paper);
+   color: var(--hcc-green);
+   overflow: hidden;
+ }
+
+ .home-coach-credentials *,
+ .home-coach-credentials *::before,
+ .home-coach-credentials *::after {
+   box-sizing: border-box;
+ }
+
+ .hcc-container {
+   width: min(1180px, 100%);
+   margin-inline: auto;
+ }
+
+ .hcc-heading {
+   max-width: 760px;
+   margin: 0 auto 55px;
+   text-align: center;
+ }
+
+ .hcc-eyebrow {
+   display: inline-block;
+   margin-bottom: 17px;
+   color: var(--hcc-gold);
+   font-size: 11px;
+   font-weight: 800;
+   letter-spacing: 2.8px;
+ }
+
+ .hcc-heading h2 {
+   margin: 0;
+   color: var(--hcc-deep);
+   font-family: Georgia, "Times New Roman", serif;
+   font-size: clamp(36px, 4.5vw, 56px);
+   font-weight: 500;
+   line-height: 1.15;
+ }
+
+ .hcc-heading h2 span {
+   color: var(--hcc-gold);
+   font-style: italic;
+ }
+
+ .hcc-heading>p {
+   max-width: 660px;
+   margin: 21px auto 0;
+   color: var(--hcc-muted);
+   font-size: 16px;
+   line-height: 1.85;
+ }
+
+ /* Main layout */
+
+ .hcc-content {
+   display: grid;
+   grid-template-columns: 0.95fr 1.05fr;
+   gap: clamp(35px, 6vw, 75px);
+   align-items: center;
+ }
+
+ /* Team image */
+
+ .hcc-image {
+   position: relative;
+   min-height: 550px;
+   overflow: hidden;
+   background: #e3d8c5;
+ }
+
+ .hcc-image>img {
+   display: block;
+   width: 100%;
+   height: 550px;
+   object-fit: cover;
+ }
+
+ .hcc-image-caption {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   align-items: center;
+   gap: 13px;
+   padding: 23px;
+   color: white;
+   background: linear-gradient(transparent,
+       rgba(16, 39, 31, 0.92));
+   font-size: 10px;
+   font-weight: 800;
+   letter-spacing: 1.8px;
+ }
+
+ .hcc-caption-icon {
+   color: #e0bd7e;
+   font-size: 30px;
+ }
+
+ /* Credentials content */
+
+ .hcc-details {
+   min-width: 0;
+ }
+
+ .hcc-label {
+   display: inline-block;
+   margin-bottom: 16px;
+   color: var(--hcc-gold);
+   font-size: 11px;
+   font-weight: 800;
+   letter-spacing: 2px;
+ }
+
+ .hcc-details>h3 {
+   margin: 0;
+   color: var(--hcc-deep);
+   font-family: Georgia, "Times New Roman", serif;
+   font-size: clamp(32px, 3.5vw, 43px);
+   font-weight: 500;
+   line-height: 1.2;
+ }
+
+ .hcc-details>h3 em {
+   display: block;
+   color: var(--hcc-gold);
+   font-weight: 500;
+ }
+
+ .hcc-description {
+   margin: 20px 0 28px;
+   color: var(--hcc-muted);
+   font-size: 15px;
+   line-height: 1.9;
+ }
+
+ /* Credential rows */
+
+ .hcc-credential-list {
+   display: grid;
+   gap: 0;
+ }
+
+ .hcc-credential {
+   display: flex;
+   align-items: flex-start;
+   gap: 18px;
+   padding: 21px 0;
+   border-top: 1px solid rgba(32, 60, 50, 0.16);
+ }
+
+ .hcc-credential-icon {
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   justify-content: center;
+   width: 46px;
+   height: 46px;
+   color: var(--hcc-gold);
+   background: var(--hcc-cream);
+   border: 1px solid rgba(184, 138, 74, 0.35);
+   font-size: 25px;
+ }
+
+ .hcc-credential h4 {
+   margin: 1px 0 7px;
+   color: var(--hcc-deep);
+   font-family: Georgia, "Times New Roman", serif;
+   font-size: 20px;
+   font-weight: 500;
+   line-height: 1.35;
+ }
+
+ .hcc-credential p {
+   margin: 0;
+   color: var(--hcc-muted);
+   font-size: 14px;
+   line-height: 1.75;
+ }
+
+ /* CTA */
+
+ .hcc-button {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 18px;
+   min-height: 52px;
+   margin-top: 27px;
+   padding: 14px 22px;
+   color: white;
+   background: var(--hcc-green);
+   border: 1px solid var(--hcc-green);
+   text-decoration: none;
+   font-size: 13px;
+   font-weight: 700;
+   transition:
+     background 0.25s ease,
+     color 0.25s ease;
+ }
+
+ .hcc-button:hover {
+   color: var(--hcc-deep);
+   background: transparent;
+ }
+
+ .hcc-button span {
+   font-size: 18px;
+ }
+
+ /* Tablet */
+
+ @media (max-width: 900px) {
+   .hcc-content {
+     grid-template-columns: 1fr;
+     gap: 35px;
+   }
+
+   .hcc-image,
+   .hcc-image>img {
+     height: 420px;
+     min-height: 0;
+   }
+
+   .hcc-details {
+     max-width: 680px;
+   }
+ }
+
+ /* Mobile */
+
+ @media (max-width: 600px) {
+   .home-coach-credentials {
+     padding: 60px 18px;
+   }
+
+   .hcc-heading {
+     margin-bottom: 35px;
+   }
+
+   .hcc-eyebrow {
+     font-size: 10px;
+     letter-spacing: 2px;
+   }
+
+   .hcc-heading h2 {
+     font-size: 36px;
+   }
+
+   .hcc-heading>p {
+     font-size: 15px;
+     line-height: 1.8;
+   }
+
+   .hcc-image,
+   .hcc-image>img {
+     height: 320px;
+   }
+
+   .hcc-details>h3 {
+     font-size: 33px;
+   }
+
+   .hcc-credential {
+     gap: 13px;
+     padding: 18px 0;
+   }
+
+   .hcc-credential-icon {
+     width: 40px;
+     height: 40px;
+     font-size: 22px;
+   }
+
+   .hcc-credential h4 {
+     font-size: 18px;
+   }
+
+   .hcc-credential p {
+     font-size: 14px;
+   }
+
+   .hcc-button {
+     width: 100%;
+   }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+   .hcc-button {
+     transition: none;
+   }
+ }
+
+ /* =========================================
+   COACH CREDENTIALS - POLISH & ANIMATIONS
+========================================= */
+
+ /* Equal image and content heights */
+ .hcc-content {
+   display: grid;
+   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+   gap: clamp(35px, 5vw, 65px);
+   align-items: stretch;
+ }
+
+ .hcc-image {
+   position: relative;
+   height: 100%;
+   min-height: 0;
+   overflow: hidden;
+ }
+
+ .hcc-image>img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   min-height: 0;
+   object-fit: cover;
+   transition: transform 0.7s ease;
+ }
+
+ .hcc-image:hover>img {
+   transform: scale(1.045);
+ }
+
+ .hcc-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   min-width: 0;
+   padding-block: 8px;
+   animation: hcc-content-reveal 0.8s ease both;
+ }
+
+ /* Smooth entrance animations */
+ .hcc-heading {
+   animation: hcc-heading-reveal 0.8s ease both;
+ }
+
+ .hcc-image {
+   animation: hcc-image-reveal 0.9s ease both;
+ }
+
+ .hcc-credential {
+   opacity: 0;
+   animation: hcc-row-reveal 0.65s ease forwards;
+ }
+
+ .hcc-credential:nth-child(1) {
+   animation-delay: 0.15s;
+ }
+
+ .hcc-credential:nth-child(2) {
+   animation-delay: 0.3s;
+ }
+
+ .hcc-credential:nth-child(3) {
+   animation-delay: 0.45s;
+ }
+
+ @keyframes hcc-heading-reveal {
+   from {
+     opacity: 0;
+     transform: translateY(24px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ @keyframes hcc-image-reveal {
+   from {
+     opacity: 0;
+     transform: translateX(-25px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+
+ @keyframes hcc-content-reveal {
+   from {
+     opacity: 0;
+     transform: translateX(22px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+
+ @keyframes hcc-row-reveal {
+   from {
+     opacity: 0;
+     transform: translateY(14px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ /* Professional Lucide icons */
+ .hcc-credential-icon {
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   justify-content: center;
+   width: 48px;
+   height: 48px;
+   color: var(--hcc-gold);
+   background: var(--hcc-cream);
+   border: 1px solid rgba(184, 138, 74, 0.35);
+   transition:
+     color 0.3s ease,
+     background 0.3s ease,
+     border-color 0.3s ease,
+     transform 0.3s ease;
+ }
+
+ .hcc-credential-icon svg {
+   width: 22px;
+   height: 22px;
+   stroke-width: 1.7;
+ }
+
+ .hcc-credential:hover .hcc-credential-icon {
+   color: #fff;
+   background: var(--hcc-gold);
+   border-color: var(--hcc-gold);
+   transform: translateY(-3px);
+ }
+
+ /* Credential row hover */
+ .hcc-credential {
+   transition:
+     padding-left 0.3s ease,
+     border-color 0.3s ease;
+ }
+
+ .hcc-credential:hover {
+   padding-left: 8px;
+   border-color: var(--hcc-gold);
+ }
+
+ .hcc-credential h4 {
+   transition: color 0.3s ease;
+ }
+
+ .hcc-credential:hover h4 {
+   color: var(--hcc-gold);
+ }
+
+ /* Button hover uses the secondary gold colour */
+ .hcc-button {
+   position: relative;
+   overflow: hidden;
+   isolation: isolate;
+   background: var(--hcc-green);
+   color: #fff;
+   border: 1px solid var(--hcc-gold);
+   transition:
+     color 0.35s ease,
+     border-color 0.35s ease,
+     transform 0.3s ease;
+ }
+
+ .hcc-button::before {
+   position: absolute;
+   z-index: -1;
+   inset: 0;
+   content: "";
+   background: var(--hcc-gold);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform 0.35s ease;
+ }
+
+ .hcc-button:hover {
+   color: #fff;
+   border-color: var(--hcc-gold);
+   transform: translateY(-2px);
+ }
+
+ .hcc-button:hover::before {
+   transform: scaleX(1);
+ }
+
+ .hcc-button span {
+   display: inline-block;
+   transition: transform 0.3s ease;
+ }
+
+ .hcc-button:hover span {
+   transform: translate(3px, -3px);
+ }
+
+ /* Tablet */
+ @media (max-width: 900px) {
+   .hcc-content {
+     grid-template-columns: 1fr;
+     gap: 32px;
+   }
+
+   .hcc-image {
+     height: 420px;
+   }
+
+   .hcc-image>img {
+     height: 100%;
+   }
+
+   .hcc-details {
+     padding-block: 0;
+   }
+ }
+
+ /* Mobile */
+ @media (max-width: 600px) {
+   .hcc-image {
+     height: 320px;
+   }
+
+   .hcc-credential-icon {
+     width: 42px;
+     height: 42px;
+   }
+
+   .hcc-credential-icon svg {
+     width: 20px;
+     height: 20px;
+   }
+
+   .hcc-credential:hover {
+     padding-left: 0;
+   }
+ }
+
+ /* Respect reduced-motion preferences */
+ @media (prefers-reduced-motion: reduce) {
+
+   .hcc-heading,
+   .hcc-image,
+   .hcc-details,
+   .hcc-credential {
+     animation: none;
+     opacity: 1;
+     transform: none;
+   }
+
+   .hcc-image>img,
+   .hcc-credential-icon,
+   .hcc-credential,
+   .hcc-credential h4,
+   .hcc-button,
+   .hcc-button::before,
+   .hcc-button span {
+     transition: none;
+   }
+ }
+ /* Remove the line above the footer on Home 1 */
+.page-home main > section.ka-final-cta {
+    border-bottom: none !important;
+}
+
+.page-home .site-footer {
+    border-top: none !important;
+}
+/* HOME 1 — Remove the orange divider above the footer */
+
+body.page-home main > section:last-of-type {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+body.page-home main > section:last-of-type::after,
+body.page-home main > section:last-of-type::before {
+    content: none !important;
+    display: none !important;
+}
+
+body.page-home footer,
+body.page-home .site-footer,
+body.page-home footer.site-footer {
+    border-top: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+body.page-home footer::before,
+body.page-home footer::after,
+body.page-home .site-footer::before,
+body.page-home .site-footer::after {
+    content: none !important;
+    display: none !important;
+}
+/* Remove underline from Home 1 and Home 2 footer links */
+.site-footer a,
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:visited {
+    text-decoration: none !important;
+}
+
+/* Remove underline pseudo-elements from footer links */
+.site-footer a::before,
+.site-footer a::after {
+    content: none !important;
+    display: none !important;
+}
+/* HOME 1 — EVENT SECTION: REDUCE TOP/BOTTOM SPACE */
+body.page-home .ka-event-band {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+/* DARK MODE — PURE BLACK BACKGROUND */
+html[data-theme="dark"] body.page-home .ka-event-band,
+body.page-home.dark-mode .ka-event-band,
+body.page-home[data-theme="dark"] .ka-event-band {
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+/* DARK MODE — EVENT CARDS ALSO BLACK */
+html[data-theme="dark"] body.page-home .ka-event-card,
+body.page-home.dark-mode .ka-event-card,
+body.page-home[data-theme="dark"] .ka-event-card {
+    background: #000000 !important;
+}
+/* HOME 1 — INCREASE EVENT SECTION HEIGHT */
+body.page-home main > section.ka-event-band {
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+body.page-home .ka-event-band .ka-event-grid {
+    gap: 36px !important;
+    align-items: center !important;
+}
+
+body.page-home .ka-event-band .ka-event-card {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+    body.page-home main > section.ka-event-band {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+}
+/* HOME 1 — PLAYER JOURNAL DARK MODE FIX */
+
+/* Pure black journal section */
+html[data-theme="dark"] body.page-home .ka-player-journal,
+body.page-home.dark-mode .ka-player-journal,
+body.page-home[data-theme="dark"] .ka-player-journal {
+    background: #000000 !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+}
+
+/* Journal main heading — white */
+html[data-theme="dark"] body.page-home .ka-journal-copy h2,
+body.page-home.dark-mode .ka-journal-copy h2,
+body.page-home[data-theme="dark"] .ka-journal-copy h2 {
+    color: #FFFFFF !important;
+}
+
+/* Journal list headings — white */
+html[data-theme="dark"] body.page-home .ka-journal-list strong,
+body.page-home.dark-mode .ka-journal-list strong,
+body.page-home[data-theme="dark"] .ka-journal-list strong {
+    color: #FFFFFF !important;
+}
+
+/* Journal descriptions — light grey */
+html[data-theme="dark"] body.page-home .ka-journal-copy p,
+html[data-theme="dark"] body.page-home .ka-journal-list small,
+body.page-home.dark-mode .ka-journal-copy p,
+body.page-home.dark-mode .ka-journal-list small,
+body.page-home[data-theme="dark"] .ka-journal-copy p,
+body.page-home[data-theme="dark"] .ka-journal-list small {
+    color: #D0D0D0 !important;
+}
+
+/* Journal list cards — black background */
+html[data-theme="dark"] body.page-home .ka-journal-list > div,
+body.page-home.dark-mode .ka-journal-list > div,
+body.page-home[data-theme="dark"] .ka-journal-list > div {
+    background: #000000 !important;
+    border-color: #333333 !important;
+}
+
+/* Journal eyebrow text */
+html[data-theme="dark"] body.page-home .ka-journal-copy .ka-eyebrow,
+body.page-home.dark-mode .ka-journal-copy .ka-eyebrow,
+body.page-home[data-theme="dark"] .ka-journal-copy .ka-eyebrow {
+    color: #C99552 !important;
+}
+/* Remove gold border from Journal button */
+body.page-home .ka-player-journal a.ka-btn.ka-btn-dark {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Reduce top padding of Player Journal section */
+body.page-home .ka-player-journal {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+    body.page-home .ka-player-journal {
+        padding-top: 12px !important;
+    }
+}
+/* HOME 1 — FORCE REDUCE JOURNAL TOP GAP */
+html body.page-home main section.ka-player-journal {
+    padding-top: 90px !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
+}
+
+html body.page-home main section.ka-player-journal > .ka-wrap {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+html body.page-home .ka-player-journal .ka-journal-layout {
+    padding-top: 5px !important;
+    margin-top: 0 !important;
+    align-items: center !important;
+}
+
+/* Remove extra space before journal heading */
+html body.page-home .ka-player-journal .ka-journal-copy {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+html body.page-home .ka-player-journal .ka-journal-copy > .ka-eyebrow {
+    margin-top: 0 !important;
+}
+/* KnightAura — Add space below Better Players heading */
+body.page-home .home-coach-credentials .hcc-details > h3 {
+    margin-bottom: 40px !important;
+}
+/* HOME 1 — CTA solid primary green background */
+.page-home .ka-final-cta {
+    background: #F5EDE1 !important;
+}
+
+.page-home .ka-final-inner {
+    background-color: #103D32 !important;
+    background-image: none !important;
+    border: 1px solid #C88945 !important;
+}
+
+/* Remove diagonal decorative lines */
+.page-home .ka-final-inner::before,
+.page-home .ka-final-inner::after {
+    background-image: none !important;
+    content: none !important;
+    display: none !important;
+}
+
+/* Keep heading and description readable */
+.page-home .ka-final-inner h2 {
+    color: #FFF8EF !important;
+}
+
+.page-home .ka-final-inner h2 em {
+    color: #D49A52 !important;
+}
+
+.page-home .ka-final-inner p {
+    color: #FFF8EF !important;
+}
+
+/* Keep eyebrow text gold */
+.page-home .ka-final-inner .ka-eyebrow {
+    color: #D49A52 !important;
+}
+
+/* Button — transparent with secondary-colour border and text */
+.page-home .ka-final-inner > a.ka-btn {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 1px solid #C88945 !important;
+    color: #C88945 !important;
+    box-shadow: none !important;
+}
+
+/* Button arrow */
+.page-home .ka-final-inner > a.ka-btn span {
+    color: #C88945 !important;
+}
+
+/* Hover — no background fill */
+.page-home .ka-final-inner > a.ka-btn:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #C88945 !important;
+    border-color: #C88945 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.page-home .ka-final-inner > a.ka-btn:hover span {
+    color: #C88945 !important;
+}
+/* HOME 1 — REMOVE GREEN HERO BACKGROUND */
+
+.page-home .ka-hero,
+.page-home .ka-home-hero {
+    background: #F7F5EF !important;
+    background-image: none !important;
+}
+
+/* Remove green overlay and glow */
+.page-home .ka-hero-glow {
+    display: none !important;
+}
+
+/* Hero text colors */
+.page-home .ka-hero-copy h1 {
+    color: #203C32 !important;
+}
+
+.page-home .ka-hero-copy h1 em {
+    color: #B88A4A !important;
+}
+
+.page-home .ka-hero-copy > p {
+    color: #45564E !important;
+}
+
+/* Eyebrow text */
+.page-home .ka-hero-copy .ka-eyebrow {
+    color: #B88A4A !important;
+}
+
+/* Keep hero image and floating cards visible */
+.page-home .ka-hero-art {
+    background: transparent !important;
+}
+
+.page-home .ka-art-frame {
+    border-color: rgba(184, 138, 74, 0.35);
+}
+
+/* First button */
+.page-home .ka-hero-copy .ka-btn-light {
+    background: #203C32 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #203C32 !important;
+}
+
+.page-home .ka-hero-copy .ka-btn-light:hover {
+    background: #B88A4A !important;
+    border-color: #B88A4A !important;
+    color: #FFFFFF !important;
+}
+
+/* Second button */
+.page-home .ka-hero-copy .ka-text-link {
+    color: #203C32 !important;
+}
+
+.page-home .ka-hero-copy .ka-text-link:hover {
+    color: #B88A4A !important;
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}
+/* LIGHT MODE: Improve text visibility on primary-green sections */
+html[data-theme="light"] body.page-home .ka-split-copy h2,
+html[data-theme="light"] body.page-home .ka-split-copy h2 strong,
+html[data-theme="light"] body.page-home .ka-event-band h2,
+html[data-theme="light"] body.page-home .ka-feature-wide h3,
+html[data-theme="light"] body.page-home .ka-feature-wide p {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Keep the original gold secondary colour */
+html[data-theme="light"] body.page-home .ka-split-copy h2 em,
+html[data-theme="light"] body.page-home .ka-event-band h2 em {
+    color: #B88A4A !important;
+    -webkit-text-fill-color: #B88A4A !important;
+}

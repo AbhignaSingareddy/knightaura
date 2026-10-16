@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#203C32">
+
+    <title>Coming Soon | Knight Aura Chess Academy</title>
+
+    <meta
+        name="description"
+        content="A new chapter in chess learning is coming soon to Knight Aura Chess Academy."
+    >
+
+    <link rel="icon" type="image/png" href="assets/knightaura-mark.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Shared and page-specific CSS -->
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/coming%20soon.css">
+</head>
+
+<body class="coming-soon-page">
+
+    <main class="coming-shell">
+
+        <section class="coming-card" aria-labelledby="comingTitle">
+
+            <!-- Theme and direction controls -->
+            <div class="coming-controls">
+
+               
+
+                <button
+                    type="button"
+                    id="themeToggle"
+                    class="coming-icon-button"
+                    aria-label="Switch to dark mode"
+                    title="Toggle dark mode"
+                >
+                    <i
+                        id="themeSymbol"
+                        data-lucide="moon"
+                        aria-hidden="true"
+                    ></i>
+                </button>
+                 <button
+                    type="button"
+                    id="directionToggle"
+                    class="coming-icon-button"
+                    aria-label="Switch to right-to-left layout"
+                    title="Toggle RTL/LTR"
+                >
+                    <i data-lucide="arrow-left-right" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+            <!-- Knight Aura branding -->
+            <a
+                class="coming-brand"
+                href="index.html"
+                aria-label="Knight Aura Chess Academy home"
+            >
+
+                <img
+                    src="assets/knightaura-mark.png"
+                    alt="Knight Aura Chess Academy logo"
+                    class="coming-logo"
+                >
+
+                <span class="coming-brand-copy">
+
+                    <span class="coming-brand-name">
+                        <span>Knight</span><span class="brand-aura">Aura</span>
+                    </span>
+
+                    <span class="coming-tagline">
+                        THE ART OF CHESS
+                    </span>
+
+                </span>
+
+            </a>
+
+            <!-- Main heading -->
+            <h1 id="comingTitle">
+                Great things are
+                <em>in the making.</em>
+            </h1>
+
+            <p class="coming-description">
+                We're preparing something special for your chess journey.
+                A new space to learn, sharpen your strategy, and make
+                every move count. Stay tuned, the next move is almost here.
+            </p>
+
+            <!-- Decorative divider -->
+            <div class="coming-divider" aria-hidden="true">
+                <span></span>
+                <i data-lucide="crown"></i>
+                <span></span>
+            </div>
+
+            <!-- Countdown -->
+            <p class="coming-countdown-label">
+                THE COUNTDOWN TO OUR NEXT MOVE
+            </p>
+
+            <div
+                class="coming-countdown"
+                aria-label="Launch countdown"
+                aria-live="off"
+            >
+
+                <div class="coming-time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+
+                <div class="coming-time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+
+                <div class="coming-time-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div class="coming-time-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+
+            </div>
+
+            <!-- Email notification form -->
+            <form class="coming-notify-form" id="notifyForm">
+
+                <label
+                    class="visually-hidden"
+                    for="notifyEmail"
+                >
+                    Email address
+                </label>
+
+                <div class="coming-email-wrap">
+
+                    <i data-lucide="mail" aria-hidden="true"></i>
+
+                    <input
+                        id="notifyEmail"
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email for updates"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="coming-notify-button"
+                >
+                    <i data-lucide="bell" aria-hidden="true"></i>
+                    <span>Notify Me</span>
+                </button>
+
+            </form>
+
+            <p
+                id="formMessage"
+                class="coming-form-message"
+                aria-live="polite"
+            ></p>
+
+            <!-- Closing tagline -->
+            <p class="coming-bottom-note">
+                <i data-lucide="sparkles" aria-hidden="true"></i>
+                Think deeply. Play purposefully. Grow constantly.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Existing JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

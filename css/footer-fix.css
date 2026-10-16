@@ -1,0 +1,438 @@
+/* KnightAura footer contrast fix — loaded after every page stylesheet */
+html:not([data-theme="dark"]) .site-footer,
+html[data-theme="light"] .site-footer {
+  background: #FFF9F0 !important;
+  color: #203C32 !important;
+  border-top: 1px solid #B88A4A !important;
+}
+html:not([data-theme="dark"]) .site-footer .footer-about,
+html:not([data-theme="dark"]) .site-footer .footer-links a,
+html:not([data-theme="dark"]) .site-footer .footer-contact-item,
+html:not([data-theme="dark"]) .site-footer .footer-contact-item a,
+html:not([data-theme="dark"]) .site-footer .footer-contact-item span,
+html:not([data-theme="dark"]) .site-footer .footer-bottom,
+html:not([data-theme="dark"]) .site-footer .footer-bottom a,
+html:not([data-theme="dark"]) .site-footer .brand-knight,
+html:not([data-theme="dark"]) .site-footer .brand-subtitle,
+html[data-theme="light"] .site-footer .footer-about,
+html[data-theme="light"] .site-footer .footer-links a,
+html[data-theme="light"] .site-footer .footer-contact-item,
+html[data-theme="light"] .site-footer .footer-contact-item a,
+html[data-theme="light"] .site-footer .footer-contact-item span,
+html[data-theme="light"] .site-footer .footer-bottom,
+html[data-theme="light"] .site-footer .footer-bottom a,
+html[data-theme="light"] .site-footer .brand-knight,
+html[data-theme="light"] .site-footer .brand-subtitle {
+  color: #203C32 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+}
+html:not([data-theme="dark"]) .site-footer .footer-title,
+html[data-theme="light"] .site-footer .footer-title {
+  color: #B88A4A !important;
+}
+html:not([data-theme="dark"]) .site-footer .brand-aura,
+html[data-theme="light"] .site-footer .brand-aura {
+  color: #B88A4A !important;
+}
+html:not([data-theme="dark"]) .site-footer .footer-contact-item svg,
+html:not([data-theme="dark"]) .site-footer .footer-contact-item i,
+html[data-theme="light"] .site-footer .footer-contact-item svg,
+html[data-theme="light"] .site-footer .footer-contact-item i {
+  color: #B88A4A !important;
+  stroke: #B88A4A !important;
+  opacity: 1 !important;
+}
+/* Social circles are intentionally NOT filled green in light mode. */
+html:not([data-theme="dark"]) .site-footer .social-links a,
+html[data-theme="light"] .site-footer .social-links a {
+  background: transparent !important;
+  border: 1px solid #B88A4A !important;
+  color: #203C32 !important;
+  box-shadow: none !important;
+}
+html:not([data-theme="dark"]) .site-footer .social-links a i,
+html[data-theme="light"] .site-footer .social-links a i {
+  color: #203C32 !important;
+  opacity: 1 !important;
+}
+html:not([data-theme="dark"]) .site-footer .social-links a:hover,
+html[data-theme="light"] .site-footer .social-links a:hover {
+  background: #B88A4A !important;
+  color: #203C32 !important;
+  transform: translateY(-3px);
+}
+html:not([data-theme="dark"]) .site-footer .social-links a:hover i,
+html[data-theme="light"] .site-footer .social-links a:hover i {
+  color: #203C32 !important;
+}
+html:not([data-theme="dark"]) .site-footer .footer-bottom,
+html[data-theme="light"] .site-footer .footer-bottom {
+  border-color: #B88A4A !important;
+}
+/* Dark Mode remains black with white text and gold accents. */
+html[data-theme="dark"] .site-footer {
+  background: #050505 !important;
+  color: #FFFFFF !important;
+  border-top: 1px solid #B88A4A !important;
+}
+html[data-theme="dark"] .site-footer .footer-about,
+html[data-theme="dark"] .site-footer .footer-links a,
+html[data-theme="dark"] .site-footer .footer-contact-item,
+html[data-theme="dark"] .site-footer .footer-contact-item a,
+html[data-theme="dark"] .site-footer .footer-contact-item span,
+html[data-theme="dark"] .site-footer .footer-bottom,
+html[data-theme="dark"] .site-footer .footer-bottom a,
+html[data-theme="dark"] .site-footer .brand-knight,
+html[data-theme="dark"] .site-footer .brand-subtitle {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+html[data-theme="dark"] .site-footer .footer-title,
+html[data-theme="dark"] .site-footer .brand-aura,
+html[data-theme="dark"] .site-footer .footer-contact-item svg,
+html[data-theme="dark"] .site-footer .footer-contact-item i {
+  color: #B88A4A !important;
+  stroke: #B88A4A !important;
+}
+html[data-theme="dark"] .site-footer .social-links a {
+  background: transparent !important;
+  border: 1px solid #B88A4A !important;
+  color: #FFFFFF !important;
+}
+html[data-theme="dark"] .site-footer .social-links a i {
+  color: #FFFFFF !important;
+}
+html[data-theme="dark"] .site-footer .social-links a:hover {
+  background: #B88A4A !important;
+}
+html[data-theme="dark"] .site-footer .social-links a:hover i {
+  color: #050505 !important;
+}
+
+
+/* ===== DEFINITIVE FOOTER TEXT HOVER FIX =====
+   This file loads after shared.css and uses matching/higher specificity
+   to override the light/dark footer base text colors above. */
+html:not([data-theme="dark"]) body .site-footer .footer-links a:hover,
+html:not([data-theme="dark"]) body .site-footer .footer-links a:hover *,
+html:not([data-theme="dark"]) body .site-footer .footer-contact-item a:hover,
+html:not([data-theme="dark"]) body .site-footer .footer-contact-item a:hover *,
+html:not([data-theme="dark"]) body .site-footer .footer-legal-bottom a:hover,
+html:not([data-theme="dark"]) body .site-footer .footer-legal-bottom a:hover *,
+html[data-theme="light"] body .site-footer .footer-links a:hover,
+html[data-theme="light"] body .site-footer .footer-links a:hover *,
+html[data-theme="light"] body .site-footer .footer-contact-item a:hover,
+html[data-theme="light"] body .site-footer .footer-contact-item a:hover *,
+html[data-theme="light"] body .site-footer .footer-legal-bottom a:hover,
+html[data-theme="light"] body .site-footer .footer-legal-bottom a:hover * {
+  color: #B88A4A !important;
+  -webkit-text-fill-color: #B88A4A !important;
+  opacity: 1 !important;
+}
+
+html[data-theme="dark"] body .site-footer .footer-links a:hover,
+html[data-theme="dark"] body .site-footer .footer-links a:hover *,
+html[data-theme="dark"] body .site-footer .footer-contact-item a:hover,
+html[data-theme="dark"] body .site-footer .footer-contact-item a:hover *,
+html[data-theme="dark"] body .site-footer .footer-legal-bottom a:hover,
+html[data-theme="dark"] body .site-footer .footer-legal-bottom a:hover * {
+  color: #B88A4A !important;
+  -webkit-text-fill-color: #B88A4A !important;
+  opacity: 1 !important;
+}
+
+/* Remove unwanted top line from the header on every page */
+html body header.site-header {
+  border-top: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+html body header.site-header::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}

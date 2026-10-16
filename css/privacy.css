@@ -1,0 +1,1574 @@
+
+/* =====================================================
+   KNIGHT AURA — PRIVACY POLICY PAGE
+   No header or footer
+   ===================================================== */
+
+.privacy-page {
+    --privacy-green: #103b30;
+    --privacy-green-light: #1d5747;
+    --privacy-gold: #c88c43;
+    --privacy-gold-light: #efc58e;
+    --privacy-cream: #fbf8f1;
+    --privacy-white: #ffffff;
+    --privacy-text: #244238;
+    --privacy-muted: #788b82;
+    --privacy-border: #e2e7df;
+
+    margin: 0;
+    min-height: 100vh;
+    background: var(--privacy-cream);
+    color: var(--privacy-text);
+    font-family: "Lora", Georgia, serif;
+}
+
+.privacy-page *,
+.privacy-page *::before,
+.privacy-page *::after {
+    box-sizing: border-box;
+}
+
+/* Display controls */
+
+.privacy-controls {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    direction: ltr;
+}
+
+.privacy-icon-btn {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #e5bd88;
+    border-radius: 50%;
+    background: var(--privacy-cream);
+    color: var(--privacy-green);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.privacy-icon-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.8;
+}
+
+.privacy-icon-btn:hover {
+    background: var(--privacy-green);
+    border-color: var(--privacy-green);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Centered logo and name */
+
+.privacy-brand {
+    width: 100%;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 110px 20px;
+    background: var(--privacy-cream);
+}
+
+.privacy-brand > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    direction: ltr;
+    text-decoration: none;
+}
+
+.privacy-brand img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    object-fit: contain;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.privacy-brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.privacy-brand-name {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    white-space: nowrap;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.8px;
+}
+
+.privacy-brand-name .brand-knight {
+    color: var(--privacy-green);
+}
+
+.privacy-brand-name .brand-aura {
+    color: var(--privacy-gold);
+}
+
+.privacy-brand-tagline {
+    color: var(--privacy-green);
+    font-family: "Lora", Georgia, serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+}
+
+/* Privacy hero */
+
+.privacy-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+    padding: 65px 24px;
+    text-align: center;
+    color: #ffffff;
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(200, 140, 67, 0.13),
+            transparent 27%
+        ),
+        linear-gradient(
+            125deg,
+            #0c3026,
+            var(--privacy-green),
+            var(--privacy-green-light)
+        );
+}
+
+.privacy-hero::before,
+.privacy-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(239, 197, 142, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.privacy-hero::before {
+    width: 300px;
+    height: 300px;
+    top: -190px;
+    left: -90px;
+}
+
+.privacy-hero::after {
+    width: 360px;
+    height: 360px;
+    right: -130px;
+    bottom: -220px;
+}
+
+.privacy-hero-content {
+    width: min(800px, 100%);
+    margin: 0 auto;
+}
+
+.privacy-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--privacy-gold-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.privacy-eyebrow i {
+    font-size: 13px;
+}
+
+.privacy-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(52px, 7vw, 82px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.privacy-hero h1 em {
+    color: var(--privacy-gold-light);
+    font-weight: 500;
+}
+
+.privacy-hero p {
+    max-width: 600px;
+    margin: 22px auto 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Privacy content */
+
+.privacy-content {
+    padding: 65px 24px 85px;
+    background: var(--privacy-cream);
+}
+
+.privacy-container {
+    width: min(880px, 100%);
+    margin: 0 auto;
+}
+
+.privacy-intro {
+    margin-bottom: 30px;
+    padding: 32px 35px;
+    border: 1px solid var(--privacy-border);
+    border-radius: 14px;
+    background: var(--privacy-white);
+    box-shadow: 0 12px 36px rgba(16, 59, 48, 0.05);
+}
+
+.privacy-section-icon {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 11px;
+    background: #f8eddd;
+    color: var(--privacy-gold);
+    font-size: 19px;
+}
+
+.privacy-intro h2 {
+    margin: 0 0 14px;
+    color: var(--privacy-green);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.privacy-intro p,
+.privacy-block p {
+    margin: 0 0 12px;
+    color: var(--privacy-muted);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.privacy-intro p:last-child,
+.privacy-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Individual policy topics */
+
+.privacy-block {
+    padding: 30px 4px;
+    border-bottom: 1px solid var(--privacy-border);
+}
+
+.privacy-block h3 {
+    margin: 0 0 13px;
+    color: var(--privacy-green);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(24px, 3vw, 31px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    padding: 24px 27px;
+    border: 1px solid rgba(200, 140, 67, 0.3);
+    border-radius: 13px;
+    background: #f6eddf;
+}
+
+.privacy-note > i {
+    flex: 0 0 auto;
+    color: var(--privacy-gold);
+    font-size: 29px;
+}
+
+.privacy-note p {
+    margin: 0;
+    color: var(--privacy-muted);
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.privacy-note strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--privacy-green);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+}
+
+/* Dark mode */
+
+html[data-theme="dark"] .privacy-page,
+body[data-theme="dark"].privacy-page {
+    --privacy-cream: #101c18;
+    --privacy-white: #172721;
+    --privacy-text: #e8eee8;
+    --privacy-muted: #a7b7ae;
+    --privacy-border: rgba(255, 255, 255, 0.1);
+    --privacy-green: #e2c18e;
+}
+
+html[data-theme="dark"] .privacy-brand,
+body[data-theme="dark"].privacy-page .privacy-brand {
+    background: #101c18;
+}
+
+html[data-theme="dark"] .privacy-brand-name .brand-knight,
+body[data-theme="dark"].privacy-page .privacy-brand-name .brand-knight {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .privacy-brand-tagline,
+body[data-theme="dark"].privacy-page .privacy-brand-tagline {
+    color: #e2c18e;
+}
+
+html[data-theme="dark"] .privacy-hero {
+    background: linear-gradient(125deg, #071c16, #102d23, #183c2e);
+}
+
+html[data-theme="dark"] .privacy-intro h2,
+html[data-theme="dark"] .privacy-block h3,
+html[data-theme="dark"] .privacy-note strong {
+    color: #e2c18e;
+}
+
+html[data-theme="dark"] .privacy-section-icon,
+html[data-theme="dark"] .privacy-note {
+    background: rgba(200, 140, 67, 0.12);
+}
+
+html[data-theme="dark"] .privacy-icon-btn {
+    background: #172721;
+    color: #e2c18e;
+    border-color: rgba(226, 193, 142, 0.45);
+}
+
+/* RTL / LTR */
+
+html[dir="rtl"] .privacy-content,
+html.rtl-mode .privacy-content,
+body.rtl-mode .privacy-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .privacy-note,
+html.rtl-mode .privacy-note,
+body.rtl-mode .privacy-note {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+html[dir="rtl"] .privacy-controls,
+html.rtl-mode .privacy-controls,
+body.rtl-mode .privacy-controls {
+    right: auto;
+    left: 24px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .privacy-controls {
+        top: 15px;
+        right: 15px;
+        gap: 6px;
+    }
+
+    html[dir="rtl"] .privacy-controls,
+    html.rtl-mode .privacy-controls,
+    body.rtl-mode .privacy-controls {
+        right: auto;
+        left: 15px;
+    }
+
+    .privacy-icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .privacy-icon-btn svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .privacy-brand {
+        min-height: 94px;
+        padding: 20px 95px 16px 12px;
+    }
+
+    .privacy-brand > a {
+        gap: 8px;
+    }
+
+    .privacy-brand img {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .privacy-brand-name {
+        font-size: 25px;
+    }
+
+    .privacy-brand-tagline {
+        font-size: 7px;
+        letter-spacing: 0;
+    }
+
+    .privacy-hero {
+        min-height: 290px;
+        padding: 50px 20px;
+    }
+
+    .privacy-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .privacy-hero h1 {
+        font-size: clamp(43px, 11vw, 62px);
+    }
+
+    .privacy-hero p {
+        margin-top: 17px;
+        font-size: 12px;
+    }
+
+    .privacy-content {
+        padding: 38px 17px 55px;
+    }
+
+    .privacy-intro {
+        padding: 25px 22px;
+    }
+
+    .privacy-intro h2 {
+        font-size: 31px;
+    }
+
+    .privacy-intro p,
+    .privacy-block p {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .privacy-block {
+        padding: 24px 2px;
+    }
+
+    .privacy-block h3 {
+        font-size: 25px;
+    }
+
+    .privacy-note {
+        gap: 13px;
+        padding: 20px 17px;
+    }
+
+    .privacy-note > i {
+        font-size: 24px;
+    }
+
+    .privacy-note strong {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 380px) {
+    .privacy-brand {
+        padding-right: 86px;
+    }
+
+    .privacy-brand img {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .privacy-brand-name {
+        font-size: 22px;
+    }
+
+    .privacy-brand-tagline {
+        font-size: 6px;
+    }
+
+    .privacy-hero h1 {
+        font-size: 42px;
+    }
+
+    .privacy-note {
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   PRIVACY PAGE — ALIGNMENT & READABILITY FIX
+   ========================================= */
+
+/* Keep the logo centered and controls at the top-right */
+.privacy-brand {
+    position: relative;
+    width: 100%;
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 100px;
+}
+
+.privacy-brand > a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+    direction: ltr;
+    text-align: left;
+}
+
+.privacy-brand img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.privacy-brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.privacy-brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0;
+    white-space: nowrap;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.privacy-brand-name .brand-knight {
+    color: var(--privacy-green);
+}
+
+.privacy-brand-name .brand-aura {
+    color: var(--privacy-gold);
+}
+
+.privacy-brand-tagline {
+    display: block;
+    color: var(--privacy-green);
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Keep theme controls in their own fixed position */
+.privacy-controls {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.privacy-icon-btn {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+}
+
+/* Hero text */
+.privacy-hero {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 65px 24px;
+    text-align: center;
+}
+
+.privacy-hero-content {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+.privacy-eyebrow {
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.privacy-hero h1 {
+    margin: 0 auto;
+    font-size: clamp(54px, 7vw, 78px);
+    line-height: 1.08;
+}
+
+.privacy-hero p {
+    max-width: 700px;
+    margin: 22px auto 0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Center the entire policy content */
+.privacy-content {
+    width: 100%;
+    padding: 65px 24px 85px;
+}
+
+.privacy-container {
+    width: min(900px, 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Introduction card */
+.privacy-intro {
+    width: 100%;
+    margin: 0 auto 35px;
+    padding: 38px 42px;
+    text-align: center;
+}
+
+.privacy-section-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.privacy-intro h2 {
+    margin: 0 auto 18px;
+    font-size: clamp(32px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.privacy-intro p {
+    max-width: 740px;
+    margin: 0 auto 15px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.privacy-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Policy sections */
+.privacy-block {
+    width: 100%;
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.privacy-block h3 {
+    margin: 0 auto 17px;
+    font-size: clamp(27px, 3vw, 34px);
+    line-height: 1.25;
+}
+
+.privacy-block p {
+    max-width: 760px;
+    margin: 0 auto 16px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.privacy-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Final privacy note */
+.privacy-note {
+    width: 100%;
+    justify-content: center;
+    margin: 38px auto 0;
+    padding: 27px 30px;
+    text-align: center;
+}
+
+.privacy-note p {
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.privacy-note strong {
+    font-size: 26px;
+}
+
+/* RTL: keep the logo name joined and centered */
+html[dir="rtl"] .privacy-brand,
+html.rtl-mode .privacy-brand,
+body.rtl-mode .privacy-brand {
+    justify-content: center;
+}
+
+html[dir="rtl"] .privacy-brand > a,
+html.rtl-mode .privacy-brand > a,
+body.rtl-mode .privacy-brand > a {
+    flex-direction: row;
+    direction: ltr;
+}
+
+html[dir="rtl"] .privacy-brand-copy,
+html.rtl-mode .privacy-brand-copy,
+body.rtl-mode .privacy-brand-copy {
+    align-items: flex-start;
+}
+
+html[dir="rtl"] .privacy-content,
+html.rtl-mode .privacy-content,
+body.rtl-mode .privacy-content {
+    text-align: center;
+}
+
+html[dir="rtl"] .privacy-intro,
+html[dir="rtl"] .privacy-block,
+html[dir="rtl"] .privacy-note,
+html.rtl-mode .privacy-intro,
+html.rtl-mode .privacy-block,
+html.rtl-mode .privacy-note,
+body.rtl-mode .privacy-intro,
+body.rtl-mode .privacy-block,
+body.rtl-mode .privacy-note {
+    text-align: center;
+}
+
+html[dir="rtl"] .privacy-note,
+html.rtl-mode .privacy-note,
+body.rtl-mode .privacy-note {
+    flex-direction: row;
+}
+
+/* Dark mode text readability */
+html[data-theme="dark"] .privacy-brand-name .brand-knight,
+body[data-theme="dark"].privacy-page .privacy-brand-name .brand-knight {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .privacy-brand-tagline,
+body[data-theme="dark"].privacy-page .privacy-brand-tagline {
+    color: #efc58e;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .privacy-brand {
+        min-height: 100px;
+        padding: 18px 85px 18px 12px;
+    }
+
+    .privacy-brand > a {
+        gap: 8px;
+    }
+
+    .privacy-brand img {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .privacy-brand-name {
+        font-size: 25px;
+    }
+
+    .privacy-brand-tagline {
+        font-size: 7px;
+        letter-spacing: 0;
+    }
+
+    .privacy-controls {
+        top: 12px;
+        right: 12px;
+        gap: 6px;
+    }
+
+    .privacy-icon-btn {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .privacy-hero {
+        min-height: 280px;
+        padding: 45px 18px;
+    }
+
+    .privacy-hero h1 {
+        font-size: clamp(43px, 11vw, 58px);
+    }
+
+    .privacy-hero p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .privacy-content {
+        padding: 35px 16px 50px;
+    }
+
+    .privacy-intro {
+        padding: 26px 20px;
+    }
+
+    .privacy-intro p,
+    .privacy-block p {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .privacy-block {
+        padding: 25px 4px;
+    }
+
+    .privacy-block h3 {
+        font-size: 26px;
+    }
+
+    .privacy-note {
+        flex-direction: column;
+        padding: 22px 18px;
+    }
+
+    html[dir="rtl"] .privacy-note,
+    html.rtl-mode .privacy-note,
+    body.rtl-mode .privacy-note {
+        flex-direction: column;
+    }
+}
+
+/* Keep the privacy content card centered */
+.privacy-container {
+    width: min(900px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Introduction card: center the card, not its text */
+.privacy-intro {
+    width: 100%;
+    margin: 0 auto 35px;
+    text-align: left;
+}
+
+/* Keep the icon centered inside the intro card */
+.privacy-section-icon {
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Normal paragraph alignment */
+.privacy-intro h2,
+.privacy-intro p,
+.privacy-block h3,
+.privacy-block p {
+    text-align: left;
+}
+
+/* Keep section cards/content centered in the page */
+.privacy-block {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 4px;
+    text-align: left;
+}
+
+/* Readable paragraph width */
+.privacy-intro p,
+.privacy-block p {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Final information card */
+.privacy-note {
+    width: 100%;
+    margin: 35px auto 0;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.privacy-note p {
+    text-align: left;
+}
+
+/* RTL: normal right-aligned reading */
+html[dir="rtl"] .privacy-intro,
+html[dir="rtl"] .privacy-block,
+html[dir="rtl"] .privacy-note,
+html.rtl-mode .privacy-intro,
+html.rtl-mode .privacy-block,
+html.rtl-mode .privacy-note,
+body.rtl-mode .privacy-intro,
+body.rtl-mode .privacy-block,
+body.rtl-mode .privacy-note {
+    text-align: right;
+}
+
+html[dir="rtl"] .privacy-section-icon,
+html.rtl-mode .privacy-section-icon,
+body.rtl-mode .privacy-section-icon {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Mobile readability */
+@media (max-width: 600px) {
+    .privacy-intro {
+        padding: 25px 20px;
+    }
+
+    .privacy-intro h2 {
+        font-size: 29px;
+    }
+
+    .privacy-intro p,
+    .privacy-block p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .privacy-block h3 {
+        font-size: 25px;
+    }
+}
+
+/* Fix logo alignment when RTL is enabled */
+
+/* LTR default */
+.privacy-brand > a {
+    direction: ltr;
+    flex-direction: row;
+}
+
+.privacy-brand-copy {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* RTL mode: move logo to the right of the name */
+html[dir="rtl"] .privacy-brand > a,
+html.rtl-mode .privacy-brand > a,
+body.rtl-mode .privacy-brand > a {
+    direction: rtl;
+    flex-direction: row;
+}
+
+html[dir="rtl"] .privacy-brand-copy,
+html.rtl-mode .privacy-brand-copy,
+body.rtl-mode .privacy-brand-copy {
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* Keep KnightAura joined together in both directions */
+.privacy-brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    white-space: nowrap;
+}
+
+html[dir="rtl"] .privacy-brand-name,
+html.rtl-mode .privacy-brand-name,
+body.rtl-mode .privacy-brand-name {
+    flex-direction: row-reverse;
+}
+
+/* Keep logo and brand group centered */
+.privacy-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy-brand > a {
+    margin-inline: auto;
+}
+
+/* Preserve the tagline colour */
+.privacy-brand-tagline {
+    color: var(--privacy-green);
+}
+
+html[data-theme="dark"] .privacy-brand-tagline,
+body[data-theme="dark"].privacy-page .privacy-brand-tagline {
+    color: #efc58e;
+}
+html[dir="rtl"] body.privacy-page .privacy-brand-name {
+    position: relative !important;
+    left: 45px !important;
+    right: auto !important;
+}
+/* Match homepage tagline typography */
+.privacy-brand-tagline {
+    font-family: "Lora", Georgia, serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.15px !important;
+    white-space: nowrap !important;
+}
+
+/* RTL: move only the tagline slightly right */
+html[dir="rtl"] body.privacy-page .privacy-brand-tagline {
+    position: relative;
+    right: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .privacy-brand-tagline {
+        font-size: 8px !important;
+        letter-spacing: 0 !important;
+    }
+}
+
+/* ==========================================================
+   MOVE WISE BRAND + RESPONSIVE HEADER CONSISTENCY HOTFIX
+   Keep existing page layouts and logo artwork unchanged.
+========================================================== */
+.site-header .brand-copy,
+.site-footer .brand-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0;
+  line-height: 1 !important;
+}
+.site-header .brand-name,
+.site-footer .brand-name {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle {
+  display: block !important;
+  margin-top: 4px !important;
+  font-family: inherit !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  max-width: none !important;
+  opacity: 1;
+}
+.site-header .brand {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.site-header .brand-mark {
+  flex-shrink: 0 !important;
+}
+.site-header .mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    overflow: visible !important;
+  }
+  .site-header > .container {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: calc(100% - 24px) !important;
+    height: 72px !important;
+    min-height: 72px !important;
+    margin-inline: auto !important;
+  }
+  .site-header .brand {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 126px) !important;
+    gap: 7px !important;
+    white-space: nowrap !important;
+  }
+  .site-header .brand-mark {
+    flex: 0 0 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+  .site-header .brand-mark img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  .site-header .brand-name {
+    font-size: 17px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 7px !important;
+    letter-spacing: .06em !important;
+    margin-top: 3px !important;
+  }
+  .site-header .header-actions {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    margin-inline-start: auto !important;
+  }
+  .site-header .header-actions .desktop-action {
+    display: inline-flex !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    padding: 0 !important;
+  }
+  .site-header .header-actions .login-action {
+    display: none !important;
+  }
+  .site-header .mobile-toggle {
+    order: 3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1002 !important;
+  }
+  .site-header .nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: -12px !important;
+    width: auto !important;
+    max-height: calc(100vh - 82px) !important;
+    overflow-y: auto !important;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    background: var(--color-page, #fff9f0) !important;
+    border-bottom: 1px solid var(--color-border, rgba(32,60,50,.16)) !important;
+    box-shadow: 0 14px 28px rgba(0,0,0,.10) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 3px !important;
+    white-space: normal !important;
+    z-index: 1001 !important;
+  }
+  .site-header .nav.is-open {
+    display: flex !important;
+  }
+  .site-header .nav > .nav-link,
+  .site-header .nav > .dropdown > .dropdown-trigger {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    justify-content: space-between !important;
+    text-align: start !important;
+    padding: 10px 2px !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+  .site-header .dropdown {
+    width: 100% !important;
+  }
+  .site-header .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 2px 0 8px !important;
+    box-shadow: none !important;
+  }
+  html[dir="rtl"] .site-header .nav > .nav-link,
+  html[dir="rtl"] .site-header .nav > .dropdown > .dropdown-trigger {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header > .container {
+    width: calc(100% - 16px) !important;
+    gap: 5px !important;
+  }
+  .site-header .brand {
+    gap: 5px !important;
+    max-width: calc(100% - 112px) !important;
+  }
+  .site-header .brand-mark {
+    flex-basis: 29px !important;
+    width: 29px !important;
+    height: 29px !important;
+  }
+  .site-header .brand-name {
+    font-size: 15px !important;
+  }
+  .site-header .brand-subtitle {
+    font-size: 6.5px !important;
+    letter-spacing: .04em !important;
+  }
+  .site-header .header-actions {
+    gap: 2px !important;
+  }
+  .site-header .header-actions .icon-button {
+    width: 27px !important;
+    height: 27px !important;
+    flex-basis: 27px !important;
+  }
+  .site-header .mobile-toggle {
+    width: 31px !important;
+    height: 31px !important;
+    flex-basis: 31px !important;
+    min-width: 31px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav,
+  .site-header .mobile-toggle {
+    transition: none !important;
+  }
+}
+
+
+
+/* KnightAura tagline consistency: The Art of Chess */
+.site-header .brand-subtitle,
+.site-footer .brand-subtitle,
+.auth-brand .brand-subtitle,
+.dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.045em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-subtitle,
+  .site-footer .brand-subtitle,
+  .auth-brand .brand-subtitle,
+  .dashboard-page .brand-subtitle {
+    font-size: 9px !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.2 !important;
+  }
+}
+
+
+/* FINAL OVERRIDE: make “The Art of Chess” match Home on every page */
+html body .site-header .brand-subtitle,
+html body .site-footer .brand-subtitle,
+html body .auth-brand .brand-subtitle,
+html body .dashboard-page .brand-subtitle {
+  font-size: 11px !important;
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+  html body .site-header .brand-subtitle,
+  html body .site-footer .brand-subtitle,
+  html body .auth-brand .brand-subtitle,
+  html body .dashboard-page .brand-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.25 !important;
+    margin-top: 2px !important;
+  }
+}
+/* PRIVACY PAGE BRAND — MATCH HOME PAGE */
+
+.privacy-brand {
+    width: 100%;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 100px;
+    background: var(--privacy-cream);
+}
+
+.privacy-brand > a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-inline: auto;
+    direction: ltr;
+    text-decoration: none;
+}
+
+.privacy-brand img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    object-fit: contain;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.privacy-brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    line-height: 1;
+}
+
+.privacy-brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0;
+    margin: 0;
+    font-family: var(--font-heading, Georgia, serif) !important;
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: -0.8px !important;
+    white-space: nowrap;
+}
+
+.privacy-brand-name .brand-knight {
+    color: var(--privacy-green);
+}
+
+.privacy-brand-name .brand-aura {
+    color: var(--privacy-gold);
+}
+
+.privacy-brand-tagline {
+    display: block;
+    margin-top: 3px !important;
+    color: var(--privacy-green);
+    font-family: var(--font-body, Georgia, serif) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .privacy-brand-name .brand-knight,
+body[data-theme="dark"].privacy-page .privacy-brand-name .brand-knight {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .privacy-brand-tagline,
+body[data-theme="dark"].privacy-page .privacy-brand-tagline {
+    color: #efc58e;
+}
+
+/* Responsive: keep logo centered and proportional */
+@media (max-width: 600px) {
+    .privacy-brand {
+        min-height: 100px;
+        padding: 18px 70px;
+    }
+
+    .privacy-brand img {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .privacy-brand-name {
+        font-size: 22px !important;
+    }
+
+    .privacy-brand-tagline {
+        font-size: 8px !important;
+        letter-spacing: 0.025em !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .privacy-brand {
+        padding-inline: 55px;
+    }
+
+    .privacy-brand img {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .privacy-brand-name {
+        font-size: 19px !important;
+    }
+
+    .privacy-brand-tagline {
+        font-size: 7px !important;
+        letter-spacing: 0 !important;
+    }
+}
+/* PRIVACY POLICY — RTL LOGO ORDER FIX */
+
+/* LTR default: Logo first, then name */
+.privacy-brand > a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    direction: ltr;
+}
+
+.privacy-brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 5px;
+}
+
+/* RTL: KnightAura name first, logo after it */
+html[dir="rtl"] body.privacy-page .privacy-brand > a,
+html.rtl-mode body.privacy-page .privacy-brand > a,
+body.rtl-mode.privacy-page .privacy-brand > a {
+    flex-direction: row-reverse !important;
+    direction: ltr !important;
+    gap: 10px !important;
+}
+
+html[dir="rtl"] body.privacy-page .privacy-brand-copy,
+html.rtl-mode body.privacy-page .privacy-brand-copy,
+body.rtl-mode.privacy-page .privacy-brand-copy {
+    order: 0 !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    direction: ltr !important;
+}
+
+/* Prevent brand name from shifting or overlapping */
+html[dir="rtl"] body.privacy-page .privacy-brand-name,
+html.rtl-mode body.privacy-page .privacy-brand-name,
+body.rtl-mode.privacy-page .privacy-brand-name {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    flex-direction: row !important;
+    direction: ltr !important;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+}
+
+html[dir="rtl"] body.privacy-page .privacy-brand-tagline,
+html.rtl-mode body.privacy-page .privacy-brand-tagline,
+body.rtl-mode.privacy-page .privacy-brand-tagline {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    direction: ltr !important;
+    text-align: left !important;
+    white-space: nowrap;
+}
+
+/* Keep logo dimensions and spacing stable */
+html[dir="rtl"] body.privacy-page .privacy-brand img,
+html.rtl-mode body.privacy-page .privacy-brand img,
+body.rtl-mode.privacy-page .privacy-brand img {
+    order: 0 !important;
+    flex: 0 0 48px;
+    margin: 0 !important;
+}
